@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyUtilsProject</string>
+    <string name="ceshianniu1">测试按钮1</string>
+    <string name="zongjifen">总积分</string>
+    <string name="act_integralrecode_default">--,---</string>
+    <string name="act_integralrecode_title">积分记录</string>
+</resources>
