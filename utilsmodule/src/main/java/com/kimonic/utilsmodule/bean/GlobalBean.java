@@ -7,7 +7,7 @@ package com.kimonic.utilsmodule.bean;
  * author：          kimonik
  * version：          1.0
  * date：            2017/8/8
- * description：   返回的加密json数据
+ * description：   返回的加密json数据,外层包裹bean,视具体情况进行改写
  * history：
  * * ====================================================================
  */

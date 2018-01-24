@@ -34,16 +34,16 @@ import butterknife.BindView;
 public class TestActivity extends BaseActivity {
 
 
-    @BindView(R.id.tv_act_integralrecode_totalintegral)
-    TextView tvActIntegralrecodeTotalintegral;
-    @BindView(R.id.tv_act_integralrecode_integralrecode)
-    TextView tvActIntegralrecodeIntegralrecode;
-    @BindView(R.id.iv_act_integralrecode_filtrate)
-    ImageView ivActIntegralrecodeFiltrate;
-    @BindView(R.id.lv_act_integralrecode)
-    ListView lvActIntegralrecode;
-    @BindView(R.id.srl_fact_integralrecode)
-    com.scwang.smartrefresh.layout.SmartRefreshLayout srlFactIntegralrecode;
+//    @BindView(R.id.tv_act_integralrecode_totalintegral)
+//    TextView tvActIntegralrecodeTotalintegral;
+//    @BindView(R.id.tv_act_integralrecode_integralrecode)
+//    TextView tvActIntegralrecodeIntegralrecode;
+//    @BindView(R.id.iv_act_integralrecode_filtrate)
+//    ImageView ivActIntegralrecodeFiltrate;
+//    @BindView(R.id.lv_act_integralrecode)
+//    ListView lvActIntegralrecode;
+//    @BindView(R.id.srl_fact_integralrecode)
+//    com.scwang.smartrefresh.layout.SmartRefreshLayout srlFactIntegralrecode;
     private int page=1;
 
     @Override
@@ -71,12 +71,12 @@ public class TestActivity extends BaseActivity {
 
     @Override
     public void initView() {
-//设置全区背景色
-        srlFactIntegralrecode.setPrimaryColorsId(R.color.global_theme_background_color);
-        //设置 Header 为 Material风格
-        srlFactIntegralrecode.setEnableRefresh(false);
-        //设置 Footer 为 球脉冲
-        srlFactIntegralrecode.setRefreshFooter(new BallPulseFooter(this).setSpinnerStyle(SpinnerStyle.Scale));
+//        //设置全区背景色
+//        srlFactIntegralrecode.setPrimaryColorsId(R.color.global_theme_background_color);
+//        //设置 Header 为 Material风格
+//        srlFactIntegralrecode.setEnableRefresh(false);
+//        //设置 Footer 为 球脉冲
+//        srlFactIntegralrecode.setRefreshFooter(new BallPulseFooter(this).setSpinnerStyle(SpinnerStyle.Scale));
     }
 
     @Override
@@ -86,20 +86,20 @@ public class TestActivity extends BaseActivity {
 
     @Override
     public void initDataFromInternet() {
-        TreeMap<String, String> map = new TreeMap<>();
-
-//        map.put("login_token", UserConfig.getInstance().getLoginToken(this));
-//        Log.e(TAG, "initDataFromInternet: ------获取的logintoken-----------" + UserConfig.getInstance().getLoginToken(this));
-        map.put("login_token", "12267");
-        map.put("start_time", "");
-        map.put("end_time", "");
-        map.put("page_count", "");//待删除字段
-        map.put("page", "" + page);
-//        Log.e("TAG", "initDataFromInternet: ---------------------??" + paramsStartTime);
-//        Log.e("TAG", "initDataFromInternet: ---------------------??" + paramsEndTime);
-        showPDialog();
-
-        HttpUtils.getInstance().POST(this, Constants.INTEGRAL_LIST, map, "IntegralRecodeActivity", getStringCallback());
+//        TreeMap<String, String> map = new TreeMap<>();
+//
+////        map.put("login_token", UserConfig.getInstance().getLoginToken(this));
+////        Log.e(TAG, "initDataFromInternet: ------获取的logintoken-----------" + UserConfig.getInstance().getLoginToken(this));
+//        map.put("login_token", "12267");
+//        map.put("start_time", "");
+//        map.put("end_time", "");
+//        map.put("page_count", "");//待删除字段
+//        map.put("page", "" + page);
+////        Log.e("TAG", "initDataFromInternet: ---------------------??" + paramsStartTime);
+////        Log.e("TAG", "initDataFromInternet: ---------------------??" + paramsEndTime);
+//        showPDialog();
+//
+//        HttpUtils.getInstance().POST(this, Constants.INTEGRAL_LIST, map, "IntegralRecodeActivity", getStringCallback());
 
 
 //                new StringCallback() {
@@ -134,8 +134,8 @@ public class TestActivity extends BaseActivity {
 
     @Override
     public void loadInternetDataToUi(Response<String> response) {
-        String result = StringUtils.getDecodeString(response.body());
-        Log.e("TAG", "loadInternetDataToUi: ---请求获取的数据--"+result);
+//        String result = StringUtils.getDecodeString(response.body());
+//        Log.e("TAG", "loadInternetDataToUi: ---请求获取的数据--"+result);
 
     }
 

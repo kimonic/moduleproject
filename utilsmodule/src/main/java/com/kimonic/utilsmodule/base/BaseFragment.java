@@ -22,6 +22,7 @@ import com.kimonic.utilsmodule.utils.ToastUtils;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.lang.ref.WeakReference;
 import java.util.Map;
@@ -61,6 +62,25 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
 
     private MyHandler handler;
 
+    /**下拉刷新,上拉加载布局*/
+    private SmartRefreshLayout srl;
+
+    @SuppressWarnings("unused")
+    public void setSrl(SmartRefreshLayout srl) {
+        this.srl = srl;
+    }
+
+    /**结束加载刷新*/
+    public void finishRL(){
+        if (srl!=null){
+            if (srl.isRefreshing()){
+                srl.finishRefresh();
+            }else if (srl.isLoading()){
+                srl.finishLoadmore();
+            }
+        }
+    }
+
     /**okgo stringcallback()*/
     private StringCallback stringCallback;
 
@@ -72,14 +92,16 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
                 @Override
                 public void onSuccess(Response<String> response) {
                     dismissPDialog();
+                    finishRL();
                     loadInternetDataToUi(response);
                 }
 
                 @Override
                 public void onError(Response<String> response) {
                     super.onError(response);
-                    ToastUtils.showToast(getActivity(), R.string.wangluobutaigeiliyou);
                     dismissPDialog();
+                    finishRL();
+                    ToastUtils.showToast(getActivity(), R.string.wangluobutaigeiliyou);
                 }
             };
 
