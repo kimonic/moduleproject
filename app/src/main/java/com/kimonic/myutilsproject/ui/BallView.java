@@ -6,6 +6,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -37,6 +39,11 @@ public class BallView extends View {
      */
     private Path pathLine;
 
+    /**波浪偏移量*/
+    private  float offset=0;
+    /**空间圆直径的1/6*/
+    private  float  radious;
+
 
     private RectF rectF = new RectF();
 
@@ -44,6 +51,21 @@ public class BallView extends View {
     private int lineBorderWidth = 20;
     private String text = "11.00%";
     private float duandianbuchang = 10;
+
+
+    /**整个空间矩形*/
+    RectF rectFAll;
+
+
+    private boolean  openAnim=true;
+
+    public boolean isOpenAnim() {
+        return openAnim;
+    }
+
+    public void setOpenAnim(boolean openAnim) {
+        this.openAnim = openAnim;
+    }
 
     public String getText() {
         return text;
@@ -74,6 +96,7 @@ public class BallView extends View {
 
     private void initView() {
         pathLine = new Path();
+        rectFAll=new RectF();
 
         circlePaint = new Paint();
         circlePaint.setAntiAlias(true);
@@ -96,15 +119,16 @@ public class BallView extends View {
 
         testPaint = new Paint();
         testPaint.setAntiAlias(true);
-        testPaint.setColor(Color.parseColor("#21B7DA"));
+        testPaint.setColor(Color.parseColor("#F1F0E7"));
         testPaint.setStyle(Paint.Style.FILL);
+        testPaint.setStrokeWidth(10);
 
 
         shadowpaint = new Paint();
         shadowpaint.setAntiAlias(true);
         shadowpaint.setStyle(Paint.Style.FILL);
         shadowpaint.setColor(Color.parseColor("#149BBC"));
-
+        animThread();
 
     }
 
@@ -124,41 +148,36 @@ public class BallView extends View {
         rectF.right = width / 2 + length / 2 - 5;
         rectF.bottom = height / 2 + length / 2 - 5;
 
-//        canvas.drawRect(rectF,testPaint);
-//        //绘制直线
-//        canvas.drawArc(rectF, 180-angle/2, -angle/2, false, linePaint);
-//        canvas.drawArc(rectF, 0+angle/2, angle/2, false, linePaint);
-//
-//        Log.e("TAG", "onDraw: 绘制直线--angle---" + angle);
-//
-//        float temp = (float) ((length - 2 * Math.sqrt(0.24f * length * length)) / 2);
-//        pathLine.moveTo(2, height / 2+length*0.03f);
-//        pathLine.lineTo(width-2 , height / 2+length*0.03f);
-//        pathLine.lineTo(width -temp-2, height / 2+ 0.1f * length);
-//        pathLine.lineTo(temp+2, height / 2+ 0.1f * length);
-////        pathLine.addArc(rectF, 0, angle);
-////        pathLine.moveTo((float) (length-(length-2*Math.sqrt(0.24f*length*length))/2),height/2+0.1f*length);
-////        pathLine.lineTo((float) ((length - 2 * Math.sqrt(0.24f * length * length)) / 2), height / 2 + 0.1f * length);
-////        pathLine.addArc(rectF, 180, -angle);
-//
-//        pathLine.close();
-//
-//
-//        canvas.drawPath(pathLine, linePaint);
+        //两个扇形叠加形成水层效果
+
+
+
+        //---------------------------绘制波浪--------------------------------------------------------
+        float  boFeng=height/2-80;
+        float  shuiPing=height/2+50;
+        float  boGu=height/2+100;
+        float  weiYi=length/6;
+        radious=weiYi;
+
+        for (int i = 0; i < 8; i++) {
+            pathLine.reset();
+            pathLine.moveTo(weiYi*(i-2)+offset,shuiPing);
+            pathLine.quadTo(weiYi*(i-1)+offset,boFeng,weiYi*i+offset,shuiPing);
+            pathLine.close();
+            canvas.drawPath(pathLine,linePaint);
+        }
+
+        //---------------------------绘制波浪--------------------------------------------------------
+
 
 
 
         canvas.drawArc(rectF, angle/2, 180-angle , false, linePaint);
         canvas.drawArc(rectF, angle, 180 - 2 * angle, false, shadowpaint);
+//        canvas.drawArc(rectF, 0, 180, false, shadowpaint);
 
 
 
-
-//        float lineStartX = (float) (width / 2 - Math.sqrt(length * length / 4 - length * length * 0.01));
-//        float lineEndX = (float) (width / 2 + Math.sqrt(length * length / 4 - length * length * 0.01));
-//        float lineHeight = height / 2 + 0.1f * length / 2;
-//        linePaint.setStrokeWidth(length*0.1f);
-//        canvas.drawLine(lineStartX+duandianbuchang, lineHeight, lineEndX-duandianbuchang, lineHeight, linePaint);
 
 
         //绘制上半部分文本
@@ -177,9 +196,58 @@ public class BallView extends View {
         canvas.drawText(getResources().getString(R.string.yuqinianhuashouyi), textX1, textY1, textPaint);
 
 
+
+        pathLine.reset();
+        pathLine.moveTo(0,height/2);
+        pathLine.arcTo(rectF,180,-90);
+        pathLine.lineTo(0,height/2+length/2);
+        pathLine.close();
+        canvas.drawPath(pathLine,testPaint);
+
+        pathLine.reset();
+        pathLine.moveTo(length,height/2);
+        pathLine.arcTo(rectF,0,90);
+        pathLine.lineTo(length,height/2+length/2);
+        pathLine.close();
+        canvas.drawPath(pathLine,testPaint);
+
+
+//        canvas.drawLine(0,0,0,height,testPaint);
+//        canvas.drawLine(width,0,width,height,testPaint);
+
+
+
+
+
         //绘制外圈圆
         canvas.drawCircle(width / 2, height / 2, length / 2 - circleBorderWidth, circlePaint);
 
 
     }
+
+    public void  animThread(){
+        new Thread(){
+            @Override
+            public void run() {
+
+                while (openAnim){
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    if (offset>radious){
+                        offset=offset-radious+10;
+                    }else {
+                        offset=offset+10;
+                    }
+                    postInvalidate();
+                }
+            }
+        }.start();
+    }
+
+
+
 }
