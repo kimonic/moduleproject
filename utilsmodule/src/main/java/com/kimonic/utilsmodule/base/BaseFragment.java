@@ -256,7 +256,8 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
 
     @Override
     public void onDestroyView() {
-
+        dismissPDialog();
+        bDialog=null;
 
         if (okgoCancelTag != null) {//根据标识取消掉本页正在进行的网络请求的
             OkGo.cancelTag(OkGo.getInstance().getOkHttpClient(), okgoCancelTag);

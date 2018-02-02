@@ -44,7 +44,7 @@ import butterknife.ButterKnife;
  * ===================================================
  */
 
-public abstract class BaseActivity extends AppCompatActivity implements BaseMethod, View.OnClickListener{
+public abstract class BaseActivity extends AppCompatActivity implements BaseMethod, View.OnClickListener {
 
     /**
      * app进入前台后为false,返回后为true
@@ -68,7 +68,9 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
      * 本activity内的okgo的请求标识
      */
     private String okgoCancelTag;
-    /**下拉刷新,上拉加载布局*/
+    /**
+     * 下拉刷新,上拉加载布局
+     */
     private SmartRefreshLayout srl;
 
     @SuppressWarnings("unused")
@@ -76,12 +78,14 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         this.srl = srl;
     }
 
-    /**结束加载刷新*/
-    public void finishRL(){
-        if (srl!=null){
-            if (srl.isRefreshing()){
+    /**
+     * 结束加载刷新
+     */
+    public void finishRL() {
+        if (srl != null) {
+            if (srl.isRefreshing()) {
                 srl.finishRefresh();
-            }else if (srl.isLoading()){
+            } else if (srl.isLoading()) {
                 srl.finishLoadmore();
             }
         }
@@ -120,14 +124,18 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         }
     }
 
-    /**okgo stringcallback()*/
+    /**
+     * okgo stringcallback()
+     */
     private StringCallback stringCallback;
 
-    /**返回okgo的StringCallback实例*/
+    /**
+     * 返回okgo的StringCallback实例
+     */
     @SuppressWarnings("unused")
     public StringCallback getStringCallback() {
-        if (stringCallback==null){
-            stringCallback=new StringCallback() {
+        if (stringCallback == null) {
+            stringCallback = new StringCallback() {
                 @Override
                 public void onSuccess(Response<String> response) {
                     dismissPDialog();
@@ -267,6 +275,27 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
     }
 
     /**
+     * Map<String, String>启动下一个activity
+     */
+    @SuppressWarnings("unused")
+    protected void openActivityParams(Class<? extends BaseActivity> toActivity, String key, String value) {
+        Intent intent = new Intent(this, toActivity);
+        intent.putExtra(key, value);
+        startActivity(intent);
+    }
+
+    /**
+     * Map<String, String>启动下一个activity
+     */
+    @SuppressWarnings("unused")
+    protected void openActivityParams(Class<? extends BaseActivity> toActivity, String key1, String value1, String key2, String value2) {
+        Intent intent = new Intent(this, toActivity);
+        intent.putExtra(key1, value1);
+        intent.putExtra(key2, value2);
+        startActivity(intent);
+    }
+
+    /**
      * Bundle参数启动下一个activity
      */
     protected void openActivity(Class<? extends BaseActivity> toActivity, Bundle parameter) {
@@ -357,7 +386,8 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
 
     @Override
     protected void onDestroy() {
-
+        dismissPDialog();
+        bDialog = null;
         if (okgoCancelTag != null) {//根据标识取消掉本页正在进行的网络请求的
             OkGo.cancelTag(OkGo.getInstance().getOkHttpClient(), okgoCancelTag);
         }
@@ -365,17 +395,18 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
 
     }
 
-    /**将资源颜色值转化为颜色值,等同于方法
-     * @see Context getColor(@ColorRes int id)*/
+    /**
+     * 将资源颜色值转化为颜色值,等同于方法
+     *
+     * @see Context getColor(@ColorRes int id)
+     */
     @SuppressWarnings("unused")
-    public int getColorRes(@ColorRes int  colorResId){
-        if (Build.VERSION.SDK_INT<23){
+    public int getColorRes(@ColorRes int colorResId) {
+        if (Build.VERSION.SDK_INT < 23) {
             return getResources().getColor(colorResId);
         }
-        return getResources().getColor(colorResId,null);
+        return getResources().getColor(colorResId, null);
     }
-
-
 
 
     /**
@@ -398,7 +429,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
             }
         }.start();
     }
-
 
 
 }

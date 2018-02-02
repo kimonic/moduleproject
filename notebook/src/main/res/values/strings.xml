@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">NoteBook</string>
+    <string name="zhanghuming">账户名</string>
+    <string name="tianjiazhanghuming">添加账户名</string>
+    <string name="xuanzezhanghu">选择账户</string>
+    <string name="chakanshuju">查看数据</string>
+    <string name="bijiaoshuju">比较数据</string>
+    <string name="xiugaishuju">修改数据</string>
+    <string name="shanchushuju">删除数据</string>
+    <string name="tianjaishuju">添加数据</string>
+    <string name="dangqiandengluyognhuming">当前登录用户名</string>
+    <string name="tianjiabiaoqian">添加标签</string>
+    <string name="querentianjia">确认添加</string>
+    <string name="qingshuruyaotianjiadeyonghuming">请输入要添加的用户名</string>
+    <string name="tianjiaxinyonghu">添加新用户</string>
+    <string name="baocunchenggong">保存成功!</string>
+    <string name="yonghumingbunengweikong">用户名不能为空!</string>
+    <string name="qingshurumima">请输入密码</string>
+    <string name="qingshuruzhengquedemima">请输入正确格式的密码!</string>
+    <string name="yognhumingyicunzai">用户名已存在!</string>
+    <string name="tianjiayonghuxiabiaoqian">添加用户下标签</string>
+    <string name="qingshuruyaotianjiadebiaoqianmingcheng">请输入要添加的标签名称</string>
+    <string name="gaibiaoqianjiangtianjiadao">该标签将添加到的用户是:</string>
+    <string name="qingshurubiaoqianmingcheng">请输入标签名称!</string>
+    <string name="dangqianbiaoqianyicunzai">当前标签已存在,不能重复添加!</string>
+</resources>

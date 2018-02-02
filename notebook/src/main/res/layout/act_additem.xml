@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBac"
+    >
+    <com.kimonic.utilsmodule.ui.MTopBarView
+        android:id="@+id/mtb_act_additem"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimaryDark"
+        app:centerText="@string/tianjiayonghuxiabiaoqian" />
+
+    <TextView
+        android:id="@+id/tv_act_additem_user_name"
+        style="@style/TextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:text="@string/gaibiaoqianjiangtianjiadao" />
+
+    <EditText
+        android:id="@+id/et_act_additem"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:hint="@string/qingshuruyaotianjiadebiaoqianmingcheng"
+        />
+
+    <TextView
+        android:id="@+id/tv_act_additem_add"
+        style="@style/TextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:text="@string/querentianjia" />
+
+</LinearLayout>
+

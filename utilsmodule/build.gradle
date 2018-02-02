@@ -71,7 +71,8 @@ dependencies {
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-1'
 //    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-1'
 
-
+//    数据库操作库
+    compile 'org.litepal.android:core:1.6.1'
 
 
 }

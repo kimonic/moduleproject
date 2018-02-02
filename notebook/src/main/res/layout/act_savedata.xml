@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#a3a3"
+    android:orientation="vertical">
+    <TextView
+    android:id="@+id/tv_act_savedata_current_user"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    style="@style/TextStyle"
+    android:text="@string/dangqiandengluyognhuming"
+    />
+    <ListView
+        android:id="@+id/lv_act_savedata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

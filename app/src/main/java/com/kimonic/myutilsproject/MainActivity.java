@@ -1,10 +1,13 @@
 package com.kimonic.myutilsproject;
 
+import android.app.Application;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.kimonic.myutilsproject.activity.TestActivity;
+import com.kimonic.myutilsproject.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.lzy.okgo.model.Response;
 
@@ -38,6 +41,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void initDataFromIntent() {
+        Log.e("TAG", "initDataFromIntent: -----"+ MApp.DEVICE_WIDTH);
+        Log.e("TAG", "initDataFromIntent: -----"+ MApp.DEVICE_HEIGHT);
+        Log.e("TAG", "initDataFromIntent: --TestActivity---"+ TestActivity.DEVICE_DENSITY);
+
+
 
     }
 

@@ -3,6 +3,7 @@ package com.kimonic.myutilsproject.mapp;
 import android.app.Application;
 
 import com.kimonic.utilsmodule.code.CreateCode;
+import com.kimonic.utilsmodule.utils.ScreenSizeUtils;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -31,11 +32,24 @@ import okhttp3.OkHttpClient;
  */
 
 public class MApp extends Application {
+
+    /**设备屏幕宽度*/
+    public static int DEVICE_WIDTH;
+    /**设备屏幕高度*/
+    public static int DEVICE_HEIGHT;
+    /**设备屏幕密度*/
+    public static int DEVICE_DENSITY;
+
+
     @Override
     public void onCreate() {
         super.onCreate();
-        CreateCode.initCreatCode(this);
 
+        DEVICE_WIDTH = ScreenSizeUtils.getScreenWidth(this);
+        DEVICE_HEIGHT = ScreenSizeUtils.getScreenHeight(this);
+        DEVICE_DENSITY = ScreenSizeUtils.getDensity(this);
+
+        CreateCode.initCreatCode(this);
         initOkGo();
     }
 

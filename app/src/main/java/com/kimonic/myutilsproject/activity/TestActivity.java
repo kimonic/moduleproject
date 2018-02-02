@@ -32,6 +32,7 @@ import butterknife.BindView;
  */
 
 public class TestActivity extends BaseActivity {
+    public static int DEVICE_DENSITY=132;
 
 
 //    @BindView(R.id.tv_act_integralrecode_totalintegral)
