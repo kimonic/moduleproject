@@ -1,6 +1,5 @@
 package com.kimonic.notebook.activity;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,7 +17,6 @@ import org.litepal.crud.DataSupport;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * * ===============================================================
@@ -51,7 +49,7 @@ public class AddItemActivity extends BaseActivity {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.tv_act_additem_add://确认添加
+            case R.id.tv_act_additem_add://确认添加,litepal数据库新添加表后必须更新版本或重新安装
                 String item = et.getText().toString().trim();
                 if ("".equals(item)) {
                     ToastUtils.showToast(AddItemActivity.this, R.string.qingshurubiaoqianmingcheng);
@@ -118,10 +116,5 @@ public class AddItemActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
 }

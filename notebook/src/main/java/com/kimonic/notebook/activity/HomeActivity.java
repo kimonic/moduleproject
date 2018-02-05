@@ -60,6 +60,7 @@ public class HomeActivity extends BaseActivity {
             case R.id.tv_act_home_del_data://删除数据
                 break;
             case R.id.tv_act_home_add_item://添加标签
+                openActivityParams(AddItemActivity.class, "username", userName);
 
                 break;
 //            case R.id.: break;

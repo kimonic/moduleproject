@@ -74,5 +74,8 @@ dependencies {
 //    数据库操作库
     compile 'org.litepal.android:core:1.6.1'
 
+    //万能适配器
+    compile 'com.zhy:base-adapter:3.0.3'
+
 
 }

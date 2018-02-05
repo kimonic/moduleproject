@@ -6,8 +6,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
+import com.kimonic.notebook.litemapbean.ItemFlagLMBean;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.lzy.okgo.model.Response;
+
+import org.litepal.crud.DataSupport;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,11 +53,11 @@ public class SaveDataActivity extends BaseActivity {
     @Override
     public void initDataFromIntent() {
         userName = getIntent().getStringExtra("username");
-
     }
 
     @Override
     public void initView() {
+        tvCurrentUser.setText(userName);
 
     }
 
@@ -63,6 +68,8 @@ public class SaveDataActivity extends BaseActivity {
 
     @Override
     public void initDataFromInternet() {
+        List<ItemFlagLMBean> listItem= DataSupport.where("userName = ?",userName).find(ItemFlagLMBean.class);
+
 
     }
 
@@ -76,10 +83,5 @@ public class SaveDataActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
 }
