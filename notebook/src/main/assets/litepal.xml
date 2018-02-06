@@ -11,5 +11,6 @@
         <mapping class="com.kimonic.notebook.litemapbean.DataNameTableLMBean"/>
         <mapping class="com.kimonic.notebook.litemapbean.SaveDataLMBean"/>
         <mapping class="com.kimonic.notebook.litemapbean.ItemFlagLMBean"/>
+        <mapping class="com.kimonic.notebook.litemapbean.DateRecordLMBean"/>
     </list>
 </litepal>

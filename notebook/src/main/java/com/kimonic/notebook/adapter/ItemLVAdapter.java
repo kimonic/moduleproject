@@ -23,12 +23,14 @@ import java.util.List;
  */
 
 public class ItemLVAdapter<ItemFlagLMBean> extends CommonAdapter {
+
     public ItemLVAdapter(Context context, @NonNull List<ItemFlagLMBean> list) {
         super(context, list);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
 
         return super.getView(position, convertView, parent);
     }

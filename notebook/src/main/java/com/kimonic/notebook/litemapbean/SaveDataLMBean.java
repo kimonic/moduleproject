@@ -23,7 +23,7 @@ public class SaveDataLMBean extends DataSupport {
     /**标签数值*/
     private  float   value;
     /**创建日期标签*/
-    private  String  dataFlag;
+    private  String  dateFlag;
     /**item唯一标识*/
     private  String  itemFlag;
 
@@ -52,12 +52,12 @@ public class SaveDataLMBean extends DataSupport {
         this.value = value;
     }
 
-    public String getDataFlag() {
-        return dataFlag;
+    public String getDateFlag() {
+        return dateFlag;
     }
 
-    public void setDataFlag(String dataFlag) {
-        this.dataFlag = dataFlag;
+    public void setDateFlag(String dateFlag) {
+        this.dateFlag = dateFlag;
     }
 
     public String getItemFlag() {
@@ -66,5 +66,18 @@ public class SaveDataLMBean extends DataSupport {
 
     public void setItemFlag(String itemFlag) {
         this.itemFlag = itemFlag;
+    }
+
+    @Override
+    public String toString() {
+        return "{用户名--" +
+                userName +
+                ",标签名--" +
+                item +
+                ",标签数值--" +
+                String.valueOf(value) +
+                ",创建日期--" +
+                dateFlag +
+                "}\n\n";
     }
 }

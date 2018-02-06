@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBac"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGlobal"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/dangqiandengluyognhuming" />
+
+        <TextView
+            android:id="@+id/tv_act_comeparedata_current_user"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_act_comparedata_first"
+        style="@style/EditTextCompare"
+        />
+
+    <EditText
+        android:id="@+id/et_act_comparedata_second"
+        style="@style/EditTextCompare"
+        />
+
+    <TextView
+        android:id="@+id/tv_act_comeparedata_compare"
+        style="@style/TextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/kaishibijiao"
+        />
+
+    <ListView
+        android:id="@+id/lv_act_comparedata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

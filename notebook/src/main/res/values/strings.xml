@@ -23,4 +23,21 @@
     <string name="gaibiaoqianjiangtianjiadao">该标签将添加到的用户是:</string>
     <string name="qingshurubiaoqianmingcheng">请输入标签名称!</string>
     <string name="dangqianbiaoqianyicunzai">当前标签已存在,不能重复添加!</string>
+    <string name="qingshurubaocunshuju">请输入要保存的数据:</string>
+    <string name="querenbaocun">确认保存</string>
+    <string name="qingxuanzeyaochakanderiqi">请选择要查看的日期</string>
+    <string name="biaoqianming">标签名:</string>
+    <string name="shuzhi">数值:</string>
+    <string name="jiluriqi">记录日期:</string>
+    <string name="shuzhizongji">数值总计:</string>
+    <string name="qingxuanzeyaobijiaoderiqi">请选择要比较的日期</string>
+    <string name="kaishibijiao">开始比较</string>
+    <string name="jilu1">记录1</string>
+    <string name="jilu2">记录2</string>
+    <string name="chazhi">差值</string>
+    <string name="bijiaoriqibunengweikong">比较日期不能为空!</string>
+    <string name="zongchazhi">总差值:\t\t</string>
+    <string name="daochushuju">导出数据</string>
+    <string name="qingshurubaocunriqi">请输入保存日期:</string>
+    <string name="geshi">日期格式:2018-01-01</string>
 </resources>

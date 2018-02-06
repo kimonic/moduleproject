@@ -6,8 +6,15 @@ import android.widget.TextView;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.UserConfig;
+import com.kimonic.notebook.litemapbean.SaveDataLMBean;
 import com.kimonic.utilsmodule.base.BaseActivity;
+import com.kimonic.utilsmodule.utils.FileUtils;
+import com.kimonic.utilsmodule.utils.TimeUtils;
 import com.lzy.okgo.model.Response;
+
+import org.litepal.crud.DataSupport;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +40,8 @@ public class HomeActivity extends BaseActivity {
     TextView tvDelData;
     @BindView(R.id.tv_act_home_add_item)
     TextView tvAddItem;
+    @BindView(R.id.tv_act_home_disk_save)
+    TextView tvDiskSave;
     private String userName;
 
     @Override
@@ -49,8 +58,10 @@ public class HomeActivity extends BaseActivity {
             case R.id.tv_act_home_sel_user://选择用户
                 break;
             case R.id.tv_act_home_query_data://查询数据
+                openActivity(FindDataActivity.class);
                 break;
             case R.id.tv_act_home_compare_data://比较数据
+                openActivity(CompareDataActivity.class);
                 break;
             case R.id.tv_act_home_update_data://更新数据
                 break;
@@ -63,7 +74,16 @@ public class HomeActivity extends BaseActivity {
                 openActivityParams(AddItemActivity.class, "username", userName);
 
                 break;
-//            case R.id.: break;
+            case R.id.tv_act_home_disk_save://导出数据
+                List<SaveDataLMBean> listDate = DataSupport.where("userName = ?"
+                        , userName).find(SaveDataLMBean.class);
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < listDate.size(); i++) {
+                    builder.append(listDate.get(i).toString());
+                }
+
+                FileUtils.saveJsonToSDCard(this, "mynotebookdata",TimeUtils.getStringDateShort() + userName + ".txt", builder.toString());
+                break;
 //            case R.id.: break;
 //            case R.id.: break;
         }
@@ -96,6 +116,7 @@ public class HomeActivity extends BaseActivity {
         tvSaveData.setOnClickListener(this);
         tvUpdateData.setOnClickListener(this);
         tvAddItem.setOnClickListener(this);
+        tvDiskSave.setOnClickListener(this);
     }
 
     @Override

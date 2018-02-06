@@ -1,6 +1,5 @@
 package com.kimonic.notebook.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,7 +8,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
-import com.kimonic.notebook.litemapbean.ItemFlagLMBean;
+import com.kimonic.notebook.config.UserConfig;
+import com.kimonic.notebook.litemapbean.DateRecordLMBean;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.lzy.okgo.model.Response;
 import com.zhy.adapter.abslistview.CommonAdapter;
@@ -24,31 +24,28 @@ import butterknife.ButterKnife;
 
 /**
  * * ===============================================================
- * name:             SaveDataActivity
+ * name:             FindDataActivity
  * guide:
  * author：          kimonik
  * version：          1.0
- * date：             2018/2/2
- * description：  添加数据
+ * date：             2018/2/6
+ * description：
  * history：
  * *==================================================================
  */
 
-public class SaveDataActivity extends BaseActivity {
-
-    @BindView(R.id.tv_act_savedata_current_user)
+public class FindDataActivity extends BaseActivity {
+    @BindView(R.id.tv_act_finddata_current_user)
     TextView tvCurrentUser;
-    @BindView(R.id.lv_act_savedata)
+    @BindView(R.id.lv_act_finddata)
     ListView lv;
-    /**
-     * 添加到的用户名
-     */
+
     private String userName;
-    private List<ItemFlagLMBean> listItem;
+    private List<DateRecordLMBean> listDate;
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_savedata;
+        return R.layout.act_finddata;
     }
 
     @Override
@@ -58,13 +55,16 @@ public class SaveDataActivity extends BaseActivity {
 
     @Override
     public void initDataFromIntent() {
-        userName = getIntent().getStringExtra("username");
+        userName = UserConfig.getInstance().getUserName(this);
     }
 
     @Override
     public void initView() {
         tvCurrentUser.setText(userName);
+        listDate = DataSupport.where("userName = ? ", userName).find(DateRecordLMBean.class);
 
+
+        lv.setAdapter(getAdapter());
     }
 
     @Override
@@ -72,37 +72,32 @@ public class SaveDataActivity extends BaseActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                openActivityParams(SaveDataDetailsActivity.class,"label",listItem.get(position).getItemName(),
-                "itemFlag",listItem.get(position).getItemFlag());
+                openActivityParams(FindDataDetailsActivity.class,"date",listDate.get(position).getDate());
             }
         });
-
     }
 
     @Override
     public void initDataFromInternet() {
-       listItem= DataSupport.where("userName = ?",userName).find(ItemFlagLMBean.class);
-        loadInternetDataToUi();
 
     }
 
     @Override
     public void loadInternetDataToUi(Response<String> response) {
 
-
-
     }
 
     @Override
     public void loadInternetDataToUi() {
-        lv.setAdapter(getAdapter());
+
     }
 
-    private CommonAdapter<ItemFlagLMBean>  getAdapter(){
-        return new CommonAdapter<ItemFlagLMBean>(this,R.layout.lv_itemflagbean,listItem) {
+
+    private CommonAdapter<DateRecordLMBean>  getAdapter(){
+        return new CommonAdapter<DateRecordLMBean>(this,R.layout.lv_daterecordbean,listDate) {
             @Override
-            protected void convert(ViewHolder viewHolder, ItemFlagLMBean item, int position) {
-                viewHolder.setText(R.id.tv_lv_itemflagbean,item.getItemName());
+            protected void convert(ViewHolder viewHolder, DateRecordLMBean item, int position) {
+                viewHolder.setText(R.id.tv_lv_daterecordbean,item.getDate());
             }
         };
     }

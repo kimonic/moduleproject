@@ -23,6 +23,16 @@
         <activity android:name=".activity.AddNewUserActivity" />
         <!--3.添加用户下的标签activity-->
         <activity android:name=".activity.AddItemActivity" />
+        <!--4.保存用户下相应标签的详细数据-->
+        <activity android:name=".activity.SaveDataDetailsActivity" />
+        <!--5.查看数据activity-->
+        <activity android:name=".activity.FindDataActivity" />
+        <!--6.某一天的记录详情-->
+        <activity android:name=".activity.FindDataDetailsActivity" />
+        <!--7.比较不同日期的记录数据-->
+        <activity android:name=".activity.CompareDataActivity" />
+        <!--7.比较不同日期的记录数据详情-->
+        <activity android:name=".activity.CompareDataDetailsActivity" />
     </application>
 
 </manifest>

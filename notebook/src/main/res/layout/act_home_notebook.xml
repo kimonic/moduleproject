@@ -83,5 +83,13 @@
         android:text="@string/tianjiabiaoqian"
         />
 
+    <TextView
+        android:id="@+id/tv_act_home_disk_save"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:text="@string/daochushuju"
+        />
+
 
 </LinearLayout>

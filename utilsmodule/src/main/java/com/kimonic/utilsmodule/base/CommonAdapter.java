@@ -30,7 +30,6 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
         this.list = list;
     }
 
-    public abstract int  getLayoutRes();
 
     @Override
     public int getCount() {
@@ -38,7 +37,7 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public T getItem(int position) {
         return list == null ? null : list.get(position);
     }
 
