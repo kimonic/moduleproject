@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_layout" android:background="@drawable/bg_popupwindow_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="7.0dip">
+        <TextView android:id="@id/tv_problem" android:background="@drawable/selector_bg_above" android:text="@string/normal_problem" style="@style/popup_textview" />
+        <View android:background="@color/image_divider" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" />
+        <TextView android:id="@id/tv_mess_center" android:text="@string/message_center" style="@style/popup_textview" />
+        <View android:background="@color/image_divider" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" />
+        <RelativeLayout android:background="@drawable/selector_bg_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/tv_online_kefu" android:layout_width="fill_parent" android:text="@string/kefu" android:layout_centerInParent="true" style="@style/popup_textview" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_unread_num" android:background="@drawable/message_unread" android:visibility="gone" android:layout_width="14.0dip" android:layout_height="14.0dip" android:layout_toRightOf="@id/tv_online_kefu" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

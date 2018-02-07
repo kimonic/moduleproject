@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/layout_payee" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout">
+        <TextView android:gravity="center|left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="客户" style="@style/text_view_tally_item" />
+        <TextView android:id="@id/tv_payee" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:layout_toLeftOf="@id/image_view_arrow" style="@style/text_view_tally_item" />
+        <ImageView android:id="@id/image_view_arrow" style="@style/item_arrow_right" />
+    </RelativeLayout>
+    <include layout="@layout/image_divider" />
+    <RelativeLayout android:id="@id/layout_provider" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout">
+        <TextView android:gravity="center|left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="供应商" style="@style/text_view_tally_item" />
+        <TextView android:id="@id/tv_value_provider" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:layout_toLeftOf="@id/image_view_arrow1" style="@style/text_view_tally_item" />
+        <ImageView android:id="@id/image_view_arrow1" style="@style/item_arrow_right" />
+    </RelativeLayout>
+    <include layout="@layout/image_divider" />
+    <RelativeLayout android:id="@id/layout_account" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout">
+        <TextView android:gravity="center|left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="收款账户" style="@style/text_view_tally_item" />
+        <TextView android:id="@id/tv_account" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:layout_toLeftOf="@id/image_view_arrow2" style="@style/text_view_tally_item" />
+        <ImageView android:id="@id/image_view_arrow2" style="@style/item_arrow_right" />
+    </RelativeLayout>
+    <include layout="@layout/image_divider" />
+    <RelativeLayout android:id="@id/layout_rec_category" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout">
+        <TextView android:gravity="center|left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="收入类别" style="@style/text_view_tally_item" />
+        <TextView android:id="@id/tv_value_rec_category" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:layout_toLeftOf="@id/image_view_arrow3" style="@style/text_view_tally_item" />
+        <ImageView android:id="@id/image_view_arrow3" style="@style/item_arrow_right" />
+    </RelativeLayout>
+    <include layout="@layout/image_divider" />
+    <RelativeLayout android:id="@id/layout_pay_account" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout">
+        <TextView android:gravity="center|left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="付款账户" style="@style/text_view_tally_item" />
+        <TextView android:id="@id/tv_value_pay_account" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:layout_toLeftOf="@id/image_view_arrow4" style="@style/text_view_tally_item" />
+        <ImageView android:id="@id/image_view_arrow4" style="@style/item_arrow_right" />
+    </RelativeLayout>
+    <include layout="@layout/image_divider" />
+    <RelativeLayout android:id="@id/layout_pay_category" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout">
+        <TextView android:gravity="center|left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="结算成本" style="@style/text_view_tally_item" />
+        <TextView android:id="@id/tv_value_pay_category" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:layout_toLeftOf="@id/image_view_arrow5" style="@style/text_view_tally_item" />
+        <ImageView android:id="@id/image_view_arrow5" style="@style/item_arrow_right" />
+    </RelativeLayout>
+</LinearLayout>

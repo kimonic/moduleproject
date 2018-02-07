@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/layout_profit" android:layout_height="wrap_content" style="@style/homepage_item_layout">
+        <ImageView android:id="@id/iv_icon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_8" android:src="@drawable/icon_master_logo" android:layout_centerVertical="true" />
+        <TextView android:gravity="center_vertical" android:id="@id/tv_user_name" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="16.0dip" android:layout_toRightOf="@id/iv_icon" android:layout_centerVertical="true" style="@style/tv_homepage_style" />
+        <LinearLayout android:gravity="right" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="6.0dip" android:layout_marginBottom="6.0dip" android:layout_toLeftOf="@id/arrow">
+            <TextView android:textColor="#ff999999" android:id="@id/tv_id" android:layout_marginTop="5.0dip" android:layout_marginRight="3.0dip" style="@style/tv_homepage_style" />
+            <TextView android:textColor="#ff343434" android:id="@id/tv_tel_phone" android:layout_marginTop="3.0dip" android:layout_marginRight="3.0dip" android:drawableRight="@null" style="@style/home_item_text_right_agent" />
+        </LinearLayout>
+        <TextView android:id="@id/arrow" style="@style/home_item_text_right_agent" />
+    </RelativeLayout>
+</LinearLayout>

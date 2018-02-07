@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/title_toolbar" />
+    <RelativeLayout android:id="@id/rl_ratepaying_type" android:layout_marginTop="16.0dip" style="@style/item_layout">
+        <TextView android:text="服务内容" style="@style/item_text_view_agent_acount" />
+        <TextView android:textColor="@color/text_color" android:id="@id/tv_ratepaying_type" android:hint="请选择服务内容" style="@style/item_text_right_agent" />
+    </RelativeLayout>
+    <include layout="@layout/layout_three_service_pager_two" />
+</LinearLayout>

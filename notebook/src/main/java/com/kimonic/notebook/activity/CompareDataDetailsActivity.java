@@ -62,7 +62,7 @@ public class CompareDataDetailsActivity extends BaseActivity {
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_comparedatadetails;
+        return R.layout.act_comparedatadetails_notebook;
     }
 
     @Override
@@ -177,7 +177,7 @@ public class CompareDataDetailsActivity extends BaseActivity {
 
 
     private CommonAdapter<CompareBean> getAdapter() {
-        return new CommonAdapter<CompareBean>(this, R.layout.lv_comparebean, list) {
+        return new CommonAdapter<CompareBean>(this, R.layout.lv_comparebean_notebook, list) {
             @Override
             protected void convert(ViewHolder viewHolder, CompareBean item, int position) {
                 viewHolder.setText(R.id.tv_lv_comparebean_label, item.getItem());

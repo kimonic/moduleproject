@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/tv_audit_status_one" android:layout_height="48.0dip" android:text="审核通过" style="@style/bt_operate_book_style" />
+    <include layout="@layout/divide_line" />
+    <TextView android:id="@id/tv_audit_status_two" android:layout_height="48.0dip" android:text="审核不通过" style="@style/bt_operate_book_style" />
+    <View android:id="@id/divide_one" android:background="@color/divide_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:id="@id/tv_audit_status_cancel" android:layout_height="48.0dip" android:text="撤销审核" style="@style/bt_operate_book_style" />
+    <View android:id="@id/divide_two" android:background="@color/divide_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textColor="@color/red" android:id="@id/tv_audit_status_delete" android:visibility="gone" android:layout_height="48.0dip" android:layout_marginTop="10.0dip" android:text="删除" style="@style/bt_operate_book_style" />
+</LinearLayout>

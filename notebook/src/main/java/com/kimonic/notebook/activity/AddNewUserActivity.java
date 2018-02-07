@@ -43,7 +43,7 @@ public class AddNewUserActivity extends BaseActivity {
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_addnewuser;
+        return R.layout.act_addnewuser_notebook;
     }
 
     @Override

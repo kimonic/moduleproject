@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_branch" app:leftText="部门" app:rightText="全部" style="@style/miv_common_style.noLeftIcon"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

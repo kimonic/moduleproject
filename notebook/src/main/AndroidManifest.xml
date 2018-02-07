@@ -3,19 +3,20 @@
     package="com.kimonic.notebook">
 
     <application
+        android:name=".mapp.MApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".mapp.MApp"
         android:theme="@style/AppTheme">
+        <!--0.首页activity-->
         <activity android:name=".activity.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
         <!--1.保存数据activity-->
         <activity android:name=".activity.SaveDataActivity" />
@@ -33,6 +34,14 @@
         <activity android:name=".activity.CompareDataActivity" />
         <!--7.比较不同日期的记录数据详情-->
         <activity android:name=".activity.CompareDataDetailsActivity" />
+        <!--8.欢迎页activity-->
+        <activity android:name=".activity.welcome.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

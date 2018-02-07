@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/tv_add_equity" android:layout_height="48.0dip" android:text="增股" style="@style/bt_operate_book_style" />
+    <View android:id="@id/divide_one" android:background="@color/divide_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:id="@id/tv_reduce_equity" android:layout_height="48.0dip" android:text="减股" style="@style/bt_operate_book_style" />
+    <View android:id="@id/divide_two" android:background="@color/divide_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:id="@id/tv_cancel" android:layout_height="48.0dip" android:layout_marginTop="10.0dip" android:text="取消" style="@style/bt_operate_book_style" />
+</LinearLayout>

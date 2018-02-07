@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/title_toolbar" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <android.support.v4.widget.NestedScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <include layout="@layout/include_miv_date" />
+                    <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_payee" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_category" app:leftIcon="@drawable/ic_category" app:leftText="支出类别" app:itemModel="defaultModel" style="@style/miv_common_style" />
+                    <include layout="@layout/include_miv_product_add" />
+                    <include layout="@layout/include_my_list_view" />
+                    <LinearLayout android:gravity="right" android:background="@color/white" android:paddingTop="@dimen/dp_10" android:paddingBottom="@dimen/dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textColor="@color/tv_color_aux_text" android:gravity="center" android:id="@id/tv_balance_name" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="合计数量：" />
+                        <TextView android:textColor="@color/amount_red" android:gravity="center" android:id="@id/tv_num" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/dp_15" style="@style/fonts_din_pro_regular" />
+                    </LinearLayout>
+                    <include layout="@layout/image_divider" />
+                    <include layout="@layout/include_tally_remark_photo" />
+                    <cn.cash360.tiger.widget.AutoWrapViewGroup style="@style/AutoWrapViewGroupStyle">
+                        <include layout="@layout/layout_tv_staff" />
+                        <include layout="@layout/layout_tv_branch" />
+                        <include layout="@layout/layout_tv_project" />
+                    </cn.cash360.tiger.widget.AutoWrapViewGroup>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+            <include layout="@layout/layout_bt_save" />
+        </LinearLayout>
+        <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/layout_num_input" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+</LinearLayout>

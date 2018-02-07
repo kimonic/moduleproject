@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_package_two" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/home_item_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/iv_logo_1" android:src="@drawable/icon_vip_two" style="@style/activity_pay_iv_log" />
+    <LinearLayout android:layout_toLeftOf="@id/tv_money" android:layout_toRightOf="@id/iv_logo_1" style="@style/activity_pay_ll_style">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vip_level_name_two" style="@style/activity_pay_tv_text_style_black" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vip_level_two_desc" style="@style/activity_pay_tv_text_style_grey" />
+    </LinearLayout>
+    <TextView android:id="@id/tv_money" android:text="@string/vip_level_two_price" style="@style/activity_pay_tv_money" />
+</RelativeLayout>

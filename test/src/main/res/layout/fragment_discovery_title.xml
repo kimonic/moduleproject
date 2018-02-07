@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_find_title_bg" android:background="@drawable/find_bg_v0" android:paddingTop="17.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="135.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/rl_message_discovery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:layout_toLeftOf="@id/tv_setting" android:layout_centerVertical="true">
+            <ImageButton android:id="@id/iv_message" android:background="@null" android:layout_width="23.0dip" android:layout_height="23.0dip" android:src="@drawable/home_ico_message" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/iv_message_dot" android:background="@drawable/shape_circle_red" android:visibility="gone" android:layout_width="9.0dip" android:layout_height="9.0dip" android:layout_marginLeft="15.0dip" />
+        </RelativeLayout>
+        <TextView android:textSize="15.0sp" android:textColor="@color/white" android:layout_gravity="right" android:id="@id/tv_setting" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="17.0dip" android:minWidth="35.0dip" android:text="设置" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10">
+        <cn.cash360.tiger.widget.CircleImageView android:id="@id/avater" android:layout_width="58.0dip" android:layout_height="58.0dip" android:layout_marginLeft="28.0dip" android:src="@drawable/me_logo_round" android:layout_centerVertical="true" app:civ_border_width="1.0dip" app:civ_border_color="@color/white" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/rl_into_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_15" android:layout_toRightOf="@id/avater" android:layout_centerVertical="true">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/sp_14" android:textColor="@color/white" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:maxEms="7" />
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_vip_logo" android:layout_width="@dimen/dp_14" android:layout_height="@dimen/dp_14" android:layout_marginLeft="@dimen/dp_10" android:src="@drawable/me_ico_vip_gray" />
+                <TextView android:textSize="@dimen/sp_12" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/tv_vip_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_6" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/sp_13" android:textColor="@color/white" android:id="@id/tv_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_4" style="@style/fonts_din_pro_regular" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

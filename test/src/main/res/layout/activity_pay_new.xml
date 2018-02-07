@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/layout_activity_pay_new_title" />
+            <TextView android:id="@id/tv_vip_title_desc" android:layout_marginBottom="6.0dip" android:text="VIP特权功能" style="@style/handle_affairs_item_tv_top" />
+            <include layout="@layout/include_pay_func_desc" />
+            <TextView android:layout_marginBottom="6.0dip" android:text="VIP特权包" style="@style/handle_affairs_item_tv_top" />
+            <include layout="@layout/layout_activity_pay_new_item_level_one" />
+            <include layout="@layout/divide_line" />
+            <include layout="@layout/layout_activity_pay_new_item_level_two" />
+            <include layout="@layout/divide_line" />
+            <include layout="@layout/layout_activity_pay_new_item_level_three" />
+            <include layout="@layout/divide_line" />
+            <include layout="@layout/layout_activity_pay_new_item_level_four" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="20.0dip" android:text="体验版免费，限1用户，200M空间。用户数是指主用户和子用户之和。主用户可以为子用户分配权限。" style="@style/activity_pay_tv_text_style_grey" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

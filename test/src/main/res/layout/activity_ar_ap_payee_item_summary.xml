@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <include android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/layout_refresh_list_view" />
+    <RelativeLayout android:background="#fffafbfe" android:layout_width="fill_parent" android:layout_height="33.0dip">
+        <TextView android:gravity="center_vertical" android:id="@id/tv_type_name" android:layout_marginRight="12.0dip" android:text="已付" android:layout_toLeftOf="@id/tv_amount" android:layout_centerVertical="true" style="@style/TvCustomerSp13" />
+        <TextView android:gravity="center_vertical" android:id="@id/tv_amount" android:layout_marginRight="@dimen/border_padding_left_right" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/TvCustomerSp13.Regular" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/title_toolbar" />
+    <RelativeLayout android:layout_marginTop="30.0dip" style="@style/item_layout">
+        <TextView android:id="@id/text_book_name" android:text="ID" style="@style/item_text_view_left" />
+        <TextView android:id="@id/tv_user_id" android:layout_alignRight="@id/text_book_name" style="@style/item_edit_right" />
+    </RelativeLayout>
+    <include layout="@layout/divide_line" />
+    <RelativeLayout style="@style/item_layout">
+        <TextView android:id="@id/tv_name" android:text="姓名" style="@style/item_text_view_left" />
+        <TextView android:id="@id/tv_user_name" android:layout_alignRight="@id/tv_name" style="@style/item_edit_right" />
+    </RelativeLayout>
+    <include layout="@layout/divide_line" />
+    <RelativeLayout style="@style/item_layout">
+        <TextView android:id="@id/tv_mobile" android:text="手机" style="@style/item_text_view_left" />
+        <TextView android:id="@id/tv_user_mobile" android:layout_alignRight="@id/tv_mobile" style="@style/item_edit_right" />
+    </RelativeLayout>
+    <include layout="@layout/divide_line" />
+    <RelativeLayout style="@style/item_layout">
+        <TextView android:id="@id/tv_email" android:text="邮箱" style="@style/item_text_view_left" />
+        <TextView android:id="@id/tv_user_email" android:layout_alignRight="@id/tv_email" style="@style/item_edit_right" />
+    </RelativeLayout>
+</LinearLayout>

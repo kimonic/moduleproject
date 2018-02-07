@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/layout_deferred" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView android:id="@id/icon_left" android:src="@drawable/ic_deferred" style="@style/item_layout_image_view" />
+        <TextView android:id="@id/tv_deferred" android:hint="摊销" android:layout_toRightOf="@id/icon_left" style="@style/item_layout_text_view_left" />
+        <TextView android:textSize="@dimen/sp_15" android:textColor="#ff313233" android:gravity="center_vertical" android:id="@id/tv_deferred_des" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  个月（不摊销）" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <EditText android:textSize="@dimen/sp_15" android:textColor="#ff313233" android:gravity="end" android:id="@id/et_deferred" android:background="@null" android:paddingRight="3.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="0" android:maxLength="10" android:layout_toLeftOf="@id/tv_deferred_des" android:layout_centerVertical="true" android:inputType="number" style="@style/fonts_din_pro_regular" />
+    </RelativeLayout>
+    <include layout="@layout/image_divider" />
+</LinearLayout>

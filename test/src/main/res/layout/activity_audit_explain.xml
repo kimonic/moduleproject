@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/title_toolbar" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_auditor" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_20" app:leftText="@string/auditor" app:itemModel="noRightArrowModel" />
+        <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_result" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" app:leftText="结果" app:itemModel="noRightArrowModel" />
+        <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_remark" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" app:leftText="@string/remark" app:divideLineShow="false" app:itemModel="withEditTextModel" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/layout_save" style="@style/ll_add_tally_layout_style"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <Button android:id="@id/btn_no_pass" android:text="@string/cancel" style="@style/bt_add_tally_continue_save_style" />
+        <Button android:id="@id/btn_pass" android:text="@string/yes" style="@style/bt_add_tally_save_style" />
+    </LinearLayout>
+</LinearLayout>

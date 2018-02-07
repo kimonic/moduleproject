@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/layout_take_back" style="@style/home_item_layout">
+        <ImageView android:layout_width="@dimen/dp_22" android:layout_height="@dimen/dp_22" android:layout_marginLeft="@dimen/dp_22" android:layout_marginRight="@dimen/dp_22" android:src="@drawable/home_icon_one" />
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/text_view_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="收欠款、预收款" />
+    </LinearLayout>
+    <include layout="@layout/divide_line" />
+    <LinearLayout android:id="@id/layout_return" style="@style/home_item_layout">
+        <ImageView android:layout_width="@dimen/dp_22" android:layout_height="@dimen/dp_22" android:layout_marginLeft="@dimen/dp_22" android:layout_marginRight="@dimen/dp_22" android:src="@drawable/home_icon_two" />
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/text_view_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="付欠款、预付款" />
+    </LinearLayout>
+    <include layout="@layout/divide_line" />
+    <LinearLayout android:id="@id/layout_more" style="@style/home_item_layout">
+        <ImageView android:layout_width="@dimen/dp_22" android:layout_height="@dimen/dp_22" android:layout_marginLeft="@dimen/dp_22" android:layout_marginRight="@dimen/dp_22" android:src="@drawable/home_icon_three" />
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/text_view_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="更多记账" />
+    </LinearLayout>
+    <include layout="@layout/divide_line" />
+    <LinearLayout android:id="@id/layout_vip_info" style="@style/home_item_layout">
+        <ImageView android:layout_width="@dimen/dp_22" android:layout_height="@dimen/dp_22" android:layout_marginLeft="@dimen/dp_22" android:layout_marginRight="@dimen/dp_22" android:src="@drawable/home_icon_four" />
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/bg_yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VIP特权功能" />
+    </LinearLayout>
+</LinearLayout>

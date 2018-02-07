@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@id/layout_refresh_list_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/layout_bottom_data" android:layout_below="@id/layout_merge_item_top" layout="@layout/layout_refresh_list_view" />
+        <RelativeLayout android:id="@id/layout_bottom_data" style="@style/ListBottomViewGroupStyle">
+            <TextView android:id="@id/text_view_in" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:id="@id/text_view_in_amount" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/text_view_in" />
+            <TextView android:id="@id/text_view_out" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_toRightOf="@id/text_view_in_amount" />
+            <TextView android:id="@id/text_view_out_amount" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/text_view_out" />
+            <TextView android:id="@id/text_view_total_amount" android:layout_alignParentRight="true" style="@style/TvCustomerSp13.Regular" />
+            <TextView android:id="@id/text_view_total" android:text="合计：" android:layout_toLeftOf="@id/text_view_total_amount" style="@style/TvCustomerSp13" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

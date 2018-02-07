@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@color/white" android:padding="@dimen/padding_l" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.AppCompatCheckBox android:id="@id/isChosen" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <TextView android:id="@id/text_view_name" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:singleLine="true" />
+    <TextView android:id="@id/text_view_tel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" />
+</LinearLayout>

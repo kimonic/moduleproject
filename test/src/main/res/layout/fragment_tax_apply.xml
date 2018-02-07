@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:id="@id/app_bar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay">
+            <TextView android:textSize="@dimen/title_text_size" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="报税·办事" />
+            <ImageButton android:layout_gravity="center|right" android:id="@id/iv_help" android:background="@drawable/selector_bg_title" android:layout_width="?actionBarSize" android:layout_height="fill_parent" android:src="@drawable/banshi_ico_help" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/iv_banner" android:layout_width="fill_parent" android:layout_height="136.0dip" android:src="@drawable/icon_tax_banner" android:scaleType="fitXY" />
+            <View style="@style/handle_affairs_item_divide" />
+            <include layout="@layout/layout_handle_affairs_item_one" />
+            <View style="@style/handle_affairs_item_divide" />
+            <include layout="@layout/layout_handle_affairs_item_two" />
+            <View style="@style/handle_affairs_item_divide" />
+            <include layout="@layout/layout_handle_affairs_item_three" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

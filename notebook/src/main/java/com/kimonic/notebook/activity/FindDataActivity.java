@@ -1,7 +1,5 @@
 package com.kimonic.notebook.activity;
 
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -20,7 +18,6 @@ import org.litepal.crud.DataSupport;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * * ===============================================================
@@ -45,7 +42,7 @@ public class FindDataActivity extends BaseActivity {
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_finddata;
+        return R.layout.act_finddata_notebook;
     }
 
     @Override
@@ -94,7 +91,7 @@ public class FindDataActivity extends BaseActivity {
 
 
     private CommonAdapter<DateRecordLMBean>  getAdapter(){
-        return new CommonAdapter<DateRecordLMBean>(this,R.layout.lv_daterecordbean,listDate) {
+        return new CommonAdapter<DateRecordLMBean>(this,R.layout.lv_daterecordbean_notebook,listDate) {
             @Override
             protected void convert(ViewHolder viewHolder, DateRecordLMBean item, int position) {
                 viewHolder.setText(R.id.tv_lv_daterecordbean,item.getDate());

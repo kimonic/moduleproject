@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/view_divide" android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="@dimen/dp_10" />
+    <TextView android:textSize="12.0sp" android:textColor="@color/tv_color_aux_text" android:id="@id/cate" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" />
+    <include layout="@layout/divide_line" />
+</LinearLayout>

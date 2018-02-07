@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/layout_save" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_15" android:layout_marginTop="@dimen/dp_15" android:layout_marginRight="@dimen/dp_15" android:layout_marginBottom="@dimen/dp_15" android:layout_alignParentBottom="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textColor="#fffe7d7d" android:id="@id/btn_delete" android:background="@drawable/selector_btn_white" android:visibility="gone" android:text="@string/delete" android:layout_alignParentBottom="true" style="@style/btn_item" />
+</LinearLayout>

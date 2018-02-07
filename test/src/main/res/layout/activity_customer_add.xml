@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/title_toolbar" />
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/rl_bottom">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <cn.cash360.tiger.widget.MenuItemView android:id="@id/name_menu_item_type" android:layout_marginTop="@dimen/dp_10" app:leftText="类型" app:leftTextSize="@dimen/sp_16" style="@style/miv_common_style.noLeftIcon" />
+                <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_name" app:leftText="名称" app:mivEditTextMaxLength="32" app:itemModel="withEditTextModel" style="@style/miv_common_style.noLeftIcon" />
+                <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_company" app:leftText="联系人" app:mivEditTextMaxLength="32" app:itemModel="withEditTextModel" style="@style/miv_common_style.noLeftIcon" />
+                <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_tel" app:leftText="手机" app:itemModel="withEditTextModel" app:mivEtInputType="phone" style="@style/miv_common_style.noLeftIcon" />
+                <include layout="@layout/include_miv_group" />
+                <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_common" app:leftText="常用" app:divideLineShow="false" app:itemModel="withSwitchCompatModel" style="@style/miv_common_style.noLeftIcon" />
+                <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" layout="@layout/include_miv_remark" />
+            </LinearLayout>
+        </ScrollView>
+        <RelativeLayout android:id="@id/rl_bottom" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_margin="@dimen/dp_15" android:layout_alignParentBottom="true">
+            <Button android:id="@id/btn_multi_import" android:background="@drawable/btn_blue" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="批量导入" android:layout_alignParentBottom="true" />
+            <Button android:textColor="#fffe7d7d" android:id="@id/btn_delete" android:background="@drawable/selector_btn_white" android:visibility="gone" android:text="@string/delete" style="@style/btn_item" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

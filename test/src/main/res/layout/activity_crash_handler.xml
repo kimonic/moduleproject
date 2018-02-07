@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_error" android:contentDescription="@null" />
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="出了点小问题" />
+        <Button android:id="@id/customactivityoncrash_error_activity_restart_button" android:background="@drawable/selector_btn_blue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="重启APP" />
+        <Button android:id="@id/customactivityoncrash_error_activity_more_info_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="错误详情" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/sp_12" android:textColor="@color/text_grey" android:layout_gravity="bottom" android:padding="@dimen/dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="提示信息：\n      1、点击 重启APP 试试；\n      2、更新到最新app版本，如果不能正常更新，请到应用市场下载更新。" android:lineSpacingExtra="@dimen/dp_3" />
+</LinearLayout>

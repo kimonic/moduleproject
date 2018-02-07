@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_email_info" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:background="@color/white" android:clickable="false" android:layout_height="wrap_content" style="@style/home_item_layout">
+        <TextView android:id="@id/tv_need_bill" android:padding="@dimen/dp_10" android:text="邮寄信息" android:layout_centerVertical="true" style="@style/activity_combo_change_tv_black_style" />
+    </RelativeLayout>
+    <include layout="@layout/divide_line" />
+    <LinearLayout android:padding="14.0dip" style="@style/activity_combo_change_ll_item_style_edit">
+        <TextView android:textColor="@color/tv_color_aux_text" android:text="姓名    " style="@style/activity_combo_change_tv_black_style" />
+        <EditText android:id="@id/et_user_name" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/activity_combo_change_tv_black_style" />
+    </LinearLayout>
+    <include layout="@layout/divide_line" />
+    <LinearLayout android:padding="14.0dip" style="@style/activity_combo_change_ll_item_style_edit">
+        <TextView android:textColor="@color/tv_color_aux_text" android:text="手机号   " style="@style/activity_combo_change_tv_black_style" />
+        <EditText android:id="@id/et_mobile_phone" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:inputType="phone" style="@style/activity_combo_change_tv_black_style" />
+    </LinearLayout>
+    <include layout="@layout/divide_line" />
+    <LinearLayout android:padding="14.0dip" style="@style/activity_combo_change_ll_item_style_edit">
+        <TextView android:textColor="@color/tv_color_aux_text" android:text="邮寄地址  " style="@style/activity_combo_change_tv_black_style" />
+        <EditText android:id="@id/et_email" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/activity_combo_change_tv_black_style" />
+    </LinearLayout>
+</LinearLayout>

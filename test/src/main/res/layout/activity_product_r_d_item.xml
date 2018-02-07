@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/title_toolbar" />
+    <include layout="@layout/layout_set_year_month" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/layout_bottom_data" layout="@layout/layout_refresh_list_view" />
+        <LinearLayout android:orientation="vertical" android:id="@id/layout_bottom_data" android:background="@color/list_bottom_bg" style="@style/ListBottomViewGroupStyle">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/sp_13" android:textColor="@color/tv_color_sub_text" android:id="@id/tv_total_rk" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="合计入库：" android:layout_weight="1.0" />
+                <TextView android:textSize="@dimen/sp_13" android:textColor="@color/tv_color_sub_text" android:id="@id/tv_total_ck" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="合计出库：" android:layout_weight="1.0" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/sp_13" android:textColor="@color/tv_color_sub_text" android:id="@id/tv_total_cost" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="合计库存成本：" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="30.0dip">
+                <include layout="@layout/service_icon_layout" />
+            </LinearLayout>
+            <RelativeLayout android:id="@id/layout_audit" android:visibility="gone" android:layout_marginTop="30.0dip" style="@style/manager_item_layout_style">
+                <ImageView android:id="@id/iv_audit" android:src="@drawable/manage_ico_check" style="@style/iv_manager_style" />
+                <TextView android:id="@id/tv_audit" android:text="审核账目" android:layout_toRightOf="@id/iv_audit" style="@style/tv_manger_style" />
+                <ImageView style="@style/iv_right_arrow_style" />
+                <ImageView android:id="@id/iv_audit_warm" android:visibility="gone" android:layout_width="10.0dip" android:layout_height="10.0dip" android:layout_marginLeft="7.0dip" android:src="@drawable/ic_news_warm" android:layout_toRightOf="@id/tv_audit" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_payee" android:visibility="gone" android:layout_marginTop="30.0dip" style="@style/manager_item_layout_style">
+                <ImageView android:id="@id/iv_customer" android:src="@drawable/manage_ico_customer" style="@style/iv_manager_style" />
+                <TextView android:text="客户管理" android:layout_toRightOf="@id/iv_customer" style="@style/tv_manger_style" />
+                <ImageView style="@style/iv_right_arrow_style" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_provider" android:visibility="gone" style="@style/manager_item_layout_style">
+                <ImageView android:id="@id/iv_provider" android:src="@drawable/manage_ico_supply" style="@style/iv_manager_style" />
+                <TextView android:text="供应商管理" android:layout_toRightOf="@id/iv_provider" style="@style/tv_manger_style" />
+                <ImageView style="@style/iv_right_arrow_style" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_project" android:visibility="gone" android:layout_marginTop="30.0dip" style="@style/manager_item_layout_style">
+                <ImageView android:id="@id/iv_project" android:src="@drawable/manage_ico_projects" style="@style/iv_manager_style" />
+                <TextView android:text="项目管理" android:layout_toRightOf="@id/iv_project" style="@style/tv_manger_style" />
+                <ImageView style="@style/iv_right_arrow_style" />
+            </RelativeLayout>
+            <cn.cash360.tiger.widget.MenuItemView android:id="@id/layout_branch" android:layout_marginTop="20.0dip" app:leftIcon="@drawable/manage_ico_departments" app:leftText="部门管理" app:leftTextColor="@color/tv_color_main_text" style="@style/miv_common_style" />
+            <cn.cash360.tiger.widget.MenuItemView android:id="@id/layout_staff" app:leftIcon="@drawable/manage_ico_staff" app:leftText="职员管理" app:divideLineShow="false" app:leftTextColor="@color/tv_color_main_text" style="@style/miv_common_style" />
+            <cn.cash360.tiger.widget.MenuItemView android:id="@id/layout_in_category" android:layout_marginTop="@dimen/dp_20" app:leftIcon="@drawable/manage_ico_income" app:leftText="收入类别" app:leftTextColor="@color/tv_color_main_text" style="@style/miv_common_style" />
+            <cn.cash360.tiger.widget.MenuItemView android:id="@id/layout_out_category" app:leftIcon="@drawable/manage_ico_expense" app:leftText="支出类别" app:divideLineShow="false" app:leftTextColor="@color/tv_color_main_text" style="@style/miv_common_style" />
+            <cn.cash360.tiger.widget.MenuItemView android:id="@id/layout_currency" android:layout_marginTop="20.0dip" android:layout_marginBottom="30.0dip" app:leftIcon="@drawable/manage_ico_rate" app:leftText="汇率管理" app:divideLineShow="false" app:leftTextColor="@color/tv_color_main_text" style="@style/miv_common_style" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

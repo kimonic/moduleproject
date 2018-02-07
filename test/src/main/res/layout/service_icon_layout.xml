@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_layout0" android:background="@drawable/selector_item_layout" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/iv_icon0" android:layout_width="33.0dip" android:layout_height="33.0dip" android:src="@drawable/more_icon_tax" android:scaleType="centerCrop" />
+        <TextView android:gravity="center" android:id="@id/tv_title0" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="代账报税" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_layout1" android:background="@drawable/selector_item_layout" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/iv_icon1" android:layout_width="33.0dip" android:layout_height="33.0dip" android:src="@drawable/more_icon_social" android:scaleType="centerCrop" />
+        <TextView android:gravity="center" android:id="@id/tv_title1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="代缴社保" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_layout2" android:background="@drawable/selector_item_layout" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/iv_icon2" android:layout_width="33.0dip" android:layout_height="33.0dip" android:src="@drawable/more_icon_industry" android:scaleType="centerCrop" />
+        <TextView android:gravity="center" android:id="@id/tv_title2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="工商注册/变更" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_layout3" android:background="@drawable/selector_item_layout" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/iv_icon3" android:layout_width="33.0dip" android:layout_height="33.0dip" android:src="@drawable/more_icon_more" android:scaleType="centerCrop" />
+        <TextView android:gravity="center" android:id="@id/tv_title3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="更多服务" />
+    </LinearLayout>
+</LinearLayout>

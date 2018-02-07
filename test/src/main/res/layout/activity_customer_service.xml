@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginTop="16.0dip" android:src="@mipmap/ic_launcher" android:scaleType="centerCrop" android:contentDescription="@null" />
+            <TextView android:layout_width="fill_parent" android:layout_height="5.0dip" />
+            <TextView android:textSize="@dimen/text_normal" android:textColor="@color/text_view_grey" android:gravity="center" android:id="@id/company_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="上海财妙信息科技有限公司" />
+            <TextView android:layout_width="fill_parent" android:layout_height="5.0dip" />
+            <RelativeLayout android:id="@id/phone_layout" style="@style/item_layout">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@id/phone" android:text="电话" style="@style/item_text_view" />
+                    <TextView android:textSize="12.0sp" android:textColor="@color/text_view_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="周一至周五  9:00-17:00" android:singleLine="true" />
+                </LinearLayout>
+                <TextView android:text="4006-360-658" style="@style/item_text_right_clickable" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <RelativeLayout android:id="@id/email_layout" style="@style/item_layout">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@id/email" android:text="邮箱" style="@style/item_text_view" />
+                    <TextView android:textSize="12.0sp" android:textColor="@color/text_view_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="一个工作日内回复" android:singleLine="true" />
+                </LinearLayout>
+                <TextView android:text="kf@cash360.cn" style="@style/item_text_right" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <RelativeLayout android:id="@id/im_layout" style="@style/item_layout">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@id/im" android:text="QQ" style="@style/item_text_view" />
+                </LinearLayout>
+                <TextView android:text="65732762" style="@style/item_text_right_clickable" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <RelativeLayout android:id="@id/weibo_layout" style="@style/item_layout">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@id/weibo" android:text="微博" style="@style/item_text_view" />
+                    <TextView android:textSize="12.0sp" android:textColor="@color/text_view_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="关注我们活动多多" android:singleLine="true" />
+                </LinearLayout>
+                <TextView android:text="weibo.com/cash360" style="@style/item_text_right_clickable" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <RelativeLayout android:id="@id/weixin_layout" style="@style/item_layout">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@id/weixin" android:text="微信" style="@style/item_text_view" />
+                    <TextView android:textSize="12.0sp" android:textColor="@color/text_view_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="关注微信享更多活动" android:singleLine="true" />
+                </LinearLayout>
+                <TextView android:text="cash360cn" style="@style/item_text_right_clickable" />
+            </RelativeLayout>
+            <RelativeLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="30.0dip" android:layout_marginRight="14.0dip">
+                <Button android:textColor="@color/white" android:id="@id/btn_ease_mob" android:background="@drawable/selector_btn_blue" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/kefu" />
+            </RelativeLayout>
+            <RelativeLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="30.0dip" android:layout_marginRight="14.0dip" android:layout_marginBottom="30.0dip">
+                <Button android:textColor="@color/white" android:id="@id/btn_suggestion" android:background="@drawable/selector_btn_blue" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="提意见" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

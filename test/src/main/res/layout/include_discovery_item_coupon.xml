@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/layout_coupon" style="@style/manager_item_layout_style"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/iv_project" android:src="@drawable/icon_discovery_coupon" style="@style/iv_manager_style_tax_handle" />
+    <TextView android:id="@id/tv_mine_vip" android:text="我的优惠券" android:layout_toRightOf="@id/iv_project" style="@style/tv_manger_style" />
+    <ImageView android:id="@id/iv_coupon_msg_is_read" android:visibility="gone" android:layout_width="8.0dip" android:layout_height="8.0dip" android:layout_marginLeft="@dimen/dp_4" android:src="@drawable/shape_circle_red" android:layout_toRightOf="@id/tv_mine_vip" android:layout_centerVertical="true" />
+    <cn.cash360.tiger.widget.TextViewAdjustDrawableSize android:textSize="15.0sp" android:textColor="#ff343434" android:gravity="center" android:id="@id/tv_vip_level" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/dp_15" android:drawableRight="@drawable/ic_right_arrow" android:drawablePadding="15.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:right_height="@dimen/dp_12" app:right_width="@dimen/dp_7" />
+</RelativeLayout>

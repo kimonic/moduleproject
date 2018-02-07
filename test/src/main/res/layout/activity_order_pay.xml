@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/title_toolbar" />
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/layout_activity_pay_new_title" />
+            <TextView android:id="@id/tv_vip_title_desc" android:layout_marginBottom="6.0dip" android:text="VIP特权功能" style="@style/handle_affairs_item_tv_top" />
+            <include layout="@layout/layout_activity_order_pay_func_dec" />
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <include layout="@layout/layout_activity_order_pay_free_user" />
+                <include layout="@layout/layout_activity_order_pay_vip_user" />
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,7 +1,5 @@
 package com.kimonic.notebook.activity;
 
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -9,7 +7,6 @@ import android.widget.TextView;
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.UserConfig;
 import com.kimonic.notebook.litemapbean.DateRecordLMBean;
-import com.kimonic.notebook.litemapbean.ItemFlagLMBean;
 import com.kimonic.notebook.litemapbean.SaveDataLMBean;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.utils.StringUtils;
@@ -22,7 +19,6 @@ import org.litepal.crud.DataSupport;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * * ===============================================================
@@ -53,7 +49,7 @@ public class SaveDataDetailsActivity extends BaseActivity {
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_savedatadetails;
+        return R.layout.act_savedatadetails_notebook;
     }
 
     @Override

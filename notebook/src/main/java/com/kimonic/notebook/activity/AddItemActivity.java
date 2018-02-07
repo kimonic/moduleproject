@@ -43,7 +43,7 @@ public class AddItemActivity extends BaseActivity {
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_additem;
+        return R.layout.act_additem_notebook;
     }
 
     @Override

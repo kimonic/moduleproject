@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="370.0dip">
+        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="370.0dip" android:src="@drawable/icon_dialog_new_user" />
+        <View android:layout_gravity="bottom|center" android:id="@id/view_click" android:background="@color/transparent" android:clickable="true" android:layout_width="230.0dip" android:layout_height="50.0dip" android:layout_marginBottom="30.0dip" />
+    </FrameLayout>
+    <ImageView android:layout_gravity="center" android:id="@id/iv_close" android:clickable="true" android:layout_width="44.0dip" android:layout_height="44.0dip" android:layout_marginTop="45.0dip" android:src="@drawable/icon_new_user_coupon_close" />
+</LinearLayout>

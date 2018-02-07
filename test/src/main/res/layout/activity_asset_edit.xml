@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/title_toolbar" />
+    <android.support.v4.widget.NestedScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/layout_money" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout">
+                <TextView android:textSize="27.0sp" android:textStyle="bold" android:id="@id/tv_money" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/rl_asset_name" style="@style/asset_item_layout">
+                <TextView android:textColor="@color/text_view_grey" android:id="@id/tv_asset_name" android:text="资产名称" style="@style/item_text_view_left" />
+                <TextView android:textColor="@color/text_view_black" android:id="@id/et_asset_name" android:layout_toRightOf="@id/tv_asset_name" android:inputType="text" style="@style/asset_item_edit_right" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <RelativeLayout android:id="@id/rl_asset_amount" style="@style/asset_item_layout">
+                <TextView android:textColor="@color/text_view_grey" android:id="@id/tv_asset_amount" android:text="资产金额" style="@style/item_text_view_left" />
+                <TextView android:textColor="@color/amount_red" android:id="@id/et_asset_amount" android:layout_toRightOf="@id/tv_asset_amount" style="@style/asset_item_edit_right" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <RelativeLayout android:id="@id/rl_asset_num" style="@style/asset_item_layout">
+                <TextView android:textColor="@color/text_view_grey" android:id="@id/tv_asset_num" android:text="资产数量" style="@style/item_text_view_left" />
+                <TextView android:id="@id/et_asset_num" android:layout_toRightOf="@id/tv_asset_num" style="@style/asset_item_edit_right" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <RelativeLayout android:id="@id/rl_asset_unit_cost" style="@style/asset_item_layout">
+                <TextView android:textColor="@color/text_view_grey" android:id="@id/tv_asset_unit_cost" android:text="资产单价" style="@style/item_text_view_left" />
+                <TextView android:textColorHint="@color/colorAccent" android:id="@id/et_asset_unit_cost" android:layout_toRightOf="@id/tv_asset_unit_cost" style="@style/asset_item_edit_right" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <RelativeLayout android:id="@id/layout_account" style="@style/item_layout">
+                <TextView android:textColor="@color/text_view_grey" android:id="@id/tv_account_name" android:text="付款账户" style="@style/item_text_view_left" />
+                <TextView android:textColor="@color/text_view_black" android:gravity="right" android:id="@id/tv_account" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_3" android:layout_toLeftOf="@id/iv_arrow_right" android:layout_toRightOf="@id/tv_account_name" style="@style/text_view_tally_item" />
+                <ImageView android:id="@id/iv_arrow_right" style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <RelativeLayout android:id="@id/rl_depreciation_month" style="@style/asset_item_layout">
+                <TextView android:textColor="@color/text_view_grey" android:id="@id/tv_depreciation_month" android:text="折旧月限" style="@style/item_text_view_left" />
+                <TextView android:id="@id/et_depreciation_month" android:layout_marginRight="@dimen/dp_1" android:layout_toLeftOf="@id/tv_month_name" android:layout_toRightOf="@id/tv_depreciation_month" android:layout_alignParentRight="false" style="@style/asset_item_edit_right" />
+                <TextView android:textSize="@dimen/sp_16" android:textColor="@color/text_view_black" android:id="@id/tv_month_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="个月" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <include layout="@layout/include_layout_el_residuals_rate_edit" />
+            <include layout="@layout/include_layout_el_residuals_value" />
+            <include layout="@layout/include_tally_remark_photo" />
+            <cn.cash360.tiger.widget.AutoWrapViewGroup style="@style/AutoWrapViewGroupStyle">
+                <include layout="@layout/layout_tv_date" />
+                <include layout="@layout/layout_tv_payee" />
+                <include layout="@layout/layout_tv_staff" />
+                <include layout="@layout/layout_tv_branch" />
+                <include layout="@layout/layout_tv_project" />
+            </cn.cash360.tiger.widget.AutoWrapViewGroup>
+            <include layout="@layout/layout_audit_status" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/layout_bt_delete" />
+        <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/container_calculator" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </FrameLayout>
+</LinearLayout>

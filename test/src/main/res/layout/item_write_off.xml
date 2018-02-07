@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/layout_item_root" style="@style/item_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.AppCompatCheckBox android:id="@id/checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+    <TextView android:id="@id/tv_account" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/checkbox" />
+    <TextView android:id="@id/text_view_date" android:layout_toRightOf="@id/checkbox" android:layout_below="@id/tv_account" style="@style/item_text_view_wite_off" />
+    <LinearLayout android:gravity="end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/text_view_date" android:layout_alignParentRight="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip">
+            <TextView android:id="@id/text_view_amount" android:layout_centerVertical="true" style="@style/item_text_view" />
+            <TextView android:id="@id/text_view_name" android:layout_centerVertical="true" style="@style/item_text_view" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="/" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="/" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip">
+            <TextView android:textColor="@color/amount_red" android:id="@id/text_view_amount_balance" android:layout_centerVertical="true" style="@style/item_text_view" />
+            <TextView android:id="@id/text_view_name_balance" android:text="余额" android:layout_centerVertical="true" style="@style/item_text_view" />
+        </LinearLayout>
+        <android.support.v7.widget.AppCompatEditText android:textSize="17.0sp" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/edit_text_amount" android:background="@drawable/shape_border" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="70.0dip" android:minHeight="33.0dip" android:inputType="numberDecimal" />
+    </LinearLayout>
+</RelativeLayout>

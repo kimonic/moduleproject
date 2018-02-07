@@ -1,8 +1,5 @@
 package com.kimonic.notebook.activity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -20,7 +17,6 @@ import org.litepal.crud.DataSupport;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * * ===============================================================
@@ -48,7 +44,7 @@ public class SaveDataActivity extends BaseActivity {
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_savedata;
+        return R.layout.act_savedata_notebook;
     }
 
     @Override
@@ -99,7 +95,7 @@ public class SaveDataActivity extends BaseActivity {
     }
 
     private CommonAdapter<ItemFlagLMBean>  getAdapter(){
-        return new CommonAdapter<ItemFlagLMBean>(this,R.layout.lv_itemflagbean,listItem) {
+        return new CommonAdapter<ItemFlagLMBean>(this,R.layout.lv_itemflagbean_notebook,listItem) {
             @Override
             protected void convert(ViewHolder viewHolder, ItemFlagLMBean item, int position) {
                 viewHolder.setText(R.id.tv_lv_itemflagbean,item.getItemName());

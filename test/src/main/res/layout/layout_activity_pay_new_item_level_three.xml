@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/rl_package_one" android:layout_height="wrap_content" style="@style/home_item_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout style="@style/activity_pay_ll_above">
+        <ImageView android:id="@id/iv_logo_1" android:src="@drawable/icon_vip_three" style="@style/activity_pay_iv" />
+        <TextView android:text="@string/vip_level_name_three" style="@style/activity_pay_tv_text_style_black" />
+        <TextView android:text="@string/vip_level_three_desc" style="@style/activity_pay_tv_text_style_grey" />
+    </LinearLayout>
+    <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="13.0dip">
+        <Button android:id="@id/btn_level_three_month" android:text="@string/vip_level_three_price" style="@style/activity_pay_bt_style" />
+        <LinearLayout android:id="@id/btn_level_three_year" style="@style/activity_pay_ll_money">
+            <TextView android:text="@string/vip_level_three_price_year" style="@style/activity_pay_tv_money_up" />
+            <TextView android:text="@string/vip_level_three_price_save" style="@style/activity_pay_tv_money_down" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/include_miv_image" />
+        <include layout="@layout/include_miv_left_text" />
+        <include layout="@layout/include_miv_arrow" />
+        <include layout="@layout/include_miv_right_text" />
+    </RelativeLayout>
+    <include layout="@layout/include_miv_divide" />
+</LinearLayout>

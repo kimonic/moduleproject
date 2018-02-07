@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/title_toolbar" />
+    <android.support.v4.widget.SwipeRefreshLayout android:id="@id/swipe" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="vertical" android:id="@id/ll_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:id="@id/tv_company_name" android:text="操作权限" style="@style/tv_list_top_style" />
+                    <cn.cash360.tiger.widget.MyListView android:id="@id/listView" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="#00000000" android:divider="@color/image_divider" android:dividerHeight="1.0px" />
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:text="数据权限" style="@style/tv_list_top_style" />
+                        <RelativeLayout android:id="@id/rl_data_account" style="@style/homepage_item_layout">
+                            <TextView android:text="可以使用的账户" style="@style/tv_item_permission_setting" />
+                            <TextView android:id="@id/tv_account_num" style="@style/home_item_text_right_agent" />
+                            <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" layout="@layout/divide_line" />
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@id/rl_data_category" style="@style/homepage_item_layout">
+                            <TextView android:text="可以使用的收支类别" style="@style/tv_item_permission_setting" />
+                            <TextView android:id="@id/tv_category_num" style="@style/home_item_text_right_agent" />
+                            <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" layout="@layout/divide_line" />
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@id/rl_data_branch" style="@style/homepage_item_layout">
+                            <TextView android:text="可以使用的部门" style="@style/tv_item_permission_setting" />
+                            <TextView android:id="@id/tv_branch_num" style="@style/home_item_text_right_agent" />
+                            <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" layout="@layout/divide_line" />
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@id/rl_data_warehouse" style="@style/homepage_item_layout">
+                            <TextView android:text="可以使用的仓库" style="@style/tv_item_permission_setting" />
+                            <TextView android:id="@id/tv_warehouse_num" style="@style/home_item_text_right_agent" />
+                            <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" layout="@layout/divide_line" />
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@id/rl_data_project" style="@style/homepage_item_layout">
+                            <TextView android:text="可以使用的项目" style="@style/tv_item_permission_setting" />
+                            <TextView android:id="@id/tv_project_num" style="@style/home_item_text_right_agent" />
+                            <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" layout="@layout/divide_line" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:text="其他" style="@style/tv_list_top_style" />
+                <RelativeLayout android:id="@id/rl_book_lock" style="@style/homepage_item_layout">
+                    <TextView android:text="账本锁" style="@style/tv_item_permission_setting" />
+                    <TextView android:id="@id/tv_lock_state" style="@style/home_item_text_right_agent" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

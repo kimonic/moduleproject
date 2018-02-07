@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/layout_save" style="@style/ll_add_tally_layout_style"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/btn_continue_save" android:text="保存再记" style="@style/bt_add_tally_continue_save_style" />
+    <Button android:id="@id/btn_save" android:text="保 存" style="@style/bt_add_tally_save_style" />
+</LinearLayout>

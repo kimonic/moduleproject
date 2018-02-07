@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/layout_item" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout">
+        <ImageView android:id="@id/iv_icon" android:layout_width="@dimen/dp_22" android:layout_height="@dimen/dp_22" android:src="@drawable/icon_account_subject_type_0" android:scaleType="centerCrop" />
+        <TextView android:id="@id/list_text_item" android:layout_marginLeft="12.0dip" style="@style/item_text_view_left" />
+    </LinearLayout>
+    <ImageView android:id="@id/iv_divide" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="16.0dip" android:src="@color/image_divider" />
+</LinearLayout>

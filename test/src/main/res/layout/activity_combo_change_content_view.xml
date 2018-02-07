@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:padding="14.0dip" style="@style/activity_combo_change_ll_item_style_edit">
+        <TextView android:textColor="@color/tv_color_aux_text" android:text="发票抬头  " style="@style/activity_combo_change_tv_black_style" />
+        <EditText android:id="@id/et_bill_name" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/activity_combo_change_tv_black_style" />
+    </LinearLayout>
+    <include layout="@layout/divide_line" />
+    <LinearLayout android:padding="14.0dip" style="@style/activity_combo_change_ll_item_style_edit">
+        <TextView android:textColor="@color/tv_color_aux_text" android:text="税号        " style="@style/activity_combo_change_tv_black_style" />
+        <EditText android:id="@id/et_bill_num" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:inputType="text" style="@style/activity_combo_change_tv_black_style" />
+    </LinearLayout>
+</LinearLayout>

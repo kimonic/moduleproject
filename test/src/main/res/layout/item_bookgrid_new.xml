@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/layout" android:layout_width="100.0dip" android:layout_height="120.0dip" android:layout_centerHorizontal="true">
+        <ImageView android:id="@id/face_book" android:background="@drawable/bg_face_book_1" android:layout_width="90.0dip" android:layout_height="110.0dip" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/add" android:background="@drawable/bg_book_add" android:visibility="gone" android:layout_width="90.0dip" android:layout_height="110.0dip" android:layout_centerInParent="true" />
+        <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="8.0dip" android:layout_alignParentBottom="true">
+            <ImageView android:id="@id/iv_is_master" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="11.0dip" android:src="@drawable/icon_book_master" android:layout_weight="1.0" />
+            <ImageView android:id="@id/iv_is_locked" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/icon_book_lock" android:layout_weight="1.0" />
+            <ImageView android:id="@id/iv_selected" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_book_check" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView android:textSize="12.0sp" android:textColor="#ff666666" android:ellipsize="end" android:gravity="center" android:id="@id/name" android:layout_width="90.0dip" android:layout_height="wrap_content" android:layout_marginTop="-2.0dip" android:layout_marginBottom="@dimen/padding_m" android:lines="1" android:maxEms="5" android:layout_below="@id/layout" android:layout_centerHorizontal="true" />
+</RelativeLayout>

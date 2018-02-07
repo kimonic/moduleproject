@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <include layout="@layout/layout_set_year_month" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/layout_bottom_data" layout="@layout/layout_refresh_list_view" />
+        <RelativeLayout android:id="@id/layout_bottom_data" android:background="@color/list_bottom_bg" android:paddingTop="@dimen/dp_8" android:paddingRight="15.0dip" android:paddingBottom="@dimen/dp_8" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <TextView android:text="当前合计：" android:layout_toLeftOf="@id/text_view_amount" style="@style/TvCustomerSp13" />
+            <TextView android:id="@id/text_view_amount" android:layout_alignParentRight="true" style="@style/TvCustomerSp13.Regular" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

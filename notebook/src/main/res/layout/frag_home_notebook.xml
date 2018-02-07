@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#a3a3"
+    tools:context="com.kimonic.notebook.activity.HomeActivity">
+
+    <TextView
+        android:id="@+id/tv_act_home_current_user"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:text="@string/dangqiandengluyognhuming"
+        />
+
+    <TextView
+        android:id="@+id/tv_act_home_add_new_user"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:text="@string/tianjiazhanghuming"
+        />
+
+    <TextView
+        android:id="@+id/tv_act_home_sel_user"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:text="@string/xuanzezhanghu"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_act_home_query_data"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:text="@string/chakanshuju"
+        />
+
+    <TextView
+        android:id="@+id/tv_act_home_compare_data"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:text="@string/bijiaoshuju"
+        />
+
+    <TextView
+        android:id="@+id/tv_act_home_update_data"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:text="@string/xiugaishuju"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_act_home_save_data"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:text="@string/tianjaishuju"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_act_home_del_data"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:text="@string/shanchushuju"
+        />
+
+    <TextView
+        android:id="@+id/tv_act_home_add_item"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:text="@string/tianjiabiaoqian"
+        />
+
+    <TextView
+        android:id="@+id/tv_act_home_disk_save"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        style="@style/TextStyle"
+        android:text="@string/daochushuju"
+        />
+
+
+</LinearLayout>

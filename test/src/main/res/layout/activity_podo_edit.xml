@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/title_toolbar" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/layout_save">
+            <LinearLayout android:orientation="vertical" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <include layout="@layout/include_miv_podo_no" />
+                <include layout="@layout/include_miv_date" />
+                <include layout="@layout/include_miv_payee" />
+                <include layout="@layout/include_my_list_view" />
+                <include layout="@layout/include_miv_total_amount" />
+                <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_account" app:leftIcon="@drawable/ic_account" app:leftText="收款账户" app:itemModel="defaultModel" style="@style/miv_common_style" />
+                <include layout="@layout/include_tally_remark_photo" />
+                <cn.cash360.tiger.widget.AutoWrapViewGroup style="@style/AutoWrapViewGroupStyle">
+                    <include layout="@layout/layout_tv_staff" />
+                    <include layout="@layout/layout_tv_branch" />
+                    <include layout="@layout/layout_tv_project" />
+                </cn.cash360.tiger.widget.AutoWrapViewGroup>
+                <include layout="@layout/layout_audit_status" />
+            </LinearLayout>
+        </ScrollView>
+        <include layout="@layout/layout_bt_delete" />
+        <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/layout_num_input" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+</LinearLayout>

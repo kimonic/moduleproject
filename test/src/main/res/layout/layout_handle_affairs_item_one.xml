@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:text="金融" style="@style/handle_affairs_item_tv_top" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:id="@id/item_one_one" style="@style/handle_affairs_inner_item">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="15.0dip">
+                <ImageView android:id="@id/iv_icon1" android:layout_marginTop="0.0dip" android:src="@drawable/icon_item_one_one" android:layout_centerHorizontal="true" style="@style/handle_affairs_iv" />
+                <TextView android:textSize="10.0sp" android:textColor="@color/white" android:gravity="center" android:background="@drawable/shape_rectangle_red_3_dp" android:paddingLeft="@dimen/dp_3" android:paddingTop="@dimen/dp_1" android:paddingRight="@dimen/dp_3" android:paddingBottom="@dimen/dp_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:text="HOT" android:layout_toRightOf="@id/iv_icon1" />
+            </RelativeLayout>
+            <TextView android:text="金融贷款" style="@style/handle_affairs_item_tv_inner" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/item_one_two" style="@style/handle_affairs_inner_item">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="15.0dip">
+                <ImageView android:id="@id/iv_icon2" android:layout_marginTop="0.0dip" android:src="@drawable/icon_item_one_two" android:layout_centerHorizontal="true" style="@style/handle_affairs_iv" />
+                <TextView android:textSize="10.0sp" android:textColor="@color/white" android:gravity="center" android:background="@drawable/shape_rectangle_red_3_dp" android:paddingLeft="@dimen/dp_3" android:paddingTop="@dimen/dp_1" android:paddingRight="@dimen/dp_3" android:paddingBottom="@dimen/dp_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:text="HOT" android:layout_toRightOf="@id/iv_icon2" />
+            </RelativeLayout>
+            <TextView android:text="申请扶持资金" style="@style/handle_affairs_item_tv_inner" />
+        </LinearLayout>
+        <LinearLayout android:visibility="invisible" style="@style/handle_affairs_inner_item">
+            <ImageView android:src="@drawable/icon_item_three_two" style="@style/handle_affairs_iv" />
+            <TextView android:text="社保代缴" style="@style/handle_affairs_item_tv_inner" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/title_toolbar" />
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="173.0dip" android:layout_height="90.0dip" android:layout_marginTop="52.0dip" android:src="@drawable/icon_lock" />
+    <TextView android:textSize="14.0sp" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="34.0dip" android:text="请输入账本锁上显示的数字" />
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:id="@id/et_super_pdw" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="38.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="38.0dip" android:inputType="textPassword" />
+        <Button android:textSize="17.0sp" android:textColor="@color/white" android:id="@id/bt_commit" android:background="@drawable/selector_btn_blue" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_marginTop="22.0dip" android:layout_marginRight="35.0dip" android:layout_marginBottom="25.0dip" android:text="提交" />
+    </LinearLayout>
+    <cn.cash360.tiger.widget.gridpassword.GridPasswordView android:id="@id/password" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="38.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="38.0dip" app:gpvTextColor="@color/colorPrimary" app:gpvPasswordType="numberPassword" />
+    <TextView android:textSize="15.0sp" android:textColor="@color/red" android:gravity="center" android:id="@id/tv_tips" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="密码不正确" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:id="@id/tv_click" android:background="@color/background_app" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

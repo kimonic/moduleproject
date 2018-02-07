@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay">
+            <RelativeLayout android:layout_gravity="right" android:id="@id/rl_suggestion_back" android:layout_width="70.0dip" android:layout_height="fill_parent" android:layout_marginRight="3.0dip">
+                <TextView android:gravity="center|right" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:text="我的意见" />
+                <ImageView android:id="@id/tv_meg_unread" android:background="@drawable/message_unread" android:padding="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="13.0dip" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="13.0sp" android:textColor="@color/tv_color_aux_text" android:paddingLeft="15.0dip" android:paddingTop="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="您的意见" />
+            <EditText android:textSize="14.0sp" android:textColor="@color/tv_color_main_text" android:textColorHint="@color/tv_color_hint_text" android:gravity="left" android:id="@id/et_desc" android:background="@color/white" android:paddingLeft="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:minHeight="138.0dip" android:hint="请输入您的宝贵意见，我们将为您不断改进！" />
+            <TextView android:textColor="@color/tv_color_hint_text" android:gravity="right" android:id="@id/tv_desc_num" android:background="@color/white" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="剩余200字" />
+            <TextView android:textSize="13.0sp" android:textColor="@color/tv_color_aux_text" android:paddingLeft="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginBottom="10.0dip" android:text="联系方式(至少填一个，以便我们回访到您)" />
+            <EditText android:textSize="15.0sp" android:textColor="@color/tv_color_main_text" android:textColorHint="@color/tv_color_hint_text" android:id="@id/et_phone" android:background="@color/white" android:paddingLeft="20.0dip" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="您的手机" android:maxLines="6" android:inputType="phone" />
+            <EditText android:textSize="15.0sp" android:textColor="@color/tv_color_main_text" android:textColorHint="@color/tv_color_hint_text" android:id="@id/et_email" android:background="@color/white" android:paddingLeft="20.0dip" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="您的邮箱" android:maxLines="6" />
+            <Button android:id="@id/btn_suggestion" android:background="@drawable/btn_blue" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="25.0dip" android:layout_marginRight="15.0dip" android:text="建议反馈" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

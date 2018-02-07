@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_root_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/title_toolbar" />
+    <cn.cash360.tiger.widget.LoadingLayout android:id="@id/loading_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <android.support.v4.widget.NestedScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <include layout="@layout/include_miv_date" />
+                    <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_payee" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_category" app:leftIcon="@drawable/ic_income_category" app:leftText="支出类别" app:itemModel="defaultModel" style="@style/miv_common_style" />
+                    <include layout="@layout/include_miv_product_add" />
+                    <include layout="@layout/include_my_list_view" />
+                    <LinearLayout android:gravity="right" android:background="@color/white" android:padding="@dimen/dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textColor="@color/tv_color_aux_text" android:gravity="center" android:id="@id/tv_balance_name" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="合计数量：" />
+                        <TextView android:gravity="center" android:id="@id/tv_num" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/dp_10" style="@style/fonts_din_pro_regular" />
+                    </LinearLayout>
+                    <include layout="@layout/divide_line" />
+                    <include layout="@layout/include_tally_remark_photo" />
+                    <cn.cash360.tiger.widget.AutoWrapViewGroup android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_m" android:layout_marginRight="@dimen/padding_m">
+                        <include layout="@layout/layout_tv_staff" />
+                        <include layout="@layout/layout_tv_branch" />
+                        <include layout="@layout/layout_tv_project" />
+                    </cn.cash360.tiger.widget.AutoWrapViewGroup>
+                    <include layout="@layout/layout_audit_status" />
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+            <include layout="@layout/layout_bt_delete" />
+        </LinearLayout>
+    </cn.cash360.tiger.widget.LoadingLayout>
+</LinearLayout>

@@ -1,6 +1,5 @@
 package com.kimonic.notebook.activity;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,7 +43,7 @@ public class FindDataDetailsActivity extends BaseActivity {
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_finddatadetails;
+        return R.layout.act_finddatadetails_notebook;
     }
 
     @Override
@@ -98,7 +97,7 @@ public class FindDataDetailsActivity extends BaseActivity {
     }
 
     private CommonAdapter<SaveDataLMBean> getAdapter(){
-        return new CommonAdapter<SaveDataLMBean>(this,R.layout.lv_savedatabean,listDate) {
+        return new CommonAdapter<SaveDataLMBean>(this,R.layout.lv_savedatabean_notebook,listDate) {
             @Override
             protected void convert(ViewHolder viewHolder, SaveDataLMBean item, int position) {
                 viewHolder.setText(R.id.tv_lv_savedatabean_shuzhi,String.valueOf(item.getValue()));

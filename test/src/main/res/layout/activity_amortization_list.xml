@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <FrameLayout android:id="@id/fl_amortization_content" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <RelativeLayout android:background="@color/bottom_bg_color" android:paddingLeft="@dimen/border_padding_left_right" android:paddingTop="@dimen/dp_4" android:paddingRight="@dimen/border_padding_left_right" android:paddingBottom="@dimen/dp_4" android:layout_width="fill_parent" android:layout_height="31.0dip">
+        <android.support.v7.widget.AppCompatCheckBox android:textColor="@color/tv_color_sub_text" android:id="@id/cb_canceled" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="显示已结清的" />
+        <TextView android:gravity="center_vertical" android:text="合计：" android:layout_toLeftOf="@id/tv_total_amount" android:layout_centerVertical="true" style="@style/TvCustomerSp13" />
+        <TextView android:gravity="center_vertical" android:id="@id/tv_total_amount" android:text="0.00" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/TvCustomerSp13.Regular" />
+    </RelativeLayout>
+</LinearLayout>

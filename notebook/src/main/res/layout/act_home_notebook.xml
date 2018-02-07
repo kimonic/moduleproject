@@ -1,95 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#a3a3"
-    tools:context="com.kimonic.notebook.activity.HomeActivity">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_act_home_current_user"
+
+    <com.kimonic.utilsmodule.ui.NoScrollViewPager
+        android:id="@+id/vp_act_home"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        style="@style/TextStyle"
-        android:text="@string/dangqiandengluyognhuming"
-        />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-    <TextView
-        android:id="@+id/tv_act_home_add_new_user"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        style="@style/TextStyle"
-        android:text="@string/tianjiazhanghuming"
-        />
+        android:layout_height="1dp"
+        android:background="@color/color_line" />
 
-    <TextView
-        android:id="@+id/tv_act_home_sel_user"
+    <com.kimonic.utilsmodule.ui.NaviButtonView
+        android:id="@+id/nbv_act_home"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        style="@style/TextStyle"
-        android:text="@string/xuanzezhanghu"
-        />
+        android:layout_height="46dp"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        app:colorSel="@color/colorBac"
+        app:colorUnSel="@color/black"
+        app:count="4"
+        app:imagesSelArray="@array/imagesSelR"
+        app:imagesUnSelArray="@array/imagesUnSelR"
+        app:textArray="@array/textIdR">
 
 
-    <TextView
-        android:id="@+id/tv_act_home_query_data"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        style="@style/TextStyle"
-        android:text="@string/chakanshuju"
-        />
-
-    <TextView
-        android:id="@+id/tv_act_home_compare_data"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        style="@style/TextStyle"
-        android:text="@string/bijiaoshuju"
-        />
-
-    <TextView
-        android:id="@+id/tv_act_home_update_data"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        style="@style/TextStyle"
-        android:text="@string/xiugaishuju"
-        />
-
-
-    <TextView
-        android:id="@+id/tv_act_home_save_data"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        style="@style/TextStyle"
-        android:text="@string/tianjaishuju"
-        />
-
-
-    <TextView
-        android:id="@+id/tv_act_home_del_data"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        style="@style/TextStyle"
-        android:text="@string/shanchushuju"
-        />
-
-    <TextView
-        android:id="@+id/tv_act_home_add_item"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        style="@style/TextStyle"
-        android:text="@string/tianjiabiaoqian"
-        />
-
-    <TextView
-        android:id="@+id/tv_act_home_disk_save"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        style="@style/TextStyle"
-        android:text="@string/daochushuju"
-        />
+    </com.kimonic.utilsmodule.ui.NaviButtonView>
 
 
 </LinearLayout>

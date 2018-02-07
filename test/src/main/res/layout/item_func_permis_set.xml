@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/book_default_layout" style="@style/item_layout">
+        <TextView android:id="@id/tv_name" android:text="@string/book_default_set" style="@style/item_text_view_left" />
+        <ImageView android:id="@id/default_icon" android:src="@drawable/ic_yes_green" style="@style/item_image_right" />
+    </RelativeLayout>
+</LinearLayout>

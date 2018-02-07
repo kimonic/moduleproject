@@ -6,5 +6,6 @@
     <color name="colorGlobal">#149BBC</color>
     <color name="colorBlack">#111111</color>
     <color name="colorBac">#71C171</color>
+    <color name="color_line">#F4F4F4</color>
 
 </resources>

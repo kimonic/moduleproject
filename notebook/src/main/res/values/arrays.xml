@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="imagesSelR" >
+        <item>@drawable/act_home_icon1</item>
+        <item>@drawable/act_home_icon2</item>
+        <item>@drawable/act_home_icon3</item>
+        <item>@drawable/act_home_icon4</item>
+    </string-array>
+
+    <string-array name="imagesUnSelR" >
+        <item>@drawable/act_home_icon1_unsel</item>
+        <item>@drawable/act_home_icon2_unsel</item>
+        <item>@drawable/act_home_icon3_unsel</item>
+        <item>@drawable/act_home_icon4_unsel</item>
+    </string-array>
+    <string-array name="textIdR" >
+        <item>@string/jizhang</item>
+        <item>@string/baobiao</item>
+        <item>@string/daiban</item>
+        <item>@string/my</item>
+    </string-array>
+
+
+
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_tally" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_gravity="center" android:id="@id/tv_accoount_category" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:id="@id/tv_data" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/ll_middle">
+            <TextView android:layout_gravity="center" android:id="@id/tv_amount" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+            <TextView android:id="@id/tv_state" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_middle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/rl_right">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="/" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="/" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/rl_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+            <TextView android:textColor="@color/amount_red" android:id="@id/tv_balance" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="余额" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/layout_amount_input" />
+            <RelativeLayout android:id="@id/layout_account" android:focusable="true" android:clickable="true" style="@style/item_layout_relative_layout">
+                <ImageView android:id="@id/icon_left" android:src="@drawable/ic_account" style="@style/item_layout_image_view" />
+                <TextView android:id="@id/menu_text_left" android:text="付款账户" android:layout_toRightOf="@id/icon_left" style="@style/item_layout_text_view_left" />
+                <TextView android:id="@id/tv_account" android:layout_toLeftOf="@id/iv_arrow" style="@style/item_layout_text_view_right" />
+                <ImageView android:id="@id/iv_arrow" style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <include layout="@layout/include_tally_remark_photo" />
+            <cn.cash360.tiger.widget.AutoWrapViewGroup style="@style/AutoWrapViewGroupStyle">
+                <include layout="@layout/layout_tv_date" />
+                <include layout="@layout/layout_tv_payee" />
+                <include layout="@layout/layout_tv_staff" />
+                <include layout="@layout/layout_tv_branch" />
+                <include layout="@layout/layout_tv_project" />
+            </cn.cash360.tiger.widget.AutoWrapViewGroup>
+        </LinearLayout>
+        <include layout="@layout/layout_bt_save" />
+        <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/container_calculator" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <EditText android:gravity="center" android:id="@id/et_request_code" android:background="@drawable/selector_request_code" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="80.0dip" android:layout_marginRight="10.0dip" android:hint="输入邀请码" android:inputType="number" />
+    <Button android:textSize="17.0sp" android:textColor="@color/white" android:id="@id/bt_bind" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="50.0dip" android:layout_marginRight="10.0dip" android:text="绑定" style="@style/btn_blue" />
+    <Button android:textSize="17.0sp" android:textColor="@color/white" android:id="@id/bt_share" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="50.0dip" android:layout_marginRight="10.0dip" android:text="推荐账王给好友" style="@style/btn_orange" />
+    <TextView android:textSize="16.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="50.0dip" android:text="没有邀请码？你可以推荐账王给好友让好友的企业记账不可思议的简单" />
+</LinearLayout>

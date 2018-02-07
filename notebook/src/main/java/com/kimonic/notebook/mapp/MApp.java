@@ -41,6 +41,8 @@ public class MApp extends Application {
     public static int DEVICE_HEIGHT;
     /**设备屏幕密度*/
     public static int DEVICE_DENSITY;
+    /**设备状态栏高度*/
+    public static int STATUS_BAE_HEIGHT;
 
 
     @Override
@@ -50,6 +52,7 @@ public class MApp extends Application {
         DEVICE_WIDTH = ScreenSizeUtils.getScreenWidth(this);
         DEVICE_HEIGHT = ScreenSizeUtils.getScreenHeight(this);
         DEVICE_DENSITY = ScreenSizeUtils.getDensity(this);
+        STATUS_BAE_HEIGHT=ScreenSizeUtils.getStatusHeight(this);
 
         LitePal.initialize(this);
 

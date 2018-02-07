@@ -16,9 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 
 import com.kimonic.utilsmodule.R;
 import com.kimonic.utilsmodule.utils.DialogUtils;
+import com.kimonic.utilsmodule.utils.ScreenSizeUtils;
 import com.kimonic.utilsmodule.utils.ToastUtils;
 import com.lzy.imagepicker.view.SystemBarTintManager;
 import com.lzy.okgo.OkGo;
@@ -190,6 +192,17 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//强制竖屏显示
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);//禁止截屏
 //        getSupportActionBar().hide();//代码隐藏actionbar
+
+        if (isHideStatusBar()){
+            Window window = getWindow();
+            //隐藏状态栏
+            //定义全屏参数
+            int flag=WindowManager.LayoutParams.FLAG_FULLSCREEN;
+            //设置当前窗体为全屏显示
+            window.setFlags(flag, flag);
+        }
+
+
         setContentView(getLayoutResId());
         ButterKnife.bind(this);
         initDataFromIntent();
@@ -197,6 +210,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         initListener();
         initDataFromInternet();
 
+    }
+
+    /**设置是否隐藏状态栏*/
+    public boolean isHideStatusBar() {
+        return false;
     }
 
     /**
@@ -217,6 +235,17 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
      */
     protected boolean translucentStatusBar() {
         return true;
+    }
+
+    /**设置顶部margin,
+     *
+     * @param view  最顶部的view
+     * @param statusBarHeight  状态栏高度
+     */
+    public void setTopMargin(View view,int  statusBarHeight){
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) view.getLayoutParams();
+        params.setMargins(0, statusBarHeight, 0, 0);
+        view.setLayoutParams(params);
     }
 
     /**

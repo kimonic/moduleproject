@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/selector_radius_bg" android:layout_width="320.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageButton android:layout_gravity="right" android:id="@id/ib_close" android:background="@null" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="12.0dip" android:src="@drawable/icon_dialog_close" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/text_view_black" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_marginTop="5.0dip" android:text="财税全家桶是一对一专属服务。" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/text_view_black" android:id="@id/tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="25.0dip" android:text="请留下您联系方式，我们的财税专员\n即刻联系您，进行专项咨询购买。" android:lineSpacingExtra="2.0dip" />
+    <LinearLayout android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputLayout android:id="@id/text_input_layout" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="35.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="35.0dip" app:hintAnimationEnabled="true">
+            <EditText android:textSize="15.0sp" android:id="@id/et_phone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="联系电话" android:inputType="phone" />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+    <Button android:textSize="17.0sp" android:textColor="@color/white" android:id="@id/bt_commit" android:background="@drawable/selector_btn_blue" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_marginTop="22.0dip" android:layout_marginRight="35.0dip" android:layout_marginBottom="25.0dip" android:text="提交" />
+</LinearLayout>

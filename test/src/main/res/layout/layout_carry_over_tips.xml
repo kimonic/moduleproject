@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/shape_scm_hint" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/iv_warn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="13.0dip" android:src="@drawable/icon_scm_warn" />
+    <TextView android:textSize="13.0sp" android:textColor="#ffab5f40" android:id="@id/tv_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginTop="13.0dip" android:layout_marginBottom="13.0dip" android:text="销售出货需要到网页版的库存处理中进行成本结转。" android:layout_toLeftOf="@id/iv_close" android:layout_toRightOf="@id/iv_warn" />
+    <ImageView android:id="@id/iv_close" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="16.0dip" android:src="@drawable/icon_scm_close" android:layout_alignParentRight="true" />
+</RelativeLayout>

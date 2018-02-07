@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="11.0dip" android:text="请仔细确认以下信息并尽快完成支付。" />
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="11.0dip">
+            <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="付费类型：" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center|right" android:id="@id/tv_order_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="首付" android:drawablePadding="6.0dip" />
+        </FrameLayout>
+        <include layout="@layout/image_divider" />
+        <FrameLayout android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="11.0dip">
+            <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="用户数" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center|right" android:id="@id/tv_user_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1000用户" android:drawablePadding="6.0dip" />
+        </FrameLayout>
+        <include layout="@layout/image_divider" />
+        <FrameLayout android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="11.0dip">
+            <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="时间" />
+            <LinearLayout android:layout_gravity="center|right" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="16.0sp" android:id="@id/tv_month" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12月" android:drawablePadding="6.0dip" />
+                <TextView android:textSize="12.0sp" android:id="@id/tv_extra_month" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(赠送3个月)" android:drawablePadding="6.0dip" />
+            </LinearLayout>
+        </FrameLayout>
+        <include layout="@layout/image_divider" />
+        <FrameLayout android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="11.0dip">
+            <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="应付金额" />
+            <TextView android:textSize="18.0sp" android:textStyle="bold" android:layout_gravity="center|right" android:id="@id/tv_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="36000" android:drawablePadding="6.0dip" />
+        </FrameLayout>
+        <include layout="@layout/image_divider" />
+        <FrameLayout android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="11.0dip">
+            <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="支付方式" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center|right" android:id="@id/tv_pay_methods" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="手机支付宝" android:drawableRight="@drawable/ic_right_arrow" android:drawablePadding="6.0dip" />
+        </FrameLayout>
+        <include layout="@layout/image_divider" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@color/white" android:padding="11.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="11.0dip">
+        <TextView android:textSize="15.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="更多支付方式，请" />
+        <TextView android:textSize="15.0sp" android:layout_gravity="center" android:id="@id/tv_service" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="联系客服" />
+    </LinearLayout>
+    <Button android:layout_gravity="center" android:id="@id/btn_commit" android:layout_marginTop="40.0dip" android:text="立即支付" style="@style/btn_orange" />
+</LinearLayout>

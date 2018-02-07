@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/email_login_form" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/activity_vertical_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:id="@id/layout_prefix" android:padding="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="15.0sp" android:textColor="@color/text_view_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="国家/地区" />
+                <View android:background="#ffdadada" android:layout_width="2.0dip" android:layout_height="fill_parent" android:layout_marginLeft="18.0dip" />
+                <TextView android:textSize="15.0sp" android:textColor="@color/text_view_black" android:id="@id/tv_region" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="18.0dip" android:text="中国+86" android:drawableRight="@drawable/ic_right_arrow" />
+            </LinearLayout>
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/edit_parent_style">
+                <EditText android:id="@id/email" android:hint="@string/hint_email_id" android:maxLines="1" android:singleLine="true" android:inputType="textEmailAddress" style="@style/LoginEditTextStyle" />
+            </FrameLayout>
+            <include layout="@layout/layout_login_password" />
+            <Button android:enabled="false" android:id="@id/email_sign_in_button" android:layout_marginTop="16.0dip" android:text="@string/text_login" style="@style/ButtonLoginStyle" />
+        </LinearLayout>
+        <include layout="@layout/layout_login_bottom_view" />
+    </RelativeLayout>
+</LinearLayout>

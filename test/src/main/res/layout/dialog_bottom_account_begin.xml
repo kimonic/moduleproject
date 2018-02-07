@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/tv_begin_account" android:layout_height="48.0dip" android:text="初始" style="@style/bt_operate_book_style" />
+    <View android:id="@id/divide_two" android:background="@color/divide_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textColor="@color/red" android:id="@id/tv_delete_edit" android:layout_height="48.0dip" android:layout_marginTop="10.0dip" android:text="编辑/删除" style="@style/bt_operate_book_style" />
+</LinearLayout>

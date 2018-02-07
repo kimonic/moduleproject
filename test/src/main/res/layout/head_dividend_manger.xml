@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="@color/tv_color_aux_text" android:background="@color/background_app" android:padding="@dimen/dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="当前利润" />
+    <LinearLayout android:gravity="right" android:orientation="vertical" android:background="@color/white" android:padding="@dimen/dp_12" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/tv_color_main_text" android:gravity="right" android:id="@id/tv_init_profit" android:padding="@dimen/dp_3" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/fonts_din_pro_regular" />
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/tv_color_main_text" android:gravity="right" android:id="@id/tv_c_p_profits" android:padding="@dimen/dp_3" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/fonts_din_pro_regular" />
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/tv_color_main_text" android:gravity="right" android:id="@id/tv_total_profit" android:padding="@dimen/dp_3" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/fonts_din_pro_regular" />
+    </LinearLayout>
+    <TextView android:textColor="@color/textColorGray" android:background="@color/background_app" android:padding="@dimen/dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="分红明细" />
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="10.0dip" />
+    <RelativeLayout android:id="@id/layout_item" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:id="@id/tv_head_view" android:text="通过分组筛选" style="@style/item_text_view_left" />
+        <ImageView android:id="@id/image_view_right_arrow" android:background="@drawable/ic_right_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="10.0dip" />
+</LinearLayout>

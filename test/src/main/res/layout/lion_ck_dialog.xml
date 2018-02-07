@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="19.0sp" android:id="@id/tv_msg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="4.0dip" android:text="恭喜您！注册成功！\n恭喜您！注册成功！\n恭喜您！注册成功！" android:lineSpacingMultiplier="1.3" android:scaleX="0.95" android:scaleY="0.95" />
+    <TextView android:background="#143b3b3b" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="16.0sp" android:textColor="@drawable/lion_list_blue_white" android:gravity="center" android:id="@id/btn_nag" android:background="@drawable/lion_btn_ckdialog" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="取消" android:layout_weight="1.0" />
+        <TextView android:id="@id/divider" android:background="#143b3b3b" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <TextView android:textSize="16.0sp" android:textColor="@drawable/lion_list_blue_white" android:gravity="center" android:id="@id/btn_pos" android:background="@drawable/lion_btn_ckdialog" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="确定" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

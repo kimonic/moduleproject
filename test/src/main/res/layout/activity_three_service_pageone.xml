@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/title_toolbar" />
+    <ImageView android:id="@id/iv_icon4" android:layout_width="fill_parent" android:layout_height="200.0dip" android:src="@drawable/agent_acount" android:scaleType="centerCrop" />
+    <Button android:id="@id/btn_apply_for" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="14.0dip" android:layout_marginTop="47.0dip" android:layout_marginRight="14.0dip" android:text="立即申请" style="@style/corner_button_style_agent" />
+    <TextView android:textColor="@color/tel_blue" android:layout_gravity="center" android:id="@id/tv_tel_phone" android:background="@drawable/selector_cardview_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:text="服务热线：4006-360-658" />
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="34.0dip" android:layout_marginTop="45.0dip" android:layout_marginRight="34.0dip" layout="@layout/agent_account_icon_layout" />
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/title_toolbar" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/layout_save">
+            <LinearLayout android:orientation="vertical" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <include layout="@layout/include_stock_taking_pk" />
+                <include layout="@layout/include_stock_taking_py" />
+                <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_14" layout="@layout/include_miv_date" />
+                <android.support.design.widget.TextInputLayout android:background="@color/white" android:padding="14.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <EditText android:id="@id/edit_text_remark" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/remark" android:maxLength="120" android:inputType="textMultiLine" />
+                </android.support.design.widget.TextInputLayout>
+                <cn.cash360.tiger.widget.AutoWrapViewGroup style="@style/AutoWrapViewGroupStyle">
+                    <include layout="@layout/layout_tv_staff" />
+                    <include layout="@layout/layout_tv_branch" />
+                    <include layout="@layout/layout_tv_project" />
+                </cn.cash360.tiger.widget.AutoWrapViewGroup>
+            </LinearLayout>
+        </ScrollView>
+        <include layout="@layout/layout_bt_save" />
+    </RelativeLayout>
+</LinearLayout>

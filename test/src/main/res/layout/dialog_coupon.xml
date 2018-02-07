@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="311.0dip" android:layout_height="348.0dip">
+        <ImageView android:layout_gravity="center" android:layout_width="311.0dip" android:layout_height="348.0dip" android:src="@drawable/activity_old_user_bg" />
+        <TextView android:textSize="@dimen/sp_15" android:textColor="@color/white" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_25" android:layout_marginRight="@dimen/dp_25" android:layout_marginBottom="@dimen/dp_20" android:text="众享红包，助您升级VIP，\n体验更好服务，限时领取500元优惠券" android:layout_above="@id/bt_confirm" android:lineSpacingExtra="@dimen/dp_3" />
+        <Button android:textSize="@dimen/sp_17" android:textStyle="bold" android:textColor="#ffbd4400" android:id="@id/bt_confirm" android:background="@drawable/shape_rectangle_yellow_circle" android:layout_width="200.0dip" android:layout_height="@dimen/dp_44" android:layout_marginLeft="@dimen/dp_48" android:layout_marginRight="@dimen/dp_48" android:layout_marginBottom="@dimen/dp_25" android:text="立即领取" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <View android:layout_gravity="center" android:id="@id/view_close" android:background="@drawable/icon_new_user_coupon_close" android:visibility="gone" android:clickable="true" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="@dimen/dp_44" />
+</LinearLayout>

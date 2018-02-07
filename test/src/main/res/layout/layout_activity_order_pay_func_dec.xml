@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip">
+        <LinearLayout android:id="@id/ll_func_1" style="@style/activity_order_pay_func_desc_ll_style">
+            <ImageView android:src="@drawable/ic_vip1" style="@style/activity_order_pay_func_desc_iv_style" />
+            <TextView android:text="多用户权限" style="@style/activity_order_pay_func_desc_tv_style" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/ll_func_2" style="@style/activity_order_pay_func_desc_ll_style">
+            <ImageView android:src="@drawable/ic_vip2" style="@style/activity_order_pay_func_desc_iv_style" />
+            <TextView android:text="审核" style="@style/activity_order_pay_func_desc_tv_style" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/ll_func_3" style="@style/activity_order_pay_func_desc_ll_style">
+            <ImageView android:src="@drawable/ic_vip3" style="@style/activity_order_pay_func_desc_iv_style" />
+            <TextView android:text="回收站" style="@style/activity_order_pay_func_desc_tv_style" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/ll_func_4" style="@style/activity_order_pay_func_desc_ll_style">
+            <ImageView android:src="@drawable/ic_vip4" style="@style/activity_order_pay_func_desc_iv_style" />
+            <TextView android:text="excel" style="@style/activity_order_pay_func_desc_tv_style" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip">
+        <LinearLayout android:id="@id/ll_func_5" style="@style/activity_order_pay_func_desc_ll_style">
+            <ImageView android:src="@drawable/ic_vip5" style="@style/activity_order_pay_func_desc_iv_style" />
+            <TextView android:text="操作历史" style="@style/activity_order_pay_func_desc_tv_style" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/ll_func_6" style="@style/activity_order_pay_func_desc_ll_style">
+            <ImageView android:src="@drawable/ic_vip6" style="@style/activity_order_pay_func_desc_iv_style" />
+            <TextView android:text="销量分析" style="@style/activity_order_pay_func_desc_tv_style" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/ll_func_7" style="@style/activity_order_pay_func_desc_ll_style">
+            <ImageView android:src="@drawable/ic_vip7" style="@style/activity_order_pay_func_desc_iv_style" />
+            <TextView android:text="批量记账" style="@style/activity_order_pay_func_desc_tv_style" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/ll_func_8" style="@style/activity_order_pay_func_desc_ll_style">
+            <ImageView android:src="@drawable/ic_vip8" style="@style/activity_order_pay_func_desc_iv_style" />
+            <TextView android:text="定时记账" style="@style/activity_order_pay_func_desc_tv_style" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

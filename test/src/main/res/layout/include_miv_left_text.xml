@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="@dimen/sp_16" android:textColor="@color/tv_color_aux_text" android:gravity="center_vertical" android:id="@id/menu_text_left" android:paddingTop="@dimen/dp_13" android:paddingBottom="@dimen/dp_13" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_12" android:lines="1" android:layout_toRightOf="@id/icon_left" android:layout_centerVertical="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/layout_set_year_month" />
+    <include android:id="@id/layout_refresh_list_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/layout_bottom_data" android:layout_below="@id/layout_merge_item_top" layout="@layout/layout_refresh_list_view" />
+    <RelativeLayout android:gravity="right" android:id="@id/layout_bottom_data" style="@style/ListBottomViewGroupStyle">
+        <TextView android:id="@id/text_view_total" android:text="合计：" style="@style/TvCustomerSp13" />
+        <TextView android:id="@id/text_view_total_amount" android:layout_toRightOf="@id/text_view_total" style="@style/TvCustomerSp13.Regular" />
+    </RelativeLayout>
+</RelativeLayout>

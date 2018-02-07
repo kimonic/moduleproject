@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@drawable/bg_stock_banner" android:layout_width="fill_parent" android:layout_height="@dimen/dp_75"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="@dimen/dp_0" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/sp_12" android:textColor="@color/white_tran_70" android:gravity="center_horizontal" android:id="@id/tv_total_cost_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="总库存" />
+        <TextView android:textSize="@dimen/sp_18" android:textColor="@color/md_white_1000" android:gravity="center_horizontal" android:id="@id/text_view_total_cost" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_6" android:text="80000" style="@style/fonts_din_pro_medium" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="@dimen/dp_0" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/sp_12" android:textColor="@color/white_tran_70" android:gravity="center_horizontal" android:id="@id/tv_total_sale_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="本月销售额" />
+        <TextView android:textSize="@dimen/sp_18" android:textColor="@color/md_white_1000" android:gravity="center_horizontal" android:id="@id/text_view_total_sale_amount" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_6" android:text="80000" style="@style/fonts_din_pro_medium" />
+    </LinearLayout>
+</LinearLayout>

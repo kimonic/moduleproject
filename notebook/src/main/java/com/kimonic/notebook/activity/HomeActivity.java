@@ -1,48 +1,37 @@
 package com.kimonic.notebook.activity;
 
-import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.TextView;
 
 import com.kimonic.notebook.R;
-import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.SaveDataLMBean;
+import com.kimonic.notebook.fragment.HomeFragment;
+import com.kimonic.utilsmodule.adapter.FragmentVPAdapter;
 import com.kimonic.utilsmodule.base.BaseActivity;
-import com.kimonic.utilsmodule.utils.FileUtils;
-import com.kimonic.utilsmodule.utils.TimeUtils;
+import com.kimonic.utilsmodule.ui.NaviButtonView;
+import com.kimonic.utilsmodule.ui.NoScrollViewPager;
 import com.lzy.okgo.model.Response;
 
-import org.litepal.crud.DataSupport;
-
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class HomeActivity extends BaseActivity {
 
 
-    @BindView(R.id.tv_act_home_current_user)
-    TextView tvCurrentUser;
-    @BindView(R.id.tv_act_home_add_new_user)
-    TextView tvAddNewUser;
-    @BindView(R.id.tv_act_home_sel_user)
-    TextView tvSelUser;
-    @BindView(R.id.tv_act_home_query_data)
-    TextView tvQueryData;
-    @BindView(R.id.tv_act_home_compare_data)
-    TextView tvCompareData;
-    @BindView(R.id.tv_act_home_update_data)
-    TextView tvUpdateData;
-    @BindView(R.id.tv_act_home_save_data)
-    TextView tvSaveData;
-    @BindView(R.id.tv_act_home_del_data)
-    TextView tvDelData;
-    @BindView(R.id.tv_act_home_add_item)
-    TextView tvAddItem;
-    @BindView(R.id.tv_act_home_disk_save)
-    TextView tvDiskSave;
-    private String userName;
+    @BindView(R.id.vp_act_home)
+    NoScrollViewPager vpActHome;
+    @BindView(R.id.nbv_act_home)
+    NaviButtonView nbvActHome;
+
+    private List<Fragment> list;
+    private int beforePosition = 0;
+
+    public ViewPager getVpActHome() {
+        return vpActHome;
+    }
+
 
     @Override
     public int getLayoutResId() {
@@ -51,72 +40,64 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tv_act_home_add_new_user://添加新用户
-                openActivity(AddNewUserActivity.class);
-                break;
-            case R.id.tv_act_home_sel_user://选择用户
-                break;
-            case R.id.tv_act_home_query_data://查询数据
-                openActivity(FindDataActivity.class);
-                break;
-            case R.id.tv_act_home_compare_data://比较数据
-                openActivity(CompareDataActivity.class);
-                break;
-            case R.id.tv_act_home_update_data://更新数据
-                break;
-            case R.id.tv_act_home_save_data://保存数据
-                openActivityParams(SaveDataActivity.class, "username", userName);
-                break;
-            case R.id.tv_act_home_del_data://删除数据
-                break;
-            case R.id.tv_act_home_add_item://添加标签
-                openActivityParams(AddItemActivity.class, "username", userName);
 
-                break;
-            case R.id.tv_act_home_disk_save://导出数据
-                List<SaveDataLMBean> listDate = DataSupport.where("userName = ?"
-                        , userName).find(SaveDataLMBean.class);
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < listDate.size(); i++) {
-                    builder.append(listDate.get(i).toString());
-                }
-
-                FileUtils.saveJsonToSDCard(this, "mynotebookdata",TimeUtils.getStringDateShort() + userName + ".txt", builder.toString());
-                break;
-//            case R.id.: break;
-//            case R.id.: break;
-        }
 
     }
 
     @Override
     public void initDataFromIntent() {
-        userName = UserConfig.getInstance().getUserName(this);
-        if ("".equals(userName)) {
-            userName = "亦筝笙";
-            UserConfig.getInstance().setUserName(this, "亦筝笙");
-        }
+
     }
 
     @Override
     public void initView() {
-        tvCurrentUser.setText((getString(R.string.dangqiandengluyognhuming) + ":" + userName));
-
+        initFragmentList();
+        FragmentVPAdapter adapter = new FragmentVPAdapter(getSupportFragmentManager(), list);
+        vpActHome.setAdapter(adapter);
+        nbvActHome.setViewPager(vpActHome);
+        vpActHome.setOffscreenPageLimit(4);
     }
 
+    private void initFragmentList() {
+        list = new ArrayList<>();
+
+
+        HomeFragment fragment1 = new HomeFragment();
+        list.add(fragment1);
+
+
+        HomeFragment fragment2 = new HomeFragment();
+        list.add(fragment2);
+
+        HomeFragment fragment3 = new HomeFragment();
+        list.add(fragment3);
+
+        HomeFragment fragment4 = new HomeFragment();
+        list.add(fragment4);
+
+    }
     @Override
     public void initListener() {
-        tvAddNewUser.setOnClickListener(this);
-        tvSelUser.setOnClickListener(this);
-        tvCompareData.setOnClickListener(this);
+//----------------------------可能会对页面跳转产生影响-------------------------------------
+        nbvActHome.setListener(new NaviButtonView.CurrentPositionListener() {
+            @Override
+            public boolean currentPosition(int position) {
 
-        tvDelData.setOnClickListener(this);
-        tvQueryData.setOnClickListener(this);
-        tvSaveData.setOnClickListener(this);
-        tvUpdateData.setOnClickListener(this);
-        tvAddItem.setOnClickListener(this);
-        tvDiskSave.setOnClickListener(this);
+                return true;
+
+            }
+        });
+
+        vpActHome.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+
+
+
+            }
+        });
+        //----------------------------可能会对页面跳转产生影响-------------------------------------
+
     }
 
     @Override
@@ -134,10 +115,6 @@ public class HomeActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
+
 }

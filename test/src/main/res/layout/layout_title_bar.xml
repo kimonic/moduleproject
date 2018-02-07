@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_title_bar" android:background="@color/home_title_bar_bg_color" android:layout_width="fill_parent" android:layout_height="?actionBarSize"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/iv_manager" android:background="@null" android:layout_width="?actionBarSize" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:src="@drawable/home_ico_manage" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <ImageButton android:id="@id/ib_select_book" android:background="@drawable/selector_bg_title" android:layout_width="?actionBarSize" android:layout_height="fill_parent" android:src="@drawable/home_ico_book" />
+    <RelativeLayout android:id="@id/rl_message" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/iv_manager" android:layout_centerVertical="true">
+        <ImageButton android:id="@id/iv_message" android:background="@drawable/selector_bg_title" android:layout_width="23.0dip" android:layout_height="23.0dip" android:src="@drawable/home_ico_message" android:layout_centerVertical="true" />
+        <ImageView android:background="@drawable/shape_circle_red" android:layout_width="9.0dip" android:layout_height="9.0dip" android:layout_marginLeft="15.0dip" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/title_text_size" android:textColor="@color/white" android:gravity="center" android:id="@id/title_company" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxEms="7" android:singleLine="true" android:drawablePadding="2.0dip" android:layout_centerInParent="true" />
+    <ImageView android:visibility="gone" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginLeft="2.0dip" android:src="@drawable/arrow_up" android:layout_toRightOf="@id/title_company" android:layout_centerVertical="true" />
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_layout" android:background="#fff8f9fa" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50">
+        <TextView android:textSize="@dimen/sp_19" android:textColor="#ff333333" android:id="@id/tv_add_tally" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="记一笔" android:layout_centerInParent="true" />
+        <TextView android:textSize="@dimen/sp_12" android:textColor="@color/colorAccent" android:gravity="center_vertical" android:id="@id/tv_help" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/dp_17" android:text="不会记账?" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <include layout="@layout/layout_add_tally_top" />
+    <ScrollView android:background="@drawable/shape_rectangle_white" android:padding="@dimen/dp_1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dp_10" android:layout_marginRight="@dimen/dp_10" android:layout_marginBottom="@dimen/dp_10">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/layout_add_tally_bottom" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

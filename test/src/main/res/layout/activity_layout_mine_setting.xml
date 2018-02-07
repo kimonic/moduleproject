@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <include layout="@layout/layout_person_center_message" />
+    <RelativeLayout android:id="@id/layout_add_notes" android:visibility="gone" style="@style/manager_item_layout_style">
+        <ImageView android:id="@id/ico_add_notes" android:src="@drawable/icon_add_notes" style="@style/iv_manager_style" />
+        <TextView android:text="记事" android:layout_toRightOf="@id/ico_add_notes" style="@style/tv_manger_style" />
+        <ImageView style="@style/iv_right_arrow_style" />
+    </RelativeLayout>
+    <include layout="@layout/layout_local_key" />
+    <include layout="@layout/layout_bind_account" />
+    <include layout="@layout/layout_evaluate_us" />
+    <include layout="@layout/layout_person_center_about_us" />
+    <TextView android:textSize="15.0sp" android:textColor="@color/amount_red" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/btn_logout" android:background="@drawable/selector_btn_white_dp_0" android:padding="@dimen/dp_15" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="退出登录" android:onClick="onClick" />
+</LinearLayout>

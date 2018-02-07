@@ -178,6 +178,7 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
         initDataFromIntent();
         initView();
         initListener();
+        initDataFromInternet();
         handler = new MyHandler(getActivity());
         return view;
     }
@@ -218,6 +219,27 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
                 intent.putExtra(entry.getKey(), entry.getValue());
             }
         }
+        startActivity(intent);
+    }
+
+    /**
+     * Map<String, String>启动下一个activity
+     */
+    @SuppressWarnings("unused")
+    protected void openActivityParams(Class<? extends BaseActivity> toActivity, String key, String value) {
+        Intent intent = new Intent(getActivity(), toActivity);
+        intent.putExtra(key, value);
+        startActivity(intent);
+    }
+
+    /**
+     * Map<String, String>启动下一个activity
+     */
+    @SuppressWarnings("unused")
+    protected void openActivityParams(Class<? extends BaseActivity> toActivity, String key1, String value1, String key2, String value2) {
+        Intent intent = new Intent(getActivity(), toActivity);
+        intent.putExtra(key1, value1);
+        intent.putExtra(key2, value2);
         startActivity(intent);
     }
 

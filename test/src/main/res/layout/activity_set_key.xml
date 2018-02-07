@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <TextView android:textSize="13.0sp" android:textColor="@color/tv_color_aux_text" android:paddingLeft="@dimen/dp_15" android:paddingTop="@dimen/dp_8" android:paddingBottom="@dimen/dp_8" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="您可以用手机号和密码登录账王电脑版和手机版" />
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" layout="@layout/layout_login_password" />
+    <Button android:enabled="false" android:textColor="@color/white" android:id="@id/next" android:layout_marginLeft="15.0dip" android:layout_marginTop="25.0dip" android:layout_marginRight="15.0dip" android:text="完成" style="@style/ButtonLoginStyle" />
+</LinearLayout>

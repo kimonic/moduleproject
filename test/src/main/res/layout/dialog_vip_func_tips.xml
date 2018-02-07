@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:id="@id/iv_icon" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginTop="22.0dip" android:scaleType="centerCrop" />
+    <TextView android:textSize="17.0sp" android:textColor="@color/black_80_percent" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="9.0dip" android:text="多用户分权限" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:layout_marginTop="26.0dip" android:layout_marginRight="14.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="@color/tv_color_666" android:id="@id/tv_num_one" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="1." android:lineSpacingExtra="5.0dip" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/tv_color_666" android:id="@id/tv_num_one_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:text="解决多名股东随时监管公司日常财务开销的需要，也就是说各个股东不必要每次到公司让财务拉账，只要开通子账号各股东即可随时监督，告别糊涂账。" android:lineSpacingExtra="5.0dip" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:layout_marginTop="26.0dip" android:layout_marginRight="14.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="@color/tv_color_666" android:id="@id/tv_num_two" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="2." android:lineSpacingExtra="5.0dip" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/tv_color_666" android:id="@id/tv_num_two_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:text="解决多名股东随时监管公司日常财务开销的需要，也就是说各个股东不必要每次到公司让财务拉账，只要开通子账号各股东即可随时监督，告别糊涂账。" android:lineSpacingExtra="5.0dip" />
+    </LinearLayout>
+    <ImageView android:id="@id/ok" android:background="@drawable/bg_i_know" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:layout_marginBottom="26.0dip" />
+</LinearLayout>

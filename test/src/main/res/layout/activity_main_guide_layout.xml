@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:id="@id/rl_root" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_three" android:background="@color/transparent_black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/iv_three" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/newbie_guide_three_new" android:scaleType="fitXY" android:adjustViewBounds="true" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/bt_three" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="30.0dip" android:src="@drawable/icon_newbie_guide_know" android:layout_above="@id/iv_three" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rl_two" android:background="@color/transparent_black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/iv_two" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/newbie_guide_two_new" android:scaleType="fitXY" android:adjustViewBounds="true" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/bt_two" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="30.0dip" android:src="@drawable/icon_newbie_guide_know" android:layout_above="@id/iv_two" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rl_one" android:background="@color/transparent_black" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="9.0dip" android:layout_marginBottom="60.0dip" android:src="@drawable/icon_newbie_guide_one_" android:adjustViewBounds="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        <ImageView android:id="@id/bt_one" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="60.0dip" android:src="@drawable/icon_newbie_guide_know" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</FrameLayout>

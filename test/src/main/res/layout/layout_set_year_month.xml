@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/layout_merge_item_top" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:baselineAligned="false">
+        <ImageView android:id="@id/image_view_month_up" android:layout_width="40.0dip" android:layout_height="45.0dip" android:src="@drawable/ic_left_arrow" android:scaleType="centerInside" />
+        <TextView android:textSize="15.0sp" android:textColor="@color/tv_color_main_text" android:layout_gravity="center" android:id="@id/text_view_month" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_60" android:layout_marginRight="@dimen/dp_60" />
+        <ImageView android:id="@id/image_view_month_down" android:layout_width="40.0dip" android:layout_height="45.0dip" android:src="@drawable/ic_right_arrow" android:scaleType="centerInside" />
+    </LinearLayout>
+    <ImageView android:layout_width="fill_parent" android:layout_height="1.0px" android:src="@color/image_divider" />
+</LinearLayout>

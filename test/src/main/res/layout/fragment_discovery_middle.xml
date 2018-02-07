@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="80.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/tv_help_center" android:background="@drawable/selector_item_layout" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/iv_icon0" android:src="@drawable/icon_help_center" style="@style/fragment_tax_handle_middle_iv" />
+        <TextView android:id="@id/tv_title0" android:text="帮助中心" style="@style/fragment_tax_handle_middle_tv" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/rl_customer" style="@style/layout_ll_style_dialog">
+        <RelativeLayout android:layout_width="26.0dip" android:layout_height="26.0dip">
+            <ImageView android:id="@id/iv_icon1" android:src="@drawable/icon_new_customer" style="@style/fragment_tax_handle_middle_iv" />
+            <ImageView android:id="@id/iv_msg_is_read" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/message_unread" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <TextView android:id="@id/tv_title1" android:text="客服一对一" style="@style/fragment_tax_handle_middle_tv" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/tv_invite_friend" style="@style/layout_ll_style_dialog">
+        <ImageView android:id="@id/iv_icon2" android:src="@drawable/icon_request_friend" style="@style/fragment_tax_handle_middle_iv" />
+        <TextView android:id="@id/tv_title2" android:text="邀请好友" style="@style/fragment_tax_handle_middle_tv" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/tv_upgrade_vip" style="@style/layout_ll_style_dialog">
+        <ImageView android:id="@id/iv_icon3" android:src="@drawable/find_icon_vip" style="@style/fragment_tax_handle_middle_iv" />
+        <TextView android:id="@id/tv_title3" android:text="升级VIP" style="@style/fragment_tax_handle_middle_tv" />
+    </LinearLayout>
+</LinearLayout>

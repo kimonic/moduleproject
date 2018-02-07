@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/ll_root_view" android:background="@color/transparent_black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/md_indigo_200" android:layout_width="fill_parent" android:layout_height="2.0px" />
+    <RelativeLayout android:background="@color/white" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="18.0sp" android:textColor="@color/tv_color_main_text" android:id="@id/text_view_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="已选货品" android:layout_centerInParent="true" />
+        <TextView android:textColor="@color/tv_color_main_text" android:id="@id/tv_judge_price" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/text_view_name" android:layout_below="@id/text_view_name" />
+        <ImageView android:id="@id/image_view_clear" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_clear_products" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/image_view_close" android:padding="@dimen/dp_5" android:layout_width="@dimen/dp_22" android:layout_height="@dimen/dp_22" android:src="@drawable/ic_close_product" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:background="@color/image_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:orientation="horizontal" android:background="@color/image_divider" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/layout_quantity" android:background="@color/white" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="1.0px" android:layout_weight="1.0">
+            <TextView android:textSize="12.0sp" android:textColor="@color/tv_color_main_text" android:id="@id/text_view_q" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="数量" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/tv_color_main_text" android:id="@id/text_view_quantity" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:layout_below="@id/text_view_q" android:layout_centerHorizontal="true" style="@style/fonts_din_pro_regular" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_purchasePrice" android:background="@color/white" android:padding="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="1.0px" android:layout_weight="1.0">
+            <TextView android:textSize="12.0sp" android:textColor="@color/tv_color_main_text" android:id="@id/text_view_purchasePrice_" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="进价" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/tv_color_main_text" android:id="@id/text_view_purchasePrice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:layout_below="@id/text_view_purchasePrice_" android:layout_centerHorizontal="true" style="@style/fonts_din_pro_regular" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_price" android:background="@color/white" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="12.0sp" android:textColor="@color/tv_color_main_text" android:id="@id/text_view_p" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="价格" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/tv_color_main_text" android:id="@id/text_view_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:layout_below="@id/text_view_p" android:layout_centerHorizontal="true" style="@style/fonts_din_pro_regular" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ImageView android:layout_width="fill_parent" android:layout_height="0.5px" android:src="@color/image_divider" />
+    <LinearLayout android:orientation="horizontal" android:background="@color/image_divider" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="3.0">
+            <LinearLayout android:orientation="horizontal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <Button android:id="@id/num1" android:text="1" style="@style/num_keyboard" />
+                <Button android:id="@id/num2" android:text="2" style="@style/num_keyboard" />
+                <Button android:id="@id/num3" android:text="3" style="@style/num_keyboard" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <Button android:id="@id/num4" android:text="4" style="@style/num_keyboard" />
+                <Button android:id="@id/num5" android:text="5" style="@style/num_keyboard" />
+                <Button android:id="@id/num6" android:text="6" style="@style/num_keyboard" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/back" android:background="@drawable/ic_back" android:layout_width="fill_parent" android:layout_height="101.0dip" style="@style/num_keyboard" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@color/image_divider" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="3.0">
+            <LinearLayout android:orientation="horizontal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <Button android:id="@id/num7" android:text="7" style="@style/num_keyboard" />
+                <Button android:id="@id/num8" android:text="8" style="@style/num_keyboard" />
+                <Button android:id="@id/num9" android:text="9" style="@style/num_keyboard" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <Button android:id="@id/clear" android:text="c" style="@style/num_keyboard" />
+                <Button android:id="@id/num0" android:text="0" style="@style/num_keyboard" />
+                <Button android:textStyle="bold" android:id="@id/dot" android:text="." style="@style/num_keyboard" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:background="@color/image_divider" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:textColor="#fff66058" android:id="@id/ok" android:layout_height="101.0dip" android:text="OK" style="@style/num_keyboard" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

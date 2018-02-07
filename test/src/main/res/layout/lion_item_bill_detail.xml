@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/tally_pic" android:layout_width="@dimen/tally_pic_width" android:layout_height="@dimen/tally_pic_height" android:layout_margin="6.0dip" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:layout_toRightOf="@id/tally_pic" android:layout_centerVertical="true">
+        <TextView android:textSize="14.0sp" android:textColor="@color/black_item" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_toLeftOf="@id/date" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="12.0sp" android:textColor="@color/black_item" android:id="@id/amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0dip" android:layout_alignParentRight="true" />
+        <TextView android:textSize="12.0sp" android:textColor="@color/black_item" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/amount" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>

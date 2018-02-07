@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout style="@style/item_layout">
+        <TextView android:textSize="13.0sp" android:textColor="@color/tv_color_main_text" android:id="@id/text_view_name" android:layout_width="wrap_content" style="@style/item_text_view_tips" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/tv_color_main_text" android:id="@id/tv_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" style="@style/fonts_din_pro_regular" />
+    </RelativeLayout>
+    <include layout="@layout/divide_line" />
+</LinearLayout>

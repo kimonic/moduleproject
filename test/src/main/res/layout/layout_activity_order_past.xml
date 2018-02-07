@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_vip_past" android:background="@color/white" android:paddingBottom="@dimen/dp_30" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/sp_18" android:textColor="#ff313233" android:gravity="center_horizontal" android:id="@id/tv_vip_is_past_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_38" android:layout_marginTop="@dimen/dp_42" android:layout_marginRight="@dimen/dp_38" android:layout_marginBottom="@dimen/dp_20" android:text="您的企业版套餐已到期是时候成为VIP用户，提高工作效率了" android:lineSpacingExtra="@dimen/dp_2" />
+    <TextView android:textSize="@dimen/sp_13" android:textColor="#ff636566" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="如需帮助？联系客服" />
+    <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10">
+        <TextView android:textSize="@dimen/sp_13" android:gravity="right" android:id="@id/tv_tel_phone" android:paddingRight="@dimen/dp_6" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/sp_13" android:gravity="left" android:id="@id/tv_qq_num" android:paddingLeft="@dimen/dp_6" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="QQ：65732762" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

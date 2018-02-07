@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="150.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_item" android:layout_width="fill_parent" android:layout_height="150.0dip">
+        <ImageView android:id="@id/iv_bill" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/banner" android:scaleType="centerCrop" android:adjustViewBounds="true" />
+        <ImageView android:layout_gravity="end|center|top" android:id="@id/image_checked" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.5dip" android:layout_marginRight="5.5dip" android:src="@drawable/image_unselected" android:scaleType="centerInside" android:layout_alignParentRight="true" />
+        <View android:id="@id/image_mask" android:background="#88000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <LinearLayout android:id="@id/ll_layout_add" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:background="@drawable/lion_map_add" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

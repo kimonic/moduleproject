@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="15.0dip">
+        <include layout="@layout/layout_login_mobile_prefix" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" style="@style/edit_parent_style">
+            <EditText android:id="@id/et_mobile_phone" android:hint="@string/hint_tel" android:maxLines="1" android:inputType="phone" style="@style/LoginEditTextStyle" />
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_15" android:layout_marginTop="@dimen/dp_10" android:layout_marginRight="@dimen/dp_15">
+        <include layout="@layout/layout_get_valid_code" />
+    </LinearLayout>
+    <TextView android:textSize="13.0sp" android:textColor="@drawable/selector_tv_color_red" android:gravity="left" android:id="@id/btn_voice" android:padding="5.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:text="未收到验证码？试试语音验证" android:onClick="onClick" />
+    <Button android:id="@id/btn_complete" android:layout_margin="15.0dip" android:text="完成" style="@style/ButtonLoginStyle" />
+</LinearLayout>

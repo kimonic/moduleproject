@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/tally_pic" android:layout_width="@dimen/tally_pic_width" android:layout_height="@dimen/tally_pic_height" android:layout_margin="6.0dip" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:layout_toRightOf="@id/tally_pic" android:layout_centerVertical="true">
+        <TextView android:textSize="16.0sp" android:textColor="@color/black_item" android:id="@id/tally_text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="采购商品" android:layout_centerVertical="true" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <TextView android:textSize="16.0sp" android:textColor="@color/black_item" android:id="@id/tally_text2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="500" android:layout_alignParentRight="true" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/black_item" android:id="@id/tally_text3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="2015-3-3" android:layout_below="@id/tally_text2" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

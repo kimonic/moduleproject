@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/title_toolbar" />
+    <TextView android:id="@id/tv_mobile" style="@style/subuser_add_confirm_tv_style" />
+    <TextView android:id="@id/tv_name" android:layout_marginTop="3.0dip" style="@style/subuser_add_confirm_tv_style" />
+    <TextView android:layout_marginTop="22.0dip" android:text="确认要添加为子用户吗？" style="@style/subuser_add_confirm_tv_style" />
+    <TextView android:textColor="#ff888888" android:layout_marginTop="13.0dip" android:text="添加为子用户后，他可以看到本账本的账。\n接下来您可以为他分配相应的权限。" style="@style/subuser_add_confirm_tv_style" />
+    <Button android:id="@id/btn_reg_add" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="32.0dip" android:layout_marginTop="32.0dip" android:layout_marginRight="32.0dip" android:text="确认添加" style="@style/corner_button_style_agent" />
+</LinearLayout>

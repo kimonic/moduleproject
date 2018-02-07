@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_payee" app:leftIcon="@drawable/ic_payee_item" app:leftText="往来单位" app:itemModel="defaultModel" style="@style/miv_common_style"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

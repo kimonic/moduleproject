@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_look" android:layout_width="fill_parent" android:layout_height="52.0dip">
+        <CheckBox android:id="@id/checkbox_look" android:layout_width="wrap_content" android:layout_height="21.0dip" android:layout_marginLeft="16.0dip" android:layout_centerVertical="true" style="@style/custom_checkbox_theme" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff666666" android:id="@id/tv_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_toRightOf="@id/checkbox_look" android:layout_centerVertical="true" />
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_middle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_toRightOf="@id/tv_date" android:layout_centerVertical="true">
+            <TextView android:textSize="12.0sp" android:textColor="#ffa6a6a6" android:id="@id/tv_name_look" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="12.0sp" android:textColor="#ffa6a6a6" android:id="@id/tv_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <TextView android:textSize="15.0sp" android:textColor="#ff333333" android:layout_gravity="right" android:id="@id/tv_balance" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="12.0sp" android:textColor="#ff333333" android:id="@id/tv_balance_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rl_edit" android:layout_width="fill_parent" android:layout_height="52.0dip">
+        <CheckBox android:id="@id/checkbox_after" android:layout_width="wrap_content" android:layout_height="21.0dip" android:layout_marginLeft="16.0dip" android:layout_centerVertical="true" style="@style/custom_checkbox_theme" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:id="@id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_toRightOf="@id/checkbox_after" android:layout_centerVertical="true" />
+        <EditText android:textSize="14.0sp" android:textColor="#ffc3c3c3" android:gravity="right" android:id="@id/edit_text_amount" android:background="@drawable/shape_border" android:padding="7.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:minWidth="50.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:inputType="number" />
+    </RelativeLayout>
+</RelativeLayout>

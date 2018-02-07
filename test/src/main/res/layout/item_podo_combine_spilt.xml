@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_marginTop="@dimen/dp_10" style="@style/item_layout">
+        <TextView android:textSize="@dimen/sp_13" android:id="@id/text_view_date" style="@style/item_text_secondary" />
+        <TextView android:textSize="@dimen/sp_13" android:id="@id/text_view_id" android:layout_marginRight="@dimen/dp_5" android:layout_alignParentRight="true" style="@style/item_text_secondary" />
+    </RelativeLayout>
+    <ImageView android:layout_width="fill_parent" android:layout_height="1.0px" android:src="@color/image_divider" />
+    <RelativeLayout style="@style/item_layout">
+        <TextView android:id="@id/text_view_ware" style="@style/item_text_view" />
+        <TextView android:textColor="@color/amount_red" android:id="@id/text_view_amount" style="@style/item_text_right" />
+    </RelativeLayout>
+</LinearLayout>

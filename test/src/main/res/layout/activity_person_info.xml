@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/layout_avater" android:layout_marginTop="@dimen/dp_20" style="@style/item_layout">
+                <TextView android:text="头像" style="@style/item_text_view" />
+                <ImageView android:id="@id/image_view_avater" android:background="@color/transparent" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginRight="@dimen/dp_15" android:scaleType="centerCrop" android:layout_toLeftOf="@id/icon_right" android:layout_centerVertical="true" />
+                <include layout="@layout/include_miv_arrow" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_id" android:layout_width="fill_parent" android:layout_height="wrap_content" app:leftText="ID" app:itemModel="noRightArrowModel" style="@style/miv_common_style.noLeftIcon" />
+            <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_name" android:layout_width="fill_parent" android:layout_height="wrap_content" app:leftText="姓名" app:itemModel="noRightArrowModel" style="@style/miv_common_style.noLeftIcon" />
+            <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_job" android:layout_width="fill_parent" android:layout_height="wrap_content" app:leftText="职务" style="@style/miv_common_style.noLeftIcon" />
+            <RelativeLayout android:id="@id/layout_type" android:visibility="gone" style="@style/item_layout">
+                <TextView android:text="类型" style="@style/item_text_view" />
+                <TextView android:id="@id/text_view_type" style="@style/item_text_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_email" android:visibility="gone" style="@style/item_layout">
+                <TextView android:text="邮箱" style="@style/item_text_view" />
+                <TextView android:textColor="@color/amount_orange" android:id="@id/text_view_email_valid" android:text="未绑定" style="@style/item_text_right" />
+                <TextView android:id="@id/text_view_email" style="@style/item_text_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_tel" android:visibility="gone" style="@style/item_layout">
+                <TextView android:text="手机" style="@style/item_text_view" />
+                <TextView android:textColor="@color/amount_orange" android:id="@id/text_view_tel_valid" android:text="未绑定" style="@style/item_text_right" />
+                <TextView android:id="@id/text_view_tel" style="@style/item_text_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_modify_key" android:visibility="gone" style="@style/item_layout">
+                <TextView android:text="修改密码" style="@style/item_text_view" />
+                <ImageView style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <TextView android:textSize="13.0sp" android:textColor="@color/text_view_grey" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/padding_l" android:text="@string/vip_privilege" />
+            <RelativeLayout android:id="@id/layout_tenent_name" android:visibility="gone" style="@style/item_layout">
+                <TextView android:text="公司名" style="@style/item_text_view" />
+                <TextView android:id="@id/text_view_tenent_name" style="@style/item_text_right_clickable" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_area" android:visibility="gone" style="@style/item_layout">
+                <TextView android:text="地区" style="@style/item_text_view" />
+                <TextView android:id="@id/text_view_area" style="@style/item_text_right_clickable" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_company_type" android:visibility="gone" style="@style/item_layout">
+                <TextView android:text="行业类型" style="@style/item_text_view" />
+                <TextView android:id="@id/text_view_company_type" style="@style/item_text_right_clickable" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_vip_time" android:visibility="gone" style="@style/item_layout">
+                <TextView android:text="期限" style="@style/item_text_view" />
+                <TextView android:id="@id/text_view_vip_time" style="@style/item_text_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_num_user" android:visibility="gone" style="@style/item_layout">
+                <TextView android:text="最大用户数" style="@style/item_text_view" />
+                <TextView android:id="@id/text_view_num_user" style="@style/item_text_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_num_book" android:visibility="gone" style="@style/home_item_layout">
+                <TextView android:layout_marginLeft="14.0dip" android:text="已用空间" style="@style/item_text_view" />
+                <TextView android:id="@id/text_view_num_book" android:layout_marginRight="14.0dip" style="@style/item_text_right" />
+                <ProgressBar android:id="@id/progress_bar" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="8.0dip" android:layout_marginLeft="14.0dip" android:layout_marginRight="14.0dip" android:progressDrawable="@drawable/space_progress_bar" android:layout_alignParentBottom="true" style="?android:attr/progressBarStyleHorizontal" />
+            </RelativeLayout>
+            <View android:background="@color/background_app" android:layout_width="fill_parent" android:layout_height="15.0dip" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

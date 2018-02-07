@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.cash360.tiger.widget.TextViewAdjustDrawableSize android:id="@id/tv_branch" android:hint="部门" android:drawableLeft="@drawable/ic_branch" style="@style/tv_add_tally_style"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

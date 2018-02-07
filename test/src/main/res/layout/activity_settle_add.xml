@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/title_toolbar" />
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="@dimen/dp_10" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/layout_money" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout">
+                <TextView android:textSize="27.0sp" android:textStyle="bold" android:id="@id/tv_money" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+            <cn.cash360.tiger.widget.MyListView android:id="@id/list_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <RelativeLayout style="@style/item_layout">
+                <TextView android:textColor="@color/text_view_grey" android:id="@id/tv_total_cost" android:text="合计成本" style="@style/item_text_view_left" />
+                <TextView android:textColor="@color/text_view_black" android:id="@id/et_total_cost" android:layout_toRightOf="@id/tv_total_cost" style="@style/asset_item_edit_right" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <RelativeLayout android:id="@id/layout_category" style="@style/item_layout">
+                <TextView android:textColor="@color/text_view_grey" android:id="@id/tv_category_name" android:text="成本类别" style="@style/item_text_view_left" />
+                <TextView android:gravity="right" android:id="@id/tv_category" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_6" android:layout_toLeftOf="@id/iv_category" android:layout_toRightOf="@id/tv_category_name" style="@style/text_view_tally_item" />
+                <ImageView android:id="@id/iv_category" style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <include layout="@layout/image_divider" />
+            <include layout="@layout/include_tally_remark_photo" />
+            <cn.cash360.tiger.widget.AutoWrapViewGroup style="@style/AutoWrapViewGroupStyle">
+                <include layout="@layout/layout_tv_date" />
+                <include layout="@layout/layout_tv_payee" />
+                <include layout="@layout/layout_tv_staff" />
+                <include layout="@layout/layout_tv_branch" />
+                <include layout="@layout/layout_tv_project" />
+            </cn.cash360.tiger.widget.AutoWrapViewGroup>
+        </LinearLayout>
+    </ScrollView>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/layout_bt_save" />
+    </FrameLayout>
+</LinearLayout>

@@ -1,6 +1,5 @@
 package com.kimonic.notebook.activity;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -21,7 +20,6 @@ import org.litepal.crud.DataSupport;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * * ===============================================================
@@ -53,7 +51,7 @@ public class CompareDataActivity extends BaseActivity {
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_comparedata;
+        return R.layout.act_comparedata_notebook;
     }
 
     @Override
@@ -124,7 +122,7 @@ public class CompareDataActivity extends BaseActivity {
 
 
     private CommonAdapter<DateRecordLMBean> getAdapter() {
-        return new CommonAdapter<DateRecordLMBean>(this, R.layout.lv_daterecordbean, listDate) {
+        return new CommonAdapter<DateRecordLMBean>(this, R.layout.lv_daterecordbean_notebook, listDate) {
             @Override
             protected void convert(ViewHolder viewHolder, DateRecordLMBean item, int position) {
                 viewHolder.setText(R.id.tv_lv_daterecordbean, item.getDate());

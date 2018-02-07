@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_product_add" app:leftIcon="@drawable/ic_product" app:leftText="选择货品" app:itemModel="withImageModel" style="@style/miv_common_style"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

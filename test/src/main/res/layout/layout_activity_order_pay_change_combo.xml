@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:text="变更套餐" style="@style/handle_affairs_item_tv_top" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/tv_color" android:id="@id/tv_combo_change_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/tv_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="6.0dip" android:text="套餐变更不变更原套餐期限。" />
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_item_level_1" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/home_item_layout">
+        <LinearLayout style="@style/activity_pay_ll_above">
+            <ImageView android:id="@id/iv_logo_1" android:src="@drawable/icon_vip_one" style="@style/activity_pay_iv" />
+            <TextView android:text="@string/vip_level_name_one" style="@style/activity_pay_tv_text_style_black" />
+            <TextView android:text="@string/vip_level_one_desc" style="@style/activity_pay_tv_text_style_grey" />
+        </LinearLayout>
+        <RelativeLayout android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/tv_combo_change_month_1" android:text="@string/vip_level_one_price" android:layout_centerVertical="true" style="@style/activity_pay_tv_text_style_grey" />
+            <TextView android:text="@string/vip_level_one_price_year" android:layout_toRightOf="@id/tv_combo_change_month_1" android:layout_centerVertical="true" style="@style/activity_pay_tv_text_style_grey" />
+            <Button android:id="@id/btn_change_combo_1" android:text="立即变更" style="@style/activity_pay_bt_style" />
+        </RelativeLayout>
+        <include layout="@layout/divide_line" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_item_level_2" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/home_item_layout">
+        <LinearLayout style="@style/activity_pay_ll_above">
+            <ImageView android:id="@id/iv_logo_2" android:src="@drawable/icon_vip_two" style="@style/activity_pay_iv" />
+            <TextView android:text="@string/vip_level_name_two" style="@style/activity_pay_tv_text_style_black" />
+            <TextView android:text="@string/vip_level_two_desc" style="@style/activity_pay_tv_text_style_grey" />
+        </LinearLayout>
+        <RelativeLayout android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/tv_combo_change_month_2" android:text="@string/vip_level_two_price" android:layout_centerVertical="true" style="@style/activity_pay_tv_text_style_grey" />
+            <TextView android:text="@string/vip_level_two_price_year" android:layout_toRightOf="@id/tv_combo_change_month_2" android:layout_centerVertical="true" style="@style/activity_pay_tv_text_style_grey" />
+            <Button android:id="@id/btn_change_combo_2" android:text="立即变更" style="@style/activity_pay_bt_style" />
+        </RelativeLayout>
+        <include layout="@layout/divide_line" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_item_level_3" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/home_item_layout">
+        <LinearLayout style="@style/activity_pay_ll_above">
+            <ImageView android:id="@id/iv_logo_3" android:src="@drawable/icon_vip_three" style="@style/activity_pay_iv" />
+            <TextView android:text="@string/vip_level_name_three" style="@style/activity_pay_tv_text_style_black" />
+            <TextView android:text="@string/vip_level_three_desc" style="@style/activity_pay_tv_text_style_grey" />
+        </LinearLayout>
+        <RelativeLayout android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/tv_combo_change_month_3" android:text="@string/vip_level_three_price" android:layout_centerVertical="true" style="@style/activity_pay_tv_text_style_grey" />
+            <TextView android:text="@string/vip_level_three_price_year" android:layout_toRightOf="@id/tv_combo_change_month_3" android:layout_centerVertical="true" style="@style/activity_pay_tv_text_style_grey" />
+            <Button android:id="@id/btn_change_combo_3" android:text="立即变更" style="@style/activity_pay_bt_style" />
+        </RelativeLayout>
+        <include layout="@layout/divide_line" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_item_level_4" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/home_item_layout">
+        <LinearLayout style="@style/activity_pay_ll_above">
+            <ImageView android:id="@id/iv_logo_4" android:src="@drawable/icon_vip_four" style="@style/activity_pay_iv" />
+            <TextView android:text="@string/vip_level_name_four" style="@style/activity_pay_tv_text_style_black" />
+            <TextView android:text="@string/vip_level_four_desc" style="@style/activity_pay_tv_text_style_grey" />
+        </LinearLayout>
+        <RelativeLayout android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/tv_combo_change_month_4" android:text="@string/vip_level_four_price" android:layout_centerVertical="true" style="@style/activity_pay_tv_text_style_grey" />
+            <TextView android:text="@string/vip_level_four_price_year" android:layout_toRightOf="@id/tv_combo_change_month_4" android:layout_centerVertical="true" style="@style/activity_pay_tv_text_style_grey" />
+            <Button android:id="@id/btn_change_combo_4" android:text="立即变更" style="@style/activity_pay_bt_style" />
+        </RelativeLayout>
+        <include layout="@layout/divide_line" />
+    </LinearLayout>
+</LinearLayout>

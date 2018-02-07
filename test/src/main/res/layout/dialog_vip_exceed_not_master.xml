@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/selector_radius_bg" android:layout_width="280.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:textColor="@color/black" android:gravity="center" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="提示" />
+    <TextView android:textSize="15.0sp" android:textColor="@color/tv_color" android:gravity="left" android:id="@id/tips" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="25.0dip" android:layout_marginBottom="13.0dip" android:text="抱歉，该账本VIP特权已到期，您的记账权限已被停用。您可以切换其他账本，或联系主用户。" android:lineSpacingExtra="3.0dip" />
+    <include layout="@layout/divide_line" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="18.0sp" android:textColor="#ff3ca8e9" android:gravity="center" android:id="@id/tv_select_book" android:background="@drawable/selector_btn_white" android:layout_width="0.0dip" android:layout_height="50.0dip" android:text="切换账本" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

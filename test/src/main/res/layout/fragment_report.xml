@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/status_bar_layout" />
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay">
+            <TextView android:textSize="@dimen/title_text_size" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="报表" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView android:background="#fff0f4f5" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/dp_10" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textColor="#ff949899" android:paddingLeft="@dimen/dp_6" android:paddingTop="@dimen/dp_3" android:paddingBottom="@dimen/dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="财务报表" />
+            <RelativeLayout android:id="@id/layout_balance_sheet" android:background="@drawable/selector_report_item" android:padding="0.0dip" style="@style/item_layout">
+                <ImageView android:background="@drawable/shape_report_iv_balance_sheet" android:layout_width="5.0dip" android:layout_height="70.0dip" />
+                <cn.cash360.tiger.widget.TextViewAdjustDrawableSize android:text="资产负债表" android:drawableLeft="@drawable/ic_report_balance_sheet" style="@style/fragment_report_tv_item_name" />
+                <ImageView android:layout_marginRight="16.0dip" style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_account_balance" android:background="@drawable/selector_report_item" android:padding="0.0dip" android:layout_marginTop="@dimen/activity_vertical_margin" style="@style/item_layout">
+                <ImageView android:background="@drawable/shape_report_iv_account_balance" android:layout_width="5.0dip" android:layout_height="70.0dip" />
+                <cn.cash360.tiger.widget.TextViewAdjustDrawableSize android:text="账户余额表" android:drawableLeft="@drawable/ic_report_account_balance" style="@style/fragment_report_tv_item_name" />
+                <ImageView android:layout_marginRight="16.0dip" style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_profit" android:background="@drawable/selector_report_item" android:padding="0.0dip" android:layout_marginTop="@dimen/activity_vertical_margin" style="@style/item_layout">
+                <ImageView android:background="@drawable/shape_report_iv_profit" android:layout_width="5.0dip" android:layout_height="70.0dip" />
+                <cn.cash360.tiger.widget.TextViewAdjustDrawableSize android:text="利润表" android:drawableLeft="@drawable/ic_report_profit" style="@style/fragment_report_tv_item_name" />
+                <ImageView android:layout_marginRight="16.0dip" style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_income" android:background="@drawable/selector_report_item" android:padding="0.0dip" android:layout_marginTop="@dimen/activity_vertical_margin" style="@style/item_layout">
+                <ImageView android:background="@drawable/shape_report_iv_income" android:layout_width="5.0dip" android:layout_height="70.0dip" />
+                <cn.cash360.tiger.widget.TextViewAdjustDrawableSize android:text="收入表" android:drawableLeft="@drawable/ic_report_income" style="@style/fragment_report_tv_item_name" />
+                <ImageView android:layout_marginRight="16.0dip" style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_expense" android:background="@drawable/selector_report_item" android:padding="0.0dip" android:layout_marginTop="@dimen/activity_vertical_margin" style="@style/item_layout">
+                <ImageView android:background="@drawable/shape_report_iv_expense" android:layout_width="5.0dip" android:layout_height="70.0dip" />
+                <cn.cash360.tiger.widget.TextViewAdjustDrawableSize android:text="支出表" android:drawableLeft="@drawable/ic_report_expense" style="@style/fragment_report_tv_item_name" />
+                <ImageView android:layout_marginRight="16.0dip" style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_cash_flow" android:background="@drawable/selector_report_item" android:padding="0.0dip" android:layout_marginTop="@dimen/activity_vertical_margin" style="@style/item_layout">
+                <ImageView android:background="@drawable/shape_report_iv_income" android:layout_width="5.0dip" android:layout_height="70.0dip" />
+                <cn.cash360.tiger.widget.TextViewAdjustDrawableSize android:text="现金流量表" android:drawableLeft="@drawable/ic_report_cash" style="@style/fragment_report_tv_item_name" />
+                <ImageView android:layout_marginRight="16.0dip" style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_aging" android:background="@drawable/selector_report_item" android:padding="0.0dip" android:layout_marginTop="@dimen/activity_vertical_margin" style="@style/item_layout">
+                <ImageView android:background="@drawable/shape_report_iv_profit" android:layout_width="5.0dip" android:layout_height="70.0dip" />
+                <cn.cash360.tiger.widget.TextViewAdjustDrawableSize android:text="账龄分析表" android:drawableLeft="@drawable/icon_aging_share_logo" style="@style/fragment_report_tv_item_name" />
+                <ImageView android:layout_marginRight="16.0dip" style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <TextView android:textColor="#ff949899" android:paddingLeft="@dimen/dp_6" android:paddingTop="@dimen/dp_15" android:paddingBottom="@dimen/dp_15" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="销售报表" />
+            <RelativeLayout android:id="@id/layout_product_analyze" android:background="@drawable/selector_report_item" android:padding="0.0dip" style="@style/item_layout">
+                <ImageView android:background="@drawable/shape_report_iv_account_balance" android:layout_width="5.0dip" android:layout_height="70.0dip" />
+                <cn.cash360.tiger.widget.TextViewAdjustDrawableSize android:text="货品分析表" android:drawableLeft="@drawable/ic_report_product" style="@style/fragment_report_tv_item_name" />
+                <ImageView android:layout_marginRight="16.0dip" style="@style/item_arrow_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_customer_analyze" android:background="@drawable/selector_report_item" android:padding="0.0dip" android:layout_marginTop="@dimen/activity_vertical_margin" style="@style/item_layout">
+                <ImageView android:background="@drawable/shape_report_iv_income" android:layout_width="5.0dip" android:layout_height="70.0dip" />
+                <cn.cash360.tiger.widget.TextViewAdjustDrawableSize android:text="客户分析表" android:drawableLeft="@drawable/ic_report_customer" style="@style/fragment_report_tv_item_name" />
+                <ImageView android:layout_marginRight="16.0dip" style="@style/item_arrow_right" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

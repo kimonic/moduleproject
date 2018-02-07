@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout style="@style/item_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/text_view_name" android:layout_marginLeft="30.0dip" style="@style/item_text_view" />
+    <TextView android:id="@id/text_view_quantity" style="@style/item_text_right" />
+</RelativeLayout>

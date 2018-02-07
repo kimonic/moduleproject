@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:background="#ffd6d1d1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/iv_share_friend" android:background="@null" android:layout_width="80.0dip" android:layout_height="80.0dip" android:layout_margin="10.0dip" android:src="@drawable/iv_share_friend" />
+    <ImageButton android:id="@id/iv_share_circle" android:background="@null" android:layout_width="80.0dip" android:layout_height="80.0dip" android:layout_margin="10.0dip" android:src="@drawable/iv_share_circle" />
+</LinearLayout>
