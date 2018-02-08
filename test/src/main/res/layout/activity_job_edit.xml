@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" />
-    </android.support.design.widget.AppBarLayout>
-    <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_job" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_20" app:leftText="职务" app:divideLineShow="false" style="@style/miv_common_style.noLeftIcon" />
-</LinearLayout>

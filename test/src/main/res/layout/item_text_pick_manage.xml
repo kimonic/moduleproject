@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/layout_item" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:id="@id/list_text_item" style="@style/item_text_view_left" />
-    <include layout="@layout/right_arrow" />
-    <ImageView android:id="@id/image_view_cancel" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:src="@drawable/ic_pick_cancel" android:layout_toLeftOf="@id/image_view_right_arrow" android:layout_alignParentRight="true" />
-</RelativeLayout>

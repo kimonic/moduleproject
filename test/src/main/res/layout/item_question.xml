@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/layout_item" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_item" app:leftTextSize="@dimen/sp_15" app:leftTextColor="@color/tv_color_main_text" style="@style/miv_common_style" />
-</FrameLayout>

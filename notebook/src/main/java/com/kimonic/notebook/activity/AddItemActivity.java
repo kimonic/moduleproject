@@ -47,6 +47,11 @@ public class AddItemActivity extends BaseActivity {
     }
 
     @Override
+    protected int setStatusBarColor() {
+        return 0;
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_act_additem_add://确认添加,litepal数据库新添加表后必须更新版本或重新安装

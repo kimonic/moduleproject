@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="?actionBarSize" android:layout_height="?actionBarSize"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:background="@drawable/lion_ic_actionbar_date" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="10.0dip" />
-    <TextView android:textColor="@color/white" android:id="@id/month" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
-</RelativeLayout>

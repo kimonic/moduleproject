@@ -7,7 +7,7 @@ import com.kimonic.notebook.R;
 import com.kimonic.notebook.activity.AddItemActivity;
 import com.kimonic.notebook.activity.AddNewUserActivity;
 import com.kimonic.notebook.activity.CompareDataActivity;
-import com.kimonic.notebook.activity.FindDataActivity;
+import com.kimonic.notebook.activity.fixedassets.FindDataActivity;
 import com.kimonic.notebook.activity.SaveDataActivity;
 import com.kimonic.notebook.config.UserConfig;
 import com.kimonic.notebook.litemapbean.SaveDataLMBean;

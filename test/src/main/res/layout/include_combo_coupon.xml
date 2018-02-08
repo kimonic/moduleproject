@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_select_coupon" app:leftText="优惠方式" app:rightHintText="不使用优惠券" app:divideLineShow="false" app:leftTextColor="@color/tv_color_main_text" style="@style/miv_common_style" />
-</LinearLayout>

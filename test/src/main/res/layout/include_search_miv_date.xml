@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_date" app:leftText="日期" style="@style/miv_common_style.noLeftIcon" />
-    <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_start_time" app:leftText="开始日期" style="@style/miv_common_style.noLeftIcon" />
-    <cn.cash360.tiger.widget.MenuItemView android:id="@id/miv_end_time" app:leftText="结束日期" app:divideLineShow="false" style="@style/miv_common_style.noLeftIcon" />
-</LinearLayout>

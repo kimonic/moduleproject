@@ -18,15 +18,50 @@ public class SaveDataLMBean extends DataSupport {
 
     /**用户名*/
     private  String  userName;
-    /**标签名*/
+    /**资产类别*/
     private  String  item;
-    /**标签数值*/
+    /**资产价值*/
     private  float   value;
-    /**创建日期标签*/
+    /**创建日期*/
     private  String  dateFlag;
     /**item唯一标识*/
     private  String  itemFlag;
+    /**保存数据年份*/
+    private String  year;
+    /**保存数据月份*/
+    private  String  month;
+    /**资产备注*/
+    private  String  mark;
+    /**唯一标识id*/
+    public  long  myExtendId;
 
+    public long getMyExtendId() {
+        return getBaseObjId();
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getMark() {
+        return mark;
+    }
+
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
 
     public String getUserName() {
         return userName;

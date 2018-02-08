@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/layout_item" android:descendantFocusability="blocksDescendants" style="@style/item_layout"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBox android:layout_gravity="center_vertical" android:id="@id/checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/custom_checkbox_theme" />
-    <TextView android:textSize="@dimen/sp_16" android:textColor="@color/text_view_black" android:id="@id/tv_ware_house_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10" android:text="默认残酷" android:layout_toRightOf="@id/checkbox" android:layout_centerVertical="true" />
-    <TextView android:gravity="right" android:id="@id/tv_init_num" android:layout_width="wrap_content" android:layout_toLeftOf="@id/iv_arrow" android:layout_toRightOf="@id/tv_ware_house_name" style="@style/item_text_view_tips" />
-    <ImageView android:id="@id/iv_arrow" style="@style/item_arrow_right" />
-</RelativeLayout>

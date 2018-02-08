@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@drawable/selector_item_layout" android:layout_width="fill_parent" android:layout_height="45.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="16.0sp" android:textColor="@color/tv_color_main_text" android:gravity="center_vertical" android:id="@id/tv_payee" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="14.0dip" android:layout_marginBottom="14.0dip" android:maxEms="7" android:singleLine="true" />
-    <TextView android:textSize="15.0sp" android:textColor="@color/tv_color_main_text" android:gravity="center_vertical" android:id="@id/tv_amount" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="11.0dip" android:layout_toLeftOf="@id/iv_arrow" android:layout_centerVertical="true" style="@style/fonts_din_pro_regular" />
-    <ImageView android:id="@id/iv_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:src="@drawable/ic_right_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-</RelativeLayout>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/layout_evaluate_us" style="@style/manager_item_layout_style">
-        <ImageView android:id="@id/ico_evaluate_us" android:src="@drawable/setpage_ico_evaluation" style="@style/iv_manager_style_tax_handle" />
-        <TextView android:text="评价账王" android:layout_toRightOf="@id/ico_evaluate_us" style="@style/tv_manger_style" />
-        <ImageView style="@style/iv_right_arrow_style" />
-    </RelativeLayout>
-</LinearLayout>

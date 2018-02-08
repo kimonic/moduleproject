@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="15.0dip" android:src="@color/image_divider" />
-</LinearLayout>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="8.0" style="@style/edit_parent_style">
-        <EditText android:id="@id/smsCode" android:hint="填写验证码" android:maxLines="1" style="@style/LoginEditTextStyle" />
-    </FrameLayout>
-    <TextView android:textSize="@dimen/sp_14" android:textColor="@drawable/selector_tv_valid_code" android:gravity="center" android:layout_gravity="right" android:id="@id/tv_resend" android:layout_width="wrap_content" android:layout_height="fill_parent" android:minWidth="100.0dip" android:text="获取验证码" android:layout_weight="4.0" />
-</FrameLayout>

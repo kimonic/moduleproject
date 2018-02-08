@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--0.首页activity-->
-        <activity android:name=".activity.HomeActivity">
+        <activity android:name=".activity.welcome.HomeActivity">
             <!--<intent-filter>-->
             <!--<action android:name="android.intent.action.MAIN" />-->
 
@@ -27,9 +27,9 @@
         <!--4.保存用户下相应标签的详细数据-->
         <activity android:name=".activity.SaveDataDetailsActivity" />
         <!--5.查看数据activity-->
-        <activity android:name=".activity.FindDataActivity" />
+        <activity android:name=".activity.fixedassets.FindDataActivity" />
         <!--6.某一天的记录详情-->
-        <activity android:name=".activity.FindDataDetailsActivity" />
+        <activity android:name=".activity.fixedassets.FindDataDetailsActivity" />
         <!--7.比较不同日期的记录数据-->
         <activity android:name=".activity.CompareDataActivity" />
         <!--7.比较不同日期的记录数据详情-->
@@ -42,6 +42,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--9.固定资产记录activity-->
+        <activity android:name=".activity.fixedassets.FixedAssetsActivity" />
+        <!--10.重新编辑原来的记录activity-->
+        <activity android:name=".activity.fixedassets.EditOldRecordActivity" />
     </application>
 
 </manifest>

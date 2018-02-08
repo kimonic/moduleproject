@@ -47,6 +47,11 @@ public class AddNewUserActivity extends BaseActivity {
     }
 
     @Override
+    protected int setStatusBarColor() {
+        return 0;
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_act_addnewuser_add://确认添加

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/ll_leave_msg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" style="@style/home_item_layout"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/divide_line" />
-    <TextView android:textSize="17.0sp" android:textColor="#ff31a1f8" android:layout_gravity="center_horizontal" android:paddingTop="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="留言给我" android:drawableLeft="@drawable/icon_leave_msg" android:drawablePadding="4.0dip" />
-    <TextView android:layout_gravity="center_horizontal" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="一个工作日内回复" style="@style/tv_customer_10sp" />
-    <include layout="@layout/divide_line" />
-</LinearLayout>

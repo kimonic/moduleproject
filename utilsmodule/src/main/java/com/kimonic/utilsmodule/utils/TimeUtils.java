@@ -27,6 +27,7 @@ public class TimeUtils {
         Date currentTime = new Date();
         return formatter.format(currentTime);
     }
+
     /**
      * @return 返回系统当前时间--时 分
      */
@@ -84,7 +85,6 @@ public class TimeUtils {
     }
 
 
-
     /**
      * 根据yyyy-MM-dd  获得日期是星期几
      *
@@ -113,8 +113,9 @@ public class TimeUtils {
     }
 
     /**
-     *  获取当前月份
-     * @return  月份字符串  01或11格式
+     * 获取当前月份
+     *
+     * @return 月份字符串  01或11格式
      */
     public static String getCurrentMonthStr() {
         Calendar calendar = Calendar.getInstance();
@@ -129,8 +130,9 @@ public class TimeUtils {
 
 
     /**
-     *  获取当前月份
-     * @return  月份字符串
+     * 获取当前月份
+     *
+     * @return 月份字符串
      */
     public static int getCurrentMonthInt() {
         Calendar calendar = Calendar.getInstance();
@@ -152,11 +154,21 @@ public class TimeUtils {
     public static String getCurrentFirstOfTheMonteh() {
         return getCurrentYear() + "-" + getCurrentMonthStr() + "-01";
     }
+
     /**
      * 获取某年某月
      */
     public static String getCurrentFirstOfTheMonteh(int year, int month) {
-            return year + "年" +month + "月";
+        return year + "年" + month + "月";
+    }
+
+    /**
+     * * 获取系统当前年月
+     *
+     * @return 类似2018年1月的字符串
+     */
+    public static String getCurrentYearMonth() {
+        return getCurrentYear() + "年" + getCurrentMonthInt() + "月";
     }
 
     /**
@@ -173,11 +185,11 @@ public class TimeUtils {
      * 1----星期日
      * 7----星期六
      */
-    public static int getCurrentDayOfWeekTheFirstOfMonteh(int year,int month) {
-        if (month<10){
-            return getWeekInt(year+ "-0" + month + "-01");
+    public static int getCurrentDayOfWeekTheFirstOfMonteh(int year, int month) {
+        if (month < 10) {
+            return getWeekInt(year + "-0" + month + "-01");
         }
-        return getWeekInt(year+ "-" + month + "-01");
+        return getWeekInt(year + "-" + month + "-01");
     }
 
     /**
@@ -203,10 +215,10 @@ public class TimeUtils {
      */
     public static int getLastDayOfMonth() {
         Calendar c = Calendar.getInstance();
-        if (getCurrentMonthInt()==1){
-            c.set(getCurrentYear()-1, 12, 0); //输入类型为int类型
-        }else {
-            c.set(getCurrentYear(), getCurrentMonthInt()-1, 0); //输入类型为int类型
+        if (getCurrentMonthInt() == 1) {
+            c.set(getCurrentYear() - 1, 12, 0); //输入类型为int类型
+        } else {
+            c.set(getCurrentYear(), getCurrentMonthInt() - 1, 0); //输入类型为int类型
         }
         return c.get(Calendar.DAY_OF_MONTH);
     }
@@ -216,67 +228,73 @@ public class TimeUtils {
      */
     public static int getNextDayOfMonth() {
         Calendar c = Calendar.getInstance();
-        if (getCurrentMonthInt()==12){
-            c.set(getCurrentYear()+1, 1, 0); //输入类型为int类型
-        }else {
-            c.set(getCurrentYear(), getCurrentMonthInt()+1, 0); //输入类型为int类型
+        if (getCurrentMonthInt() == 12) {
+            c.set(getCurrentYear() + 1, 1, 0); //输入类型为int类型
+        } else {
+            c.set(getCurrentYear(), getCurrentMonthInt() + 1, 0); //输入类型为int类型
         }
         return c.get(Calendar.DAY_OF_MONTH);
     }
 
 
-    /**获取当前月的上一个月*/
-    public static int getLastMonth(int  currentMonth){
-        if (currentMonth==1){
-            return 12;
-        }else {
-            return currentMonth-1;
-        }
-    }
-
-    /**获取当前月的上一个月所在的年份*/
-    public static  int getYearOfLastMonth(int currentYear,int currentMonth){
-        if (currentMonth==1){
-            return currentYear-1;
-        }else {
-            return currentYear;
-        }
-    }
-
-
-    /**获取当前月的下一个月*/
-    public static int getNextMonth(int  currentMonth){
-        if (currentMonth==12){
-            return 1;
-        }else {
-            return currentMonth+1;
-        }
-    }
-
-
-    /**获取当前月的下一个月所在的年份*/
-    public static  int getYearOfNextMonth(int currentYear,int currentMonth){
-        if (currentMonth==12){
-            return currentYear+1;
-        }else {
-            return currentYear;
-        }
-    }
-
-    /**比较两个日期的大小
-     *
-     * @param date1   yyyy-mm-dd型日期字符串
-     * @param date2   yyyy-mm-dd型日期字符串
-     * @return    true--->第一个日期在第二个日期后面
+    /**
+     * 获取当前月的上一个月
      */
-    public static boolean  compareDate(String date1, String date2){
-        int  one=StringUtils.string2Integer(date1.replace("-",""));
-        int  two=StringUtils.string2Integer(date2.replace("-",""));
-        return one>two;
+    public static int getLastMonth(int currentMonth) {
+        if (currentMonth == 1) {
+            return 12;
+        } else {
+            return currentMonth - 1;
+        }
+    }
+
+    /**
+     * 获取当前月的上一个月所在的年份
+     */
+    public static int getYearOfLastMonth(int currentYear, int currentMonth) {
+        if (currentMonth == 1) {
+            return currentYear - 1;
+        } else {
+            return currentYear;
+        }
     }
 
 
+    /**
+     * 获取当前月的下一个月
+     */
+    public static int getNextMonth(int currentMonth) {
+        if (currentMonth == 12) {
+            return 1;
+        } else {
+            return currentMonth + 1;
+        }
+    }
 
+
+    /**
+     * 获取当前月的下一个月所在的年份
+     */
+    public static int getYearOfNextMonth(int currentYear, int currentMonth) {
+        if (currentMonth == 12) {
+            return currentYear + 1;
+        } else {
+            return currentYear;
+        }
+    }
+
+    /**
+     * 比较两个日期的大小
+     *
+     * @param date1 yyyy-mm-dd型日期字符串
+     * @param date2 yyyy-mm-dd型日期字符串
+     * @return true--->第一个日期在第二个日期后面
+     */
+    public static boolean compareDate(String date1, String date2) {
+        int one = StringUtils.string2Integer(date1.replace("-", ""));
+        int two = StringUtils.string2Integer(date2.replace("-", ""));
+        return one > two;
+    }
 
 
 }

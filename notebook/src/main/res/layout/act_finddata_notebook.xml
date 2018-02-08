@@ -1,38 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBac"
     android:orientation="vertical"
     >
-    <LinearLayout
+    <com.kimonic.utilsmodule.ui.MTopBarView
+        android:id="@+id/mtb_act_finddata"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorGlobal"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="40dp"
+        android:background="@color/colorQianLan"
+        app:centerText="@string/gudingzichanjilu"
+        app:leftImage="@drawable/xvector_back"
+        />
 
-        <TextView
-            style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/dangqiandengluyognhuming" />
-
-        <TextView
-            android:id="@+id/tv_act_finddata_current_user"
-            style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            />
-    </LinearLayout>
 
     <ListView
         android:id="@+id/lv_act_finddata"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
+        android:dividerHeight="5dp"
+        android:divider="@color/color_line"
         />
 
 </LinearLayout>

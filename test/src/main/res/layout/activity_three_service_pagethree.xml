@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/title_toolbar" />
-    <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:src="@drawable/agent_acount_icon5" />
-    <TextView android:textSize="16.0sp" android:textColor="@color/tv_text" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="谢谢您选择我们的服务" />
-    <TextView android:textSize="12.0sp" android:textColor="#ff6f6f6f" android:gravity="center" android:layout_gravity="center" android:id="@id/text_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="9.0dip" android:text="您的需求我们已经收到，随后客服会尽快跟你沟通，请保持手机畅通。" />
-    <TextView android:textColor="@color/tel_blue" android:layout_gravity="center" android:id="@id/tv_tel_phone" android:background="@drawable/selector_cardview_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="31.0dip" android:text="服务热线：4006-360-658" />
-</LinearLayout>

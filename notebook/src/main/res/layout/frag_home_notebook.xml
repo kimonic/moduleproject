@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#a3a3"
-    tools:context="com.kimonic.notebook.activity.HomeActivity">
+    tools:context="com.kimonic.notebook.activity.welcome.HomeActivity">
 
     <TextView
         android:id="@+id/tv_act_home_current_user"

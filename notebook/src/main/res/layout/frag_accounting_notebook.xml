@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorQianLan"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_frag_accounting_dangqiantongji"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_frag_accounting_benyueyingkui"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="@string/ling"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/FragAccountingTextStyle1"
+                android:text="@string/benyueshouru"
+                android:textSize="14sp" />
+
+            <TextView
+                style="@style/FragAccountingTextStyle1"
+                android:text="@string/benyuezhichu"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_frag_accounting_benyueshouru"
+                style="@style/FragAccountingTextStyle1"
+                android:text="@string/ling"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_frag_accounting_benyuezhichu"
+                style="@style/FragAccountingTextStyle1"
+                android:text="@string/ling"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_frag_accounting_shourujilu"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/shourujiliu"
+        android:drawableStart="@drawable/xshape_redcircle"
+        />
+    <TextView
+        android:id="@+id/tv_frag_accounting_zhichujilu"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/zhichujiliu"
+        android:drawableStart="@drawable/xshape_yellowcircle"
+        />
+    <TextView
+        android:id="@+id/tv_frag_accounting_gudingzichan"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/gudingzichan"
+        android:drawableStart="@drawable/xshape_bluecircle"
+        />
+    <TextView
+        android:id="@+id/tv_frag_accounting_touzijizhang"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/touzijizhang"
+        android:drawableStart="@drawable/xshape_erniucircle"
+        />
+    <TextView
+        android:id="@+id/tv_frag_accounting_suoshizaji"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/suoshizaji"
+        android:drawableStart="@drawable/xshape_greencircle"
+        />
+    <TextView
+        android:id="@+id/tv_frag_accounting_beiwanglu"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/beiwanglu"
+        android:drawableStart="@drawable/xshape_violetcircle"
+        />
+
+    <TextView
+        android:id="@+id/tv_frag_accounting_shujudaochu"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/shujudaochu"
+        android:drawableStart="@drawable/xshape_cyancircle"
+        />
+
+
+</LinearLayout>

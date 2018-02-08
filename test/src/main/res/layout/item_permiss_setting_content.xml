@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/rl_data" style="@style/homepage_item_layout">
-        <TextView android:id="@id/tv_category_name" style="@style/tv_item_permission_setting" />
-        <TextView android:textColor="@color/tv_color" android:gravity="center|right" android:id="@id/tv_desc" android:singleLine="true" android:layout_toLeftOf="@id/tv_num" android:layout_toRightOf="@id/tv_category_name" style="@style/tv_item_permission_setting" />
-        <TextView android:id="@id/tv_num" style="@style/home_item_text_right_agent" />
-    </RelativeLayout>
-</LinearLayout>

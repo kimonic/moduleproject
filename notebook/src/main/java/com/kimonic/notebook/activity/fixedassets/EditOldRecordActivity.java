@@ -1,39 +1,34 @@
-package com.kimonic.notebook.activity.welcome;
+package com.kimonic.notebook.activity.fixedassets;
 
-import android.os.Handler;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.kimonic.notebook.R;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.lzy.okgo.model.Response;
 
-import butterknife.BindView;
-
 /**
  * * ===============================================================
- * name:             WelcomeActivity
+ * name:             EditOldRecordActivity
  * guide:
  * author：          kimonik
  * version：          1.0
- * date：             2018/2/7
- * description：
+ * date：             2018/2/8
+ * description：   重新编辑原来的记录activity
  * history：
  * *==================================================================
  */
 
-public class WelcomeActivity extends BaseActivity {
-    @BindView(R.id.iv_act_welcome)
-    ImageView ivActWelcome;
+public class EditOldRecordActivity extends BaseActivity {
 
+    private long id;
     @Override
     public int getLayoutResId() {
-        return R.layout.act_welcome_notebook;
+        return R.layout.act_editoldrecrod;
     }
 
     @Override
     protected int setStatusBarColor() {
-        return 0;
+        return getColorRes(R.color.colorQianLan);
     }
 
     @Override
@@ -43,19 +38,11 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     public void initDataFromIntent() {
-
+        id=getIntent().getLongExtra("id",0);
     }
 
     @Override
     public void initView() {
-        Handler handler=new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                openActivity(HomeActivity.class);
-                closeActivity();
-            }
-        },1000);
 
     }
 
@@ -77,10 +64,5 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     public void loadInternetDataToUi() {
 
-    }
-
-    @Override
-    public boolean isHideStatusBar() {
-        return true;
     }
 }

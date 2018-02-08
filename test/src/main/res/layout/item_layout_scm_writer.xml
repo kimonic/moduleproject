@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/layout_profit" style="@style/homepage_item_layout">
-        <TextView android:gravity="center_vertical" android:id="@id/tv_user_name" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:layout_centerVertical="true" style="@style/tv_homepage_style" />
-        <TextView android:textColor="#ff999999" android:id="@id/tv_id" android:layout_marginRight="16.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/tv_homepage_style" />
-    </RelativeLayout>
-</LinearLayout>

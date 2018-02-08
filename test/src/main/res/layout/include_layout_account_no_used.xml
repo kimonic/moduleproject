@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_is_init" android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="一条数据都没有，赶紧初始余额吧！" style="@style/tv_customer_15sp" />
-    <Button android:layout_gravity="center" android:id="@id/bt_init" android:layout_width="@dimen/dp_118" android:layout_marginTop="@dimen/dp_28" android:text="初始余额" style="@style/btn_blue" />
-</LinearLayout>

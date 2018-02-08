@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/layout_item" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/item_layout"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/text_view_amount">
-        <TextView android:textSize="16.0sp" android:id="@id/text_view_item_name" style="@style/item_text_primary" />
-        <TextView android:textSize="12.0sp" android:id="@id/text_view_item_date" style="@style/item_text_secondary" />
-    </LinearLayout>
-    <TextView android:textSize="15.0sp" android:textColor="#ff333333" android:id="@id/text_view_amount" android:drawablePadding="11.0dip" style="@style/item_text_right" />
-</RelativeLayout>

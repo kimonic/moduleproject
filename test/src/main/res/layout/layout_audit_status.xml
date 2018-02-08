@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/fl_audit_status" android:padding="@dimen/dp_8" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" android:layout_marginBottom="@dimen/dp_20" android:layout_alignParentBottom="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_gravity="center" android:id="@id/iv_audit_status" android:layout_width="80.0dip" android:layout_height="80.0dip" />
-    <LinearLayout android:layout_gravity="center|right" android:orientation="vertical" android:padding="@dimen/dp_8" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <TextView android:textSize="@dimen/sp_12" android:textColor="@drawable/selector_tv_color_accent" android:id="@id/tv_audit_amortize" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawableRight="@drawable/icon_audit_status_arrows" android:drawablePadding="@dimen/dp_3" />
-        <TextView android:textSize="@dimen/sp_12" android:textColor="@drawable/selector_tv_color_accent" android:id="@id/tv_audit_balance" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_12" android:drawableRight="@drawable/icon_audit_status_arrows" android:drawablePadding="@dimen/dp_3" />
-    </LinearLayout>
-</FrameLayout>

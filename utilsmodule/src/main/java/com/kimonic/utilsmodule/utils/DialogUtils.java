@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -12,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.kimonic.utilsmodule.R;
 
@@ -77,6 +79,64 @@ public class DialogUtils {
         return dialog;
     }
 
+    public static AlertDialog showPromptDialog(final Context context, final String msg, final DialogUtilsCallBack callBack ,
+                                               @Nullable String  cancel, @Nullable String affirm, @Nullable String title){
+        @SuppressLint("InflateParams") View view = LayoutInflater.from(context).inflate(R.layout.dialog_prompt, null);
+        final AlertDialog dialog = new AlertDialog.Builder(context).create();
+        dialog.setCanceledOnTouchOutside(true);
+
+        TextView tvCancel=view.findViewById(R.id.tv_dialog_item_cancel);
+        TextView tvAffirm=view.findViewById(R.id.tv_dialog_item_affirm);
+        TextView tvTitle=view.findViewById(R.id.tv_dialog_item_title);
+        TextView tvContent=view.findViewById(R.id.tv_dialog_item_content);
+
+        setTvText(tvAffirm,affirm);
+        setTvText(tvCancel,cancel);
+        setTvText(tvTitle,title);
+        setTvText(tvContent,msg);
+
+        tvCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callBack.cancel();
+                dialog.dismiss();
+            }
+        });
+
+        tvAffirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callBack.affirm();
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+        //一定得在show完dialog后来set属性
+        Window window = dialog.getWindow();
+        if (window != null) {
+            window.setContentView(view);
+            WindowManager.LayoutParams lp = window.getAttributes();
+//            Log.e(TAG, "showProgreessDialog: --ScreenSizeUtils.getDensity(this)-"+ ScreenSizeUtils.getDensity(this));
+            lp.width = 100 * ScreenSizeUtils.getDensity(context);
+            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+            lp.gravity = Gravity.CENTER;
+            window.setAttributes(lp);
+        }
+        return dialog;
+    }
+
+    private static void setTvText(TextView textView,String text){
+        if (text!=null){
+            textView.setText(text);
+        }
+    }
+
+
+    public interface DialogUtilsCallBack{
+        void cancel();
+        void affirm();
+    }
 
 
 }

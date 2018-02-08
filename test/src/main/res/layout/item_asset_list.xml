@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<cn.cash360.tiger.widget.ListItemView android:id="@id/liv_item" app:model="fourChild" style="@style/miv_common_style"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

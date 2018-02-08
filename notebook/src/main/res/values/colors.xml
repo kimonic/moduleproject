@@ -7,5 +7,7 @@
     <color name="colorBlack">#111111</color>
     <color name="colorBac">#71C171</color>
     <color name="color_line">#F4F4F4</color>
+    <color name="colorQianLan">#00ADED</color>
+    <color name="colorGray">#999999</color>
 
 </resources>

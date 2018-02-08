@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/layout_tips" android:paddingTop="@dimen/dp_11" android:paddingBottom="@dimen/dp_11" style="@style/item_layout"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/sp_12" android:id="@id/text_view_tips" android:layout_toLeftOf="@id/text_view_amount" style="@style/item_text_secondary" />
-    <TextView android:textSize="@dimen/sp_15" android:id="@id/text_view_amount" style="@style/item_text_right" />
-</RelativeLayout>

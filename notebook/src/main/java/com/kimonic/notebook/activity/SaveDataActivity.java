@@ -48,6 +48,11 @@ public class SaveDataActivity extends BaseActivity {
     }
 
     @Override
+    protected int setStatusBarColor() {
+        return 0;
+    }
+
+    @Override
     public void onClick(View v) {
 
     }

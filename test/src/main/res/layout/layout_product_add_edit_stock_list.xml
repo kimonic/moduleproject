@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <android.support.v7.widget.SwitchCompat android:textSize="@dimen/sp_16" android:textColor="@color/text_view_black" android:id="@id/switch_init_stock" android:background="@color/white" android:padding="@dimen/dp_14" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="初始库存" />
-    <cn.cash360.tiger.widget.MyListView android:id="@id/my_list_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@drawable/line_divider" />
-</LinearLayout>

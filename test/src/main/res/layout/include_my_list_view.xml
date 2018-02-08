@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <cn.cash360.tiger.widget.MyListView android:id="@id/list_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@drawable/line_divide_with_padding" android:dividerHeight="1.0px"
-      xmlns:android="http://schemas.android.com/apk/res/android" />
-    <include layout="@layout/image_divider" />
-</LinearLayout>

@@ -193,11 +193,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);//禁止截屏
 //        getSupportActionBar().hide();//代码隐藏actionbar
 
-        if (isHideStatusBar()){
+        if (isHideStatusBar()) {
             Window window = getWindow();
             //隐藏状态栏
             //定义全屏参数
-            int flag=WindowManager.LayoutParams.FLAG_FULLSCREEN;
+            int flag = WindowManager.LayoutParams.FLAG_FULLSCREEN;
             //设置当前窗体为全屏显示
             window.setFlags(flag, flag);
         }
@@ -212,7 +212,9 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
 
     }
 
-    /**设置是否隐藏状态栏*/
+    /**
+     * 设置是否隐藏状态栏
+     */
     public boolean isHideStatusBar() {
         return false;
     }
@@ -226,9 +228,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
     /**
      * 设置状态栏颜色改变状态栏颜色
      */
-    protected int setStatusBarColor() {
-        return 0;
-    }
+    protected abstract int setStatusBarColor();
 
     /**
      * 子类可以重写决定是否使用透明状态栏
@@ -237,12 +237,13 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         return true;
     }
 
-    /**设置顶部margin,
+    /**
+     * 设置顶部margin,
      *
-     * @param view  最顶部的view
-     * @param statusBarHeight  状态栏高度
+     * @param view            最顶部的view
+     * @param statusBarHeight 状态栏高度
      */
-    public void setTopMargin(View view,int  statusBarHeight){
+    public void setTopMargin(View view, int statusBarHeight) {
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) view.getLayoutParams();
         params.setMargins(0, statusBarHeight, 0, 0);
         view.setLayoutParams(params);
@@ -343,6 +344,16 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         openActivityForResult(toActivity, null, requestCode);
     }
 
+
+    /**
+     * 带返回结果,启动下一个activity
+     */
+    @SuppressWarnings("unused")
+    protected void openActivityForResult(Class<? extends BaseActivity> toActivity, String key1, String value1,int requestCode) {
+        Intent intent = new Intent(this, toActivity);
+        intent.putExtra(key1, value1);
+        startActivityForResult(intent, requestCode);
+    }
 
     /**
      * 带返回结果,启动下一个activity

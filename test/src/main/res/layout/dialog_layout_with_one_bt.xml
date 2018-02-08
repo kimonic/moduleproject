@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@drawable/shape_dialog_root_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/sp_18" android:textColor="@color/tv_color_main_text" android:gravity="center" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_20" android:layout_marginTop="@dimen/dp_20" android:layout_marginRight="@dimen/dp_20" android:text="标题" />
-    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
-        <TextView android:textColor="@color/tv_color_aux_text" android:gravity="center" android:id="@id/tv_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_20" android:layout_marginTop="@dimen/dp_20" android:layout_marginRight="@dimen/dp_20" android:text="标题" />
-    </ScrollView>
-    <Button android:textSize="@dimen/sp_18" android:textColor="@color/colorAccent" android:layout_gravity="bottom" android:id="@id/btn_save" android:background="@drawable/selector_dialog_bottom_bt" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50" android:layout_marginTop="@dimen/dp_30" android:text="@string/save" />
-</LinearLayout>

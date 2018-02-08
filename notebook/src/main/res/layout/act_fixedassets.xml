@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.kimonic.utilsmodule.ui.MTopBarView
+        android:id="@+id/mtb_act_fixedassets"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorQianLan"
+        app:centerText="@string/gudingzichan"
+        app:leftImage="@drawable/xvector_back"
+        />
+    <TextView
+        android:id="@+id/tv_act_fixedassets_chakangudingzichan"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/chakangudingzichan"
+        android:drawableStart="@drawable/xshape_redcircle"
+        />
+    <TextView
+        android:id="@+id/tv_act_fixedassets_jilugudingzichan"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/jilugudingzichan"
+        android:drawableStart="@drawable/xshape_yellowcircle"
+        />
+    <TextView
+        android:id="@+id/tv_act_fixedassets_gudingzichanjiluchaxun"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/gudingzichanjiluchaxun"
+        android:drawableStart="@drawable/xshape_bluecircle"
+        />
+    <TextView
+        android:id="@+id/tv_act_fixedassets_daochugudingzichanjilu"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/daochugudingzichanjilu"
+        android:drawableStart="@drawable/xshape_erniucircle"
+        />
+    <!--<TextView-->
+        <!--android:id="@+id/tv_act_fixedassets_suoshizaji"-->
+        <!--style="@style/FragAccountingTextStyle2"-->
+        <!--android:text="@string/suoshizaji"-->
+        <!--android:drawableStart="@drawable/xshape_greencircle"-->
+        <!--/>-->
+    <!--<TextView-->
+        <!--android:id="@+id/tv_act_fixedassets_beiwanglu"-->
+        <!--style="@style/FragAccountingTextStyle2"-->
+        <!--android:text="@string/beiwanglu"-->
+        <!--android:drawableStart="@drawable/xshape_violetcircle"-->
+        <!--/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_act_fixedassets_shujudaochu"-->
+        <!--style="@style/FragAccountingTextStyle2"-->
+        <!--android:text="@string/shujudaochu"-->
+        <!--android:drawableStart="@drawable/xshape_cyancircle"-->
+        <!--/>-->
+
+</LinearLayout>

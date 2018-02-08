@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:id="@id/ll_product_add" android:background="@drawable/selector_item_layout" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/sp_12" android:textColor="@color/text_view_black" android:gravity="center" android:padding="@dimen/dp_6" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="添加货品" android:drawableLeft="@drawable/ic_increase" android:drawablePadding="@dimen/dp_6" />
-</LinearLayout>
