@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="TextStyle" >
+    <style name="TextStyle">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:gravity">center</item>
@@ -17,7 +17,7 @@
 
     </style>
 
-    <style name="TextStyleNoTopMargin" >
+    <style name="TextStyleNoTopMargin">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:gravity">center</item>
@@ -25,20 +25,20 @@
 
     </style>
 
-    <style name="TextStyle001" >
+    <style name="TextStyle001">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:gravity">center</item>
 
     </style>
 
-    <style name="FinddataDetailsTextStyle1" >
+    <style name="FinddataDetailsTextStyle1">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="EditTextCompare" >
+    <style name="EditTextCompare">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:gravity">center</item>
@@ -49,7 +49,7 @@
         <item name="android:layout_marginTop">5dp</item>
     </style>
 
-    <style name="FragAccountingTextStyle1" >
+    <style name="FragAccountingTextStyle1">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:gravity">center</item>
@@ -58,7 +58,20 @@
         <item name="android:layout_weight">1</item>
     </style>
 
-    <style name="FragAccountingTextStyle2" >
+    <style name="LinearLayoutStytleEditOldRecord">
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:background">@color/colorBac</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+
+    <style name="FragAccountingTextStyle2">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:gravity">center_vertical</item>
@@ -70,6 +83,30 @@
         <item name="android:layout_marginTop">5dp</item>
     </style>
 
+
+    <style name="TextStyleActSaveData">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:background">@color/color_line</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="TextStyleActSaveData1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorGlobal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:background">@color/color_line</item>
+        <item name="android:paddingLeft">50dp</item>
+        <item name="android:paddingRight">50dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
 
 
 </resources>

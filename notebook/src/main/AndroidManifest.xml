@@ -19,7 +19,7 @@
             <!--</intent-filter>-->
         </activity>
         <!--1.保存数据activity-->
-        <activity android:name=".activity.SaveDataActivity" />
+        <activity android:name=".activity.fixedassets.SaveDataActivity" />
         <!--2.添加新用户activity-->
         <activity android:name=".activity.AddNewUserActivity" />
         <!--3.添加用户下的标签activity-->

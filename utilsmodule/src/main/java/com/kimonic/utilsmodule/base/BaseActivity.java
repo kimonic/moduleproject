@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.kimonic.utilsmodule.R;
+import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.kimonic.utilsmodule.utils.DialogUtils;
 import com.kimonic.utilsmodule.utils.ScreenSizeUtils;
 import com.kimonic.utilsmodule.utils.ToastUtils;
@@ -401,6 +402,17 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         }
 
         return false;
+    }
+
+    /**顶部topbarview左侧按钮处理*/
+
+    public void setCloseLisenter(MTopBarView mtb){
+        mtb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeActivity();
+            }
+        });
     }
 
     @Override

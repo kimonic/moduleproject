@@ -118,7 +118,7 @@ public class DialogUtils {
             window.setContentView(view);
             WindowManager.LayoutParams lp = window.getAttributes();
 //            Log.e(TAG, "showProgreessDialog: --ScreenSizeUtils.getDensity(this)-"+ ScreenSizeUtils.getDensity(this));
-            lp.width = 100 * ScreenSizeUtils.getDensity(context);
+            lp.width = 300 * ScreenSizeUtils.getDensity(context);
             lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
             lp.gravity = Gravity.CENTER;
             window.setAttributes(lp);

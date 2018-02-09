@@ -88,6 +88,14 @@ public class FindDataDetailsActivity extends BaseActivity {
 
     @Override
     public void initListener() {
+
+        mtb.getLeftTV().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeActivity();
+            }
+        });
+
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
@@ -127,6 +135,8 @@ public class FindDataDetailsActivity extends BaseActivity {
 
         });
 
+
+
     }
 
     @Override
@@ -152,6 +162,8 @@ public class FindDataDetailsActivity extends BaseActivity {
                 viewHolder.setText(R.id.tv_lv_savedatabean_record, item.getDateFlag());
                 viewHolder.setText(R.id.tv_lv_savedatabean_label, item.getItem());
                 viewHolder.setText(R.id.tv_lv_savedatabean_mark, item.getMark());
+                viewHolder.setText(R.id.tv_lv_savedatabean_modifytimes, String.valueOf(item.getFrequencyOfModification()));
+                viewHolder.setText(R.id.tv_lv_savedatabean_lastmodify, item.getLastModify());
             }
         };
     }

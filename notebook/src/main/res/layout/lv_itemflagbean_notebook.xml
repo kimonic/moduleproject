@@ -4,9 +4,8 @@
     android:layout_height="match_parent">
     <TextView
         android:id="@+id/tv_lv_itemflagbean"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        style="@style/TextStyle"
+        style="@style/TextStyleActSaveData1"
+        android:drawableStart="@drawable/xvector_yousanjiao"
         />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_line"
     android:orientation="vertical">
+
     <com.kimonic.utilsmodule.ui.MTopBarView
-        android:id="@+id/mtb_act_finddatadetails"
+        android:id="@+id/mtb_act_editoldrecord"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorQianLan"
@@ -14,98 +15,122 @@
         app:leftImage="@drawable/xvector_back" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-
+       style="@style/LinearLayoutStytleEditOldRecord"
         >
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            style="@style/TextStyle001"
-            android:text="@string/zichanleibie"
-            />
 
         <TextView
-            android:id="@+id/tv_lv_savedatabean_label"
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/zichanleibie" />
+
+        <EditText
+            android:id="@+id/et_act_editoldrecord_label"
+            style="@style/TextStyle001"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TextStyle001"
-            />
+            android:background="@null" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp" >
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            style="@style/TextStyle001"
-            android:text="@string/zichanjiazhi"
-            />
+        style="@style/LinearLayoutStytleEditOldRecord"
+        >
 
         <TextView
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/zichanjiazhi" />
+
+        <EditText
+            android:id="@+id/et_act_editoldrecord_shuzhi"
+            style="@style/TextStyle001"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TextStyle001"
-            android:id="@+id/tv_lv_savedatabean_shuzhi"
-            />
+            android:background="@null" />
     </LinearLayout>
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp" >
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            style="@style/TextStyle001"
-            android:text="@string/jiluriqi"
-            />
+        style="@style/LinearLayoutStytleEditOldRecord"
+        >
 
         <TextView
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/jiluriqi" />
+
+        <TextView
+            android:id="@+id/et_act_editoldrecord_record"
+            style="@style/TextStyle001"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TextStyle001"
-            android:id="@+id/tv_lv_savedatabean_record"
             />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp" >
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            style="@style/TextStyle001"
-            android:text="@string/zichanbeizhu"
-            />
+        style="@style/LinearLayoutStytleEditOldRecord"
+        >
 
         <TextView
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/zichanbeizhu" />
+
+        <EditText
+            android:id="@+id/et_act_editoldrecord_mark"
+            style="@style/TextStyle001"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@null" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LinearLayoutStytleEditOldRecord"
+        >
+
+        <TextView
             style="@style/TextStyle001"
-            android:id="@+id/tv_lv_savedatabean_mark"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/xiugaicishu" />
+
+        <TextView
+            android:id="@+id/tv_act_editoldrecord_modifytimes"
+            style="@style/TextStyle001"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LinearLayoutStytleEditOldRecord"
+        >
+
+        <TextView
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/zuihouxiugairiqi" />
+
+        <TextView
+            android:id="@+id/tv_act_editoldrecord_lastmodify"
+            style="@style/TextStyle001"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             />
     </LinearLayout>
+    <TextView
+        android:id="@+id/tv_act_editoldrecord_save"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorQianLan"
+        android:textColor="@color/colorWhite"
+        android:text="@string/querenbaocunxiugai" />
+
 
 </LinearLayout>

@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBac"
     android:orientation="vertical">
 
     <com.kimonic.utilsmodule.ui.MTopBarView
@@ -18,7 +17,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:background="@color/colorGlobal"
         android:gravity="center"
         android:orientation="horizontal">
@@ -27,7 +27,7 @@
             style="@style/FinddataDetailsTextStyle1"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
-            android:text="@string/shuzhizongji" />
+            android:text="@string/zichanzongji" />
 
         <TextView
             android:id="@+id/tv_act_finddatadetails_total"
@@ -40,8 +40,11 @@
         android:id="@+id/lv_act_finddatadetails"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:divider="#00000000"
-        android:dividerHeight="5dp" />
+        android:divider="@color/color_line"
+        android:dividerHeight="5dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@color/colorBac"
+        />
 
 </LinearLayout>

@@ -65,9 +65,23 @@
     <string name="gudingzichanjilu">固定资产记录</string>
     <string name="jiluxiangqing">记录详情</string>
     <string name="beizhu">备注:</string>
-    <string name="zichanleibie">资产类别</string>
-    <string name="zichanjiazhi">资产价值</string>
+    <string name="zichanleibie">资产类别:</string>
+    <string name="zichanjiazhi">资产价值:</string>
     <string name="zichanbeizhu" >资产备注:</string>
     <string name="quedingyaoshanchugaitiaojilume">确定要删除该条记录么?</string>
     <string name="xiugaijilu">修改记录</string>
+    <string name="querenbaocunxiugai">确认保存修改</string>
+    <string name="bunenghuifu">保存数据将不能恢复原来的数据,请谨慎操作,您确定要保存修改后的数据么?</string>
+    <string name="zuihouxiugairiqi">最后修改日期:</string>
+    <string name="xiugaicishu">修改次数</string>
+    <string name="xuanzeyiyouzichanleibiejinxingjilu">\t\t选择已有资产类别进行记录</string>
+    <string name="tianjiaxindezichanleibiejinxingjilu">\t\t添加新的资产类别进行记录</string>
+    <string name="zichanzongji">资产总计:</string>
+    <string name="dianjitianjiaxinleibie">\t\t点击添加新类别</string>
+    <string name="zichanjilu">资产记录</string>
+    <string name="zichanjiluxiangqing">资产记录详情</string>
+    <string name="qingshuruzichanleibie">请输入资产类别</string>
+    <string name="zichanleibiebunengweikong">资产类别不能为空!</string>
+    <string name="gaileibieyicunzai">当前记录日期下的该资产类别已有记录,是否需要修改原来的记录?修改后原数据将不能恢复,请谨慎操作!!</string>
+    <string name="zichanjiazhibunengweikong">资产价值不能为空!</string>
 </resources>

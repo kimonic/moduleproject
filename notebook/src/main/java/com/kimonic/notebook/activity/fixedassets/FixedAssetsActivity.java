@@ -48,6 +48,7 @@ public class FixedAssetsActivity extends BaseActivity {
                 openActivity(FindDataActivity.class);
                 break;
             case R.id.tv_act_fixedassets_jilugudingzichan://记录
+                openActivity(SaveDataActivity.class);
                 break;
             case R.id.tv_act_fixedassets_gudingzichanjiluchaxun://查询
                 break;

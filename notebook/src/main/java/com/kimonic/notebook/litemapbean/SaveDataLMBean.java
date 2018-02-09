@@ -32,8 +32,26 @@ public class SaveDataLMBean extends DataSupport {
     private  String  month;
     /**资产备注*/
     private  String  mark;
-    /**唯一标识id*/
-    public  long  myExtendId;
+    /**最后修改日期*/
+    private  String  lastModify;
+    /**修改次数*/
+    private  int  frequencyOfModification=0;
+
+    public String getLastModify() {
+        return lastModify;
+    }
+
+    public void setLastModify(String lastModify) {
+        this.lastModify = lastModify;
+    }
+
+    public int getFrequencyOfModification() {
+        return frequencyOfModification;
+    }
+
+    public void setFrequencyOfModification(int frequencyOfModification) {
+        this.frequencyOfModification = frequencyOfModification;
+    }
 
     public long getMyExtendId() {
         return getBaseObjId();

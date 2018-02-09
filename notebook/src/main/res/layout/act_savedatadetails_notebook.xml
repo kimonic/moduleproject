@@ -1,91 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBac"
     android:orientation="vertical">
 
-    <LinearLayout
+    <com.kimonic.utilsmodule.ui.MTopBarView
+        android:id="@+id/mtb_act_savedatadetails"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorGlobal"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="40dp"
+        android:background="@color/colorQianLan"
+        app:centerText="@string/zichanjiluxiangqing"
+        app:leftImage="@drawable/xvector_back"
+        />
 
-        <TextView
-            style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/dangqiandengluyognhuming" />
-
-        <TextView
-            android:id="@+id/tv_act_savedatadetails_current_user"
-            style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_act_savedatadetails_label"
-        style="@style/TextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="36dp" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorGlobal"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_marginTop="10dp"
+        style="@style/LinearLayoutStytleEditOldRecord"
         >
 
         <TextView
-            style="@style/TextStyleNoTopMargin"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:text="@string/qingshurubaocunshuju" />
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/zichanleibie" />
 
         <EditText
-            android:id="@+id/et_act_savedatadetails_content"
-            style="@style/TextStyleNoTopMargin"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="36dp"
-            android:inputType="numberDecimal"
+            android:id="@+id/et_act_savedatadetails_label"
+            style="@style/TextStyle001"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/qingshuruzichanleibie"
+            android:background="@null" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LinearLayoutStytleEditOldRecord"
+        >
+
+        <TextView
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/zichanjiazhi" />
+
+        <EditText
+            android:id="@+id/et_act_savedatadetails_shuzhi"
+            style="@style/TextStyle001"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/LinearLayoutStytleEditOldRecord"
+        >
+
+        <TextView
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/jiluriqi" />
+
+        <EditText
+            android:id="@+id/et_act_savedatadetails_record"
+            style="@style/TextStyle001"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
             />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorGlobal"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_marginTop="10dp"
+        style="@style/LinearLayoutStytleEditOldRecord"
         >
 
         <TextView
-            style="@style/TextStyleNoTopMargin"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:text="@string/qingshurubaocunriqi" />
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/zichanbeizhu" />
 
         <EditText
-            android:id="@+id/et_act_savedatadetails_riqi"
-            style="@style/TextStyleNoTopMargin"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="36dp"
-            android:inputType="text"
-            android:hint="@string/geshi"
+            android:id="@+id/et_act_savedatadetails_mark"
+            style="@style/TextStyle001"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
             />
     </LinearLayout>
 

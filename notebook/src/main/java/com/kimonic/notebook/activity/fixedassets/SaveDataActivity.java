@@ -1,4 +1,4 @@
-package com.kimonic.notebook.activity;
+package com.kimonic.notebook.activity.fixedassets;
 
 import android.view.View;
 import android.widget.AdapterView;
@@ -6,8 +6,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
+import com.kimonic.notebook.activity.SaveDataDetailsActivity;
+import com.kimonic.notebook.config.UserConfig;
 import com.kimonic.notebook.litemapbean.ItemFlagLMBean;
+import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
+import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.lzy.okgo.model.Response;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
@@ -32,10 +36,13 @@ import butterknife.BindView;
 
 public class SaveDataActivity extends BaseActivity {
 
-    @BindView(R.id.tv_act_savedata_current_user)
-    TextView tvCurrentUser;
+
     @BindView(R.id.lv_act_savedata)
     ListView lv;
+    @BindView(R.id.tv_act_savedata_addnew)
+    TextView tv;
+    @BindView(R.id.mtb_act_savedata)
+    MTopBarView mtb;
     /**
      * 添加到的用户名
      */
@@ -49,22 +56,31 @@ public class SaveDataActivity extends BaseActivity {
 
     @Override
     protected int setStatusBarColor() {
-        return 0;
+        return getColorRes(R.color.colorQianLan);
     }
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.tv_act_savedata_addnew:
+                openActivity(SaveDataDetailsActivity.class);
+                break;
+//                 case R.id.:break;
+//                 case R.id.:break;
+//                 case R.id.:break;
+//                 case R.id.:break;
+//                 case R.id.:break;
+        }
     }
 
     @Override
     public void initDataFromIntent() {
-        userName = getIntent().getStringExtra("username");
+        userName = UserConfig.getInstance().getUserName(this);
     }
 
     @Override
     public void initView() {
-        tvCurrentUser.setText(userName);
+        setTopMargin(mtb, MApp.STATUS_BAE_HEIGHT);
 
     }
 
@@ -73,23 +89,23 @@ public class SaveDataActivity extends BaseActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                openActivityParams(SaveDataDetailsActivity.class,"label",listItem.get(position).getItemName(),
-                "itemFlag",listItem.get(position).getItemFlag());
+                openActivityParams(SaveDataDetailsActivity.class, "label", listItem.get(position).getItemName(),
+                        "itemFlag", listItem.get(position).getItemFlag());
             }
         });
-
+        tv.setOnClickListener(this);
+        setCloseLisenter(mtb);
     }
 
     @Override
     public void initDataFromInternet() {
-       listItem= DataSupport.where("userName = ?",userName).find(ItemFlagLMBean.class);
+        listItem = DataSupport.where("userName = ?", userName).find(ItemFlagLMBean.class);
         loadInternetDataToUi();
 
     }
 
     @Override
     public void loadInternetDataToUi(Response<String> response) {
-
 
 
     }
@@ -99,11 +115,11 @@ public class SaveDataActivity extends BaseActivity {
         lv.setAdapter(getAdapter());
     }
 
-    private CommonAdapter<ItemFlagLMBean>  getAdapter(){
-        return new CommonAdapter<ItemFlagLMBean>(this,R.layout.lv_itemflagbean_notebook,listItem) {
+    private CommonAdapter<ItemFlagLMBean> getAdapter() {
+        return new CommonAdapter<ItemFlagLMBean>(this, R.layout.lv_itemflagbean_notebook, listItem) {
             @Override
             protected void convert(ViewHolder viewHolder, ItemFlagLMBean item, int position) {
-                viewHolder.setText(R.id.tv_lv_itemflagbean,item.getItemName());
+                viewHolder.setText(R.id.tv_lv_itemflagbean, "        " + item.getItemName());
             }
         };
     }
