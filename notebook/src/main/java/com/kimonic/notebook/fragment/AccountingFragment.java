@@ -5,6 +5,7 @@ import android.widget.TextView;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.activity.fixedassets.FixedAssetsActivity;
+import com.kimonic.notebook.activity.investment.InvestmentHomeActivity;
 import com.kimonic.utilsmodule.base.BaseFragment;
 import com.kimonic.utilsmodule.utils.TimeUtils;
 import com.lzy.okgo.model.Response;
@@ -69,6 +70,7 @@ public class AccountingFragment extends BaseFragment {
             case R.id.tv_frag_accounting_shujudaochu://数据导出
                 break;
             case R.id.tv_frag_accounting_touzijizhang://投资记账
+                openActivity(InvestmentHomeActivity.class);
                 break;
         }
     }

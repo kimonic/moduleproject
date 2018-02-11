@@ -1,4 +1,4 @@
-package com.kimonic.notebook.litemapbean;
+package com.kimonic.notebook.litemapbean.fixedassets;
 
 import org.litepal.crud.DataSupport;
 
@@ -9,7 +9,7 @@ import org.litepal.crud.DataSupport;
  * author：          kimonik
  * version：          1.0
  * date：             2018/2/2
- * description：
+ * description：  固定资产记录存储表
  * history：
  * *==================================================================
  */

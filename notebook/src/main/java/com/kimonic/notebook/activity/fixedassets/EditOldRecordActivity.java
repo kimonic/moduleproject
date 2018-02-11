@@ -1,12 +1,11 @@
 package com.kimonic.notebook.activity.fixedassets;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
-import com.kimonic.notebook.litemapbean.SaveDataLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.SaveDataLMBean;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
@@ -18,7 +17,6 @@ import com.lzy.okgo.model.Response;
 import org.litepal.crud.DataSupport;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * * ===============================================================

@@ -1,6 +1,5 @@
 package com.kimonic.notebook.activity;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -8,8 +7,11 @@ import android.widget.TextView;
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.bean.CompareBean;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.SaveDataLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.SaveDataLMBean;
+import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
+import com.kimonic.utilsmodule.ui.MTopBarView;
+import com.kimonic.utilsmodule.utils.StringUtils;
 import com.kimonic.utilsmodule.utils.TimeUtils;
 import com.lzy.okgo.model.Response;
 import com.zhy.adapter.abslistview.CommonAdapter;
@@ -21,7 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * * ===============================================================
@@ -36,8 +37,7 @@ import butterknife.ButterKnife;
  */
 
 public class CompareDataDetailsActivity extends BaseActivity {
-    @BindView(R.id.tv_act_comeparedatadetails_current_user)
-    TextView tvCurrentUser;
+
     @BindView(R.id.lv_act_comparedatadetails)
     ListView lvAct;
     @BindView(R.id.tv_act_comeparedatadetails_shuzhizongji1)
@@ -52,6 +52,8 @@ public class CompareDataDetailsActivity extends BaseActivity {
     TextView tvShuzhizongji5;
     @BindView(R.id.tv_act_comeparedatadetails_shuzhizongji6)
     TextView tvShuzhizongji6;
+    @BindView(R.id.mtb_act_comeparedatadetails)
+    MTopBarView mtb;
 
     private String date1;
     private String date2;
@@ -67,7 +69,7 @@ public class CompareDataDetailsActivity extends BaseActivity {
 
     @Override
     protected int setStatusBarColor() {
-        return 0;
+        return getColorRes(R.color.colorQianLan);
     }
 
     @Override
@@ -87,13 +89,14 @@ public class CompareDataDetailsActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        setTopMargin(mtb, MApp.STATUS_BAE_HEIGHT);
 
-        tvShuzhizongji1.setText((date1+"总计:    "));
-        tvShuzhizongji3.setText((date2+"总计:    "));
+        tvShuzhizongji1.setText((date1 + "总计:    "));
+        tvShuzhizongji3.setText((date2 + "总计:    "));
 
-        float total1=0;
-        float total2=0;
-        float total3=0;
+        float total1 = 0;
+        float total2 = 0;
+        float total3 = 0;
 
         list1 = DataSupport.where("userName = ? and dateFlag = ? "
                 , userName, date1).find(SaveDataLMBean.class);
@@ -102,20 +105,18 @@ public class CompareDataDetailsActivity extends BaseActivity {
 
 
         for (int i = 0; i < list1.size(); i++) {
-            total1+=list1.get(i).getValue();
+            total1 += list1.get(i).getValue();
         }
 
         for (int i = 0; i < list2.size(); i++) {
-            total2+=list2.get(i).getValue();
+            total2 += list2.get(i).getValue();
         }
 
-        total3=total2-total1;
+        total3 = total2 - total1;
 
-        tvShuzhizongji2.setText(String.valueOf(total1));
-        tvShuzhizongji4.setText(String.valueOf(total2));
-        tvShuzhizongji6.setText(String.valueOf(total3));
-
-
+        tvShuzhizongji2.setText(StringUtils.getCommaDecimalsStr(""+total1));
+        tvShuzhizongji4.setText(StringUtils.getCommaDecimalsStr(""+total2));
+        tvShuzhizongji6.setText(StringUtils.getCommaDecimalsStr(""+total3));
 
 
         if (list1.size() > list2.size()) {
@@ -149,9 +150,11 @@ public class CompareDataDetailsActivity extends BaseActivity {
                 if (flag && list1.get(i).getItemFlag().equals(list2.get(j).getItemFlag())) {
                     bean.setDateFlag2(list2.get(j).getDateFlag());
                     bean.setValue2(list2.get(j).getValue());
+                    bean.setMark2(list2.get(j).getMark());
                 } else if (list1.get(i).getItemFlag().equals(list2.get(j).getItemFlag())) {
                     bean.setDateFlag1(list2.get(j).getDateFlag());
                     bean.setValue1(list2.get(j).getValue());
+                    bean.setMark1(list2.get(j).getMark());
                 }
             }
 
@@ -162,7 +165,7 @@ public class CompareDataDetailsActivity extends BaseActivity {
 
     @Override
     public void initListener() {
-
+        setCloseLisenter(mtb);
     }
 
     @Override
@@ -186,12 +189,15 @@ public class CompareDataDetailsActivity extends BaseActivity {
             @Override
             protected void convert(ViewHolder viewHolder, CompareBean item, int position) {
                 viewHolder.setText(R.id.tv_lv_comparebean_label, item.getItem());
-                viewHolder.setText(R.id.tv_lv_comparebean_shuzhi1, String.valueOf(item.getValue1()));
-                viewHolder.setText(R.id.tv_lv_comparebean_shuzhi2, String.valueOf(item.getValue2()));
-                viewHolder.setText(R.id.tv_lv_comparebean_shuzhi3, String.valueOf(item.getValue2() - item.getValue1()));
+                viewHolder.setText(R.id.tv_lv_comparebean_shuzhi1, StringUtils.getCommaDecimalsStr(""+item.getValue1()));
+                viewHolder.setText(R.id.tv_lv_comparebean_shuzhi2, StringUtils.getCommaDecimalsStr(""+item.getValue2()));
+                viewHolder.setText(R.id.tv_lv_comparebean_shuzhi3, StringUtils.getCommaDecimalsStr(""+(item.getValue2() - item.getValue1())));
 
                 viewHolder.setText(R.id.tv_lv_comparebean_record1, item.getDateFlag1());
                 viewHolder.setText(R.id.tv_lv_comparebean_record2, item.getDateFlag2());
+
+                viewHolder.setText(R.id.tv_lv_comparebean_mark1, item.getMark1());
+                viewHolder.setText(R.id.tv_lv_comparebean_mark2, item.getMark2());
 
                 viewHolder.setText(R.id.tv_lv_comparebean_record3, TimeUtils.getNowDateShort());
 
@@ -200,10 +206,4 @@ public class CompareDataDetailsActivity extends BaseActivity {
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 }

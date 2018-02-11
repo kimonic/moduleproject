@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
+import com.kimonic.notebook.activity.CompareDataActivity;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
@@ -35,6 +36,9 @@ public class FixedAssetsActivity extends BaseActivity {
     @BindView(R.id.tv_act_fixedassets_daochugudingzichanjilu)
     TextView tvExport;
 
+    @BindView(R.id.tv_act_fixedassets_duibizichanjilu)
+    TextView tvCompare;
+
 
     @Override
     public int getLayoutResId() {
@@ -51,10 +55,13 @@ public class FixedAssetsActivity extends BaseActivity {
                 openActivity(SaveDataActivity.class);
                 break;
             case R.id.tv_act_fixedassets_gudingzichanjiluchaxun://查询
+                openActivity(QueryDataActivity.class);
                 break;
             case R.id.tv_act_fixedassets_daochugudingzichanjilu://导出
                 break;
-//            case R.id.: break;
+            case R.id.tv_act_fixedassets_duibizichanjilu://对比
+                openActivity(CompareDataActivity.class);
+                break;
 //            case R.id.: break;
         }
     }
@@ -81,6 +88,7 @@ public class FixedAssetsActivity extends BaseActivity {
         tvTakeNotes.setOnClickListener(this);
         tvQuery.setOnClickListener(this);
         tvExport.setOnClickListener(this);
+        tvCompare.setOnClickListener(this);
 
     }
 

@@ -32,17 +32,18 @@
         android:drawableStart="@drawable/xshape_bluecircle"
         />
     <TextView
+        android:id="@+id/tv_act_fixedassets_duibizichanjilu"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/duibigudingzichanjilu"
+        android:drawableStart="@drawable/xshape_greencircle"
+        />
+    <TextView
         android:id="@+id/tv_act_fixedassets_daochugudingzichanjilu"
         style="@style/FragAccountingTextStyle2"
         android:text="@string/daochugudingzichanjilu"
         android:drawableStart="@drawable/xshape_erniucircle"
         />
-    <!--<TextView-->
-        <!--android:id="@+id/tv_act_fixedassets_suoshizaji"-->
-        <!--style="@style/FragAccountingTextStyle2"-->
-        <!--android:text="@string/suoshizaji"-->
-        <!--android:drawableStart="@drawable/xshape_greencircle"-->
-        <!--/>-->
+
     <!--<TextView-->
         <!--android:id="@+id/tv_act_fixedassets_beiwanglu"-->
         <!--style="@style/FragAccountingTextStyle2"-->

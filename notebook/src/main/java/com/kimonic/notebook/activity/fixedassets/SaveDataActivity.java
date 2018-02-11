@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.activity.SaveDataDetailsActivity;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.ItemFlagLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.ItemFlagLMBean;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
@@ -90,7 +90,7 @@ public class SaveDataActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 openActivityParams(SaveDataDetailsActivity.class, "label", listItem.get(position).getItemName(),
-                        "itemFlag", listItem.get(position).getItemFlag());
+                        "itemFlag", ""+listItem.get(position).getItemFlag());
             }
         });
         tv.setOnClickListener(this);

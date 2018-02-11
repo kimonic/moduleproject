@@ -1,4 +1,4 @@
-package com.kimonic.notebook.litemapbean;
+package com.kimonic.notebook.litemapbean.fixedassets;
 
 import org.litepal.crud.DataSupport;
 
@@ -9,18 +9,24 @@ import org.litepal.crud.DataSupport;
  * author：          kimonik
  * version：          1.0
  * date：             2018/2/2
- * description：
+ * description：  固定资产资产类别记录表
  * history：
  * *==================================================================
  */
 
 public class ItemFlagLMBean extends DataSupport {
-    /**用户名*/
-    private  String  userName;
-    /**标签名*/
-    private  String  itemName;
-    /**标签唯一id*/
-    private  String  itemFlag;
+    /**
+     * 用户名
+     */
+    private String userName;
+    /**
+     * 标签名
+     */
+    private String itemName;
+    /**
+     * 标签唯一id
+     */
+    private long itemFlag;
 
     public String getUserName() {
         return userName;
@@ -38,11 +44,8 @@ public class ItemFlagLMBean extends DataSupport {
         this.itemName = itemName;
     }
 
-    public String getItemFlag() {
-        return itemFlag;
+    public long getItemFlag() {
+        return getBaseObjId();
     }
 
-    public void setItemFlag(String itemFlag) {
-        this.itemFlag = itemFlag;
-    }
 }

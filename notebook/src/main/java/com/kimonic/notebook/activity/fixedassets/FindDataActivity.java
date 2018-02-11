@@ -6,8 +6,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.kimonic.notebook.R;
+import com.kimonic.notebook.comparator.DateComparator;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.DateRecordLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.DateRecordLMBean;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
@@ -17,6 +18,7 @@ import com.zhy.adapter.abslistview.ViewHolder;
 
 import org.litepal.crud.DataSupport;
 
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -62,6 +64,8 @@ public class FindDataActivity extends BaseActivity {
     public void initView() {
         setTopMargin(mtb, MApp.STATUS_BAE_HEIGHT);
         listDate = DataSupport.where("userName = ? ", userName).find(DateRecordLMBean.class);
+        Collections.sort(listDate,new DateComparator());
+
         adapter = getAdapter();
         lv.setAdapter(adapter);
     }

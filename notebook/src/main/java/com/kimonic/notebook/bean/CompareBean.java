@@ -26,12 +26,32 @@ public class CompareBean {
     /**创建日期标签*/
     private  String  dateFlag1;
 
+    /**记录备注*/
+    private  String  mark1;
+    private  String  mark2;
+
 
 
     /**标签数值*/
     private  float   value2;
     /**创建日期标签*/
     private  String  dateFlag2;
+
+    public String getMark1() {
+        return mark1;
+    }
+
+    public void setMark1(String mark1) {
+        this.mark1 = mark1;
+    }
+
+    public String getMark2() {
+        return mark2;
+    }
+
+    public void setMark2(String mark2) {
+        this.mark2 = mark2;
+    }
 
     public String getUserName() {
         return userName;

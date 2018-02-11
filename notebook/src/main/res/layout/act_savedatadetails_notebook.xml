@@ -50,6 +50,7 @@
             style="@style/TextStyle001"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/qingshuruzichanjiazhi"
             android:background="@null" />
     </LinearLayout>
 
@@ -69,6 +70,7 @@
             style="@style/TextStyle001"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/qingshurujiluriqi"
             android:background="@null"
             />
     </LinearLayout>
@@ -88,6 +90,7 @@
             style="@style/TextStyle001"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/qingshuruzichanbeizhu"
             android:background="@null"
             />
     </LinearLayout>

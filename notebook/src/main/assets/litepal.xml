@@ -8,9 +8,19 @@
 
    <!--Java bean,对应相应的表名,必须写完整包路径-->
     <list>
-        <mapping class="com.kimonic.notebook.litemapbean.DataNameTableLMBean"/>
-        <mapping class="com.kimonic.notebook.litemapbean.SaveDataLMBean"/>
-        <mapping class="com.kimonic.notebook.litemapbean.ItemFlagLMBean"/>
-        <mapping class="com.kimonic.notebook.litemapbean.DateRecordLMBean"/>
+        <!--用户名密码表-->
+        <mapping class="com.kimonic.notebook.litemapbean.fixedassets.DataNameTableLMBean"/>
+        <!--固定资产记录存储表-->
+        <mapping class="com.kimonic.notebook.litemapbean.fixedassets.SaveDataLMBean"/>
+        <!--固定资产资产类别记录表-->
+        <mapping class="com.kimonic.notebook.litemapbean.fixedassets.ItemFlagLMBean"/>
+        <!--固定资产记录日期存储表-->
+        <mapping class="com.kimonic.notebook.litemapbean.fixedassets.DateRecordLMBean"/>
+        <!--投资记录详情表-->
+        <mapping class="com.kimonic.notebook.litemapbean.invest.InvestmentRecordDetailsLMBean"/>
+        <mapping class="com.kimonic.notebook.litemapbean.invest.InvestDateLMBean"/>
+        <mapping class="com.kimonic.notebook.litemapbean.invest.InvestPlateformLMBean"/>
+        <mapping class="com.kimonic.notebook.litemapbean.invest.RepayDateLMBean"/>
+
     </list>
 </litepal>

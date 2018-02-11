@@ -6,7 +6,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
-import com.kimonic.notebook.litemapbean.DataNameTableLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.DataNameTableLMBean;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.kimonic.utilsmodule.utils.ToastUtils;

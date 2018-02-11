@@ -46,6 +46,12 @@
         <activity android:name=".activity.fixedassets.FixedAssetsActivity" />
         <!--10.重新编辑原来的记录activity-->
         <activity android:name=".activity.fixedassets.EditOldRecordActivity" />
+        <!--11.固定资产查询activity-->
+        <activity android:name=".activity.fixedassets.QueryDataActivity" />
+        <!--12.固定资产查询详情activity-->
+        <activity android:name=".activity.fixedassets.QueryDataDetailsActivity" />
+        <!--投资记账主页activity-->
+        <activity android:name=".activity.investment.InvestmentHomeActivity" />
     </application>
 
 </manifest>

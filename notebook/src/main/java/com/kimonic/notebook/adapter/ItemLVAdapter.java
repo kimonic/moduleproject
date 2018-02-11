@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.kimonic.notebook.litemapbean.ItemFlagLMBean;
 import com.kimonic.utilsmodule.base.CommonAdapter;
 
 import java.util.List;

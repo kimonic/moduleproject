@@ -6,9 +6,9 @@ import android.widget.TextView;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.DateRecordLMBean;
-import com.kimonic.notebook.litemapbean.ItemFlagLMBean;
-import com.kimonic.notebook.litemapbean.SaveDataLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.DateRecordLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.ItemFlagLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.SaveDataLMBean;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
@@ -88,7 +88,8 @@ public class SaveDataDetailsActivity extends BaseActivity {
                     vaule = StringUtils.string2Float(etShuzhi.getText().toString().trim());//资产价值
                     mark = etMark.getText().toString().trim();//备注
                     listItem = DataSupport.where("userName = ? and dateFlag = ? and " +
-                            "itemFlag = ?", userName, date, typeName).find(SaveDataLMBean.class);
+                            "itemFlag = ?", userName, date, itemFlag).find(SaveDataLMBean.class);
+
                     if (listItem != null && listItem.size() > 0) {
                         DialogUtils.showPromptDialog(this, getString(R.string.gaileibieyicunzai), new DialogUtils.DialogUtilsCallBack() {
                             @Override
@@ -103,6 +104,16 @@ public class SaveDataDetailsActivity extends BaseActivity {
                                 listItem.get(0).setLastModify(TimeUtils.getNowDateShort());
                                 listItem.get(0).setFrequencyOfModification(listItem.get(0).getFrequencyOfModification() + 1);
                                 listItem.get(0).save();
+                                List<DateRecordLMBean> listDate = DataSupport.where("userName = ? and date = ? "
+                                        , userName, date).find(DateRecordLMBean.class);
+                                if (listDate == null || listDate.size() == 0) {
+                                    DateRecordLMBean bean1 = new DateRecordLMBean();
+                                    bean1.setUserName(userName);
+                                    bean1.setDate(date);
+                                    bean1.save();
+                                }
+
+                                ToastUtils.showToast(SaveDataDetailsActivity.this, R.string.baocunchenggong);
                             }
                         }, null, null, null);
 
@@ -117,18 +128,20 @@ public class SaveDataDetailsActivity extends BaseActivity {
                         bean.setYear(String.valueOf(TimeUtils.getCurrentYear()));
                         bean.setMonth(TimeUtils.getCurrentMonthStr());
                         bean.save();
+
+                        List<DateRecordLMBean> listDate = DataSupport.where("userName = ? and date = ? "
+                                , userName, date).find(DateRecordLMBean.class);
+                        if (listDate == null || listDate.size() == 0) {
+                            DateRecordLMBean bean1 = new DateRecordLMBean();
+                            bean1.setUserName(userName);
+                            bean1.setDate(date);
+                            bean1.save();
+                        }
+
+                        ToastUtils.showToast(SaveDataDetailsActivity.this, R.string.baocunchenggong);
                     }
 
-                    List<DateRecordLMBean> listDate = DataSupport.where("userName = ? and date = ? "
-                            , userName, date).find(DateRecordLMBean.class);
-                    if (listDate == null || listDate.size() == 0) {
-                        DateRecordLMBean bean1 = new DateRecordLMBean();
-                        bean1.setUserName(userName);
-                        bean1.setDate(date);
-                        bean1.save();
-                    }
 
-                    ToastUtils.showToast(SaveDataDetailsActivity.this, R.string.baocunchenggong);
                 }
 
 
@@ -169,25 +182,25 @@ public class SaveDataDetailsActivity extends BaseActivity {
         tvSave.setOnClickListener(this);
     }
 
+    /**添加资产类别*/
     private void addItem(String item) {
-        List<ItemFlagLMBean> listItem = DataSupport.where("itemName = ?", item).find(ItemFlagLMBean.class);
+        List<ItemFlagLMBean> listItem = DataSupport.where("itemName = ? and userName = ?",
+                item, userName).find(ItemFlagLMBean.class);
+
         if (listItem != null && listItem.size() == 0) {
-            List<ItemFlagLMBean> list = DataSupport.where("userName = ?", userName).find(ItemFlagLMBean.class);
+            List<ItemFlagLMBean> list = DataSupport.where("userName = ?", userName).find(ItemFlagLMBean.class);//确定标签唯一标识
             if (list == null) {
                 ItemFlagLMBean bean = new ItemFlagLMBean();
-                bean.setItemFlag("1");
                 bean.setItemName(item);
                 bean.setUserName(userName);
                 bean.save();
             } else {
                 ItemFlagLMBean bean = new ItemFlagLMBean();
-                bean.setItemFlag("" + (list.size() + 1));
                 bean.setItemName(item);
                 bean.setUserName(userName);
                 bean.save();
             }
             ToastUtils.showToast(this, R.string.baocunchenggong);
-
         }
     }
 

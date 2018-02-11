@@ -316,6 +316,16 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
     }
 
     /**
+     * String key, int value启动下一个activity
+     */
+    @SuppressWarnings("unused")
+    protected void openActivityParams(Class<? extends BaseActivity> toActivity, String key, int value) {
+        Intent intent = new Intent(this, toActivity);
+        intent.putExtra(key, value);
+        startActivity(intent);
+    }
+
+    /**
      * Map<String, String>启动下一个activity
      */
     @SuppressWarnings("unused")
@@ -350,7 +360,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
      * 带返回结果,启动下一个activity
      */
     @SuppressWarnings("unused")
-    protected void openActivityForResult(Class<? extends BaseActivity> toActivity, String key1, String value1,int requestCode) {
+    protected void openActivityForResult(Class<? extends BaseActivity> toActivity, String key1, String value1, int requestCode) {
         Intent intent = new Intent(this, toActivity);
         intent.putExtra(key1, value1);
         startActivityForResult(intent, requestCode);
@@ -404,9 +414,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         return false;
     }
 
-    /**顶部topbarview左侧按钮处理*/
+    /**
+     * 顶部topbarview左侧按钮处理
+     */
 
-    public void setCloseLisenter(MTopBarView mtb){
+    public void setCloseLisenter(MTopBarView mtb) {
         mtb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

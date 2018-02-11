@@ -20,6 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:gravity="center"
         android:text="@string/prompt"
         android:textColor="@color/black"

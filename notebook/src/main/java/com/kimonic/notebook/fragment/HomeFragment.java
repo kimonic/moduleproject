@@ -10,7 +10,7 @@ import com.kimonic.notebook.activity.CompareDataActivity;
 import com.kimonic.notebook.activity.fixedassets.FindDataActivity;
 import com.kimonic.notebook.activity.fixedassets.SaveDataActivity;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.SaveDataLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.SaveDataLMBean;
 import com.kimonic.utilsmodule.base.BaseFragment;
 import com.kimonic.utilsmodule.utils.FileUtils;
 import com.kimonic.utilsmodule.utils.TimeUtils;

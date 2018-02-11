@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.ItemFlagLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.ItemFlagLMBean;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.kimonic.utilsmodule.utils.ToastUtils;
@@ -66,13 +66,11 @@ public class AddItemActivity extends BaseActivity {
                         List<ItemFlagLMBean>  list= DataSupport.where("userName = ?",userName).find(ItemFlagLMBean.class);
                         if (list==null){
                             ItemFlagLMBean bean=new ItemFlagLMBean();
-                            bean.setItemFlag("1");
                             bean.setItemName(item);
                             bean.setUserName(userName);
                             bean.save();
                         }else {
                             ItemFlagLMBean bean=new ItemFlagLMBean();
-                            bean.setItemFlag(""+(list.size()+1));
                             bean.setItemName(item);
                             bean.setUserName(userName);
                             bean.save();

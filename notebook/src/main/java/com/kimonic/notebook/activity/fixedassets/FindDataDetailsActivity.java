@@ -9,12 +9,14 @@ import android.widget.TextView;
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.Constants;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.DateRecordLMBean;
-import com.kimonic.notebook.litemapbean.SaveDataLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.DateRecordLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.SaveDataLMBean;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.kimonic.utilsmodule.utils.DialogUtils;
+import com.kimonic.utilsmodule.utils.StringUtils;
+import com.kimonic.utilsmodule.utils.ToastUtils;
 import com.lzy.okgo.model.Response;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
@@ -73,13 +75,14 @@ public class FindDataDetailsActivity extends BaseActivity {
         listDate = DataSupport.where("userName = ? and dateFlag = ? "
                 , userName, date).find(SaveDataLMBean.class);
 
+
         float total = 0;
 
         for (int i = 0; i < listDate.size(); i++) {
             total += listDate.get(i).getValue();
         }
 
-        tvTotal.setText(String.valueOf(total));
+        tvTotal.setText(StringUtils.getCommaDecimalsStr(""+total));
         adapter = getAdapter();
         lv.setAdapter(adapter);
 
@@ -114,8 +117,20 @@ public class FindDataDetailsActivity extends BaseActivity {
                                     DataSupport.deleteAll(DateRecordLMBean.class, "date = ?", listDate.get(position).getDateFlag());
                                     setResult(666);
                                 }
+
+                                float total = 0;
+
+                                for (int i = 0; i < listDate.size(); i++) {
+                                    total += listDate.get(i).getValue();
+                                }
+
+                                tvTotal.setText(StringUtils.getCommaDecimalsStr(""+total));
+
+
                                 listDate.remove(position);
                                 adapter.notifyDataSetChanged();
+                                ToastUtils.showToast(FindDataDetailsActivity.this, R.string.shanchuchenggong);
+
 
                             }
                         }, null, null, null);
@@ -134,7 +149,6 @@ public class FindDataDetailsActivity extends BaseActivity {
 
 
         });
-
 
 
     }

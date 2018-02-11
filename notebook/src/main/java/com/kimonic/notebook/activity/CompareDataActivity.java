@@ -7,9 +7,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
+import com.kimonic.notebook.comparator.DateComparator;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.DateRecordLMBean;
+import com.kimonic.notebook.litemapbean.fixedassets.DateRecordLMBean;
+import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
+import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.kimonic.utilsmodule.utils.ToastUtils;
 import com.lzy.okgo.model.Response;
 import com.zhy.adapter.abslistview.CommonAdapter;
@@ -17,6 +20,7 @@ import com.zhy.adapter.abslistview.ViewHolder;
 
 import org.litepal.crud.DataSupport;
 
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -34,8 +38,6 @@ import butterknife.BindView;
  */
 
 public class CompareDataActivity extends BaseActivity {
-    @BindView(R.id.tv_act_comeparedata_current_user)
-    TextView tvCurrentUser;
     @BindView(R.id.et_act_comparedata_first)
     EditText etFirst;
     @BindView(R.id.et_act_comparedata_second)
@@ -44,6 +46,8 @@ public class CompareDataActivity extends BaseActivity {
     TextView tvCompare;
     @BindView(R.id.lv_act_comparedata)
     ListView lv;
+    @BindView(R.id.mtb_act_comparedata)
+    MTopBarView mtb;
 
 
     private String userName;
@@ -56,19 +60,19 @@ public class CompareDataActivity extends BaseActivity {
 
     @Override
     protected int setStatusBarColor() {
-        return 0;
+        return getColorRes(R.color.colorQianLan);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_act_comeparedata_compare:
-                String date1=etFirst.getText().toString().trim();
-                String date2=etSecond.getText().toString().trim();
-                if ("".equals(date1)&&"".equals(date2)){
+                String date1 = etFirst.getText().toString().trim();
+                String date2 = etSecond.getText().toString().trim();
+                if ("".equals(date1) && "".equals(date2)) {
                     ToastUtils.showToast(CompareDataActivity.this, R.string.bijiaoriqibunengweikong);
-                }else {
-                    openActivityParams(CompareDataDetailsActivity.class,"date1",date1,"date2",date2);
+                } else {
+                    openActivityParams(CompareDataDetailsActivity.class, "date1", date1, "date2", date2);
                 }
                 break;
 //            case R.id.: break;
@@ -86,16 +90,17 @@ public class CompareDataActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        tvCurrentUser.setText(userName);
+        setTopMargin(mtb, MApp.STATUS_BAE_HEIGHT);
 
         listDate = DataSupport.where("userName = ? ", userName).find(DateRecordLMBean.class);
-
+        Collections.sort(listDate, new DateComparator());
 
         lv.setAdapter(getAdapter());
     }
 
     @Override
     public void initListener() {
+        setCloseLisenter(mtb);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -134,4 +139,6 @@ public class CompareDataActivity extends BaseActivity {
             }
         };
     }
+
+
 }

@@ -2,73 +2,73 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/colorGlobal"
-    >
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingBottom="5dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
 
-        >
         <TextView
+            style="@style/TextStyle1"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            style="@style/TextStyleNoTopMargin"
-            android:text="@string/biaoqianming"
-            />
+            android:text="@string/zichanleibie" />
 
         <TextView
             android:id="@+id/tv_lv_comparebean_label"
+            style="@style/TextStyle2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TextStyleNoTopMargin"
-            />
+            android:textColor="@color/colorQianLan" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingBottom="5dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp" >
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            style="@style/TextStyleNoTopMargin"
-            android:text="@string/shuzhi"
-            android:visibility="invisible"
-            />
+        android:paddingTop="5dp">
 
         <TextView
-            android:layout_width="0dp"
+            style="@style/TextStyle1"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            style="@style/TextStyleNoTopMargin"
+            android:text="@string/shuzhi"
+            android:visibility="invisible" />
+
+        <TextView
             android:id="@+id/tv_lv_comparebean_canshu1"
+            style="@style/TextStyle2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/jilu1"
-            />
+            android:textColor="@color/colorBac" />
+
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            style="@style/TextStyleNoTopMargin"
             android:id="@+id/tv_lv_comparebean_canshu2"
+            style="@style/TextStyle2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/jilu2"
-            />
+            android:textColor="@color/colorViolet" />
+
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            style="@style/TextStyleNoTopMargin"
             android:id="@+id/tv_lv_comparebean_canshu3"
+            style="@style/TextStyle2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/chazhi"
-            />
+            android:textColor="@color/colorAccent" />
     </LinearLayout>
 
 
@@ -76,38 +76,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingBottom="5dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp" >
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            style="@style/TextStyleNoTopMargin"
-            android:text="@string/shuzhi"
-            />
+        android:paddingTop="5dp">
 
         <TextView
-            android:layout_width="0dp"
+            style="@style/TextStyle1"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            style="@style/TextStyleNoTopMargin"
+            android:text="@string/zichanjiazhi" />
+
+        <TextView
             android:id="@+id/tv_lv_comparebean_shuzhi1"
-            />
-        <TextView
+            style="@style/TextStyle1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            style="@style/TextStyleNoTopMargin"
+            android:textColor="@color/colorBac" />
+
+        <TextView
             android:id="@+id/tv_lv_comparebean_shuzhi2"
-            />
-        <TextView
+            style="@style/TextStyle1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            style="@style/TextStyleNoTopMargin"
+            android:textColor="@color/colorViolet" />
+
+        <TextView
             android:id="@+id/tv_lv_comparebean_shuzhi3"
-            />
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorAccent" />
     </LinearLayout>
 
 
@@ -115,38 +117,80 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingBottom="5dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp" >
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            style="@style/TextStyleNoTopMargin"
-            android:text="@string/jiluriqi"
-            />
+        android:paddingTop="5dp">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/TextStyle1"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            style="@style/TextStyleNoTopMargin"
+            android:text="@string/jiluriqi" />
+
+        <TextView
             android:id="@+id/tv_lv_comparebean_record1"
-            />
-        <TextView
+            style="@style/TextStyle1"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            style="@style/TextStyleNoTopMargin"
+            android:layout_weight="1"
+            android:textColor="@color/colorBac" />
+
+        <TextView
             android:id="@+id/tv_lv_comparebean_record2"
-            />
-        <TextView
+            style="@style/TextStyle1"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            style="@style/TextStyleNoTopMargin"
+            android:layout_weight="1"
+            android:textColor="@color/colorViolet" />
+
+        <TextView
             android:id="@+id/tv_lv_comparebean_record3"
-            />
+            style="@style/TextStyle2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorAccent" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            style="@style/TextStyle1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/zichanbeizhu" />
+
+        <TextView
+            android:id="@+id/tv_lv_comparebean_mark1"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorBac" />
+
+        <TextView
+            android:id="@+id/tv_lv_comparebean_mark2"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorViolet" />
+
+        <TextView
+            android:id="@+id/tv_lv_comparebean_mark3"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
 
 </LinearLayout>
