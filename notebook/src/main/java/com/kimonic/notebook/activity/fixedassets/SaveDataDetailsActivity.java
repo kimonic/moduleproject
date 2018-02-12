@@ -1,4 +1,4 @@
-package com.kimonic.notebook.activity;
+package com.kimonic.notebook.activity.fixedassets;
 
 import android.view.View;
 import android.widget.EditText;

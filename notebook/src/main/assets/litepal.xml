@@ -4,7 +4,7 @@
     <dbname value="notebook" />
 
     <!--数据库的版本号,当有改变时将版本号加1-->
-    <version value="4" />
+    <version value="6" />
 
    <!--Java bean,对应相应的表名,必须写完整包路径-->
     <list>
@@ -18,8 +18,11 @@
         <mapping class="com.kimonic.notebook.litemapbean.fixedassets.DateRecordLMBean"/>
         <!--投资记录详情表-->
         <mapping class="com.kimonic.notebook.litemapbean.invest.InvestmentRecordDetailsLMBean"/>
+        <!--投资日期记录表-->
         <mapping class="com.kimonic.notebook.litemapbean.invest.InvestDateLMBean"/>
+        <!--投资平台记录表-->
         <mapping class="com.kimonic.notebook.litemapbean.invest.InvestPlateformLMBean"/>
+        <!--回款时间记录表-->
         <mapping class="com.kimonic.notebook.litemapbean.invest.RepayDateLMBean"/>
 
     </list>

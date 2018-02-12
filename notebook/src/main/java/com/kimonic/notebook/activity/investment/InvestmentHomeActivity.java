@@ -51,8 +51,10 @@ public class InvestmentHomeActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_act_investmenthome_chakantouzijilu://查看
+                openActivity(SeeInvestRecordActivity.class);
                 break;
             case R.id.tv_act_investmenthome_tianjiatouzijilu://添加
+                openActivity(AddInvestRecordActivity.class);
                 break;
             case R.id.tv_act_investmenthome_touzijiluchaxun://查询
                 break;
@@ -82,6 +84,7 @@ public class InvestmentHomeActivity extends BaseActivity {
         tvDaoChu.setOnClickListener(this);
         tvHuiKuan.setOnClickListener(this);
         tvTianJia.setOnClickListener(this);
+
     }
 
     @Override

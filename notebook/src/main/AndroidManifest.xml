@@ -25,7 +25,7 @@
         <!--3.添加用户下的标签activity-->
         <activity android:name=".activity.AddItemActivity" />
         <!--4.保存用户下相应标签的详细数据-->
-        <activity android:name=".activity.SaveDataDetailsActivity" />
+        <activity android:name=".activity.fixedassets.SaveDataDetailsActivity" />
         <!--5.查看数据activity-->
         <activity android:name=".activity.fixedassets.FindDataActivity" />
         <!--6.某一天的记录详情-->
@@ -50,8 +50,14 @@
         <activity android:name=".activity.fixedassets.QueryDataActivity" />
         <!--12.固定资产查询详情activity-->
         <activity android:name=".activity.fixedassets.QueryDataDetailsActivity" />
-        <!--投资记账主页activity-->
+        <!--13.投资记账主页activity-->
         <activity android:name=".activity.investment.InvestmentHomeActivity" />
+        <!--14.添加投资记录activity-->
+        <activity android:name=".activity.investment.AddInvestRecordActivity" />
+        <!--15.添加投资记录详情activity-->
+        <activity android:name=".activity.investment.AddInvestRecordDetailsActivity" />
+        <!--16.查看投资记录activity-->
+        <activity android:name=".activity.investment.SeeInvestRecordActivity" />
     </application>
 
 </manifest>

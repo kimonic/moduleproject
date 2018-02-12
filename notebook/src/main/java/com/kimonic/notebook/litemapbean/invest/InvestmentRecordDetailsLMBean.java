@@ -20,10 +20,12 @@ public class InvestmentRecordDetailsLMBean extends DataSupport {
      * 用户名
      */
     private String userName;
-    ////投资平台,投资日期,,回款日期,投资金额,回款金额,投资账号,备注,统计标识,是否已到期,唯一标识
+    ////投资平台,投资日期,,回款日期,投资金额,,备注
+    /// 回款金额,投资账号,统计标识,是否已到期
     // 固定年化收益
-    // 返现金额及其他,额外年化收益,总年化收益,总收益,投资天数,修改次数,最后修改日期
-    // 投资手机号,投资年份,投资月份
+    // 返现金额及其他,额外年化收益,总年化收益,总收益,投资天数,
+    // 投资手机号
+    //修改次数,最后修改日期 ,投资年份,投资月份,唯一标识
     /**
      * 投资年份
      */
@@ -91,7 +93,7 @@ public class InvestmentRecordDetailsLMBean extends DataSupport {
     /**
      * 总收益
      */
-    private String totalIncome;
+    private float totalIncome;
     /**
      * 投资天数
      */
@@ -310,14 +312,14 @@ public class InvestmentRecordDetailsLMBean extends DataSupport {
     /**
      * 总收益
      */
-    public String getTotalIncome() {
+    public float getTotalIncome() {
         return totalIncome;
     }
 
     /**
      * 总收益
      */
-    public void setTotalIncome(String totalIncome) {
+    public void setTotalIncome(float totalIncome) {
         this.totalIncome = totalIncome;
     }
 

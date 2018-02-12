@@ -1,5 +1,6 @@
-package com.kimonic.notebook.activity.fixedassets;
+package com.kimonic.notebook.activity.investment;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -7,7 +8,7 @@ import android.widget.TextView;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.fixedassets.ItemFlagLMBean;
+import com.kimonic.notebook.litemapbean.invest.InvestPlateformLMBean;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
@@ -23,34 +24,29 @@ import butterknife.BindView;
 
 /**
  * * ===============================================================
- * name:             SaveDataActivity
+ * name:             AddInvestRecordActivity
  * guide:
  * author：          kimonik
  * version：          1.0
- * date：             2018/2/2
- * description：  添加数据
+ * date：             2018/2/12
+ * description：添加投资记录activity
  * history：
  * *==================================================================
  */
 
-public class SaveDataActivity extends BaseActivity {
-
-
-    @BindView(R.id.lv_act_savedata)
-    ListView lv;
-    @BindView(R.id.tv_act_savedata_addnew)
-    TextView tv;
-    @BindView(R.id.mtb_act_savedata)
+public class AddInvestRecordActivity extends BaseActivity {
+    @BindView(R.id.mtb_act_addinvestrecord)
     MTopBarView mtb;
-    /**
-     * 添加到的用户名
-     */
+    @BindView(R.id.tv_act_addinvestrecord_addnew)
+    TextView tvAddnew;
+    @BindView(R.id.lv_act_addinvestrecord)
+    ListView lv;
     private String userName;
-    private List<ItemFlagLMBean> listItem;
+    private List<InvestPlateformLMBean> list;
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_savedata_notebook;
+        return R.layout.act_addinvestrecord;
     }
 
     @Override
@@ -61,8 +57,8 @@ public class SaveDataActivity extends BaseActivity {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.tv_act_savedata_addnew:
-                openActivity(SaveDataDetailsActivity.class);
+            case R.id.tv_act_addinvestrecord_addnew:
+                openActivity(AddInvestRecordDetailsActivity.class);
                 break;
 //                 case R.id.:break;
 //                 case R.id.:break;
@@ -70,58 +66,61 @@ public class SaveDataActivity extends BaseActivity {
 //                 case R.id.:break;
 //                 case R.id.:break;
         }
+
     }
 
     @Override
     public void initDataFromIntent() {
         userName = UserConfig.getInstance().getUserName(this);
+        list = DataSupport.where("userName = ?", userName).find(InvestPlateformLMBean.class);
+
     }
 
     @Override
     public void initView() {
         setTopMargin(mtb, MApp.STATUS_BAE_HEIGHT);
+        lv.setAdapter(getAdapter());
+        
+        Log.e("AddInvestRecordActivity", "initView: -list----"+list.size());
+
 
     }
 
     @Override
     public void initListener() {
+        setCloseLisenter(mtb);
+        tvAddnew.setOnClickListener(this);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                openActivityParams(SaveDataDetailsActivity.class, "label", listItem.get(position).getItemName(),
-                        "itemFlag", ""+listItem.get(position).getItemFlag());
+                openActivityParams(AddInvestRecordDetailsActivity.class,"plateform",list.get(position).getInvestPlateform());
+
             }
         });
-        tv.setOnClickListener(this);
-        setCloseLisenter(mtb);
+
     }
 
     @Override
     public void initDataFromInternet() {
-        listItem = DataSupport.where("userName = ?", userName).find(ItemFlagLMBean.class);
-        loadInternetDataToUi();
 
     }
 
     @Override
     public void loadInternetDataToUi(Response<String> response) {
 
-
     }
 
     @Override
     public void loadInternetDataToUi() {
-        lv.setAdapter(getAdapter());
+
     }
 
-    private CommonAdapter<ItemFlagLMBean> getAdapter() {
-        return new CommonAdapter<ItemFlagLMBean>(this, R.layout.lv_itemflagbean_notebook, listItem) {
+    private CommonAdapter<InvestPlateformLMBean> getAdapter() {
+        return new CommonAdapter<InvestPlateformLMBean>(this, R.layout.lv_itemflagbean_notebook, list) {
             @Override
-            protected void convert(ViewHolder viewHolder, ItemFlagLMBean item, int position) {
-                viewHolder.setText(R.id.tv_lv_itemflagbean, "        " + item.getItemName());
+            protected void convert(ViewHolder viewHolder, InvestPlateformLMBean item, int position) {
+                viewHolder.setText(R.id.tv_lv_itemflagbean, "        " + item.getInvestPlateform());
             }
         };
     }
-
-
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.kimonic.utilsmodule.ui.MTopBarView
+        android:id="@+id/mtb_act_addinvestrecord"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorQianLan"
+        app:centerText="@string/tianjiatouzijilu"
+        app:leftImage="@drawable/xvector_back" />
+
+
+    <TextView
+        style="@style/TextStyleActSaveData"
+        android:drawableStart="@drawable/xshape_bluecircle"
+        android:text="@string/tianjiaxindetouzipingtaijinxingjilu" />
+
+    <TextView
+        android:id="@+id/tv_act_addinvestrecord_addnew"
+        style="@style/TextStyleActSaveData1"
+        android:drawableStart="@drawable/xvector_yousanjiao"
+        android:text="@string/dainjitianjiaxinpingtai" />
+
+    <TextView
+        style="@style/TextStyleActSaveData"
+        android:layout_marginTop="5dp"
+        android:drawableStart="@drawable/xshape_redcircle"
+        android:text="@string/xuanzeyiyoupingtaijinxingjilu" />
+
+    <ListView
+        android:id="@+id/lv_act_addinvestrecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>
