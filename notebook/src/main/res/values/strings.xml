@@ -149,7 +149,9 @@
     <string name="dangqianjilupingtai">当前记录投资平台,在当前记录日期下已有记录,保存将覆盖原来的数据,数据不可恢复,请谨慎操作!!</string>
     <string name="qingshuruzhengquedetouziriqi">请输入正确的投资日期,格式:2018-01-01</string>
     <string name="qingshuruzhengquedehuikuanriqi">请输入正确的回款日期,格式:2018-01-01</string>
-    <string name="genjutouziriqichakan">根据投资日期查看</string>
-    <string name="genjuhuikuanriqichaxun">根据回款日期查看</string>
-    <string name="genjutouzipingtaichakan">根据投资平台查看</string>
+    <string name="genjutouziriqichakan">\t\t根据投资日期查看</string>
+    <string name="genjuhuikuanriqichaxun">\t\t根据回款日期查看</string>
+    <string name="genjutouzipingtaichakan">\t\t根据投资平台查看</string>
+    <string name="qingshurutouzijine">请输入投资金额,投资金额必须填写!</string>
+    <string name="touzijiluliebiao">投资记录列表</string>
 </resources>

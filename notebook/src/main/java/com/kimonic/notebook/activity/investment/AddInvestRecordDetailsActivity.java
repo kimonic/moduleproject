@@ -272,7 +272,7 @@ public class AddInvestRecordDetailsActivity extends BaseActivity {
             ToastUtils.showToast(AddInvestRecordDetailsActivity.this, R.string.qingshurutouzipingtai);
             return false;
         }else if ("".equals(investAcount)) {
-            ToastUtils.showToast(AddInvestRecordDetailsActivity.this, R.string.qingshuruhuikuanriqi);
+            ToastUtils.showToast(AddInvestRecordDetailsActivity.this, R.string.qingshurutouzijine);
             return false;
         } else {
             return true;
@@ -285,11 +285,8 @@ public class AddInvestRecordDetailsActivity extends BaseActivity {
      */
     private boolean checkDateStyle(String date) {
         String temp[] = date.split("-");
-        if (temp.length != 3 || temp[0].length() != 4 || temp[1].length() != 2 ||
-                StringUtils.string2Integer(temp[1]) > 12 || temp[2].length() != 2 || StringUtils.string2Integer(temp[2]) > 31) {
-            return false;
-        }
-        return true;
+        return !(temp.length != 3 || temp[0].length() != 4 || temp[1].length() != 2 ||
+                StringUtils.string2Integer(temp[1]) > 12 || temp[2].length() != 2 || StringUtils.string2Integer(temp[2]) > 31);
     }
 
 

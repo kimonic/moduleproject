@@ -1,6 +1,7 @@
 package com.kimonic.notebook.adapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -111,7 +112,9 @@ public class ExpanableAdapter extends BaseExpandableListAdapter {
         }
 
         groupHolder.txt.setText(groupList.get(groupPosition).getTitle());
-        groupHolder.txt.setCompoundDrawables(context.getResources().getDrawable(R.drawable.xvector_yousanjiao), null, null, null);
+        Drawable drawable=context.getResources().getDrawable(R.drawable.xvector_yousanjiao);
+        drawable.setBounds(0,0,30,30);
+        groupHolder.txt.setCompoundDrawables(drawable, null, null, null);
         return convertView;
     }
 
@@ -124,7 +127,7 @@ public class ExpanableAdapter extends BaseExpandableListAdapter {
      * @see android.widget.ExpandableListAdapter#isChildSelectable(int, int)
      */
     @Override
-    public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+    public View getChildView(final int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         ItemHolder itemHolder = null;
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.lvitem_expanable_child, parent, false);
@@ -136,6 +139,26 @@ public class ExpanableAdapter extends BaseExpandableListAdapter {
         }
         itemHolder.lv.setAdapter(getAdapter(groupList.get(groupPosition).getChild()));
         HeightUtils.setListviewHeight(itemHolder.lv);
+
+        //解决嵌套listview时,setOnChildListener()不响应的问题,同时要在子item的根布局上添加属
+        // 性    android:descendantFocusability="blocksDescendants"
+//        itemHolder.lv.setClickable(false);
+//        itemHolder.lv.setPressed(false);
+//        itemHolder.lv.setEnabled(false);
+        if (listener!=null){
+            listener.onClick(groupPosition,itemHolder.lv);
+        }
+
+
+
+//        itemHolder.lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                ToastUtils.showToast(context, groupList.get(groupPosition).getChild().get(position));
+//
+//            }
+//        });
+
         return convertView;
     }
 
@@ -170,22 +193,49 @@ public class ExpanableAdapter extends BaseExpandableListAdapter {
                 textView.setText(item);
                 switch (position % 5) {
                     case 0:
-                        textView.setCompoundDrawables(context.getResources().getDrawable(R.drawable.xshape_bluecircle), null, null, null);
+                        Drawable drawable1=context.getResources().getDrawable(R.drawable.xshape_bluecircle);
+                        drawable1.setBounds(0,0,30,30);
+                        textView.setCompoundDrawables(drawable1, null, null, null);
                         break;
                     case 1:
-                        textView.setCompoundDrawables(context.getResources().getDrawable(R.drawable.xshape_cyancircle), null, null, null);
+                        Drawable drawable2=context.getResources().getDrawable(R.drawable.xshape_cyancircle);
+                        drawable2.setBounds(0,0,30,30);
+                        textView.setCompoundDrawables(drawable2, null, null, null);
                         break;
                     case 2:
-                        textView.setCompoundDrawables(context.getResources().getDrawable(R.drawable.xshape_redcircle), null, null, null);
+                        Drawable drawable3=context.getResources().getDrawable(R.drawable.xshape_redcircle);
+                        drawable3.setBounds(0,0,30,30);
+
+                        textView.setCompoundDrawables(drawable3, null, null, null);
                         break;
                     case 3:
-                        textView.setCompoundDrawables(context.getResources().getDrawable(R.drawable.xshape_violetcircle), null, null, null);
+                        Drawable drawable4=context.getResources().getDrawable(R.drawable.xshape_violetcircle);
+                        drawable4.setBounds(0,0,30,30);
+
+                        textView.setCompoundDrawables(drawable4, null, null, null);
                         break;
                     case 4:
-                        textView.setCompoundDrawables(context.getResources().getDrawable(R.drawable.xshape_yellowcircle), null, null, null);
+                        Drawable drawable5=context.getResources().getDrawable(R.drawable.xshape_yellowcircle);
+                        drawable5.setBounds(0,0,30,30);
+
+                        textView.setCompoundDrawables(drawable5, null, null, null);
                         break;
                 }
             }
         };
+    }
+
+    private OnAdapterItemListener listener;
+
+    public OnAdapterItemListener getListener() {
+        return listener;
+    }
+
+    public void setListener(OnAdapterItemListener listener) {
+        this.listener = listener;
+    }
+
+    public interface OnAdapterItemListener{
+        void onClick(int groupPosition,View view);
     }
 }

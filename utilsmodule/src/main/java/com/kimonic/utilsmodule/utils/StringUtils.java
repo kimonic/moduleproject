@@ -127,11 +127,13 @@ public class StringUtils {
      * @return 字符串数字或0
      */
     public static int string2Integer(String intString) {
+
         if (intString == null) {
             return 0;
         }
         try {
-            return Integer.parseInt(intString);
+
+            return Integer.parseInt(intString.trim());
         } catch (NumberFormatException e) {
             return 0;
         }
