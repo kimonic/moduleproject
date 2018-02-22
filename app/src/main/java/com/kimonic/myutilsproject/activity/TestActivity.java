@@ -1,23 +1,10 @@
 package com.kimonic.myutilsproject.activity;
 
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.kimonic.myutilsproject.R;
-import com.kimonic.myutilsproject.config.Constants;
 import com.kimonic.utilsmodule.base.BaseActivity;
-import com.kimonic.utilsmodule.utils.HttpUtils;
-import com.kimonic.utilsmodule.utils.StringUtils;
 import com.lzy.okgo.model.Response;
-import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
-import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
-
-import java.util.TreeMap;
-
-import butterknife.BindView;
 
 /**
  * * ===============================================================
@@ -50,6 +37,11 @@ public class TestActivity extends BaseActivity {
     @Override
     public int getLayoutResId() {
         return R.layout.act_test;
+    }
+
+    @Override
+    protected int setStatusBarColor() {
+        return 0;
     }
 
     @Override

@@ -58,7 +58,9 @@
         <activity android:name=".activity.investment.AddInvestRecordDetailsActivity" />
         <!--16.查看投资记录activity-->
         <activity android:name=".activity.investment.SeeInvestRecordActivity" />
-        <!--17.查看投资记录详情activity-->
+        <!--17.查看投资记录筛选列表activity-->
+        <activity android:name=".activity.investment.SeeInvestRecordListActivity" />
+        <!--18.查看投资记录详情activity-->
         <activity android:name=".activity.investment.SeeInvestRecordDetailsActivity" />
     </application>
 

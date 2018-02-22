@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--投资平台-->
+    <LinearLayout style="@style/LinearLayoutStytleEditOldRecord1">
+
+        <TextView
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/touzipingtai" />
+
+        <TextView
+            android:id="@+id/tv_lv_seeinvestrecorddetails_invest_plateform"
+            style="@style/TextStyle002"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="@color/colorAccent"
+            />
+    </LinearLayout>
+
+    <!--投资金额-->
+    <LinearLayout style="@style/LinearLayoutStytleEditOldRecord1">
+
+        <TextView
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/touzijine" />
+
+        <TextView
+            android:id="@+id/tv_lv_seeinvestrecorddetails_invest_amount"
+            style="@style/TextStyle002"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="@color/colorQianLan"
+            />
+    </LinearLayout>
+
+
+    <!--投资日期-->
+    <LinearLayout style="@style/LinearLayoutStytleEditOldRecord1">
+
+        <TextView
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/touziriqi" />
+
+        <TextView
+            android:id="@+id/tv_lv_seeinvestrecorddetails_investdate"
+            style="@style/TextStyle002"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="@color/colorPrimary"
+            />
+    </LinearLayout>
+
+    <!--回款日期-->
+    <LinearLayout style="@style/LinearLayoutStytleEditOldRecord1">
+
+        <TextView
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/huikuanriqi" />
+
+        <TextView
+            android:id="@+id/tv_lv_seeinvestrecorddetails_repaydate"
+            style="@style/TextStyle002"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="@color/colorGlobal"
+            />
+    </LinearLayout>
+
+    <!--&lt;!&ndash;是否到期&ndash;&gt;-->
+    <!--<LinearLayout style="@style/LinearLayoutStytleEditOldRecord1">-->
+
+    <!--<TextView-->
+    <!--style="@style/TextStyle001"-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/shifoudaoqi" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_lv_seeinvestrecorddetails_mature_flag"-->
+    <!--style="@style/TextStyle001"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@null"-->
+    <!--android:text="@string/weidaoqi"-->
+    <!--/>-->
+    <!--</LinearLayout>-->
+
+
+    <!--投资备注-->
+    <LinearLayout style="@style/LinearLayoutStytleEditOldRecord1">
+
+        <TextView
+            style="@style/TextStyle001"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/touzibeizhu" />
+
+        <TextView
+            android:id="@+id/tv_lv_seeinvestrecorddetails_invest_mark"
+            style="@style/TextStyle002"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="@color/colorBlack"
+            />
+    </LinearLayout>
+</LinearLayout>

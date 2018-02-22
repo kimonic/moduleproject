@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/myproject.iml" filepath="$PROJECT_DIR$/myproject.iml" />
       <module fileurl="file://$PROJECT_DIR$/notebook/notebook.iml" filepath="$PROJECT_DIR$/notebook/notebook.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uninstallapp/uninstallapp.iml" filepath="$PROJECT_DIR$/uninstallapp/uninstallapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/utilsmodule/utilsmodule.iml" filepath="$PROJECT_DIR$/utilsmodule/utilsmodule.iml" />
     </modules>
   </component>

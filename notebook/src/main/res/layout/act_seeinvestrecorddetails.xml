@@ -10,14 +10,350 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorQianLan"
-        app:centerText="@string/touzijiluliebiao"
+        app:centerText="@string/touzijiluxiangqing"
         app:leftImage="@drawable/xvector_back" />
-    <ListView
-        android:id="@+id/lv_act_seeinvestrecorddetails"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:dividerHeight="5dp"
-        android:divider="@color/color_line"
-        />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--投资平台-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/touzipingtai" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_invest_plateform"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    />
+            </LinearLayout>
+
+            <!--投资金额-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/touzijine" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_invest_amount"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    />
+            </LinearLayout>
+
+
+            <!--投资日期-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/touziriqi" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_investdate"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    />
+            </LinearLayout>
+
+            <!--回款日期-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/huikuanriqi" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_repaydate"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    />
+            </LinearLayout>
+
+            <!--&lt;!&ndash;是否到期&ndash;&gt;-->
+            <!--<LinearLayout style="@style/LinearLayoutStytleEditOldRecord">-->
+
+            <!--<TextView-->
+            <!--style="@style/TextStyle001"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/shifoudaoqi" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_act_seeinvestrecorddetails_mature_flag"-->
+            <!--style="@style/TextStyle001"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@null"-->
+            <!--android:text="@string/weidaoqi"-->
+            <!--/>-->
+            <!--</LinearLayout>-->
+
+
+            <!--投资备注-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/touzibeizhu" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_invest_mark"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+
+                    />
+            </LinearLayout>
+
+
+
+            <!--投资账号-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/touzizhanghao" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_invest_acounts"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    />
+            </LinearLayout>
+
+
+            <!--投资手机号-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/touziguanlianshoujihao" />
+
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_phone_number"
+                    style="@style/TextStyle001"
+                    android:inputType="phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    />
+            </LinearLayout>
+
+
+            <!--回款金额-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/huikuanjine" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_repay_amount"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    />
+            </LinearLayout>
+
+
+            <!--统计标识-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tongjibiaoshi" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_valid_flag"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    />
+            </LinearLayout>
+
+
+
+
+
+            <!--额外收益-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ewaishouyi" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_cash_back"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    />
+            </LinearLayout>
+
+            <!--投资天数-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/touzitianshu" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_invest_numberof_days"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    />
+            </LinearLayout>
+
+            <!--额外年化收益率-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ewainianhuashouyilv" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_extra_annual_income"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:background="@null"
+                    />
+            </LinearLayout>
+
+            <!--固定年化收益-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gudingnianhuashouyi" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_fixed_annual_income"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    />
+            </LinearLayout>
+
+
+            <!--总收益-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zongshouyi" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_total_income"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:background="@null"
+                    />
+            </LinearLayout>
+
+
+            <!--总年化收益-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zongnianhuashouyi" />
+
+                <TextView
+                    android:id="@+id/tv_act_seeinvestrecorddetails_total_annual_income"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    />
+            </LinearLayout>
+
+
+
+
+
+
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_act_seeinvestrecorddetails_save"-->
+            <!--style="@style/TextStyle"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="36dp"-->
+            <!--android:text="@string/querenbaocun" />-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="500dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>

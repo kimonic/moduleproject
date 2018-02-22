@@ -1,7 +1,6 @@
 package com.kimonic.myutilsproject;
 
-import android.app.Application;
-import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,8 +10,9 @@ import com.kimonic.myutilsproject.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.lzy.okgo.model.Response;
 
+import java.io.File;
+
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -23,6 +23,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public int getLayoutResId() {
         return R.layout.act_main;
+    }
+
+    @Override
+    protected int setStatusBarColor() {
+        return 0;
     }
 
     @Override
@@ -44,6 +49,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Log.e("TAG", "initDataFromIntent: -----"+ MApp.DEVICE_WIDTH);
         Log.e("TAG", "initDataFromIntent: -----"+ MApp.DEVICE_HEIGHT);
         Log.e("TAG", "initDataFromIntent: --TestActivity---"+ TestActivity.DEVICE_DENSITY);
+
 
 
 

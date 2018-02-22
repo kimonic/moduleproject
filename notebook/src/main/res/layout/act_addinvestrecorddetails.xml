@@ -134,10 +134,7 @@
                     android:hint="@string/qingshurutouzibeizhu" />
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@color/colorBac" />
+
 
             <!--投资账号-->
             <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
@@ -219,10 +216,7 @@
 
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@color/colorBac" />
+
 
             <!--额外收益-->
             <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
@@ -341,10 +335,6 @@
             </LinearLayout>
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@color/colorBac" />
 
 
 

@@ -137,7 +137,7 @@ public class SeeInvestRecordActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                ToastUtils.showToast(SeeInvestRecordActivity.this, list.get(groupPosition).getChild().get(position));
-                openActivityParams(SeeInvestRecordDetailsActivity.class,"type",""+(groupPosition+1),"condition",
+                openActivityParams(SeeInvestRecordListActivity.class,"type",""+(groupPosition+1),"condition",
                         list.get(groupPosition).getChild().get(position).trim());
                 // TODO: 2018/2/13 启动查看数据界面
             }

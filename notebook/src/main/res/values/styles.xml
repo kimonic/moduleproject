@@ -47,6 +47,12 @@
 
     </style>
 
+    <style name="TextStyle002">
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
     <style name="FinddataDetailsTextStyle1">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorWhite</item>
@@ -85,6 +91,17 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
+    <style name="LinearLayoutStytleEditOldRecord1">
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
 
     <style name="FragAccountingTextStyle2">
         <item name="android:textSize">14sp</item>
@@ -98,7 +115,7 @@
         <item name="android:layout_marginTop">5dp</item>
     </style>
 
-<style name="FragAccountingTextStyle3">
+    <style name="FragAccountingTextStyle3">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:gravity">center_vertical</item>

@@ -154,4 +154,7 @@
     <string name="genjutouzipingtaichakan">\t\t根据投资平台查看</string>
     <string name="qingshurutouzijine">请输入投资金额,投资金额必须填写!</string>
     <string name="touzijiluliebiao">投资记录列表</string>
+    <string name="touzijiluxiangqing">投资记录详情</string>
+    <string name="tongjiyouxiao">统计有效</string>
+    <string name="tongjiwuxiao">统计无效</string>
 </resources>

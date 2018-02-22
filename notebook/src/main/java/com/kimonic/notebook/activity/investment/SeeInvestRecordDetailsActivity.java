@@ -1,53 +1,73 @@
 package com.kimonic.notebook.activity.investment;
 
+import android.util.Log;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.TextView;
 
 import com.kimonic.notebook.R;
-import com.kimonic.notebook.config.UserConfig;
 import com.kimonic.notebook.litemapbean.invest.InvestmentRecordDetailsLMBean;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
-import com.kimonic.utilsmodule.utils.StringUtils;
 import com.lzy.okgo.model.Response;
 
 import org.litepal.crud.DataSupport;
-
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
 import butterknife.BindView;
 
 /**
  * * ===============================================================
- * name:             SeeInvestRecordActivity
+ * name:             SeeInvestRecordDetailsActivity
  * guide:
  * author：          kimonik
  * version：          1.0
- * date：             2018/2/12
- * description：   查看投资记录详情activity
+ * date：             2018/2/22
+ * description：查看投资记录详情activity
  * history：
  * *==================================================================
  */
 
 public class SeeInvestRecordDetailsActivity extends BaseActivity {
+
+    @BindView(R.id.tv_act_seeinvestrecorddetails_invest_plateform)
+    TextView tvInvestPlateform;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_invest_amount)
+    TextView tvInvestAmount;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_investdate)
+    TextView tvInvestdate;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_repaydate)
+    TextView tvRepaydate;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_invest_mark)
+    TextView tvInvestMark;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_invest_acounts)
+    TextView tvInvestAcounts;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_phone_number)
+    TextView tvPhoneNumber;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_repay_amount)
+    TextView tvRepayAmount;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_valid_flag)
+    TextView tvValidFlag;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_cash_back)
+    TextView tvCashBack;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_invest_numberof_days)
+    TextView tvInvestNumberofDays;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_extra_annual_income)
+    TextView tvExtraAnnualIncome;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_fixed_annual_income)
+    TextView tvFixedAnnualIncome;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_total_income)
+    TextView tvTotalIncome;
+    @BindView(R.id.tv_act_seeinvestrecorddetails_total_annual_income)
+    TextView tvTotalAnnualIncome;
     @BindView(R.id.mtb_act_seeinvestrecorddetails)
     MTopBarView mtb;
-    @BindView(R.id.lv_act_seeinvestrecorddetails)
-    ListView lv;
 
-    private String type;
-    private String condition;
-    private String userName;
-
-    private List<InvestmentRecordDetailsLMBean> list;
-
+    private long id;
 
     @Override
     public int getLayoutResId() {
         return R.layout.act_seeinvestrecorddetails;
+
     }
 
     @Override
@@ -62,61 +82,25 @@ public class SeeInvestRecordDetailsActivity extends BaseActivity {
 
     @Override
     public void initDataFromIntent() {
-        type = getIntent().getStringExtra("type");
-        condition = getIntent().getStringExtra("condition");
-        userName = UserConfig.getInstance().getUserName(this);
-        initList();
-
-
-    }
-
-    private void initList() {
-        switch (StringUtils.string2Integer(type)) {
-            case 1:
-                list= DataSupport.where("userName = ? and investDate = ?",userName
-                ,condition).find(InvestmentRecordDetailsLMBean.class);
-                break;
-            case 2:
-
-                list= DataSupport.where("userName = ? and repayDate = ?",userName
-                        ,condition).find(InvestmentRecordDetailsLMBean.class);
-                break;
-            case 3:
-                list= DataSupport.where("userName = ? and investPlateform = ?",userName
-                        ,condition).find(InvestmentRecordDetailsLMBean.class);
-                break;
+        String temp = getIntent().getStringExtra("id");
+        if (temp != null) {
+            id = Long.parseLong(temp);
+        } else {
+            id = -1;
         }
-    }
 
-    private void sortList(List<String> list) {
-        Collections.sort(list, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                if (StringUtils.string2Integer(o1.replace("-", ""))
-                        < StringUtils.string2Integer(o2.replace("-", ""))) {
-                    return 1;
-                } else if (StringUtils.string2Integer(o1.replace("-", ""))
-                        > StringUtils.string2Integer(o2.replace("-", ""))) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            }
-        });
     }
 
     @Override
     public void initView() {
 
         setTopMargin(mtb, MApp.STATUS_BAE_HEIGHT);
-
-
+        loadInternetDataToUi();
     }
 
     @Override
     public void initListener() {
         setCloseLisenter(mtb);
-
     }
 
     @Override
@@ -131,6 +115,38 @@ public class SeeInvestRecordDetailsActivity extends BaseActivity {
 
     @Override
     public void loadInternetDataToUi() {
+        Log.e("SetailsActivity", "loadInternetDataToUi: -----"+id);
+
+        if (id != -1) {
+            InvestmentRecordDetailsLMBean bean = DataSupport.find(InvestmentRecordDetailsLMBean.class, id);
+            tvInvestPlateform.setText(bean.getInvestPlateform());
+            tvCashBack.setText(("" + bean.getCashBack()));
+            tvExtraAnnualIncome.setText(bean.getExtraAnnualIncome());
+
+            tvFixedAnnualIncome.setText(bean.getFixedAnnualIncom());
+            tvInvestAcounts.setText(bean.getInvestAcounts());
+            tvInvestAmount.setText(("" + bean.getInvestAmount()));
+
+            tvInvestdate.setText(bean.getInvestDate());
+            tvInvestMark.setText(bean.getMark());
+            tvInvestNumberofDays.setText(("" + bean.getInvestNumberOfDays()));
+
+            tvPhoneNumber.setText(bean.getPhoneNumer());
+            tvRepayAmount.setText(("" + bean.getRepayAmount()));
+            tvRepaydate.setText(bean.getRepayDate());
+
+            tvTotalAnnualIncome.setText(bean.getTotalAnnualIncome());
+            tvTotalIncome.setText(("" + bean.getTotalIncome()));
+            if (bean.isValidFlag()){
+                tvValidFlag.setText(R.string.tongjiyouxiao);
+            }else {
+                tvValidFlag.setText(R.string.tongjiwuxiao);
+            }
+
+//            tvInvestPlateform.setText(bean.getInvestPlateform());
+//            tvInvestPlateform.setText(bean.getInvestPlateform());
+//            tvInvestPlateform.setText(bean.getInvestPlateform());
+        }
 
     }
 
