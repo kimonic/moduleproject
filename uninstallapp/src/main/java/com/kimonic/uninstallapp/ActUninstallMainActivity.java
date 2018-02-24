@@ -94,6 +94,7 @@ public class ActUninstallMainActivity extends BaseActivity {
 
     }
 
+
     @Override
     public void initListener() {
 
