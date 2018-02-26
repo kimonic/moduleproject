@@ -2,6 +2,7 @@ package com.kimonic.notebook.activity.welcome;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -18,6 +19,10 @@ import com.lzy.okgo.model.Response;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 
@@ -63,8 +68,8 @@ public class HomeActivity extends BaseActivity {
         vpActHome.setOffscreenPageLimit(4);
 
 
-        BubbleView view=new BubbleView(this);
-        ((FrameLayout)(getWindow().getDecorView())).addView(view);
+        BubbleView view = new BubbleView(this);
+        ((FrameLayout) (getWindow().getDecorView())).addView(view);
     }
 
     private void initFragmentList() {
@@ -85,9 +90,9 @@ public class HomeActivity extends BaseActivity {
         list.add(fragment4);
 
     }
+
     @Override
     public void initListener() {
-//----------------------------可能会对页面跳转产生影响-------------------------------------
         nbvActHome.setListener(new NaviButtonView.CurrentPositionListener() {
             @Override
             public boolean currentPosition(int position) {
@@ -102,15 +107,29 @@ public class HomeActivity extends BaseActivity {
             public void onPageSelected(int position) {
 
 
-
             }
         });
-        //----------------------------可能会对页面跳转产生影响-------------------------------------
-
     }
 
     @Override
     public void initDataFromInternet() {
+        ExecutorService executorService1 = new ThreadPoolExecutor(5,20,60L,
+                TimeUnit.SECONDS,new ArrayBlockingQueue<Runnable>(1));
+        for (int i = 0; i <10; i++) {
+            final int flag=i;
+            executorService1.execute(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep((long) (2000));
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Log.e("HomeActivity", "run: -----"+flag+"--------------"+Thread.currentThread().getName());
+
+                }
+            });
+        }
 
     }
 

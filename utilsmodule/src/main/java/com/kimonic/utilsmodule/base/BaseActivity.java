@@ -21,7 +21,7 @@ import android.widget.LinearLayout;
 import com.kimonic.utilsmodule.R;
 import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.kimonic.utilsmodule.utils.DialogUtils;
-import com.kimonic.utilsmodule.utils.ScreenSizeUtils;
+import com.kimonic.utilsmodule.utils.ThreadUtils;
 import com.kimonic.utilsmodule.utils.ToastUtils;
 import com.lzy.imagepicker.view.SystemBarTintManager;
 import com.lzy.okgo.OkGo;
@@ -180,8 +180,10 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
 
     public void dismissPDialog() {
         isProgressing = false;
-        if (bDialog != null && bDialog.isShowing()) {
-            bDialog.dismiss();
+        if (!(isFinishing() || isDestroyed())) {
+            if (bDialog != null && bDialog.isShowing()) {
+                bDialog.dismiss();
+            }
         }
     }
 
@@ -448,6 +450,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         }
     }
 
+
     @Override
     protected void onDestroy() {
         dismissPDialog();
@@ -477,7 +480,24 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
      * 进度加载显示控制线程
      */
     private void timeThread() {
-        new Thread() {
+//        ScheduledThreadPoolExecutor executor=new ScheduledThreadPoolExecutor(6);
+//        executor.execute(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.sleep(sleepTime);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                Message msg = Message.obtain();
+//                msg.what = 1;
+//                if (handler != null) {
+//                    handler.sendMessage(msg);
+//                }
+//            }
+//        });
+
+        ThreadUtils.getCashThreadPoolInstance().execute(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -491,7 +511,23 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
                     handler.sendMessage(msg);
                 }
             }
-        }.start();
+        });
+
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.sleep(sleepTime);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                Message msg = Message.obtain();
+//                msg.what = 1;
+//                if (handler != null) {
+//                    handler.sendMessage(msg);
+//                }
+//            }
+//        }.start();
     }
 
 

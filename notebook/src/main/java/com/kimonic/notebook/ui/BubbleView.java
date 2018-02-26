@@ -148,6 +148,10 @@ public class BubbleView extends View {
                      point.y = temp * temp * p0.y + 2 * t * temp * p1.y + t * t * p2.y;
                      return point;
                      }
+                     y=ax+b
+                     py0=a*px0+b
+                     py1=a*px1+b
+                     a=(py0-py1)/(px0-px1)
 
                      PT.x = powf(1 - t, 3) * P1.x + 3.0f * powf(1 - t, 2) * t * P2.x + 3.0f * (1 - t) * t * t * P3.x + t * t * t * P4.x;
                      PT.y = powf(1 - t, 3) * P1.y + 3.0f * powf(1 - t, 2) * t * P2.y + 3.0f * (1 - t) * t * t * P3.y + t * t * t * P4.y;
