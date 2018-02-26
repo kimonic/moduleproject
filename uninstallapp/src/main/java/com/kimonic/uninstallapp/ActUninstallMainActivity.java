@@ -43,8 +43,6 @@ public class ActUninstallMainActivity extends BaseActivity {
         uninstall_intent.setAction(Intent.ACTION_DELETE);
         uninstall_intent.setData(Uri.parse("package:" + packageName));
         startActivity(uninstall_intent);
-
-
     }
 
     @Override

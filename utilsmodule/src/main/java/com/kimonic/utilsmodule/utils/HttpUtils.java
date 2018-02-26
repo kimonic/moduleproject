@@ -7,6 +7,7 @@ import android.util.Log;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.callback.Callback;
+import com.lzy.okgo.callback.FileCallback;
 
 import java.io.File;
 import java.util.Map;
@@ -107,6 +108,36 @@ public class HttpUtils {
                 .cacheMode(CacheMode.DEFAULT)       // 缓存模式，详细请看缓存介绍
                 .execute(callback);
 
+    }
+    /**下载文件*/
+    public void  downloadFile(String url,FileCallback fileCallback){
+        OkGo.<File>get(url)
+                .tag("downloadfile")
+                .execute(fileCallback);
+//                        new FileCallback(dir,filename){
+//                    @Override
+//                    public void onSuccess(Response<File> response) {
+//                        Log.e("HttpUtils", "downloadProgress: -下载成功----");
+//                        String dir= Environment.getExternalStorageDirectory().getAbsolutePath()+"/apkdownload";
+//                        AppKidUtils.installApk(context,dir+"/mydownload11.apk");
+//
+//
+//                    }
+//
+//                    @Override
+//                    public void downloadProgress(Progress progress) {
+//                        Log.e("HttpUtils", "downloadProgress: -下载进度----"+progress.fraction);
+//                        super.downloadProgress(progress);
+//                    }
+//
+//                    @Override
+//                    public void onError(Response<File> response) {
+//                        super.onError(response);
+//                        Log.e("HttpUtils", "downloadProgress: -未知错误----"+response.toString());
+//
+//                    }
+//                }
+// );
     }
 
 

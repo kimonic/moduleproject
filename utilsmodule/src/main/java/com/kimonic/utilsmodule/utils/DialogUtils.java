@@ -79,6 +79,7 @@ public class DialogUtils {
         return dialog;
     }
 
+    /**显示提示dialog*/
     public static AlertDialog showPromptDialog(final Context context, final String msg, final DialogUtilsCallBack callBack ,
                                                @Nullable String  cancel, @Nullable String affirm, @Nullable String title){
         @SuppressLint("InflateParams") View view = LayoutInflater.from(context).inflate(R.layout.dialog_prompt, null);
@@ -126,6 +127,34 @@ public class DialogUtils {
         return dialog;
     }
 
+
+
+    /**显示下载dialog*/
+    public static AlertDialog showDownloadDialog(Context context,DialogUtils.ProgressCallback callBack){
+        @SuppressLint("InflateParams") View view = LayoutInflater.from(context).inflate(R.layout.dialog_download, null);
+        final AlertDialog dialog = new AlertDialog.Builder(context).create();
+        dialog.setCanceledOnTouchOutside(false);
+
+        TextView tvProgress=view.findViewById(R.id.tv_dialog_download_progress);
+
+
+       callBack.getProgressView(tvProgress);
+
+        dialog.show();
+        //一定得在show完dialog后来set属性
+        Window window = dialog.getWindow();
+        if (window != null) {
+            window.setContentView(view);
+            WindowManager.LayoutParams lp = window.getAttributes();
+//            Log.e(TAG, "showProgreessDialog: --ScreenSizeUtils.getDensity(this)-"+ ScreenSizeUtils.getDensity(this));
+            lp.width = 200 * ScreenSizeUtils.getDensity(context);
+            lp.height = 200 * ScreenSizeUtils.getDensity(context);
+            lp.gravity = Gravity.CENTER;
+            window.setAttributes(lp);
+        }
+        return dialog;
+    }
+
     private static void setTvText(TextView textView,String text){
         if (text!=null){
             textView.setText(text);
@@ -136,6 +165,10 @@ public class DialogUtils {
     public interface DialogUtilsCallBack{
         void cancel();
         void affirm();
+    }
+
+    public interface ProgressCallback{
+        void getProgressView(TextView textView);
     }
 
 
