@@ -1,13 +1,9 @@
 package com.kimonic.notebook.activity.welcome;
 
-import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.fragment.AccountingFragment;
@@ -18,15 +14,8 @@ import com.kimonic.utilsmodule.adapter.FragmentVPAdapter;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.NaviButtonView;
 import com.kimonic.utilsmodule.ui.NoScrollViewPager;
-import com.kimonic.utilsmodule.utils.AppKidUtils;
-import com.kimonic.utilsmodule.utils.DialogUtils;
-import com.kimonic.utilsmodule.utils.HttpUtils;
-import com.kimonic.utilsmodule.utils.StringUtils;
-import com.lzy.okgo.callback.FileCallback;
-import com.lzy.okgo.model.Progress;
 import com.lzy.okgo.model.Response;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,8 +31,8 @@ public class HomeActivity extends BaseActivity {
 
     private List<Fragment> list;
     private int beforePosition = 0;
-    private TextView tvProgress;
-    private AlertDialog dialog;
+
+
 
     public ViewPager getVpActHome() {
         return vpActHome;
@@ -124,49 +113,6 @@ public class HomeActivity extends BaseActivity {
 
 
 
-        String url="http://app.mi.com/download/26";
-        final String dir=Environment.getExternalStorageDirectory().getAbsolutePath()+"/apkdownload";
-        final String fileName="mydownload.apk";
-        String filePath=dir+"/"+fileName;
-        File file=new File(filePath);
-        if (file.exists()){
-            AppKidUtils.installApk(HomeActivity.this, filePath);
-        }else {
-            Log.e("HttpUtils", "downloadProgress: -下载----"+url);
-            Log.e("HttpUtils", "downloadProgress: -下载----"+dir);
-            dialog=DialogUtils.showDownloadDialog(HomeActivity.this, new DialogUtils.ProgressCallback() {
-                @Override
-                public void getProgressView(TextView textView) {
-                    tvProgress=textView;
-                }
-            });
-
-            HttpUtils.getInstance().downloadFile(url, new FileCallback(dir,fileName) {
-                @Override
-                public void onSuccess(Response<File> response) {
-                    AppKidUtils.installApk(HomeActivity.this, dir +"/"+ fileName);
-                }
-
-                @Override
-                public void downloadProgress(final Progress progress) {
-                    Log.e("HttpUtils", "downloadProgress: -下载进度----" + progress.fraction);
-
-                    if (tvProgress!=null)
-                        tvProgress.setText(StringUtils.getTwoDecimalsStr(""+progress.fraction*100));
-                    super.downloadProgress(progress);
-                }
-
-                @Override
-                public void onError(Response<File> response) {
-                    super.onError(response);
-                    Log.e("HttpUtils", "downloadProgress: -未知错误----" + response.toString());
-
-                }
-            });
-
-        }
-
-
 
     }
 
@@ -184,4 +130,6 @@ public class HomeActivity extends BaseActivity {
     protected int setStatusBarColor() {
         return getColorRes(R.color.colorQianLan);
     }
+
+
 }
