@@ -157,4 +157,7 @@
     <string name="touzijiluxiangqing">投资记录详情</string>
     <string name="tongjiyouxiao">统计有效</string>
     <string name="tongjiwuxiao">统计无效</string>
+    <string name="qxjc">权限检查</string>
+    <string name="queding">确定</string>
+    <string name="weishouyuduqutonghuajiluquanxian">未授予读取通话记录权限!</string>
 </resources>
