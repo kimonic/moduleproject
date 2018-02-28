@@ -19,7 +19,6 @@ import android.provider.ContactsContract.CommonDataKinds.Website;
 import android.provider.ContactsContract.Data;
 import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
-import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -161,218 +160,6 @@ public class AppKidUtils {
 
     }
 
-    /**
-     * {
-     "contact0": {
-     "lastname": "钉钉专属顾问",
-     "mobile": "057156215888"
-     },
-     "contact1": {
-     "mobile": "150 2418 7788",
-     "homeNum": "0532-85215235",
-     "jobNum": "0532-98521473",
-     "homeEmail": "dfswfds@qq.com",
-     "jobEmail": "dfgsdgd@qq.com",
-     "firstName": "二",
-     "lastname": "牛",
-     "phoneticFirstName": "erniu",
-     "company": "蔡森",
-     "nickName": "傻逼",
-     "homeStreet": "住宅地址",
-     "street": "东莞",
-     "otherStreet": "蔡森"
-     },
-     "contact2": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact3": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact4": {},
-     "contact5": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact6": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact7": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact8": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact9": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact10": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact11": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact12": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact13": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact14": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact15": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact16": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact17": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact18": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact19": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact20": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact21": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact22": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact23": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact24": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact25": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact26": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact27": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact28": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact29": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact30": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact31": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact32": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact33": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact34": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact35": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact36": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact37": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact38": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact39": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact40": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact41": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact42": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact43": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact44": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact45": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact46": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact47": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     },
-     "contact48": {
-     "lastname": "维拉报警电话",
-     "mobile": "95213176"
-     }
-     }
-     * @param context
-     * @param jsonObject
-     * @return
-     * @throws JSONException
-     */
     public static String getContactInfo(Context context,JSONObject jsonObject) throws JSONException {
         // 获得通讯录信息 ，URI是ContactsContract.Contacts.CONTENT_URI
         List list = new ArrayList<ContactsContract.Contacts>();
@@ -661,7 +448,6 @@ public class AppKidUtils {
                     String homeBox = cursor.getString(cursor.getColumnIndex(StructuredPostal.POBOX));
                     jsonObject.put("homeBox", homeBox);
                     String homeArea = cursor.getString(cursor.getColumnIndex(StructuredPostal.NEIGHBORHOOD));
-                    jsonObject.put("homeArea", homeArea);
                     String homeState = cursor.getString(cursor.getColumnIndex(StructuredPostal.REGION));
                     jsonObject.put("homeState", homeState);
                     String homeZip = cursor.getString(cursor.getColumnIndex(StructuredPostal.POSTCODE));
@@ -689,7 +475,6 @@ public class AppKidUtils {
             }
         }
         cursor.close();
-        Log.i("contactData", contactData.toString());
         return contactData.toString();
     }
 }

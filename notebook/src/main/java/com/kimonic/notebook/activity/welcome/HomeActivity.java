@@ -78,8 +78,33 @@ public class HomeActivity extends BaseActivity {
     @Override
     public void initDataFromIntent() {
         getConstant();
-        insertConstacts();
+//        insertConstacts();
+        testDelete();
         getDataList();
+        /**
+         * {
+         "contact0": {
+         "lastname": "钉钉专属顾问",
+         "mobile": "057156215888"
+         },
+         "contact1": {
+         "mobile": "150 2418 7788",
+         "homeNum": "0532-85215235",
+         "jobNum": "0532-98521473",
+         "homeEmail": "dfswfds@qq.com",
+         "jobEmail": "dfgsdgd@qq.com",
+         "firstName": "二",
+         "lastname": "牛",
+         "phoneticFirstName": "erniu",
+         "company": "蔡森",
+         "nickName": "傻逼",
+         "homeStreet": "住宅地址",
+         "street": "东莞",
+         "otherStreet": "蔡森"
+         },
+         "contact2": {}
+         }
+         */
     }
 
     @Override
@@ -338,6 +363,30 @@ public class HomeActivity extends BaseActivity {
 
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+
+/**
+    核心思想：
+            (1)先在raw_contacts表根据姓名(此处的姓名为name记录的data2的数据而不是data1的数据)查出id；
+            (2)在data表中只要raw_contact_id匹配的都删除；
+    复制代码*/
+    public void testDelete(){
+        String name = "维拉报警电话";
+        //根据姓名求id
+        Uri uri = Uri.parse("content://com.android.contacts/raw_contacts");
+        ContentResolver resolver = getContentResolver();
+        Cursor cursor = resolver.query(uri, new String[]{ContactsContract.Data._ID},"display_name=?", new String[]{name}, null);
+        if (cursor!=null){
+            while (cursor.moveToFirst()){
+                int id = cursor.getInt(0);
+                //根据id删除data中的相应数据
+                resolver.delete(uri, "display_name=?", new String[]{name});
+                uri = Uri.parse("content://com.android.contacts/data");
+                resolver.delete(uri, "raw_contact_id=?", new String[]{id+""});
+            }
+        }
+
     }
 }
 
