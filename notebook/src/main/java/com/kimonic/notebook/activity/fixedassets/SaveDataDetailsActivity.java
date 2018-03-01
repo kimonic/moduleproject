@@ -87,8 +87,10 @@ public class SaveDataDetailsActivity extends BaseActivity {
                     typeName = etLabel.getText().toString().trim();//资产类别
                     vaule = StringUtils.string2Float(etShuzhi.getText().toString().trim());//资产价值
                     mark = etMark.getText().toString().trim();//备注
-                    listItem = DataSupport.where("userName = ? and dateFlag = ? and " +
-                            "itemFlag = ?", userName, date, itemFlag).find(SaveDataLMBean.class);
+                    if (itemFlag!=null){
+                        listItem = DataSupport.where("userName = ? and dateFlag = ? and " +
+                                "itemFlag = ?", userName, date, itemFlag).find(SaveDataLMBean.class);
+                    }                    
 
                     if (listItem != null && listItem.size() > 0) {
                         DialogUtils.showPromptDialog(this, getString(R.string.gaileibieyicunzai), new DialogUtils.DialogUtilsCallBack() {
@@ -123,6 +125,7 @@ public class SaveDataDetailsActivity extends BaseActivity {
                         bean.setDateFlag(date);
                         bean.setItem(typeName);//资产类别
                         bean.setUserName(userName);
+                        // TODO: 2018/3/1 itemflag为null时需要确定当前标签的itemflag 
                         bean.setItemFlag(itemFlag);
                         bean.setMark(mark);
                         bean.setYear(String.valueOf(TimeUtils.getCurrentYear()));
@@ -182,7 +185,9 @@ public class SaveDataDetailsActivity extends BaseActivity {
         tvSave.setOnClickListener(this);
     }
 
-    /**添加资产类别*/
+    /**
+     * 添加资产类别
+     */
     private void addItem(String item) {
         List<ItemFlagLMBean> listItem = DataSupport.where("itemName = ? and userName = ?",
                 item, userName).find(ItemFlagLMBean.class);

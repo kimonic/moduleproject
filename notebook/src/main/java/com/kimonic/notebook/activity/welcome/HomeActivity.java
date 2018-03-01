@@ -3,12 +3,8 @@ package com.kimonic.notebook.activity.welcome;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;
-import android.content.ContentUris;
-import android.content.ContentValues;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.CallLog;
 import android.provider.ContactsContract;
@@ -29,15 +25,10 @@ import com.kimonic.utilsmodule.adapter.FragmentVPAdapter;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.NaviButtonView;
 import com.kimonic.utilsmodule.ui.NoScrollViewPager;
-import com.kimonic.utilsmodule.utils.AppKidUtils;
+import com.kimonic.utilsmodule.utils.ContactsUtils;
 import com.kimonic.utilsmodule.utils.ToastUtils;
 import com.lzy.okgo.model.Response;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -77,10 +68,12 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public void initDataFromIntent() {
+//        ContactsUtils.deleteContacts(this,"亦筝笙");
         getConstant();
-//        insertConstacts();
+        insertConstacts();
         testDelete();
         getDataList();
+        ContactsUtils.getCallRecord(this);
         /**
          * {
          "contact0": {
@@ -184,12 +177,8 @@ public class HomeActivity extends BaseActivity {
 
     private void getConstant() {
 
-        try {
-           Log.e("TAG", "getConstant: -----"+ AppKidUtils.getContactInfo(this,new JSONObject()));
+        Log.e("TAG", "getConstant: -----" + ContactsUtils.getContactInfo(this));
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 //        Cursor cursor = null;
 //        try {
 //            Cursor cursor1 = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
@@ -227,43 +216,45 @@ public class HomeActivity extends BaseActivity {
 
     public void insertConstacts() {
 
-        ContentValues values = new ContentValues();
-        Uri rawContactUri = getContentResolver().insert(
-                ContactsContract.RawContacts.CONTENT_URI, values);//先创建一个空的联系人
-        Log.e("TAG", "getConstant: --rawContactUri---" + rawContactUri);
-        long rawContactId = ContentUris.parseId(rawContactUri);//获得新建空的联系人的ID
-        Log.e("TAG", "getConstant: --rawContactId---" + rawContactId);
+        ContactsUtils.addContacts(this,"亦筝笙","18765218309", R.mipmap.ic_launcher,"完美故事!");
 
-        // 表插入姓名数据
-        values.clear();//清空values
-        values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);//赋值ID
-        values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE);// 插入的值的mime内容类型
-        values.put(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, "维拉报警电话");//联系人姓名
-        getContentResolver().insert(ContactsContract.Data.CONTENT_URI, values);//插入联系人姓名
-
-        //写入电话
-        values.clear();
-        values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
-        values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
-        values.put(ContactsContract.CommonDataKinds.Phone.NUMBER, "95213176");//插入电话号码
-        values.put(ContactsContract.CommonDataKinds.Phone.TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE);
-        getContentResolver().insert(android.provider.ContactsContract.Data.CONTENT_URI, values);
-
-        //写入头像
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
-        try {
-            out.flush();
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        values.clear();
-        values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
-        values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Photo.CONTENT_ITEM_TYPE);
-        values.put(ContactsContract.CommonDataKinds.Photo.PHOTO, out.toByteArray());
-        getContentResolver().insert(ContactsContract.Data.CONTENT_URI, values);
+//        ContentValues values = new ContentValues();
+//        Uri rawContactUri = getContentResolver().insert(
+//                ContactsContract.RawContacts.CONTENT_URI, values);//先创建一个空的联系人
+//        Log.e("TAG", "getConstant: --rawContactUri---" + rawContactUri);
+//        long rawContactId = ContentUris.parseId(rawContactUri);//获得新建空的联系人的ID
+//        Log.e("TAG", "getConstant: --rawContactId---" + rawContactId);
+//
+//        // 表插入姓名数据
+//        values.clear();//清空values
+//        values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);//赋值ID
+//        values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE);// 插入的值的mime内容类型
+//        values.put(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, "维拉报警电话");//联系人姓名
+//        getContentResolver().insert(ContactsContract.Data.CONTENT_URI, values);//插入联系人姓名
+//
+//        //写入电话
+//        values.clear();
+//        values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
+//        values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
+//        values.put(ContactsContract.CommonDataKinds.Phone.NUMBER, "95213176");//插入电话号码
+//        values.put(ContactsContract.CommonDataKinds.Phone.TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE);
+//        getContentResolver().insert(android.provider.ContactsContract.Data.CONTENT_URI, values);
+//
+//        //写入头像
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+//        ByteArrayOutputStream out = new ByteArrayOutputStream();
+//        bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+//        try {
+//            out.flush();
+//            out.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        values.clear();
+//        values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
+//        values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Photo.CONTENT_ITEM_TYPE);
+//        values.put(ContactsContract.CommonDataKinds.Photo.PHOTO, out.toByteArray());
+//        getContentResolver().insert(ContactsContract.Data.CONTENT_URI, values);
     }
 
     /**
@@ -366,24 +357,25 @@ public class HomeActivity extends BaseActivity {
     }
 
 
-/**
-    核心思想：
-            (1)先在raw_contacts表根据姓名(此处的姓名为name记录的data2的数据而不是data1的数据)查出id；
-            (2)在data表中只要raw_contact_id匹配的都删除；
-    复制代码*/
-    public void testDelete(){
+    /**
+     * 核心思想：
+     * (1)先在raw_contacts表根据姓名(此处的姓名为name记录的data2的数据而不是data1的数据)查出id；
+     * (2)在data表中只要raw_contact_id匹配的都删除；
+     * 复制代码
+     */
+    public void testDelete() {
         String name = "维拉报警电话";
         //根据姓名求id
         Uri uri = Uri.parse("content://com.android.contacts/raw_contacts");
         ContentResolver resolver = getContentResolver();
-        Cursor cursor = resolver.query(uri, new String[]{ContactsContract.Data._ID},"display_name=?", new String[]{name}, null);
-        if (cursor!=null){
-            while (cursor.moveToFirst()){
+        Cursor cursor = resolver.query(uri, new String[]{ContactsContract.Data._ID}, "display_name=?", new String[]{name}, null);
+        if (cursor != null) {
+            while (cursor.moveToFirst()) {
                 int id = cursor.getInt(0);
                 //根据id删除data中的相应数据
                 resolver.delete(uri, "display_name=?", new String[]{name});
                 uri = Uri.parse("content://com.android.contacts/data");
-                resolver.delete(uri, "raw_contact_id=?", new String[]{id+""});
+                resolver.delete(uri, "raw_contact_id=?", new String[]{id + ""});
             }
         }
 
