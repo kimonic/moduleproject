@@ -12,7 +12,27 @@ import android.widget.Toast;
  * version：          1.0
  * date：            2017/7/7
  * description：   toast显示工具类
+ * method:
+ *
+ *          showToast(Context context, @StringRes int resId)------使用字符串资源显示短toast
+ *          showToast(Context context, String content)-----------使用字符串显示短toast
+ *          showToast(Context context, String content, int duration )----使用字符串显示自定义时间的toast
+ *          showToast(Context context, @StringRes int resId, int duration )-----使用字符串资源显示自定义时间的toast
+ *
  * history：
+ *
+ *          Toast使用自定义背景色以及使用自定view的方法
+ *          Toast toast=Toast.makeText(context,content,duration);
+ *          View  view=toast.getView();
+ *          view.setBackgroundColor(int color);
+ *          toast.show();
+ *          自定义view
+ *          TextView textview=new TextView(context);
+ *          textview.setText(content);
+ *          textview.setBackgroundColor(int color);
+ *          ........
+ *          toast.setView(textview);
+ *          toast.show();
  * * ==================================================
  *
  */

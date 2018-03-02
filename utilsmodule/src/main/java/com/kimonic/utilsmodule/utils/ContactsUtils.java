@@ -48,7 +48,31 @@ import java.util.Map;
  * version：          1.0
  * date：             2018/3/1
  * description：   联系人相关辅助类
- * history：
+ * method:
+ * addContacts(Context context, String contactsName, String phoneNumber, @DrawableRes int drawableResId, String mark)
+ * 添加通讯录联系人,含姓名,手机号码,头像和备注,采用更新模式,已有时不会重复插入数据库
+ * <p>
+ * <p>
+ * history：  不同的通讯录对数据库的操作可能不同,简单暴力的方式就是视具体情况直接操作数据库
+ * <p>
+ * Uri uri = Uri.parse("content://com.android.contacts/数据库下的表名");//对相应的表进行数据操作
+ * 主要使用表名:
+ * content://com.android.contacts/contacts   总表
+ * content://com.android.contacts/data   详细数据表
+ * content://com.android.contacts/mimetypes    mime类型表,默认有13中类型
+ * content://com.android.contacts/raw_contacts   姓名概览表
+ * <p>
+ * Cursor cursor = resolver.query(uri, new String[]{ContactsContract.Data._ID},
+ * "display_name=?", new String[]{contactsName}, null);
+ * <p>
+ * 参数1:uri,要访问的数据库的表名
+ * 参数2:要访问的表中的字段名
+ * 参数3:筛选条件
+ * 参数4:筛选条件?的具体值
+ * 参数5:排序方式
+ * <p>
+ * <p>
+ * C:\Users\Administrator\Desktop
  * 参考文章:https://www.cnblogs.com/xiaoxiaoshen/p/5167541.html
  * *==================================================================
  */
@@ -62,54 +86,73 @@ public class ContactsUtils {
 
     /**
      * 向通讯录中添加联系人,添加姓名,手机号,头像图片
-     *   Uri uri = Uri.parse("content://com.android.contacts/data");//对data表的所有数据操作
-     ContentValues values = new ContentValues();
-     //更新电话号码
-     values.put("data1", number);
-     resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"5", rawContactId+""}) ;
-     //更新联系人姓名
-     values.clear();
-     values.put("data1", name);
-     resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"7", rawContactId+""}) ;
-     //更新email
-     values.clear();
-     values.put("data1", email);
-     resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"1", rawContactId+""}) ;
-     //更新im
-     values.clear();
-     values.put("data1", im);
-     resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"2", rawContactId+""}) ;
-     //更新company
-     values.clear();
-     values.put("data1", company);
-     values.put("data3",name);
-     values.put("data4",position);
-     resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"4", rawContactId+""}) ;
-
+     * Uri uri = Uri.parse("content://com.android.contacts/data");//对data表的所有数据操作
+     * ContentValues values = new ContentValues();
+     * //更新电话号码
+     * values.put("data1", number);
+     * resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"5", rawContactId+""}) ;
+     * //更新联系人姓名
+     * values.clear();
+     * values.put("data1", name);
+     * resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"7", rawContactId+""}) ;
+     * //更新email
+     * values.clear();
+     * values.put("data1", email);
+     * resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"1", rawContactId+""}) ;
+     * //更新im
+     * values.clear();
+     * values.put("data1", im);
+     * resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"2", rawContactId+""}) ;
+     * //更新company
+     * values.clear();
+     * values.put("data1", company);
+     * values.put("data3",name);
+     * values.put("data4",position);
+     * resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"4", rawContactId+""}) ;
      */
     public static void addContacts(Context context, String contactsName, String phoneNumber, @DrawableRes int drawableResId, String mark) {
-        //获取内容解析器
-        ContentResolver resolver = context.getContentResolver();
-        //        ContentResolver的存储保存类
-        ContentValues values = new ContentValues();
+
+        ContentResolver resolver = context.getContentResolver();//获取内容解析器
+
+//        resolver.delete(Uri.parse("content://com.android.contacts/contacts"), null, null);
+//        resolver.delete(Uri.parse("content://com.android.contacts/raw_contacts"), null, null);
+//        resolver.delete(Uri.parse("content://com.android.contacts/data"),null,null);
+//        for (int i = 0; i < 253; i++) {
+//            Log.e("TAG", "addContacts: ---shanchucaozuo--"
+//                    +resolver.delete(Uri.parse("content://com.android.contacts/data"), null, null));
+
+
+//        }
+
+        ContentValues values = new ContentValues();//ContentResolver的存储保存类
         long rawContactId = -1;
+
+        boolean existFlag = false;//默认要创建的联系人不存在
+        Uri uri = Uri.parse("content://com.android.contacts/data");//对data表的所有数据操作
 
         if (TextUtils.isEmpty(contactsName)) {
             return;
         } else {
-            Uri uri = Uri.parse("content://com.android.contacts/raw_contacts");
-            Cursor cursor = resolver.query(uri, new String[]{ContactsContract.Data._ID}, "display_name=?", new String[]{contactsName}, null);
+            //查询  raw_contacts
+            Uri uri1 = Uri.parse("content://com.android.contacts/raw_contacts");
+            Cursor cursor = resolver.query(uri1, new String[]{ContactsContract.Data._ID},
+                    "display_name=?", new String[]{contactsName}, null);
             try {
-                if (cursor != null) {
-                    while (cursor.moveToNext()) {
-                        //ContactsContract.Contacts._ID属于contacts表,与raw_contacts表中的RawContactsID相同
-                        rawContactId = cursor.getInt(cursor.getColumnIndex(ContactsContract.Contacts._ID));
-                    }
+                if (cursor!=null)
+                Log.e("TAG", "addContacts: -----"+cursor.moveToFirst());
+
+                if (cursor != null && cursor.moveToNext()) {//存疑:首次调用moveToNext()是查询的第一个还是跳过第一个????
+//                    while (cursor.moveToNext()) {//while循环中使用moveToFirst会造成死循环
+                    //ContactsContract.Contacts._ID属于raw_contacts表,与contacts表中的_ID相同,与data表中的raw_contact_id也相同
+                    rawContactId = cursor.getInt(cursor.getColumnIndex(ContactsContract.Contacts._ID));
+                    existFlag = true;
+//                    }
                 } else {
-                    //先创建一个空的联系人
+                    //先创建一个空的联系人,在raw_contacts表中
                     Uri rawContactUri = resolver.insert(ContactsContract.RawContacts.CONTENT_URI, values);
                     //获取新建该联系人对象存储的唯一id
                     rawContactId = ContentUris.parseId(rawContactUri);//获得新建空的联系人的ID
+                    existFlag = false;
                 }
             } catch (Exception e) {
                 ToastUtils.showToast(context, R.string.tianjialianxirenshibai);
@@ -120,30 +163,48 @@ public class ContactsUtils {
             }
         }
 
+        if (!existFlag) {
+            // 表插入姓名数据
+            values.clear();//清空values
+            values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);//赋值ID
+            values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE);// 插入的值的mime内容类型
+            values.put(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, contactsName);//联系人姓名
+            resolver.insert(ContactsContract.Data.CONTENT_URI, values);//插入联系人姓名
+        }
 
-        // 表插入姓名数据
-        values.clear();//清空values
-        values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);//赋值ID
-        values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE);// 插入的值的mime内容类型
-        values.put(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, contactsName);//联系人姓名
-        resolver.insert(ContactsContract.Data.CONTENT_URI, values);//插入联系人姓名
 
         //写入电话
         values.clear();
-        values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
-        values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
-        values.put(ContactsContract.CommonDataKinds.Phone.NUMBER, phoneNumber);//插入电话号码
-        values.put(ContactsContract.CommonDataKinds.Phone.TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE);
+        if (existFlag) {
+            //更新电话号码,精确插入数据库,与其他通讯录型软件可能存在兼容性问题
+            values.put("data1", phoneNumber);
+            //vnd.android.cursor.item/phone_v2  mimetypes表中id为5表示的类型
+//                模拟器中contacts数据库mimetypes表中所有的字段
+//             id               mimetype
+//             1	vnd.android.cursor.item/email_v2
+//             2	vnd.android.cursor.item/im
+//             3	vnd.android.cursor.item/nickname
+//             4	vnd.android.cursor.item/organization
+//             5	vnd.android.cursor.item/phone_v2
+//             6	vnd.android.cursor.item/sip_address
+//             7	vnd.android.cursor.item/name
+//             8	vnd.android.cursor.item/postal-address_v2
+//             9	vnd.android.cursor.item/identity
+//             10	vnd.android.cursor.item/photo
+//             11	vnd.android.cursor.item/group_membership
+//             12	vnd.android.cursor.item/website
+//             13	vnd.android.cursor.item/contact_event
 
-        Uri uri = Uri.parse("content://com.android.contacts/data");//对data表的所有数据操作
-        //更新电话号码
-        values.put("data1", phoneNumber);
-        resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"5", rawContactId+""}) ;
+            resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"5", rawContactId + ""});
+        } else {
+            //使用insert时,在模拟器中是追加主要电话号码,但读取时只能读一个号码
+            values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
+            values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
+            values.put(ContactsContract.CommonDataKinds.Phone.NUMBER, phoneNumber);//插入电话号码
+            values.put(ContactsContract.CommonDataKinds.Phone.TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE);
+            resolver.insert(android.provider.ContactsContract.Data.CONTENT_URI, values);
+        }
 
-
-
-//使用insert时,在模拟器中是追加主要电话号码,但读取时只能读一个号码
-//        resolver.insert(android.provider.ContactsContract.Data.CONTENT_URI, values);
 
         //写入头像
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), drawableResId);
@@ -157,19 +218,29 @@ public class ContactsUtils {
         }
 
         values.clear();
-        values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
-        values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Photo.CONTENT_ITEM_TYPE);
-        values.put(ContactsContract.CommonDataKinds.Photo.PHOTO, out.toByteArray());
-        resolver.insert(ContactsContract.Data.CONTENT_URI, values);
+        if (existFlag) {
+            values.put("data15", out.toByteArray());
+            resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"10", rawContactId + ""});
+        } else {
+            values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
+            values.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Photo.CONTENT_ITEM_TYPE);
+            values.put(ContactsContract.CommonDataKinds.Photo.PHOTO, out.toByteArray());
+            resolver.insert(ContactsContract.Data.CONTENT_URI, values);
+        }
 
 
         // 表插入备注数据
         values.clear();//清空values
-        values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);//赋值ID
-        values.put(ContactsContract.Data.MIMETYPE, Event.CONTENT_ITEM_TYPE);// 插入的值的mime内容类型
-        values.put(Event.TYPE, Event.TYPE_OTHER);//联系人姓名
-        values.put(Event.START_DATE, mark);//联系人姓名
-        resolver.insert(ContactsContract.Data.CONTENT_URI, values);//插入联系人姓名
+        if (existFlag) {
+            values.put("data13", mark);//data13字段值自选,注意不要与其他保存字段重复
+            resolver.update(uri, values, "mimetype_id=? and raw_contact_id=?", new String[]{"13", rawContactId + ""});
+        } else {
+            values.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);//赋值ID
+            values.put(ContactsContract.Data.MIMETYPE, Event.CONTENT_ITEM_TYPE);// 插入的值的mime内容类型
+            values.put(Event.TYPE, Event.TYPE_OTHER);//备注类型
+            values.put(Event.START_DATE, mark);//备注
+            resolver.insert(ContactsContract.Data.CONTENT_URI, values);//插入联系人姓名
+        }
     }
 
     /**
