@@ -160,4 +160,5 @@
     <string name="qxjc">权限检查</string>
     <string name="queding">确定</string>
     <string name="weishouyuduqutonghuajiluquanxian">未授予读取通话记录权限!</string>
+    <string name="daorugudingzichanjilu">\t\t导入固定资产记录</string>
 </resources>

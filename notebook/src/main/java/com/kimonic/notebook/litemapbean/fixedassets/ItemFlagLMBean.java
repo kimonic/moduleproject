@@ -45,7 +45,10 @@ public class ItemFlagLMBean extends DataSupport {
     }
 
     public long getItemFlag() {
-        return getBaseObjId();
+        return itemFlag;
     }
 
+    public void setItemFlag(long itemFlag) {
+        this.itemFlag = itemFlag;
+    }
 }

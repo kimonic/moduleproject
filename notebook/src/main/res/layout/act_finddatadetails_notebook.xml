@@ -44,7 +44,6 @@
         android:dividerHeight="5dp"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
-        android:background="@color/colorBac"
         />
 
 </LinearLayout>

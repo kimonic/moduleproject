@@ -43,6 +43,12 @@
         android:text="@string/daochugudingzichanjilu"
         android:drawableStart="@drawable/xshape_erniucircle"
         />
+    <TextView
+        android:id="@+id/tv_act_fixedassets_daorugudingzichanjilu"
+        style="@style/FragAccountingTextStyle2"
+        android:text="@string/daorugudingzichanjilu"
+        android:drawableStart="@drawable/xshape_cyancircle"
+        />
 
     <!--<TextView-->
         <!--android:id="@+id/tv_act_fixedassets_beiwanglu"-->

@@ -70,6 +70,8 @@
         <activity android:name=".activity.investment.SeeInvestRecordListActivity" />
         <!--18.查看投资记录详情activity-->
         <activity android:name=".activity.investment.SeeInvestRecordDetailsActivity" />
+        <!--19.固定资产记录备份activity-->
+        <activity android:name=".activity.fixedassets.BackupsActivity" />
     </application>
 
 </manifest>

@@ -55,3 +55,17 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 
 }
+
+//此处依赖可能有问题----------解决support包依赖有多个版本的警告问题------------------------------------------------------
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '27.0.2'
+            }
+        }
+    }
+}
+//此处依赖可能有问题----------------------------------------------------------------

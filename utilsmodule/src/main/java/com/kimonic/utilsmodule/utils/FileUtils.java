@@ -1,22 +1,16 @@
 package com.kimonic.utilsmodule.utils;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Log;
-
 
 import com.kimonic.utilsmodule.R;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
 
 /**
  * * ==================================================
@@ -126,14 +120,63 @@ public class FileUtils {
     }
 
     /**
-     * 读取文件
+     * 读取文件,通过底层目录,文件名,sdk的以及目录
      *
      * @param context  上下文
      * @param fileName 文件名称
      * @return 内容字符串
      */
-    public static String readFileContent(Context context, String fileName) {
-        File file = new File(getFilepath(context) + fileName);
+    public static String readFileContent(Context context, String directoryName, String fileName) {
+//        File file = new File(getFilepath(context) + fileName);
+        File appDir = new File(Environment.getExternalStorageDirectory(), directoryName);
+        if (!appDir.exists()) {
+            if (!appDir.mkdir()) {
+                Log.e("TAG", "saveImageToGallery: -----图片保存目录创建失败!!");
+            }
+        }
+        File file = new File(appDir.getAbsolutePath()+"/" + fileName);
+
+        if (file.exists()) {
+            FileInputStream fis = null;
+            InputStreamReader isr = null;
+            try {
+                fis = new FileInputStream(file);
+                isr = new InputStreamReader(fis, "UTF-8");
+
+                char[] input = new char[fis.available()];
+                isr.read(input);
+                String in = new String(input);
+                return in.trim();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (isr != null) {
+                        isr.close();
+                    }
+                    if (fis != null) {
+                        fis.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+        return "";
+
+    }
+
+    /**
+     * 通过详细路径读取文件
+     * @param fileName   详细路径
+     * @return  文件字符串
+     */
+    public static String readFileContent(String fileName) {
+        File file = new File(fileName);
+
         if (file.exists()) {
             FileInputStream fis = null;
             InputStreamReader isr = null;
@@ -297,7 +340,6 @@ public class FileUtils {
         }
         return appDir.getAbsolutePath();
     }
-
 
     public static void fileDir(Context context) {
         Log.e("TAG", "fileDir:1---------------" + context.getExternalCacheDir());//应用内缓存目录

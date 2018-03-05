@@ -87,12 +87,12 @@ public class SaveDataDetailsActivity extends BaseActivity {
                     typeName = etLabel.getText().toString().trim();//资产类别
                     vaule = StringUtils.string2Float(etShuzhi.getText().toString().trim());//资产价值
                     mark = etMark.getText().toString().trim();//备注
-                    if (itemFlag!=null){
+                    if (itemFlag != null) {
                         listItem = DataSupport.where("userName = ? and dateFlag = ? and " +
                                 "itemFlag = ?", userName, date, itemFlag).find(SaveDataLMBean.class);
-                    }                    
+                    }
 
-                    if (listItem != null && listItem.size() > 0) {
+                    if (listItem != null && listItem.size() > 0) {//当天修改
                         DialogUtils.showPromptDialog(this, getString(R.string.gaileibieyicunzai), new DialogUtils.DialogUtilsCallBack() {
                             @Override
                             public void cancel() {
@@ -119,15 +119,18 @@ public class SaveDataDetailsActivity extends BaseActivity {
                             }
                         }, null, null, null);
 
-                    } else {
+                    } else {//新建
+                        label = typeName;
+                        itemFlag = addItem(typeName);
                         SaveDataLMBean bean = new SaveDataLMBean();
                         bean.setValue(vaule);
                         bean.setDateFlag(date);
                         bean.setItem(typeName);//资产类别
                         bean.setUserName(userName);
-                        // TODO: 2018/3/1 itemflag为null时需要确定当前标签的itemflag 
+//                         TODO: 2018/3/1 itemflag为null时需要确定当前标签的itemflag
                         bean.setItemFlag(itemFlag);
                         bean.setMark(mark);
+                        bean.setLastModify(date);
                         bean.setYear(String.valueOf(TimeUtils.getCurrentYear()));
                         bean.setMonth(TimeUtils.getCurrentMonthStr());
                         bean.save();
@@ -188,25 +191,22 @@ public class SaveDataDetailsActivity extends BaseActivity {
     /**
      * 添加资产类别
      */
-    private void addItem(String item) {
+    private String addItem(String item) {
+        List<ItemFlagLMBean> list = DataSupport.findAll(ItemFlagLMBean.class);
         List<ItemFlagLMBean> listItem = DataSupport.where("itemName = ? and userName = ?",
                 item, userName).find(ItemFlagLMBean.class);
 
         if (listItem != null && listItem.size() == 0) {
-            List<ItemFlagLMBean> list = DataSupport.where("userName = ?", userName).find(ItemFlagLMBean.class);//确定标签唯一标识
-            if (list == null) {
-                ItemFlagLMBean bean = new ItemFlagLMBean();
-                bean.setItemName(item);
-                bean.setUserName(userName);
-                bean.save();
-            } else {
-                ItemFlagLMBean bean = new ItemFlagLMBean();
-                bean.setItemName(item);
-                bean.setUserName(userName);
-                bean.save();
-            }
-            ToastUtils.showToast(this, R.string.baocunchenggong);
+            ItemFlagLMBean bean = new ItemFlagLMBean();
+            bean.setItemName(item);
+            bean.setItemFlag((list.size() + 1));
+            bean.setUserName(userName);
+            bean.save();
+            return "" + bean.getItemFlag();
+        } else if (listItem != null) {
+            return "" + listItem.get(0).getItemFlag();
         }
+        return "";
     }
 
     @Override
