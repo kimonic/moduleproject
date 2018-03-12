@@ -122,6 +122,9 @@ public class FixedAssetsActivity extends BaseActivity {
                 break;
             case R.id.tv_act_fixedassets_daorugudingzichanjilu://导入
 //                String json1=FileUtils.readFileContent();
+                //发送短信
+//                Intent sms = new Intent(Intent.ACTION_SENDTO,Uri.parse("smsto:18765218309"));
+//                startActivity(sms);
                 openFileManager();
                 break;
         }
@@ -165,7 +168,6 @@ public class FixedAssetsActivity extends BaseActivity {
         tvExport.setOnClickListener(this);
         tvCompare.setOnClickListener(this);
         tvImport.setOnClickListener(this);
-
     }
 
     @Override

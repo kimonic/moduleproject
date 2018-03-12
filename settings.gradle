@@ -1,1 +1,1 @@
-include ':app', ':utilsmodule', ':notebook', ':test', ':uninstallapp'
+include ':app', ':utilsmodule', ':notebook', ':test', ':uninstallapp', ':studysousecodenote'
