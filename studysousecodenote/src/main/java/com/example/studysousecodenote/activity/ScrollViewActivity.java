@@ -3,6 +3,7 @@ package com.example.studysousecodenote.activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.example.studysousecodenote.R;
 import com.kimonic.utilsmodule.base.BaseActivity;
@@ -32,6 +33,8 @@ public class ScrollViewActivity extends BaseActivity {
     Button btUp;
     @BindView(R.id.bt_act_scrollview_soursecode_down)
     Button btDown;
+    @BindView(R.id.tv_act_scrollview_soursecode)
+    TextView tv;
 
     @Override
     public int getLayoutResId() {
@@ -48,7 +51,9 @@ public class ScrollViewActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt_act_scrollview_soursecode_up:
-                sv.setOverScrollMode(View.OVER_SCROLL_NEVER);
+/**
+ */
+
                 break;
             case R.id.bt_act_scrollview_soursecode_down:
                 sv.setOverScrollMode(View.OVER_SCROLL_ALWAYS);//内容滚动时允许scrollview有边界溢出
@@ -72,8 +77,8 @@ public class ScrollViewActivity extends BaseActivity {
         sv.fullScroll(View.FOCUS_DOWN);//下翻到底部
         sv.pageScroll(View.FOCUS_UP);//scrollview上翻一屏
         sv.pageScroll(View.FOCUS_DOWN);//scrollview下翻一屏
-        sv.smoothScrollBy(0,0);//平滑滚动从指定坐标点
-        sv.scrollBy(0,0);//立即滚动从指定坐标点
+        sv.smoothScrollBy(0, 0);//平滑滚动从指定坐标点
+        sv.scrollBy(0, 0);//立即滚动从指定坐标点
         sv.smoothScrollTo(0, 0);//平滑滚动到指定坐标点
         sv.scrollTo(0, 0);//立即滚动到指定坐标点
         sv.fling(10000);//以指定出事速度抛掷scrollview,正值向下,负值向上
@@ -110,6 +115,7 @@ public class ScrollViewActivity extends BaseActivity {
     public void loadInternetDataToUi(Response<String> response) {
 
     }
+
 
     @Override
     public void loadInternetDataToUi() {

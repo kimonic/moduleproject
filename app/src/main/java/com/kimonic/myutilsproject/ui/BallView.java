@@ -6,12 +6,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.kimonic.myutilsproject.R;
@@ -210,7 +207,15 @@ public class BallView extends View {
         pathLine.lineTo(length,height/2+length/2);
         pathLine.close();
         canvas.drawPath(pathLine,testPaint);
+/**
+ 如果“从零开始”，用什么设计架构的问题属于想得太多做得太少的问题。
 
+ 从零开始意味着一个项目的主要技术难点是基本功能实现。当每一个功能都需要考虑如何做到的时候，我觉得一般人都没办法考虑如何做好。
+
+ 因为，所有的优化都是站在最上层进行统筹规划。在这之前，你必须对下层的每一个模块都非常熟悉，进而提炼可复用的代码、规划逻辑流程。
+
+ 所以，如果真的是从零开始，别想太多了
+ */
 
 //        canvas.drawLine(0,0,0,height,testPaint);
 //        canvas.drawLine(width,0,width,height,testPaint);
