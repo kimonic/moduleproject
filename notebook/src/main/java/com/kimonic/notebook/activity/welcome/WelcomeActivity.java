@@ -1,6 +1,5 @@
 package com.kimonic.notebook.activity.welcome;
 
-import android.content.pm.PackageInfo;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
@@ -9,10 +8,11 @@ import android.widget.ImageView;
 
 import com.kimonic.notebook.R;
 import com.kimonic.utilsmodule.base.BaseActivity;
+import com.kimonic.utilsmodule.utils.HttpUtils;
+import com.kimonic.utilsmodule.utils.LUtils;
 import com.lzy.okgo.model.Response;
 
 import java.io.File;
-import java.util.List;
 
 import butterknife.BindView;
 
@@ -87,10 +87,14 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     public void initDataFromInternet() {
 
+        HttpUtils.getInstance(this).GET("http://www.baidu.com", getStringCallback());
+
     }
 
     @Override
     public void loadInternetDataToUi(Response<String> response) {
+        LUtils.e(WelcomeActivity.class,"logflag---网络链接测试"+response.body());
+
 
     }
 

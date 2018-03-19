@@ -1,6 +1,5 @@
 package com.kimonic.utilsmodule.base;
 
-import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
@@ -8,8 +7,6 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.ColorRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +18,6 @@ import android.widget.LinearLayout;
 import com.kimonic.utilsmodule.R;
 import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.kimonic.utilsmodule.utils.DialogUtils;
-import com.kimonic.utilsmodule.utils.ThreadUtils;
 import com.kimonic.utilsmodule.utils.ToastUtils;
 import com.lzy.imagepicker.view.SystemBarTintManager;
 import com.lzy.okgo.OkGo;
@@ -29,7 +25,6 @@ import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
-import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.Map;
 
@@ -53,20 +48,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
      * app进入前台后为false,返回后为true
      */
     private boolean isActive = true;
-    //-----------------------------------------联网请求计时---------------------------------------------------------
-    /**
-     * dialog是否已显示
-     */
-    private boolean isProgressing = false;
 
-    /**
-     * 弱引用handler,防止内存泄露
-     */
-    private MyHandler handler = new MyHandler(this);
-    /**
-     * dialog最长的显示时间,超时将自动消失
-     */
-    private long sleepTime = 15000;
     /**
      * 本activity内的okgo的请求标识
      */
@@ -76,13 +58,14 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
      */
     private SmartRefreshLayout srl;
 
+    /**设置加载刷新布局*/
     @SuppressWarnings("unused")
     public void setSrl(SmartRefreshLayout srl) {
         this.srl = srl;
     }
 
     /**
-     * 结束加载刷新
+     * 结束SmartRefreshLayout加载刷新
      */
     public void finishRL() {
         if (srl != null) {
@@ -94,38 +77,55 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         }
     }
 
+    /**获得本类内okgo的请求tag*/
     @SuppressWarnings("unused")
     public String getOkgoCancelTag() {
         return okgoCancelTag;
     }
 
+    /**设置本类内okgo的请求tag*/
     @SuppressWarnings("unused")
     public void setOkgoCancelTag(String okgoCancelTag) {
         this.okgoCancelTag = okgoCancelTag;
     }
 
-    @SuppressLint("HandlerLeak")
-    private class MyHandler extends Handler {
-        // 弱引用 ，防止内存泄露
-        private WeakReference<AppCompatActivity> weakReference;
+    //-----------------------------------------联网请求计时---------------------------------------------------------
+//    /**
+//     * dialog是否已显示
+//     */
+//    private boolean isProgressing = false;
+//    /**
+//     * 弱引用handler,防止内存泄露
+//     */
+//    private MyHandler handler = new MyHandler(this);
+//    /**
+//     * dialog最长的显示时间,超时将自动消失
+//     */
+//    private long sleepTime = 15000;
 
-        private MyHandler(AppCompatActivity handlerMemoryActivity) {
-            weakReference = new WeakReference<>(handlerMemoryActivity);
-        }
-
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-
-            AppCompatActivity handlerMemoryActivity = weakReference.get();
-            if (handlerMemoryActivity != null && isProgressing && msg.what == 1) {
-                OkGo.getInstance().cancelAll();//取消所有的网络请求
-                dismissPDialog();
-            } else {
-                dismissPDialog();
-            }
-        }
-    }
+//    @SuppressLint("HandlerLeak")
+//    private class MyHandler extends Handler {
+//        // 弱引用 ，防止内存泄露
+//        private WeakReference<AppCompatActivity> weakReference;
+//
+//        private MyHandler(AppCompatActivity handlerMemoryActivity) {
+//            weakReference = new WeakReference<>(handlerMemoryActivity);
+//        }
+//
+//        @Override
+//        public void handleMessage(Message msg) {
+//            super.handleMessage(msg);
+//
+//            AppCompatActivity handlerMemoryActivity = weakReference.get();
+//            if (handlerMemoryActivity != null && isProgressing && msg.what == 1) {
+//                OkGo.getInstance().cancelAll();//取消所有的网络请求
+//                dismissPDialog();
+//            } else {
+//                dismissPDialog();
+//            }
+//        }
+//    }
+    //------------------------------------------联网请求计时--------------------------------------------------------
 
     /**
      * okgo stringcallback()
@@ -141,24 +141,30 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
             stringCallback = new StringCallback() {
                 @Override
                 public void onSuccess(Response<String> response) {
-                    dismissPDialog();
-                    finishRL();
+//                    dismissPDialog();
+//                    finishRL();
                     loadInternetDataToUi(response);
                 }
 
+                /**网络请求出错,某些情况下由于缓存原因,可能不会被回调,例如304等*/
                 @Override
                 public void onError(Response<String> response) {
                     super.onError(response);
+                    ToastUtils.showToast(BaseActivity.this, R.string.wangluobutaigeiliyou);
+                }
+
+                /**每次网络请求结束后都会被回调,无论网络请求时成功还是失败*/
+                @Override
+                public void onFinish() {
                     dismissPDialog();
                     finishRL();
-                    ToastUtils.showToast(BaseActivity.this, R.string.wangluobutaigeiliyou);
+                    super.onFinish();
                 }
             };
 
         }
         return stringCallback;
     }
-    //------------------------------------------联网请求计时--------------------------------------------------------
     /**
      * 加载进度显示dialog
      */
@@ -169,17 +175,19 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
      */
     @SuppressWarnings("unused")
     public void showPDialog() {
-        timeThread();
-        isProgressing = true;
+//        timeThread();//开启线程控制加载进度显示,okgo的onfinish()方法代替
+//        isProgressing = true;
         if (bDialog == null && !isFinishing()) {
             bDialog = DialogUtils.showProgreessDialog(this, getResources().getString(R.string.zaicidianjijinagtuichugaiyemian));
         } else if (!isFinishing()) {
             bDialog.show();
         }
     }
-
+    /**
+     * 取消加载进度dialog
+     */
     public void dismissPDialog() {
-        isProgressing = false;
+//        isProgressing = false;
         if (!(isFinishing() || isDestroyed())) {
             if (bDialog != null && bDialog.isShowing()) {
                 bDialog.dismiss();
@@ -476,19 +484,36 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
     }
 
 
-    /**
-     * 进度加载显示控制线程
-     */
-    private void timeThread() {
-//        ScheduledThreadPoolExecutor executor=new ScheduledThreadPoolExecutor(6);
-//        executor.execute(new Runnable() {
+//    /**
+//     * 进度加载显示控制线程
+//     */
+//    private void timeThread() {
+////        ScheduledThreadPoolExecutor executor=new ScheduledThreadPoolExecutor(6);
+////        executor.execute(new Runnable() {
+////            @Override
+////            public void run() {
+////                try {
+////                    Thread.sleep(sleepTime);
+////                } catch (InterruptedException e) {
+////                    e.printStackTrace();
+////                }
+////                Message msg = Message.obtain();
+////                msg.what = 1;
+////                if (handler != null) {
+////                    handler.sendMessage(msg);
+////                }
+////            }
+////        });
+//
+//        ThreadUtils.getCashThreadPoolInstance().execute(new Runnable() {
 //            @Override
 //            public void run() {
-//                try {
-//                    Thread.sleep(sleepTime);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+////                try {
+////                    Thread.sleep(sleepTime);
+////                } catch (InterruptedException e) {
+////                    e.printStackTrace();
+////                }
+//                SystemClock.sleep(sleepTime);
 //                Message msg = Message.obtain();
 //                msg.what = 1;
 //                if (handler != null) {
@@ -496,39 +521,23 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
 //                }
 //            }
 //        });
-
-        ThreadUtils.getCashThreadPoolInstance().execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(sleepTime);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                Message msg = Message.obtain();
-                msg.what = 1;
-                if (handler != null) {
-                    handler.sendMessage(msg);
-                }
-            }
-        });
-
-//        new Thread() {
-//            @Override
-//            public void run() {
-//                try {
-//                    Thread.sleep(sleepTime);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                Message msg = Message.obtain();
-//                msg.what = 1;
-//                if (handler != null) {
-//                    handler.sendMessage(msg);
-//                }
-//            }
-//        }.start();
-    }
+//
+////        new Thread() {
+////            @Override
+////            public void run() {
+////                try {
+////                    Thread.sleep(sleepTime);
+////                } catch (InterruptedException e) {
+////                    e.printStackTrace();
+////                }
+////                Message msg = Message.obtain();
+////                msg.what = 1;
+////                if (handler != null) {
+////                    handler.sendMessage(msg);
+////                }
+////            }
+////        }.start();
+//    }
 
 
 }

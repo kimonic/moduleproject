@@ -78,11 +78,12 @@ public class AAAPreview {
      3.调用托管平台进行支持操作,保障资金的安全
      4.使用butterknife,glide(图片处理),litepal(数据库处理),SmartRefreshLayout(加载刷新布局),
      okgo(基于okhttp的封装网络框架),gson(json数据处理)等优秀的第三方开源类库或框架,加速app的开发
-     5.添加极光推送,实现推送,统计,bug收集等功能
+     5.添加极光推送,实现推送,统计,bug收集等功能,添加友盟分享,实现app的分享功能
      6.使用混淆,乐加固,对app的安全进行多重防护
      7.使用multidex解决方法数超限问题
      8.使用动画,增加与用户之间的交互
      9.分模块开发,简化组件之间的耦合,降低迭代难度
+
 
      */
     private void resume(){

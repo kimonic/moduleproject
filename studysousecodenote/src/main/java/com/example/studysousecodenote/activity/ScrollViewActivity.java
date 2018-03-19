@@ -51,8 +51,6 @@ public class ScrollViewActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt_act_scrollview_soursecode_up:
-/**
- */
 
                 break;
             case R.id.bt_act_scrollview_soursecode_down:
