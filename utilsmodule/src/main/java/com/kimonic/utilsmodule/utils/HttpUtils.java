@@ -2,14 +2,11 @@ package com.kimonic.utilsmodule.utils;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.annotation.NonNull;
 
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.callback.Callback;
-import com.lzy.okgo.callback.FileCallback;
-import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.cookie.CookieJarImpl;
 import com.lzy.okgo.cookie.store.DBCookieStore;
 import com.lzy.okgo.https.HttpsUtils;
@@ -38,7 +35,8 @@ import okhttp3.OkHttpClient;
 
 public class HttpUtils {
 
-    private static boolean hasInitialize=false;
+    /**okgo是否已经初始化*/
+    private static boolean hasInitialize=true;
     /**全局请求重试次数*/
     private static final int RETRY_COUNT=3;
 
@@ -48,20 +46,6 @@ public class HttpUtils {
     private HttpUtils() {
 //        throw new UnsupportedOperationException("u can't initialize this");//为实现单例效果,此处不能抛出异常
     }
-
-    /**
-     * public class Singleton {
-     private Singleton(){
-
-     }
-     private static class SingletonHolder{
-     private final static Singleton instance=new Singleton();
-     }
-     public static Singleton getInstance(){
-     return SingletonHolder.instance;
-     }
-     }
-     */
 
     //创建单例--静态内部类方式
     private static class SingleHolder {
@@ -83,8 +67,8 @@ public class HttpUtils {
      * 链式调用泛型约束GetRequest<T>的泛型与Callback<T>的泛型必须一致
      */
     public void GET(String url, Map<String, String> paramsMap,
-                    Callback<StringCallback> callback) {
-        OkGo.<StringCallback>get(url)                // 请求方式和请求url
+                    Callback<String> callback) {
+        OkGo.<String>get(url)                // 请求方式和请求url
                 .tag("get")                       // 请求的 tag, 主要用于取消对应的请求
 //                .cacheKey(key)                      // 设置当前请求的缓存key,建议每个不同功能的请求设置一个
 //                .cacheMode(CacheMode.DEFAULT)       // 缓存模式--初始化时配置，详细请看缓存介绍
@@ -105,8 +89,8 @@ public class HttpUtils {
      * post请求
      */
     public void POST(String url, TreeMap<String, String> paramsMap,
-                     @NonNull String key, Callback<StringCallback> callback) {
-        OkGo.<StringCallback>post(url)     // 请求方式和请求url
+                     Callback<String> callback) {
+        OkGo.<String>post(url)     // 请求方式和请求url
                 .tag("post")                       // 请求的 tag, 主要用于取消对应的请求
                 .params(StringUtils.getRequestParams(paramsMap))//参数加密--与后台服务器相关
                 .execute(callback);
@@ -119,8 +103,8 @@ public class HttpUtils {
      * @param callback  回调
      */
     public void download(String url, Map<String, String> paramsMap,
-                         Callback<StringCallback> callback) {
-        OkGo.<StringCallback>get(url)
+                         Callback<String> callback) {
+        OkGo.<String>get(url)
                 .tag("download")
                 .params(paramsMap)
                 .execute(callback);
@@ -136,8 +120,8 @@ public class HttpUtils {
      * @param callback   回调
      */
     public void postFile(String url, String loginToken, String filePath,
-                         Callback<StringCallback> callback) {
-        OkGo.<StringCallback>post(url)
+                         Callback<String> callback) {
+        OkGo.<String>post(url)
                 .tag("postfile")
                 .params("login_token", loginToken)
                 .params("headImage", new File(filePath))
@@ -149,16 +133,14 @@ public class HttpUtils {
     /**
      * 下载文件
      */
-    public void downloadFile(String url, Callback<FileCallback> fileCallback) {
-        OkGo.<FileCallback>get(url)
+    public void downloadFile(String url, Callback<File> fileCallback) {
+        OkGo.<File>get(url)
                 .tag("downloadfile")
                 .execute(fileCallback);
     }
 
-
+    /**okgo初始化配置*/
     private static void initOkGo(Context context) {
-
-
 
         //-----------------------设置全局请求头,全局请求参数----------------------------------------
 
@@ -220,6 +202,10 @@ public class HttpUtils {
         //配置https的域名匹配规则，详细看demo的初始化介绍，不需要就不要加入，使用不当会导致https握手失败
 //        builder.hostnameVerifier(new SafeHostnameVerifier());
 
+        //----------------------okhttp3  OkHttpClient相关设置---------------------------------------
+
+        //----------------------okgo初始化----------------------------------------------------------
+
         // 此处的全局设置优先级最低,会被使用时的设置覆盖,其他统一的配置
         // 详细说明看GitHub文档：https://github.com/jeasonlzy/
         OkGo.getInstance().init((Application) context.getApplicationContext())                           //必须调用初始化
@@ -229,6 +215,8 @@ public class HttpUtils {
                 .setRetryCount(RETRY_COUNT);//全局统一超时重连次数，默认为三次，那么最差的情况会请求4次(一次原始请求，三次重连请求)，不需要可以设置为0
 //                .addCommonHeaders(headers)                      //全局公共头
 //                .addCommonParams(params);                       //全局公共参数
+        //----------------------okgo初始化----------------------------------------------------------
+
     }
 
 }

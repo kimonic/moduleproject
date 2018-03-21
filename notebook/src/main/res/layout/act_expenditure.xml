@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.kimonic.utilsmodule.ui.MTopBarView
+        android:id="@+id/mtb_act_expenditure"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorQianLan"
+        app:leftImage="@drawable/xvector_back"
+        app:centerText="@string/expenditure" />
+    <TextView
+        android:id="@+id/tv_act_expenditure_chakanzhichujilu"
+        style="@style/ExpenditureAct_tvstyle"
+        android:text="@string/chakanzhichujilu"
+        android:drawableStart="@drawable/xshape_redcircle"
+        />
+    <TextView
+        android:id="@+id/tv_act_expenditure_tianjaizhichujilu"
+        style="@style/ExpenditureAct_tvstyle"
+        android:text="@string/tianjaizhichujilu"
+        android:drawableStart="@drawable/xshape_cyancircle"
+        />
+
+    <TextView
+        android:id="@+id/tv_act_expenditure_zhichujilutongji"
+        style="@style/ExpenditureAct_tvstyle"
+        android:text="@string/zhichujilutongji"
+        android:drawableStart="@drawable/xshape_erniucircle"
+        />
+    <TextView
+        android:id="@+id/tv_act_expenditure_beifenzhichujilu"
+        style="@style/ExpenditureAct_tvstyle"
+        android:text="@string/beifenzhichujilu"
+        android:drawableStart="@drawable/xshape_bluecircle"
+        />
+    <!--<TextView-->
+        <!--android:id="@+id/tv_act_expenditure_"-->
+        <!--style="@style/ExpenditureAct_tvstyle"-->
+        <!--android:text="@string/"-->
+        <!--android:drawableStart="@drawable/"-->
+        <!--/>-->
+    <!--<TextView-->
+        <!--android:id="@+id/tv_act_expenditure_"-->
+        <!--style="@style/ExpenditureAct_tvstyle"-->
+        <!--android:text="@string/"-->
+        <!--android:drawableStart="@drawable/"-->
+        <!--/>-->
+
+</LinearLayout>

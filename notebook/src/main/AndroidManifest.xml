@@ -72,6 +72,9 @@
         <activity android:name=".activity.investment.SeeInvestRecordDetailsActivity" />
         <!--19.固定资产记录备份activity-->
         <activity android:name=".activity.fixedassets.BackupsActivity" />
+        <!--20.支出activity-->
+        <activity android:name=".mvp.expenditure.ExpenditureActivity" />
+        <activity android:name=".mvp.expenditure.ExpenditureAddActivity" />
     </application>
 
 </manifest>

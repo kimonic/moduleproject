@@ -8,7 +8,6 @@ import android.widget.ImageView;
 
 import com.kimonic.notebook.R;
 import com.kimonic.utilsmodule.base.BaseActivity;
-import com.kimonic.utilsmodule.utils.HttpUtils;
 import com.kimonic.utilsmodule.utils.LUtils;
 import com.lzy.okgo.model.Response;
 
@@ -62,8 +61,6 @@ public class WelcomeActivity extends BaseActivity {
                 }
             }
         }
-
-
     }
 
     @Override
@@ -86,8 +83,6 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     public void initDataFromInternet() {
-
-        HttpUtils.getInstance(this).GET("http://www.baidu.com", getStringCallback());
 
     }
 

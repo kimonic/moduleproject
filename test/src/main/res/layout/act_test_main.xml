@@ -25,6 +25,7 @@
                 android:layout_height="200dp"
                 android:textSize="20sp"
                 android:gravity="center"
+                android:background="#a3a3"
                 android:text="哈哈哈"
                 />
             <TextView

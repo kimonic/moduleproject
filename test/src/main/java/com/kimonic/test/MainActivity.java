@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ScrollView scrollView;
     private Button button;
 
+    private  int  count=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt_act_test_main:
-                scrollView.pageScroll(View.FOCUS_DOWN);
+//                scrollView.pageScroll(View.FOCUS_DOWN);
+//                LUtils.e(MainActivity.class,"logflag---"+button.canScrollVertically(1));
+                count++;
+                scrollView.setTranslationY(100*count);
                 break;
         }
     }

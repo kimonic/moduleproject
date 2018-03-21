@@ -161,4 +161,12 @@
     <string name="queding">确定</string>
     <string name="weishouyuduqutonghuajiluquanxian">未授予读取通话记录权限!</string>
     <string name="daorugudingzichanjilu">\t\t导入固定资产记录</string>
+    <string name="expenditure">支出</string>
+    <string name="chakanzhichujilu">\t\t查看支出记录</string>
+    <string name="tianjaizhichujilu">\t\t添加支出记录</string>
+    <string name="beifenzhichujilu">\t\t备份支出记录</string>
+    <string name="zhichujilutongji">\t\t支出记录统计</string>
+    <string name="tianjiazhichujilu">添加支出记录</string>
+    <string name="zhichumingcheng">支出名称</string>
+    <string name="qingshuruzhichumingcheng">请输入支出名称</string>
 </resources>

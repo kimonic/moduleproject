@@ -12,5 +12,7 @@
     <color name="colorQianLan1">#00AAE2</color>
     <color name="colorGreen">#15BC84</color>
     <color name="colorViolet">#7575A9</color>
+    <color name="colorGlobalBac">#EEEEEE</color>
+
 
 </resources>
