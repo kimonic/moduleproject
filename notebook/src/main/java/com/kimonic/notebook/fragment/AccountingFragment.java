@@ -6,6 +6,7 @@ import android.widget.TextView;
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.activity.fixedassets.FixedAssetsActivity;
 import com.kimonic.notebook.activity.investment.InvestmentHomeActivity;
+import com.kimonic.notebook.mvp.expenditure.add.ExpenditureActivity;
 import com.kimonic.utilsmodule.base.BaseFragment;
 import com.kimonic.utilsmodule.utils.TimeUtils;
 import com.lzy.okgo.model.Response;
@@ -59,6 +60,7 @@ public class AccountingFragment extends BaseFragment {
             case R.id.tv_frag_accounting_shourujilu://收入记录
                 break;
             case R.id.tv_frag_accounting_zhichujilu://支出记录
+                openActivity(ExpenditureActivity.class);
                 break;
             case R.id.tv_frag_accounting_gudingzichan://固定资产
                 openActivity(FixedAssetsActivity.class);

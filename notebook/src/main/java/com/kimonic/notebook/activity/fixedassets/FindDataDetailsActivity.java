@@ -92,12 +92,8 @@ public class FindDataDetailsActivity extends BaseActivity {
     @Override
     public void initListener() {
 
-        mtb.getLeftTV().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeActivity();
-            }
-        });
+
+        setCloseLisenter(mtb);
 
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

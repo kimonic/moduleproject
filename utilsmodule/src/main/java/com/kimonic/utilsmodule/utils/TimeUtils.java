@@ -128,6 +128,20 @@ public class TimeUtils {
         }
     }
 
+    /**
+     * 将月份转化为两位数的字符串
+     *
+     * @return 月份字符串  01或11格式
+     */
+    public static String getCurrentMonthStr(int month) {
+        if (month < 10) {
+            return "0" + month;
+        } else {
+            return "" + month;
+
+        }
+    }
+
 
     /**
      * 获取当前月份
@@ -145,7 +159,7 @@ public class TimeUtils {
      */
     public static int getCurrentYear() {
         Calendar calendar = Calendar.getInstance();
-        return calendar.get(Calendar.YEAR);// 获取当前月份
+        return calendar.get(Calendar.YEAR);// 获取当前年份
     }
 
     /**

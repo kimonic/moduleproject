@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/ExpenditureAct_Query_lvstyle">
+
+        <TextView
+            style="@style/ExpenditureAct_Query_lvtvstyle"
+            android:text="@string/zhichumingcheng" />
+
+        <TextView
+            android:id="@+id/et_act_expenditure_query_name"
+            style="@style/ExpenditureAct_Query_lvetstyle"
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/ExpenditureAct_Query_lvstyle">
+
+        <TextView
+            style="@style/ExpenditureAct_Query_lvtvstyle"
+            android:text="@string/zhichujine" />
+
+        <TextView
+            android:id="@+id/et_act_expenditure_query_amount"
+            style="@style/ExpenditureAct_Query_lvetstyle"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/ExpenditureAct_Query_lvstyle">
+
+        <TextView
+            style="@style/ExpenditureAct_Query_lvtvstyle"
+            android:text="@string/zhichushijian" />
+
+        <TextView
+            android:id="@+id/et_act_expenditure_query_datee"
+            style="@style/ExpenditureAct_Query_lvetstyle"
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/ExpenditureAct_Query_lvstyle">
+
+        <TextView
+            style="@style/ExpenditureAct_Query_lvtvstyle"
+            android:text="@string/beizhu" />
+
+        <TextView
+            android:id="@+id/et_act_expenditure_query_mark"
+            style="@style/ExpenditureAct_Query_lvetstyle"
+            
+            />
+    </LinearLayout>
+
+</LinearLayout>

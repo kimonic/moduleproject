@@ -4,7 +4,7 @@ import org.litepal.crud.DataSupport;
 
 /**
  * * ===============================================================
- * name:             ItemFlagLMBean
+ * name:             ExpenditureLMBean
  * guide:
  * author：          kimonik
  * version：          1.0

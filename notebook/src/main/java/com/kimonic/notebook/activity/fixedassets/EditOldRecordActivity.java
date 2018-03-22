@@ -116,14 +116,9 @@ public class EditOldRecordActivity extends BaseActivity {
 
     @Override
     public void initListener() {
+        setCloseLisenter(mtb);
         tvSave.setOnClickListener(this);
 
-        mtb.getLeftTV().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeActivity();
-            }
-        });
     }
 
     @Override

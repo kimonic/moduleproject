@@ -167,6 +167,18 @@
     <string name="beifenzhichujilu">\t\t备份支出记录</string>
     <string name="zhichujilutongji">\t\t支出记录统计</string>
     <string name="tianjiazhichujilu">添加支出记录</string>
-    <string name="zhichumingcheng">支出名称</string>
+    <string name="zhichumingcheng">支出名称:</string>
     <string name="qingshuruzhichumingcheng">请输入支出名称</string>
+    <string name="zhichujine">支出金额:</string>
+    <string name="qingshuruzhichujine">请输入支出金额</string>
+    <string name="zhichushijian">支出时间:</string>
+    <string name="riqigeshi" >日期格式:2018-01-01</string>
+    <string name="qingshurubeizhu">请输入备注</string>
+    <string name="baocunzhichujilu">保存支出记录</string>
+    <string name="riqigeshicuowu">日期输入格式错误,正确的格式为:\n2018-01-01</string>
+    <string name="chakanzhichujilu0">查看支出记录</string>
+    <string name="shangyiyue">上一月</string>
+    <string name="xiayiyue">下一月</string>
+    <string name="yijingshizuihouyigeyuela">已经是最后一个月啦!</string>
+    <string name="zaicitianjia">再次添加</string>
 </resources>

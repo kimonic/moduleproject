@@ -3,13 +3,11 @@ package com.kimonic.notebook.activity.welcome;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.FrameLayout;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.fragment.AccountingFragment;
 import com.kimonic.notebook.fragment.HomeFragment;
 import com.kimonic.notebook.mapp.MApp;
-import com.kimonic.notebook.ui.BubbleView;
 import com.kimonic.utilsmodule.adapter.FragmentVPAdapter;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.NaviButtonView;
@@ -62,8 +60,8 @@ public class HomeActivity extends BaseActivity {
         vpActHome.setOffscreenPageLimit(4);
 
 
-        BubbleView view = new BubbleView(this);
-        ((FrameLayout) (getWindow().getDecorView())).addView(view);
+//        BubbleView view = new BubbleView(this);
+//        ((FrameLayout) (getWindow().getDecorView())).addView(view);
     }
 
     private void initFragmentList() {

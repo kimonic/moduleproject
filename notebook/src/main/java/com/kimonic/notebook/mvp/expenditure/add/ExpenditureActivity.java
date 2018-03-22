@@ -1,12 +1,15 @@
-package com.kimonic.notebook.mvp.expenditure;
+package com.kimonic.notebook.mvp.expenditure.add;
 
 import android.view.View;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.mapp.MApp;
+import com.kimonic.notebook.mvp.expenditure.ExpenditureReository;
+import com.kimonic.notebook.mvp.expenditure.query.ExpenditureQueryActivity;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
+import com.kimonic.utilsmodule.utils.ToastUtils;
 import com.lzy.okgo.model.Response;
 
 import butterknife.BindView;
@@ -54,8 +57,10 @@ public class ExpenditureActivity extends BaseActivity implements ExpenditureCont
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_act_expenditure_chakanzhichujilu://查看
+                openActivity(ExpenditureQueryActivity.class);
                 break;
             case R.id.tv_act_expenditure_tianjaizhichujilu://添加
+                openActivity(ExpenditureAddActivity.class);
                 break;
             case R.id.tv_act_expenditure_zhichujilutongji://统计
                 break;
@@ -80,6 +85,7 @@ public class ExpenditureActivity extends BaseActivity implements ExpenditureCont
 
     @Override
     public void initListener() {
+        setCloseLisenter(mtb);
         tvAdd.setOnClickListener(this);
         tvBackup.setOnClickListener(this);
         tvLook.setOnClickListener(this);
@@ -108,4 +114,18 @@ public class ExpenditureActivity extends BaseActivity implements ExpenditureCont
     }
 
 
+    @Override
+    public void showToast(int resStr) {
+        ToastUtils.showToast(this,resStr);
+    }
+
+    @Override
+    public void setSave(int strRes) {
+
+    }
+
+    @Override
+    public void clear() {
+
+    }
 }

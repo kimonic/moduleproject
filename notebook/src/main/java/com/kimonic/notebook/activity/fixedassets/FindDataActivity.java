@@ -81,12 +81,8 @@ public class FindDataActivity extends BaseActivity {
                 openActivityForResult(FindDataDetailsActivity.class, "date", listDate.get(position).getDate(), 666);
             }
         });
-        mtb.getLeftTV().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeActivity();
-            }
-        });
+        setCloseLisenter(mtb);
+
     }
 
     @Override

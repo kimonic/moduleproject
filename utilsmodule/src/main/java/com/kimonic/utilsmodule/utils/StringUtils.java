@@ -87,7 +87,7 @@ public class StringUtils {
     }
 
     /**
-     * 获取六位随机验证码
+     * 获取六位随机验证码,纯数字
      */
     public static String getRandomCode() {
         StringBuilder builder = new StringBuilder();
@@ -158,6 +158,7 @@ public class StringUtils {
         }
 
     }
+
 
     /**
      * 将时间戳转为字符串
@@ -237,7 +238,7 @@ public class StringUtils {
     }
 
     /**
-     * 补齐两位小数
+     * 将字符串转化为2位小数的字符串,不足两位的补齐两位小数
      */
     public static String getTwoDecimalsStr(String fStr) {
         if (fStr==null){

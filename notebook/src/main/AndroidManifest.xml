@@ -73,8 +73,11 @@
         <!--19.固定资产记录备份activity-->
         <activity android:name=".activity.fixedassets.BackupsActivity" />
         <!--20.支出activity-->
-        <activity android:name=".mvp.expenditure.ExpenditureActivity" />
-        <activity android:name=".mvp.expenditure.ExpenditureAddActivity" />
+        <activity android:name=".mvp.expenditure.add.ExpenditureActivity" />
+        <!--21.添加支出记录activity-->
+        <activity android:name=".mvp.expenditure.add.ExpenditureAddActivity" />
+        <!--22.按月查看支出记录activity-->
+        <activity android:name=".mvp.expenditure.query.ExpenditureQueryActivity" />
     </application>
 
 </manifest>

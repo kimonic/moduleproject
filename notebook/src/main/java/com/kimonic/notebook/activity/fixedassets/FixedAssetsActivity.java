@@ -156,12 +156,8 @@ public class FixedAssetsActivity extends BaseActivity {
 
     @Override
     public void initListener() {
-        mtb.getLeftTV().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeActivity();
-            }
-        });
+        setCloseLisenter(mtb);
+
         tvLook.setOnClickListener(this);
         tvTakeNotes.setOnClickListener(this);
         tvQuery.setOnClickListener(this);

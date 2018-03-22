@@ -58,7 +58,9 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
      */
     private SmartRefreshLayout srl;
 
-    /**设置加载刷新布局*/
+    /**
+     * 设置加载刷新布局
+     */
     @SuppressWarnings("unused")
     public void setSrl(SmartRefreshLayout srl) {
         this.srl = srl;
@@ -77,13 +79,17 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         }
     }
 
-    /**获得本类内okgo的请求tag*/
+    /**
+     * 获得本类内okgo的请求tag
+     */
     @SuppressWarnings("unused")
     public String getOkgoCancelTag() {
         return okgoCancelTag;
     }
 
-    /**设置本类内okgo的请求tag*/
+    /**
+     * 设置本类内okgo的请求tag
+     */
     @SuppressWarnings("unused")
     public void setOkgoCancelTag(String okgoCancelTag) {
         this.okgoCancelTag = okgoCancelTag;
@@ -165,6 +171,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         }
         return stringCallback;
     }
+
     /**
      * 加载进度显示dialog
      */
@@ -183,6 +190,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
             bDialog.show();
         }
     }
+
     /**
      * 取消加载进度dialog
      */

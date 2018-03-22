@@ -11,36 +11,69 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorQianLan"
+        app:leftImage="@drawable/xvector_back"
         app:centerText="@string/tianjiazhichujilu" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorWhite"
-        >
+    <LinearLayout style="@style/ExpenditureAct_Add_llstyle">
+
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="14sp"
-            android:textColor="@color/colorBlack"
-            android:gravity="center"
-            android:text="@string/zhichumingcheng"
-            />
+            style="@style/ExpenditureAct_Add_tvstyle"
+            android:text="@string/zhichumingcheng" />
+
         <EditText
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:textSize="12sp"
-            android:textColor="@color/colorQianLan"
-            android:hint="@string/qingshuruzhichumingcheng"
-            android:gravity="center"
-            android:background="@null"
-            />
+            android:id="@+id/et_act_expenditure_add_name"
+            style="@style/ExpenditureAct_Add_etstyle"
+            android:hint="@string/qingshuruzhichumingcheng" />
     </LinearLayout>
 
+    <LinearLayout style="@style/ExpenditureAct_Add_llstyle">
+
+        <TextView
+            style="@style/ExpenditureAct_Add_tvstyle"
+            android:text="@string/zhichujine" />
+
+        <EditText
+            android:id="@+id/et_act_expenditure_add_amount"
+            style="@style/ExpenditureAct_Add_etstyle"
+            android:inputType="numberDecimal"
+            android:hint="@string/qingshuruzhichujine" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/ExpenditureAct_Add_llstyle">
+
+        <TextView
+            style="@style/ExpenditureAct_Add_tvstyle"
+            android:text="@string/zhichushijian" />
+
+        <EditText
+            android:id="@+id/et_act_expenditure_add_datee"
+            style="@style/ExpenditureAct_Add_etstyle"
+            android:inputType="date"
+            android:hint="@string/riqigeshi" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/ExpenditureAct_Add_llstyle">
+
+        <TextView
+            style="@style/ExpenditureAct_Add_tvstyle"
+            android:text="@string/beizhu" />
+
+        <EditText
+            android:id="@+id/et_act_expenditure_add_mark"
+            style="@style/ExpenditureAct_Add_etstyle"
+            android:hint="@string/qingshurubeizhu" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_act_expenditure_add_save"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/baocunzhichujilu"
+        android:gravity="center"
+        android:background="@color/colorQianLan"
+        android:textSize="14sp"
+        android:textColor="@color/colorWhite"
+        />
 </LinearLayout>
