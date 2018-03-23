@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.kimonic.utilsmodule.ui.MTopBarView
+        android:id="@+id/mtb_act_income_add"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorQianLan"
+        app:centerText="@string/tianjiashourujilu1"
+        app:leftImage="@drawable/xvector_back" />
+
+    <LinearLayout style="@style/IncomeAct_Add_llstyle">
+
+        <TextView
+            style="@style/IncomeAct_Add_tvstyle"
+            android:text="@string/shourumingcheng" />
+
+        <EditText
+            android:id="@+id/et_act_income_add_name"
+            style="@style/IncomeAct_Add_etstyle"
+            android:hint="@string/qingshurushourumingcheng" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/IncomeAct_Add_llstyle">
+
+        <TextView
+            style="@style/IncomeAct_Add_tvstyle"
+            android:text="@string/shourujine" />
+
+        <EditText
+            android:id="@+id/et_act_income_add_amount"
+            style="@style/IncomeAct_Add_etstyle"
+            android:inputType="numberDecimal"
+            android:hint="@string/qingshurushourujine" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/IncomeAct_Add_llstyle">
+
+        <TextView
+            style="@style/IncomeAct_Add_tvstyle"
+            android:text="@string/shouruleixing" />
+
+        <EditText
+            android:id="@+id/et_act_income_add_type"
+            style="@style/IncomeAct_Add_etstyle"
+            android:hint="@string/qingshurushouruleixing" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/IncomeAct_Add_llstyle">
+
+        <TextView
+            style="@style/IncomeAct_Add_tvstyle"
+            android:text="@string/shourushijian" />
+
+        <EditText
+            android:id="@+id/et_act_income_add_datee"
+            style="@style/IncomeAct_Add_etstyle"
+            android:inputType="date"
+            android:hint="@string/riqigeshi" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/IncomeAct_Add_llstyle">
+
+        <TextView
+            style="@style/IncomeAct_Add_tvstyle"
+            android:text="@string/beizhu" />
+
+        <EditText
+            android:id="@+id/et_act_income_add_mark"
+            style="@style/IncomeAct_Add_etstyle"
+            android:hint="@string/qingshurubeizhu" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_act_income_add_save"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/baocunshourujilu"
+        android:gravity="center"
+        android:background="@color/colorQianLan"
+        android:textSize="14sp"
+        android:textColor="@color/colorWhite"
+        />
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/IncomeAct_Query_lvstyle">
+
+        <TextView
+            style="@style/IncomeAct_Query_lvtvstyle"
+            android:text="@string/shourumingcheng" />
+
+        <TextView
+            android:id="@+id/et_act_income_query_name"
+            style="@style/IncomeAct_Query_lvetstyle"
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/IncomeAct_Query_lvstyle">
+
+        <TextView
+            style="@style/IncomeAct_Query_lvtvstyle"
+            android:text="@string/shourujine" />
+
+        <TextView
+            android:id="@+id/et_act_income_query_amount"
+            style="@style/IncomeAct_Query_lvetstyle"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/IncomeAct_Query_lvstyle">
+
+        <TextView
+            style="@style/IncomeAct_Query_lvtvstyle"
+            android:text="@string/shouruleixing" />
+
+        <TextView
+            android:id="@+id/et_act_income_query_type"
+            style="@style/IncomeAct_Query_lvetstyle"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/IncomeAct_Query_lvstyle">
+
+        <TextView
+            style="@style/IncomeAct_Query_lvtvstyle"
+            android:text="@string/shourushijian" />
+
+        <TextView
+            android:id="@+id/et_act_income_query_datee"
+            style="@style/IncomeAct_Query_lvetstyle"
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/IncomeAct_Query_lvstyle">
+
+        <TextView
+            style="@style/IncomeAct_Query_lvtvstyle"
+            android:text="@string/beizhu" />
+
+        <TextView
+            android:id="@+id/et_act_income_query_mark"
+            style="@style/IncomeAct_Query_lvetstyle"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>

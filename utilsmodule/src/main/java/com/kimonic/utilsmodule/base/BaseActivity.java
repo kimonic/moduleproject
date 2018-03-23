@@ -440,7 +440,9 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
         mtb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                handleBackup();
                 closeActivity();
+
             }
         });
     }
@@ -489,6 +491,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
             return getResources().getColor(colorResId);
         }
         return getResources().getColor(colorResId, null);
+    }
+
+    /**统一处理返回事件*/
+    public void handleBackup(){
+
     }
 
 

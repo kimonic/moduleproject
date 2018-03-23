@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     android:orientation="vertical">
 
     <LinearLayout style="@style/ExpenditureAct_Query_lvstyle">
@@ -25,6 +26,19 @@
 
         <TextView
             android:id="@+id/et_act_expenditure_query_amount"
+            style="@style/ExpenditureAct_Query_lvetstyle"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/ExpenditureAct_Query_lvstyle">
+
+        <TextView
+            style="@style/ExpenditureAct_Query_lvtvstyle"
+            android:text="@string/zhichuleixing" />
+
+        <TextView
+            android:id="@+id/et_act_expenditure_query_type"
             style="@style/ExpenditureAct_Query_lvetstyle"
 
             />

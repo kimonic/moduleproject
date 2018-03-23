@@ -1,8 +1,8 @@
-package com.kimonic.notebook.mvp.expenditure.query;
+package com.kimonic.notebook.mvp.income.query;
 
 import android.support.annotation.StringRes;
 
-import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
+import com.kimonic.notebook.litemapbean.daily.IncomeLMBean;
 import com.kimonic.utilsmodule.mvp.BasePresenter;
 import com.kimonic.utilsmodule.mvp.BaseView;
 
@@ -23,12 +23,12 @@ import java.util.List;
  * *==================================================================
  */
 
-public class ExpenditureQueryContract {
+public class IncomeQueryContract {
 
     interface View extends BaseView<Presenter> {
 
         /**设置list*/
-        void setList(List<ExpenditureLMBean> list, int flag);
+        void setList(List<IncomeLMBean> list, int flag);
         /**设置当前展示文本*/
         void setCurrent(String str);
         /**设置无数据展示*/

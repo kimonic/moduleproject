@@ -13,6 +13,7 @@
     <color name="colorGreen">#15BC84</color>
     <color name="colorViolet">#7575A9</color>
     <color name="colorGlobalBac">#EEEEEE</color>
+    <color name="colorDivider">#008CD6</color>
 
 
 </resources>

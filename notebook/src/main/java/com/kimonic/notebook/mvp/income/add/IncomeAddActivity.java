@@ -1,13 +1,13 @@
-package com.kimonic.notebook.mvp.expenditure.add;
+package com.kimonic.notebook.mvp.income.add;
 
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
-import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
+import com.kimonic.notebook.litemapbean.daily.IncomeLMBean;
 import com.kimonic.notebook.mapp.MApp;
-import com.kimonic.notebook.mvp.expenditure.ExpenditureReository;
+import com.kimonic.notebook.mvp.income.IncomeRepository;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.kimonic.utilsmodule.utils.TimeUtils;
@@ -21,36 +21,36 @@ import butterknife.BindView;
 
 /**
  * * ===============================================================
- * name:             ExpenditureAddActivity
+ * name:             IncomeAddActivity
  * guide:
  * author：          kimonik
  * version：          1.0
- * date：             2018/3/21
+ * date：             2018/3/23
  * method:
  * <p>
  * <p>
- * description：
+ * description：添加收入记录activity
  * history：
  * *==================================================================
  */
 
-public class ExpenditureAddActivity extends BaseActivity implements ExpenditureContract.View {
-
-    @BindView(R.id.mtb_act_expenditure_add)
+public class IncomeAddActivity extends BaseActivity implements IncomeContract.View{
+    @BindView(R.id.mtb_act_income_add)
     MTopBarView mtb;
-    @BindView(R.id.et_act_expenditure_add_name)
+    @BindView(R.id.et_act_income_add_name)
     EditText etName;
-    @BindView(R.id.et_act_expenditure_add_amount)
+    @BindView(R.id.et_act_income_add_amount)
     EditText etAmount;
-     @BindView(R.id.et_act_expenditure_add_type)
+    @BindView(R.id.et_act_income_add_type)
     EditText etType;
-    @BindView(R.id.et_act_expenditure_add_datee)
+    @BindView(R.id.et_act_income_add_datee)
     EditText etDate;
-    @BindView(R.id.et_act_expenditure_add_mark)
+    @BindView(R.id.et_act_income_add_mark)
     EditText etMark;
-    @BindView(R.id.tv_act_expenditure_add_save)
+    @BindView(R.id.tv_act_income_add_save)
     TextView tvSave;
-    private ExpenditureContract.Presenter presenter;
+
+    private IncomeContract.Presenter presenter;
     private Map<String, EditText> tvMap;
     private boolean addFlag = true;
 
@@ -58,11 +58,9 @@ public class ExpenditureAddActivity extends BaseActivity implements ExpenditureC
     public static final int TYPE_INSERT = 1;
     private int type = 1;
     private long id = -1;
-
-
     @Override
     public int getLayoutResId() {
-        return R.layout.act_expenditure_add;
+        return R.layout.act_income_add;
     }
 
     @Override
@@ -73,7 +71,7 @@ public class ExpenditureAddActivity extends BaseActivity implements ExpenditureC
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.tv_act_expenditure_add_save:
+            case R.id.tv_act_income_add_save:
                 if (addFlag) {
                     presenter.save(tvMap);
                 } else {
@@ -87,12 +85,11 @@ public class ExpenditureAddActivity extends BaseActivity implements ExpenditureC
 //                 case R.id.:break;
             //
         }
-
     }
 
     @Override
     public void initDataFromIntent() {
-        presenter = new ExpenditurePresenter(this, new ExpenditureReository());
+        presenter = new IncomePresenter(this, new IncomeRepository());
         tvMap = new TreeMap<>();
         tvMap.put("name", etName);
         tvMap.put("amount", etAmount);
@@ -102,15 +99,14 @@ public class ExpenditureAddActivity extends BaseActivity implements ExpenditureC
 
         type = getIntent().getIntExtra("type", TYPE_INSERT);
         id = getIntent().getLongExtra("id", -1);
-
     }
 
     @Override
     public void initView() {
         setTopMargin(mtb, MApp.STATUS_BAE_HEIGHT);
         if (type == TYPE_EDIT) {
-            mtb.setCenterTitle(R.string.bianjizhichujilu);
-            tvSave.setText(R.string.xiugaizhichujilu);
+            mtb.setCenterTitle(R.string.bianjishourujilu);
+            tvSave.setText(R.string.xiugaishourujilu);
             presenter.init(id);
         } else {
             etDate.setText(TimeUtils.getNowDateShort());
@@ -119,8 +115,8 @@ public class ExpenditureAddActivity extends BaseActivity implements ExpenditureC
 
     @Override
     public void initListener() {
-        tvSave.setOnClickListener(this);
         setCloseLisenter(mtb);
+        tvSave.setOnClickListener(this);
     }
 
     @Override
@@ -139,7 +135,7 @@ public class ExpenditureAddActivity extends BaseActivity implements ExpenditureC
     }
 
     @Override
-    public void setPresenter(ExpenditureContract.Presenter presenter) {
+    public void setPresenter(IncomeContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
@@ -165,7 +161,7 @@ public class ExpenditureAddActivity extends BaseActivity implements ExpenditureC
     }
 
     @Override
-    public void init(ExpenditureLMBean bean) {
+    public void init(IncomeLMBean bean) {
         etName.setText(bean.getItemName());
         etMark.setText(bean.getMark());
         etAmount.setText(("" + bean.getAmount()));

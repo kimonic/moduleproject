@@ -26,9 +26,15 @@ public class UserConfig {
      * 用户名
      */
     private String userName;
+    /**支出记录是否修改*/
+    private boolean  expenditureChange;
+    /**收入记录是否修改*/
+    private boolean incomeChange;
+
+
 
     /**
-     *
+     *私有构造函数
      */
     private UserConfig() {
 
@@ -73,6 +79,22 @@ public class UserConfig {
             e.printStackTrace();
         }
         this.userName = username;
-
     }
+
+    public boolean isExpenditureChange() {
+        return expenditureChange;
+    }
+
+    public void setExpenditureChange(boolean expenditureChange) {
+        this.expenditureChange = expenditureChange;
+    }
+
+    public boolean isIncomeChange() {
+        return incomeChange;
+    }
+
+    public void setIncomeChange(boolean incomeChange) {
+        this.incomeChange = incomeChange;
+    }
+
 }

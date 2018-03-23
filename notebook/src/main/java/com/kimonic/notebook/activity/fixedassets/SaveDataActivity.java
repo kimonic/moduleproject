@@ -28,7 +28,7 @@ import butterknife.BindView;
  * author：          kimonik
  * version：          1.0
  * date：             2018/2/2
- * description：  添加数据
+ * description：  资产记录
  * history：
  * *==================================================================
  */

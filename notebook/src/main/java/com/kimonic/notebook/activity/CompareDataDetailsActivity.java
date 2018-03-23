@@ -104,21 +104,24 @@ public class CompareDataDetailsActivity extends BaseActivity {
                 , userName, date2).find(SaveDataLMBean.class);
 
 
+        //日期1总金额
         for (int i = 0; i < list1.size(); i++) {
             total1 += list1.get(i).getValue();
         }
 
+        //日期2总金额
         for (int i = 0; i < list2.size(); i++) {
             total2 += list2.get(i).getValue();
         }
 
+        //总差值
         total3 = total2 - total1;
 
         tvShuzhizongji2.setText(StringUtils.getCommaDecimalsStr(""+total1));
         tvShuzhizongji4.setText(StringUtils.getCommaDecimalsStr(""+total2));
         tvShuzhizongji6.setText(StringUtils.getCommaDecimalsStr(""+total3));
 
-
+        //条目多的放在前面,避免溢出
         if (list1.size() > list2.size()) {
             createNewData(list1, list2, date1);
         } else {
@@ -129,35 +132,44 @@ public class CompareDataDetailsActivity extends BaseActivity {
 
     }
 
+    /**创建比较bean*/
     private void createNewData(List<SaveDataLMBean> list1, List<SaveDataLMBean> list2, String date1) {
         boolean flag;
+        //list1是否为第一个日期
         flag = list1.get(0).getDateFlag().equals(date1);
+
         for (int i = 0; i < list1.size(); i++) {
             CompareBean bean = new CompareBean();
-            bean.setItem(list1.get(i).getItem());
-            bean.setItemFlag(list1.get(i).getItemFlag());
-            bean.setUserName(list1.get(i).getUserName());
+            //相同的部分
+            bean.setItem(list1.get(i).getItem());//标签名
+            bean.setItemFlag(list1.get(i).getItemFlag());//标签标识
+            bean.setUserName(list1.get(i).getUserName());//用户名
+            //调整前后的顺序
             if (flag) {
-                bean.setDateFlag1(list1.get(i).getDateFlag());
-                bean.setValue1(list1.get(i).getValue());
+                bean.setDateFlag1(list1.get(i).getDateFlag());//日期
+                bean.setValue1(list1.get(i).getValue());//资产价值
+                bean.setMark1(list1.get(i).getMark());//标识
             } else {
                 bean.setDateFlag2(list1.get(i).getDateFlag());
                 bean.setValue2(list1.get(i).getValue());
+                bean.setMark2(list1.get(i).getMark());
             }
 
+            //遍历较小的list,找出相同的标签后将需要的值赋给comparebean
             for (int j = 0; j < list2.size(); j++) {
 
                 if (flag && list1.get(i).getItemFlag().equals(list2.get(j).getItemFlag())) {
-                    bean.setDateFlag2(list2.get(j).getDateFlag());
-                    bean.setValue2(list2.get(j).getValue());
-                    bean.setMark2(list2.get(j).getMark());
+
+                    bean.setDateFlag2(list2.get(j).getDateFlag());//日期
+                    bean.setValue2(list2.get(j).getValue());//资产价值
+                    bean.setMark2(list2.get(j).getMark());//标识
+
                 } else if (list1.get(i).getItemFlag().equals(list2.get(j).getItemFlag())) {
                     bean.setDateFlag1(list2.get(j).getDateFlag());
                     bean.setValue1(list2.get(j).getValue());
                     bean.setMark1(list2.get(j).getMark());
                 }
             }
-
             list.add(bean);
 
         }
@@ -195,6 +207,8 @@ public class CompareDataDetailsActivity extends BaseActivity {
 
                 viewHolder.setText(R.id.tv_lv_comparebean_record1, item.getDateFlag1());
                 viewHolder.setText(R.id.tv_lv_comparebean_record2, item.getDateFlag2());
+
+
 
                 viewHolder.setText(R.id.tv_lv_comparebean_mark1, item.getMark1());
                 viewHolder.setText(R.id.tv_lv_comparebean_mark2, item.getMark2());

@@ -1,4 +1,4 @@
-package com.kimonic.notebook.mvp.expenditure.query;
+package com.kimonic.notebook.mvp.income.query;
 
 import android.content.Intent;
 import android.view.ContextMenu;
@@ -9,9 +9,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
-import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
+import com.kimonic.notebook.litemapbean.daily.IncomeLMBean;
 import com.kimonic.notebook.mapp.MApp;
-import com.kimonic.notebook.mvp.expenditure.ExpenditureReository;
+import com.kimonic.notebook.mvp.income.IncomeRepository;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.kimonic.utilsmodule.utils.ToastUtils;
@@ -25,7 +25,7 @@ import butterknife.BindView;
 
 /**
  * * ===============================================================
- * name:             ExpenditureQueryActivity
+ * name:             incomeQueryActivity
  * guide:
  * author：          kimonik
  * version：          1.0
@@ -33,35 +33,35 @@ import butterknife.BindView;
  * method:
  * <p>
  * <p>
- * description：  按月查看支出记录activity
+ * description：  按月查看收入记录activity
  * history：
  * *==================================================================
  */
 
-public class ExpenditureQueryActivity extends BaseActivity implements ExpenditureQueryContract.View {
+public class IncomeQueryActivity extends BaseActivity implements IncomeQueryContract.View {
 
-    @BindView(R.id.mtb_act_expenditure_query)
+    @BindView(R.id.mtb_act_income_query)
     MTopBarView mtb;
-    @BindView(R.id.tv_act_expenditure_query_previous)
+    @BindView(R.id.tv_act_income_query_previous)
     TextView tvPrevious;
-    @BindView(R.id.tv_act_expenditure_query_current)
+    @BindView(R.id.tv_act_income_query_current)
     TextView tvCurrent;
-    @BindView(R.id.tv_act_expenditure_query_next)
+    @BindView(R.id.tv_act_income_query_next)
     TextView tvNext;
-    @BindView(R.id.lv_act_expenditure_query)
+    @BindView(R.id.lv_act_income_query)
     ListView lv;
-    @BindView(R.id.tv_act_expenditure_query_hint)
+    @BindView(R.id.tv_act_income_query_hint)
     TextView tvHint;
-    private ExpenditureQueryContract.Presenter presenter;
+    private IncomeQueryContract.Presenter presenter;
 
     public static final int ADAPTER_SET = 1;
     public static final int ADAPTER_UPDATE = 2;
-    private CommonAdapter<ExpenditureLMBean> adapter;
+    private CommonAdapter<IncomeLMBean> adapter;
 
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_expenditure_query;
+        return R.layout.act_income_query;
     }
 
     @Override
@@ -72,10 +72,10 @@ public class ExpenditureQueryActivity extends BaseActivity implements Expenditur
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.tv_act_expenditure_query_previous://上一个月
+            case R.id.tv_act_income_query_previous://上一个月
                 presenter.setPrevious();
                 break;
-            case R.id.tv_act_expenditure_query_next://下一个月
+            case R.id.tv_act_income_query_next://下一个月
                 presenter.setNext();
                 break;
 //            case R.id.: break;
@@ -88,7 +88,7 @@ public class ExpenditureQueryActivity extends BaseActivity implements Expenditur
 
     @Override
     public void initDataFromIntent() {
-        presenter = new ExpenditureQueryPresenter(this, new ExpenditureReository());
+        presenter = new IncomeQueryPresenter(this, new IncomeRepository());
     }
 
     @Override
@@ -156,13 +156,13 @@ public class ExpenditureQueryActivity extends BaseActivity implements Expenditur
 
 
     @Override
-    public void setPresenter(ExpenditureQueryContract.Presenter presenter) {
+    public void setPresenter(IncomeQueryContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
 
     @Override
-    public void setList(List<ExpenditureLMBean> list, int flag) {
+    public void setList(List<IncomeLMBean> list, int flag) {
         switch (flag) {
             case ADAPTER_SET://设置适配器
                 adapter = getAdapter(list);
@@ -196,21 +196,21 @@ public class ExpenditureQueryActivity extends BaseActivity implements Expenditur
 
     @Override
     public void showToast(int strRes) {
-        ToastUtils.showToast(ExpenditureQueryActivity.this, strRes);
+        ToastUtils.showToast(IncomeQueryActivity.this, strRes);
     }
 
     /**
      * 获得适配器
      */
-    private CommonAdapter<ExpenditureLMBean> getAdapter(List<ExpenditureLMBean> list) {
-        return new CommonAdapter<ExpenditureLMBean>(this, R.layout.lv_expenditure_query, list) {
+    private CommonAdapter<IncomeLMBean> getAdapter(List<IncomeLMBean> list) {
+        return new CommonAdapter<IncomeLMBean>(this, R.layout.lv_income_query, list) {
             @Override
-            protected void convert(ViewHolder viewHolder, ExpenditureLMBean item, int position) {
-                viewHolder.setText(R.id.et_act_expenditure_query_name, item.getItemName());
-                viewHolder.setText(R.id.et_act_expenditure_query_mark, item.getMark());
-                viewHolder.setText(R.id.et_act_expenditure_query_datee, item.getCompleteDate());
-                viewHolder.setText(R.id.et_act_expenditure_query_amount, "" + item.getAmount());
-                viewHolder.setText(R.id.et_act_expenditure_query_type, item.getType());
+            protected void convert(ViewHolder viewHolder, IncomeLMBean item, int position) {
+                viewHolder.setText(R.id.et_act_income_query_name, item.getItemName());
+                viewHolder.setText(R.id.et_act_income_query_mark, item.getMark());
+                viewHolder.setText(R.id.et_act_income_query_datee, item.getCompleteDate());
+                viewHolder.setText(R.id.et_act_income_query_amount, "" + item.getAmount());
+                viewHolder.setText(R.id.et_act_income_query_type, item.getType());
             }
         };
     }

@@ -26,13 +26,13 @@
             <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
-        <!--1.保存数据activity-->
+        <!--1.资产记录activity-->
         <activity android:name=".activity.fixedassets.SaveDataActivity" />
         <!--2.添加新用户activity-->
         <activity android:name=".activity.AddNewUserActivity" />
         <!--3.添加用户下的标签activity-->
         <activity android:name=".activity.AddItemActivity" />
-        <!--4.保存用户下相应标签的详细数据-->
+        <!--4.资产记录详情-记录页-->
         <activity android:name=".activity.fixedassets.SaveDataDetailsActivity" />
         <!--5.查看数据activity-->
         <activity android:name=".activity.fixedassets.FindDataActivity" />
@@ -78,6 +78,12 @@
         <activity android:name=".mvp.expenditure.add.ExpenditureAddActivity" />
         <!--22.按月查看支出记录activity-->
         <activity android:name=".mvp.expenditure.query.ExpenditureQueryActivity" />
+        <!--23.收入activity-->
+        <activity android:name=".mvp.income.IncomeActivity" />
+        <!--24.添加收入记录activity-->
+        <activity android:name=".mvp.income.add.IncomeAddActivity" />
+        <!--25.按月查看收入记录activity-->
+        <activity android:name=".mvp.income.query.IncomeQueryActivity" />
     </application>
 
 </manifest>

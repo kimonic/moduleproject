@@ -1,4 +1,4 @@
-package com.kimonic.notebook.mvp.expenditure.add;
+package com.kimonic.notebook.mvp.income.add;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -6,8 +6,8 @@ import android.widget.EditText;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
-import com.kimonic.notebook.mvp.expenditure.ExpenditureReository;
+import com.kimonic.notebook.litemapbean.daily.IncomeLMBean;
+import com.kimonic.notebook.mvp.income.IncomeRepository;
 import com.kimonic.utilsmodule.utils.CheckUtils;
 import com.kimonic.utilsmodule.utils.StringUtils;
 import com.kimonic.utilsmodule.utils.TimeUtils;
@@ -29,26 +29,26 @@ import java.util.Map;
  * *==================================================================
  */
 
-public class ExpenditurePresenter implements ExpenditureContract.Presenter {
+public class IncomePresenter implements IncomeContract.Presenter {
 
     /**
      * 视图
      */
-    private ExpenditureContract.View view;
+    private IncomeContract.View view;
     /**
      * 数据源
      */
-    private ExpenditureReository reository;
+    private IncomeRepository reository;
     /**
      * 实体数据,在本类中充当了数据源的作用
      */
-    private ExpenditureLMBean bean;
+    private IncomeLMBean bean;
     /**
      * 是否是编辑模式
      */
     private boolean editMod = false;
 
-    public ExpenditurePresenter(ExpenditureContract.View view, ExpenditureReository reository) {
+    public IncomePresenter(IncomeContract.View view, IncomeRepository reository) {
         this.view = view;
         this.reository = reository;
     }
@@ -73,24 +73,24 @@ public class ExpenditurePresenter implements ExpenditureContract.Presenter {
         String type = map.get("type").getText().toString().trim();
 
         if (TextUtils.isEmpty(name)) {
-            view.showToast(R.string.qingshuruzhichumingcheng);
+            view.showToast(R.string.qingshurushourumingcheng);
             return;
         } else if (TextUtils.isEmpty(amount)) {
-            view.showToast(R.string.qingshuruzhichujine);
+            view.showToast(R.string.qingshurushourujine);
             return;
         } else if (TextUtils.isEmpty(date)) {
             date = TimeUtils.getNowDateShort();
         } else if (CheckUtils.checkDate(date)) {
             view.showToast(R.string.riqigeshicuowu);
             return;
-        }else if (TextUtils.isEmpty(type)){
-            view.showToast(R.string.qingshuruzhichuleixing);
+        } else if (TextUtils.isEmpty(type)) {
+            view.showToast(R.string.qingshurushouruleixing);
             return;
         }
 
         String[] dateSplit = date.split("-");
         if (bean == null) {//重复保存时只保存一个,若有修改则保存修改值
-            bean = new ExpenditureLMBean();
+            bean = new IncomeLMBean();
         }
         bean.setUserName(UserConfig.getInstance().getUserName((Context) view));
         bean.setAmount(StringUtils.string2Float(amount));
@@ -101,12 +101,12 @@ public class ExpenditurePresenter implements ExpenditureContract.Presenter {
         bean.setItemName(name);
         bean.setMark(mark);
         bean.save();
-        if (editMod){
+        if (editMod) {
             view.setSave(R.string.jixubianji);
-        }else {
+        } else {
             view.setSave(R.string.zaicitianjia);
         }
-        UserConfig.getInstance().setExpenditureChange(true);
+        UserConfig.getInstance().setIncomeChange(true);
         view.showToast(R.string.baocunchenggong);
     }
 
@@ -115,9 +115,9 @@ public class ExpenditurePresenter implements ExpenditureContract.Presenter {
         if (bean != null && !editMod) {
             bean = null;
             view.clear();
-            view.setSave(R.string.baocunzhichujilu);
-        }else {
-            view.setSave(R.string.xiugaizhichujilu);
+            view.setSave(R.string.baocunshourujilu);
+        } else {
+            view.setSave(R.string.xiugaishourujilu);
         }
 
     }
@@ -125,7 +125,7 @@ public class ExpenditurePresenter implements ExpenditureContract.Presenter {
     @Override
     public void init(long id) {
         bean = reository.query(id);
-        editMod=true;
+        editMod = true;
         if (bean != null) {
             view.init(bean);
         }

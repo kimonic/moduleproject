@@ -4,17 +4,17 @@ import org.litepal.crud.DataSupport;
 
 /**
  * * ===============================================================
- * name:             ExpenditureLMBean
+ * name:             IncomeLMBean
  * guide:
  * author：          kimonik
  * version：          1.0
  * date：             2018/2/2
- * description：  支出记录保存
+ * description：  收入记录保存
  * history：
  * *==================================================================
  */
 
-public class ExpenditureLMBean extends DataSupport {
+public class IncomeLMBean extends DataSupport {
     /**
      * 用户名
      */
@@ -47,7 +47,7 @@ public class ExpenditureLMBean extends DataSupport {
      * 标签唯一id
      */
     private long itemFlag;
-    /**支出类型*/
+    /**收入类型*/
     private String  type;
 
     /**完整日期*/

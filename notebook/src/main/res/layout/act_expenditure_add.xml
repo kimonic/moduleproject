@@ -43,6 +43,18 @@
 
         <TextView
             style="@style/ExpenditureAct_Add_tvstyle"
+            android:text="@string/zhichuleixing" />
+
+        <EditText
+            android:id="@+id/et_act_expenditure_add_type"
+            style="@style/ExpenditureAct_Add_etstyle"
+            android:hint="@string/qingshuruzhichuleixing" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/ExpenditureAct_Add_llstyle">
+
+        <TextView
+            style="@style/ExpenditureAct_Add_tvstyle"
             android:text="@string/zhichushijian" />
 
         <EditText

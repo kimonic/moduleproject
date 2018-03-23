@@ -72,7 +72,7 @@ public class WelcomeActivity extends BaseActivity {
                 openActivity(HomeActivity.class);
                 closeActivity();
             }
-        }, 1000);
+        }, 100);
 
     }
 
@@ -84,11 +84,12 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     public void initDataFromInternet() {
 
+
     }
 
     @Override
     public void loadInternetDataToUi(Response<String> response) {
-        LUtils.e(WelcomeActivity.class,"logflag---网络链接测试"+response.body());
+        LUtils.e(WelcomeActivity.class, "logflag---网络链接测试" + response.body());
 
 
     }

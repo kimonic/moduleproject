@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
+import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.notebook.mvp.expenditure.ExpenditureReository;
 import com.kimonic.notebook.mvp.expenditure.query.ExpenditureQueryActivity;
@@ -126,6 +127,11 @@ public class ExpenditureActivity extends BaseActivity implements ExpenditureCont
 
     @Override
     public void clear() {
+
+    }
+
+    @Override
+    public void init(ExpenditureLMBean bean) {
 
     }
 }

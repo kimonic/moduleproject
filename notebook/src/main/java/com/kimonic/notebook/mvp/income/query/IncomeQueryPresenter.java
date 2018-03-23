@@ -1,13 +1,13 @@
-package com.kimonic.notebook.mvp.expenditure.query;
+package com.kimonic.notebook.mvp.income.query;
 
 import android.content.Context;
 import android.content.Intent;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
-import com.kimonic.notebook.mvp.expenditure.ExpenditureReository;
-import com.kimonic.notebook.mvp.expenditure.add.ExpenditureAddActivity;
+import com.kimonic.notebook.litemapbean.daily.IncomeLMBean;
+import com.kimonic.notebook.mvp.income.IncomeRepository;
+import com.kimonic.notebook.mvp.income.add.IncomeAddActivity;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.utils.TimeUtils;
 
@@ -29,17 +29,17 @@ import java.util.List;
  * *==================================================================
  */
 
-public class ExpenditureQueryPresenter implements ExpenditureQueryContract.Presenter {
-    private ExpenditureQueryContract.View view;
-    private ExpenditureReository reository;
+public class IncomeQueryPresenter implements IncomeQueryContract.Presenter {
+    private IncomeQueryContract.View view;
+    private IncomeRepository reository;
     private int currentYear, fixYear;
     private int currentMonth, fixMonth;
     private int count = 0;
-    private List<ExpenditureLMBean> list;
+    private List<IncomeLMBean> list;
     private boolean nothingFlag = false;
     private String userName;
 
-    public ExpenditureQueryPresenter(ExpenditureQueryContract.View view, ExpenditureReository reository) {
+    public IncomeQueryPresenter(IncomeQueryContract.View view, IncomeRepository reository) {
         this.view = view;
         this.reository = reository;
         userName = UserConfig.getInstance().getUserName((Context) view);
@@ -52,7 +52,7 @@ public class ExpenditureQueryPresenter implements ExpenditureQueryContract.Prese
         if (list.size() == 0) {
             view.showNothing(true);
         } else {
-            view.setList(list, ExpenditureQueryActivity.ADAPTER_SET);
+            view.setList(list, IncomeQueryActivity.ADAPTER_SET);
         }
     }
 
@@ -64,7 +64,7 @@ public class ExpenditureQueryPresenter implements ExpenditureQueryContract.Prese
             view.showNothing(true);
         } else {
             view.showNothing(false);
-            view.setList(list, ExpenditureQueryActivity.ADAPTER_UPDATE);
+            view.setList(list, IncomeQueryActivity.ADAPTER_UPDATE);
         }
     }
 
@@ -115,15 +115,15 @@ public class ExpenditureQueryPresenter implements ExpenditureQueryContract.Prese
         if (list.size() == 0) {
             view.showNothing(true);
         } else {
-            view.setList(list, ExpenditureQueryActivity.ADAPTER_UPDATE);
+            view.setList(list, IncomeQueryActivity.ADAPTER_UPDATE);
         }
     }
 
     /**启动编辑支出记录*/
     @Override
     public void startNextAct(int position) {
-        Intent intent=new Intent((BaseActivity) view, ExpenditureAddActivity.class);
-        intent.putExtra("type",ExpenditureAddActivity.TYPE_EDIT);
+        Intent intent=new Intent((BaseActivity) view, IncomeAddActivity.class);
+        intent.putExtra("type", IncomeAddActivity.TYPE_EDIT);
         intent.putExtra("id",list.get(position).getItemFlag());
         ((BaseActivity) view).startActivityForResult(intent,2);
     }

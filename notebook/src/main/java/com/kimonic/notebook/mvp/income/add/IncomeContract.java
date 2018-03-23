@@ -1,9 +1,9 @@
-package com.kimonic.notebook.mvp.expenditure.add;
+package com.kimonic.notebook.mvp.income.add;
 
 import android.support.annotation.StringRes;
 import android.widget.EditText;
 
-import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
+import com.kimonic.notebook.litemapbean.daily.IncomeLMBean;
 import com.kimonic.utilsmodule.mvp.BasePresenter;
 import com.kimonic.utilsmodule.mvp.BaseView;
 
@@ -19,12 +19,12 @@ import java.util.Map;
  * method:
  * <p>
  * <p>
- * description：  支出activity契约类
+ * description：  收入activity契约类
  * history：
  * *==================================================================
  */
 
-public interface ExpenditureContract {
+public interface IncomeContract {
     interface View extends BaseView<Presenter>{
         /**展示提示信息*/
         void showToast(@StringRes int resStr);
@@ -33,14 +33,14 @@ public interface ExpenditureContract {
         /**清空已输入信息*/
         void clear();
         /**初始化所有控件*/
-        void init(ExpenditureLMBean bean);
+        void init(IncomeLMBean bean);
 
     }
     interface Presenter extends BasePresenter{
-        /**备份支出记录*/
+        /**备份收入记录*/
         void backup();
-        /**保存支出记录*/
-        void save(Map<String,EditText> map);
+        /**保存收入记录*/
+        void save(Map<String, EditText> map);
         /**清空已保存记录*/
         void clear();
         /**带参初始化数据*/

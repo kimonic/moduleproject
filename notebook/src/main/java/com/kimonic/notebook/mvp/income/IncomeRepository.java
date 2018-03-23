@@ -1,7 +1,7 @@
-package com.kimonic.notebook.mvp.expenditure;
+package com.kimonic.notebook.mvp.income;
 
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
+import com.kimonic.notebook.litemapbean.daily.IncomeLMBean;
 import com.kimonic.utilsmodule.utils.StringUtils;
 import com.kimonic.utilsmodule.utils.TimeUtils;
 
@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * * ===============================================================
- * name:             ExpenditureReository
+ * name:             IncomeRepository
  * guide:
  * author：          kimonik
  * version：          1.0
@@ -21,19 +21,19 @@ import java.util.List;
  * method:
  * <p>
  * <p>
- * description：  支出activity的数据源
+ * description：  收入activity的数据源
  * history：
  * *==================================================================
  */
 
-public class ExpenditureReository {
+public class IncomeRepository {
 
     /**加载数据*/
-    public List<ExpenditureLMBean> loadData(String userName, int year, int month) {
+    public List<IncomeLMBean> loadData(String userName, int year, int month) {
 
 
-        List<ExpenditureLMBean> listDate = DataSupport.where("userName = ? and year = ? and month =?"
-                , userName, "" + year, TimeUtils.getCurrentMonthStr(month)).find(ExpenditureLMBean.class);
+        List<IncomeLMBean> listDate = DataSupport.where("userName = ? and year = ? and month =?"
+                , userName, "" + year, TimeUtils.getCurrentMonthStr(month)).find(IncomeLMBean.class);
 
         if (listDate.size() < 2) {
             return listDate;
@@ -46,20 +46,20 @@ public class ExpenditureReository {
 
     /**删除某一项数据*/
     public boolean delete(long id){
-        UserConfig.getInstance().setExpenditureChange(true);
-        return DataSupport.delete(ExpenditureLMBean.class,id)>0;
+        UserConfig.getInstance().setIncomeChange(true);
+        return DataSupport.delete(IncomeLMBean.class,id)>0;
     }
     /**查询某一条数据*/
-    public ExpenditureLMBean query(long id){
-        return DataSupport.find(ExpenditureLMBean.class,id);
+    public IncomeLMBean query(long id){
+        return DataSupport.find(IncomeLMBean.class,id);
     }
 
     /**
      * 按照日期排序
      */
-    private class ReositoryComparator implements Comparator<ExpenditureLMBean> {
+    private class ReositoryComparator implements Comparator<IncomeLMBean> {
         @Override
-        public int compare(ExpenditureLMBean o1, ExpenditureLMBean o2) {
+        public int compare(IncomeLMBean o1, IncomeLMBean o2) {
             return StringUtils.string2Integer(o2.getDate())-StringUtils.string2Integer(o1.getDate());
         }
     }

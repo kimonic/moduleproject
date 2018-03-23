@@ -6,12 +6,12 @@
     android:orientation="vertical">
 
     <com.kimonic.utilsmodule.ui.MTopBarView
-        android:id="@+id/mtb_act_expenditure_query"
+        android:id="@+id/mtb_act_income_query"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorQianLan"
         app:leftImage="@drawable/xvector_back"
-        app:centerText="@string/chakanzhichujilu0" />
+        app:centerText="@string/chakanshourujilu0" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -19,7 +19,7 @@
         android:layout_marginTop="10dp"
         >
         <TextView
-            android:id="@+id/tv_act_expenditure_query_previous"
+            android:id="@+id/tv_act_income_query_previous"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textSize="14sp"
@@ -27,7 +27,7 @@
             android:gravity="center"
             android:layout_weight="1"/>
         <TextView
-            android:id="@+id/tv_act_expenditure_query_current"
+            android:id="@+id/tv_act_income_query_current"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textSize="14sp"
@@ -37,7 +37,7 @@
             android:gravity="center"
             android:layout_weight="2"/>
         <TextView
-            android:id="@+id/tv_act_expenditure_query_next"
+            android:id="@+id/tv_act_income_query_next"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textSize="14sp"
@@ -46,14 +46,14 @@
             android:layout_weight="1"/>
     </LinearLayout>
     <ListView
-        android:id="@+id/lv_act_expenditure_query"
+        android:id="@+id/lv_act_income_query"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:dividerHeight="1dp"
         android:divider="@color/colorDivider"
         />
     <TextView
-        android:id="@+id/tv_act_expenditure_query_hint"
+        android:id="@+id/tv_act_income_query_hint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textSize="30sp"
