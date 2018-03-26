@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.kimonic.utilsmodule.ui.MTopBarView
+        android:id="@+id/mtb_act_memorandumadd"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorQianLan"
+        app:centerText="@string/beiwanglu1"
+        app:leftImage="@drawable/xvector_back" />
+
+    <LinearLayout style="@style/Memorandum_llStyle"
+        >
+
+        <TextView
+            style="@style/Memorandum_tvStyle"
+            android:text="@string/biaoti" />
+
+        <EditText
+            android:id="@+id/et_act_memorandumadd_title"
+            style="@style/Memorandum_etStyle"
+            android:hint="@string/qingshurubiaoti"
+            android:textColor="@color/colorLv1"
+            android:textColorHint="@color/colorQianLan"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/Memorandum_llStyle">
+
+        <TextView
+            style="@style/Memorandum_tvStyle"
+            android:text="@string/biaoqian" />
+
+        <EditText
+            android:id="@+id/et_act_memorandumadd_flag"
+            style="@style/Memorandum_etStyle"
+            android:hint="@string/qingshurubiaoqianmingcheng"
+            android:textColor="@color/colorQianLan"
+            android:textColorHint="@color/colorLv1"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/Memorandum_llStyle">
+
+        <TextView
+            style="@style/Memorandum_tvStyle"
+            android:text="@string/shijian" />
+
+        <EditText
+            android:id="@+id/et_act_memorandumadd_datee"
+            style="@style/Memorandum_etStyle"
+            android:textColor="@color/colorDate"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        >
+
+        <TextView
+            style="@style/Memorandum_tvStyle"
+            android:text="@string/neirong" />
+
+        <EditText
+            android:id="@+id/et_act_memorandumadd_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="start"
+            android:paddingTop="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:lineSpacingExtra="10dp"
+            android:background="@drawable/xshape_roundrect_empty"
+            android:textColor="@color/colorDate"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_act_memorandumadd_save"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@color/colorQianLan"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:text="@string/baocunjilu"
+        />
+
+
+</LinearLayout>

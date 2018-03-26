@@ -7,6 +7,8 @@ import android.view.View;
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.fragment.AccountingFragment;
 import com.kimonic.notebook.fragment.HomeFragment;
+import com.kimonic.notebook.fragment.MyFragment;
+import com.kimonic.notebook.fragment.ReportFormFragment;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.adapter.FragmentVPAdapter;
 import com.kimonic.utilsmodule.base.BaseActivity;
@@ -72,13 +74,13 @@ public class HomeActivity extends BaseActivity {
         list.add(fragment1);
 
 
-        HomeFragment fragment2 = new HomeFragment();
+        ReportFormFragment fragment2 = new ReportFormFragment();
         list.add(fragment2);
 
         HomeFragment fragment3 = new HomeFragment();
         list.add(fragment3);
 
-        HomeFragment fragment4 = new HomeFragment();
+        MyFragment fragment4 = new MyFragment();
         list.add(fragment4);
 
     }

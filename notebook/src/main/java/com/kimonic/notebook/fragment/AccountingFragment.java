@@ -12,6 +12,7 @@ import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
 import com.kimonic.notebook.litemapbean.daily.IncomeLMBean;
 import com.kimonic.notebook.mvp.expenditure.add.ExpenditureActivity;
 import com.kimonic.notebook.mvp.income.IncomeActivity;
+import com.kimonic.notebook.mvp.memorandum.MemorandumActivity;
 import com.kimonic.utilsmodule.base.BaseFragment;
 import com.kimonic.utilsmodule.utils.StringUtils;
 import com.kimonic.utilsmodule.utils.TimeUtils;
@@ -82,6 +83,7 @@ public class AccountingFragment extends BaseFragment {
             case R.id.tv_frag_accounting_suoshizaji://琐事杂记
                 break;
             case R.id.tv_frag_accounting_beiwanglu://备忘录
+                openActivity(MemorandumActivity.class);
                 break;
             case R.id.tv_frag_accounting_shujudaochu://数据导出
                 break;

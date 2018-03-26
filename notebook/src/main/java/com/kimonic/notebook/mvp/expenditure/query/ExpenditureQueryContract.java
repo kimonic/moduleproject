@@ -1,7 +1,5 @@
 package com.kimonic.notebook.mvp.expenditure.query;
 
-import android.support.annotation.StringRes;
-
 import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
 import com.kimonic.utilsmodule.mvp.BasePresenter;
 import com.kimonic.utilsmodule.mvp.BaseView;
@@ -33,8 +31,7 @@ public class ExpenditureQueryContract {
         void setCurrent(String str);
         /**设置无数据展示*/
         void showNothing(boolean flag);
-        /**显示提示信息*/
-        void showToast(@StringRes int strRes);
+
     }
 
     interface Presenter extends BasePresenter {

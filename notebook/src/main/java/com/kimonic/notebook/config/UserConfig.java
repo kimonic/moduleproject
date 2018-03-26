@@ -26,15 +26,22 @@ public class UserConfig {
      * 用户名
      */
     private String userName;
-    /**支出记录是否修改*/
-    private boolean  expenditureChange;
-    /**收入记录是否修改*/
+    /**
+     * 支出记录是否修改
+     */
+    private boolean expenditureChange;
+    /**
+     * 收入记录是否修改
+     */
     private boolean incomeChange;
-
+    /**
+     * 备忘录是否修改
+     */
+    private boolean memorandumChange;
 
 
     /**
-     *私有构造函数
+     * 私有构造函数
      */
     private UserConfig() {
 
@@ -70,7 +77,9 @@ public class UserConfig {
         return userName;
     }
 
-    /**设置并保存username*/
+    /**
+     * 设置并保存username
+     */
     public void setUserName(Context context, String username) {
         try {
             SharedPreferencesUtils.getInstance(context, Constants.USER_CONFIG)
@@ -97,4 +106,17 @@ public class UserConfig {
         this.incomeChange = incomeChange;
     }
 
+    /**
+     * 备忘录是否修改
+     */
+    public boolean isMemorandumChange() {
+        return memorandumChange;
+    }
+
+    /**
+     * 备忘录是否修改
+     */
+    public void setMemorandumChange(boolean memorandumChange) {
+        this.memorandumChange = memorandumChange;
+    }
 }

@@ -16,6 +16,8 @@
 
 package com.kimonic.utilsmodule.mvp;
 
+import android.support.annotation.StringRes;
+
 /**
  * 用户界面接口
  * 与用户相互交互的界面,该界面持有一个Presenter的引用,从而达到与数据源的隔离
@@ -30,5 +32,7 @@ public interface BaseView<T> {
      * @param presenter   主持人
      */
     void setPresenter(T presenter);
+    /**显示提示信息*/
+    void showToast(@StringRes int strRes);
 
 }

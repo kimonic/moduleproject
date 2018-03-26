@@ -26,8 +26,7 @@ import java.util.Map;
 
 public interface ExpenditureContract {
     interface View extends BaseView<Presenter>{
-        /**展示提示信息*/
-        void showToast(@StringRes int resStr);
+
         /**设置按钮信息*/
         void setSave(@StringRes int strRes);
         /**清空已输入信息*/

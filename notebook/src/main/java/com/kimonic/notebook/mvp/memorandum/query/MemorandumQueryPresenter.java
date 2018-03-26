@@ -1,13 +1,14 @@
-package com.kimonic.notebook.mvp.income.query;
+package com.kimonic.notebook.mvp.memorandum.query;
 
 import android.content.Context;
 import android.content.Intent;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.daily.IncomeLMBean;
-import com.kimonic.notebook.mvp.income.IncomeRepository;
-import com.kimonic.notebook.mvp.income.add.IncomeAddActivity;
+import com.kimonic.notebook.litemapbean.memorandum.MemorandumLMBean;
+import com.kimonic.notebook.mvp.income.query.IncomeQueryActivity;
+import com.kimonic.notebook.mvp.memorandum.MemorandumRespository;
+import com.kimonic.notebook.mvp.memorandum.add.MemorandumAddActivity;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.utils.TimeUtils;
 
@@ -16,33 +17,34 @@ import java.util.List;
 
 /**
  * * ===============================================================
- * name:             ExpenditureQueryPresenter
+ * name:             MemorandumQueryPresenter
  * guide:
  * author：          kimonik
  * version：          1.0
- * date：             2018/3/22
+ * date：             2018/3/26
  * method:
  * <p>
  * <p>
- * description：
+ * description：备忘录列表activity presenter
  * history：
  * *==================================================================
  */
 
-public class IncomeQueryPresenter implements IncomeQueryContract.Presenter {
-    private IncomeQueryContract.View view;
-    private IncomeRepository respository;
+public class MemorandumQueryPresenter implements MemorandumQueryContract.Presenter {
+
+    private MemorandumQueryContract.View view;
+    private MemorandumRespository<MemorandumLMBean> respository;
+    private String userName;
     private int currentYear, fixYear;
     private int currentMonth, fixMonth;
     private int count = 0;
-    private List<IncomeLMBean> list;
+    private List<MemorandumLMBean> list;
     private boolean nothingFlag = false;
-    private String userName;
 
-    public IncomeQueryPresenter(IncomeQueryContract.View view, IncomeRepository respository) {
+    public MemorandumQueryPresenter(MemorandumQueryContract.View view, MemorandumRespository<MemorandumLMBean> respository) {
         this.view = view;
         this.respository = respository;
-        userName = UserConfig.getInstance().getUserName((Context) view);
+        userName= UserConfig.getInstance().getUserName((Context) view);
     }
 
     @Override
@@ -52,7 +54,7 @@ public class IncomeQueryPresenter implements IncomeQueryContract.Presenter {
         if (list.size() == 0) {
             view.showNothing(true);
         } else {
-            view.setList(list, IncomeQueryActivity.ADAPTER_SET);
+            view.setList(list, MemorandumQueryActivity.ADAPTER_SET);
         }
     }
 
@@ -106,7 +108,7 @@ public class IncomeQueryPresenter implements IncomeQueryContract.Presenter {
 
     @Override
     public void remove(int position) {
-        if (respository.delete(list.get(position).getItemFlag())) {
+        if (respository.delete(list.get(position).getId())) {
             view.showToast(R.string.shanchuchenggong);
         } else {
             view.showToast(R.string.shanchushibai);
@@ -119,14 +121,11 @@ public class IncomeQueryPresenter implements IncomeQueryContract.Presenter {
         }
     }
 
-    /**启动编辑支出记录*/
     @Override
     public void startNextAct(int position) {
-        Intent intent=new Intent((BaseActivity) view, IncomeAddActivity.class);
-        intent.putExtra("type", IncomeAddActivity.TYPE_EDIT);
-        intent.putExtra("id",list.get(position).getItemFlag());
+        Intent intent=new Intent((BaseActivity) view, MemorandumAddActivity.class);
+        intent.putExtra("type", MemorandumAddActivity.TYPE_EDIT);
+        intent.putExtra("id",list.get(position).getId());
         ((BaseActivity) view).startActivityForResult(intent,2);
     }
-
-
 }

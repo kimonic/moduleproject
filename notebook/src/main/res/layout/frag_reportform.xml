@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorQianLan"
+        />
+    <TextView
+        android:id="@+id/tv_frag_reportform_shouzhiyuedutongji"
+        style="@style/FragReportformTextStyle2"
+        android:text="@string/shouzhiyuedutongji"
+        android:drawableStart="@drawable/xshape_redcircle"
+        />
+    <TextView
+        android:id="@+id/tv_frag_reportform_shouzhiniandutongji"
+        style="@style/FragReportformTextStyle2"
+        android:text="@string/shouzhiniandutongji"
+        android:drawableStart="@drawable/xshape_yellowcircle"
+        />
+    <TextView
+        android:id="@+id/tv_frag_reportform_gudingzichantongji"
+        style="@style/FragReportformTextStyle2"
+        android:text="@string/gudingzichantongji"
+        android:drawableStart="@drawable/xshape_bluecircle"
+        />
+    <TextView
+        android:id="@+id/tv_frag_reportform_touziyingshouyuedutongji"
+        style="@style/FragReportformTextStyle2"
+        android:text="@string/touziyingshouyuedutongji"
+        android:drawableStart="@drawable/xshape_erniucircle"
+        />
+    <TextView
+        android:id="@+id/tv_frag_reportform_touziyingshouniandutongji"
+        style="@style/FragReportformTextStyle2"
+        android:text="@string/touziyingshouniandutongji"
+        android:drawableStart="@drawable/xshape_greencircle"
+        />
+    <!--<TextView-->
+        <!--android:id="@+id/tv_frag_reportform_beiwanglu"-->
+        <!--style="@style/FragReportformTextStyle2"-->
+        <!--android:text="@string/beiwanglu"-->
+        <!--android:drawableStart="@drawable/xshape_violetcircle"-->
+        <!--/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_frag_reportform_shujudaochu"-->
+        <!--style="@style/FragReportformTextStyle2"-->
+        <!--android:text="@string/shujudaochu"-->
+        <!--android:drawableStart="@drawable/xshape_cyancircle"-->
+        <!--/>-->
+
+
+</LinearLayout>

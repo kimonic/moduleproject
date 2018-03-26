@@ -115,6 +115,18 @@
         <item name="android:layout_marginTop">5dp</item>
     </style>
 
+    <style name="FragReportformTextStyle2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:background">@color/color_line</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
     <style name="FragAccountingTextStyle3">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorBlack</item>
@@ -248,7 +260,8 @@
         <item name="android:layout_weight">2</item>
         <item name="android:background">@null</item>
     </style>
-<style name="IncomeAct_Query_lvetstyle">
+
+    <style name="IncomeAct_Query_lvetstyle">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/colorQianLan</item>
         <item name="android:gravity">center_vertical</item>
@@ -266,7 +279,8 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
     </style>
-<style name="IncomeAct_Query_lvtvstyle">
+
+    <style name="IncomeAct_Query_lvtvstyle">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:gravity">center_vertical</item>
@@ -286,5 +300,83 @@
         <item name="android:paddingRight">20dp</item>
         <item name="android:layout_marginTop">5dp</item>
     </style>
+    <!--备忘录activity布局控件style**************************************************************************-->
+    <style name="MemorandumAct_tvstyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:background">@color/color_line</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+
+    <!--备忘录activity布局控件style**************************************************************************-->
+
+
+    <!--备忘录添加activity布局控件style**************************************************************************-->
+    <style name="Memorandum_llStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+
+    <style name="Memorandum_tvStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="Memorandum_etStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/xshape_roundrect_empty</item>
+    </style>
+
+    <!--备忘录添加activity布局控件style**************************************************************************-->
+
+
+    <!--备忘录列表activity  lv  item布局控件style**************************************************************************-->
+    <style name="Lv_Ll_Memorandum_Query">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Lv_Tv_Memorandum_Query_1">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="Lv_Tv_Memorandum_Query_2">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorQianLan</item>
+    </style>
+
+
+    <!--备忘录列表activity  lv  item布局控件style**************************************************************************-->
+
 
 </resources>

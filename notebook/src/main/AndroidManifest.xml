@@ -84,6 +84,13 @@
         <activity android:name=".mvp.income.add.IncomeAddActivity" />
         <!--25.按月查看收入记录activity-->
         <activity android:name=".mvp.income.query.IncomeQueryActivity" />
+        <activity android:name=".activity.TestActivity" />
+        <!--26.备忘录添加activity-->
+        <activity android:name=".mvp.memorandum.add.MemorandumAddActivity" />
+        <!--27.备忘录activity-->
+        <activity android:name=".mvp.memorandum.MemorandumActivity" />
+        <!--28.备忘录列表activity-->
+        <activity android:name=".mvp.memorandum.query.MemorandumQueryActivity" />
     </application>
 
 </manifest>

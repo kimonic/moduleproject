@@ -4,12 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.ColorRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,14 +15,12 @@ import android.view.ViewGroup;
 
 import com.kimonic.utilsmodule.R;
 import com.kimonic.utilsmodule.utils.DialogUtils;
-import com.kimonic.utilsmodule.utils.ThreadUtils;
 import com.kimonic.utilsmodule.utils.ToastUtils;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
-import java.lang.ref.WeakReference;
 import java.util.Map;
 
 import butterknife.ButterKnife;
@@ -59,9 +54,9 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
     private long sleepTime = 15000;
     //-----------------------------------------联网请求计时---------------------------------------------------------
 
-    private boolean isProgressing = false;
+//    private boolean isProgressing = false;
 
-    private MyHandler handler;
+//    private MyHandler handler;
 
     /**
      * 下拉刷新,上拉加载布局
@@ -112,6 +107,14 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
                     finishRL();
                     ToastUtils.showToast(getActivity(), R.string.wangluobutaigeiliyou);
                 }
+
+                /**每次网络请求结束后都会被回调,无论网络请求时成功还是失败*/
+                @Override
+                public void onFinish() {
+                    dismissPDialog();
+                    finishRL();
+                    super.onFinish();
+                }
             };
 
         }
@@ -129,27 +132,27 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
         this.okgoCancelTag = okgoCancelTag;
     }
 
-    private class MyHandler extends Handler {
-        // 弱引用 ，防止内存泄露
-        private WeakReference<FragmentActivity> weakReference;
-
-        public MyHandler(FragmentActivity handlerMemoryActivity) {
-            weakReference = new WeakReference<FragmentActivity>(handlerMemoryActivity);
-        }
-
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            FragmentActivity handlerMemoryActivity = weakReference.get();
-            if (handlerMemoryActivity != null && isProgressing && msg.what == 1) {
-                OkGo.getInstance().cancelAll();
-//                ToastUtils.showToast(getActivity(), R.string.shujujiazaichaoshi);
-                dismissPDialog();
-            } else {
-                dismissPDialog();
-            }
-        }
-    }
+//    private class MyHandler extends Handler {
+//        // 弱引用 ，防止内存泄露
+//        private WeakReference<FragmentActivity> weakReference;
+//
+//        public MyHandler(FragmentActivity handlerMemoryActivity) {
+//            weakReference = new WeakReference<FragmentActivity>(handlerMemoryActivity);
+//        }
+//
+//        @Override
+//        public void handleMessage(Message msg) {
+//            super.handleMessage(msg);
+//            FragmentActivity handlerMemoryActivity = weakReference.get();
+//            if (handlerMemoryActivity != null && isProgressing && msg.what == 1) {
+//                OkGo.getInstance().cancelAll();
+////                ToastUtils.showToast(getActivity(), R.string.shujujiazaichaoshi);
+//                dismissPDialog();
+//            } else {
+//                dismissPDialog();
+//            }
+//        }
+//    }
 
 
     //------------------------------------------联网请求计时--------------------------------------------------------
@@ -157,8 +160,8 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
 
     @SuppressWarnings("unused")
     public void showPDialog() {
-        isProgressing = true;
-        timeThread();
+//        isProgressing = true;
+//        timeThread();
         try {
             if (bDialog == null) {
                 bDialog = DialogUtils.showProgreessDialog(getActivity(), getResources().getString(R.string.zaicidianjijinagtuichugaiyemian));
@@ -172,7 +175,7 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
     }
 
     public void dismissPDialog() {
-        isProgressing = false;
+//        isProgressing = false;
         if (getActivity()!=null&&!(getActivity().isFinishing()||getActivity().isDestroyed())){
             if (bDialog != null && bDialog.isShowing()) {
                 bDialog.dismiss();
@@ -191,7 +194,7 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
         initView();
         initListener();
         initDataFromInternet();
-        handler = new MyHandler(getActivity());
+//        handler = new MyHandler(getActivity());
         return view;
     }
 
@@ -315,27 +318,11 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
         return getResources().getColor(colorResId, null);
     }
 
-    /**
-     * 进度加载显示控制线程
-     */
-    private void timeThread() {
-        ThreadUtils.getCashThreadPoolInstance().execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(sleepTime);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                Message msg = Message.obtain();
-                msg.what = 1;
-                if (handler != null) {
-                    handler.sendMessage(msg);
-                }
-            }
-        });
-//        new Thread() {
+//    /**
+//     * 进度加载显示控制线程
+//     */
+//    private void timeThread() {
+//        ThreadUtils.getCashThreadPoolInstance().execute(new Runnable() {
 //            @Override
 //            public void run() {
 //                try {
@@ -350,6 +337,22 @@ public abstract class BaseFragment extends Fragment implements BaseMethod, View.
 //                    handler.sendMessage(msg);
 //                }
 //            }
-//        }.start();
-    }
+//        });
+////        new Thread() {
+////            @Override
+////            public void run() {
+////                try {
+////                    Thread.sleep(sleepTime);
+////                } catch (InterruptedException e) {
+////                    e.printStackTrace();
+////                }
+////
+////                Message msg = Message.obtain();
+////                msg.what = 1;
+////                if (handler != null) {
+////                    handler.sendMessage(msg);
+////                }
+////            }
+////        }.start();
+//    }
 }

@@ -1,6 +1,6 @@
-package com.kimonic.notebook.mvp.income.query;
+package com.kimonic.notebook.mvp.memorandum.query;
 
-import com.kimonic.notebook.litemapbean.daily.IncomeLMBean;
+import com.kimonic.notebook.litemapbean.memorandum.MemorandumLMBean;
 import com.kimonic.utilsmodule.mvp.BasePresenter;
 import com.kimonic.utilsmodule.mvp.BaseView;
 
@@ -8,11 +8,11 @@ import java.util.List;
 
 /**
  * * ===============================================================
- * name:             ExpenditureQueryContract
+ * name:             MemorandumQueryContract
  * guide:
  * author：          kimonik
  * version：          1.0
- * date：             2018/3/22
+ * date：             2018/3/26
  * method:
  * <p>
  * <p>
@@ -21,20 +21,16 @@ import java.util.List;
  * *==================================================================
  */
 
-public interface IncomeQueryContract {
-
-    interface View extends BaseView<Presenter> {
-
+public interface MemorandumQueryContract {
+    interface View extends BaseView<Presenter>{
         /**设置list*/
-        void setList(List<IncomeLMBean> list, int flag);
+        void setList(List<MemorandumLMBean> list, int flag);
         /**设置当前展示文本*/
         void setCurrent(String str);
         /**设置无数据展示*/
         void showNothing(boolean flag);
-
     }
-
-    interface Presenter extends BasePresenter {
+    interface Presenter extends BasePresenter{
         /**更新数据*/
         void updateData();
         /**设置上一个月文本*/
@@ -47,6 +43,5 @@ public interface IncomeQueryContract {
         void remove(int position);
         /**启动编辑activity*/
         void startNextAct(int position);
-
     }
 }
