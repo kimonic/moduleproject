@@ -1,4 +1,4 @@
-package com.kimonic.notebook.mvp.login;
+package com.kimonic.notebook.mvp.loginandregister.login;
 
 import android.view.View;
 import android.widget.EditText;
@@ -7,8 +7,15 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
+import com.kimonic.notebook.activity.welcome.HomeActivity;
+import com.kimonic.notebook.config.UserConfig;
+import com.kimonic.notebook.mvp.loginandregister.LoginRegisterRespository;
+import com.kimonic.notebook.mvp.loginandregister.register.RegisterActivity;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.lzy.okgo.model.Response;
+
+import java.util.Map;
+import java.util.TreeMap;
 
 import butterknife.BindView;
 
@@ -46,6 +53,8 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     @BindView(R.id.login_root)
     ScrollView loginRoot;
 
+    private Map<String, EditText> map;
+
     private LoginContract.Presenter presenter;
 
     @Override
@@ -62,10 +71,16 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_act_login_login:
+                if (presenter.check(map)) {
+                    openActivity(HomeActivity.class);
+                    closeActivity();
+                }
                 break;
             case R.id.tv_act_login_forgetpassword:
                 break;
             case R.id.tv_act_login_register:
+                openActivity(RegisterActivity.class);
+                closeActivity();
                 break;
 //            case R.id.: break;
 //            case R.id.: break;
@@ -76,16 +91,23 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     @Override
     public void initDataFromIntent() {
 
+        map = new TreeMap<>();
+        map.put("username", etUserName);
+        map.put("password", etPassword);
+
+        presenter = new LoginPresenter(this, new LoginRegisterRespository());
+
     }
 
     @Override
     public void initView() {
-
+        etUserName.setText(UserConfig.getInstance().getUserName(this));
     }
 
     @Override
     public void initListener() {
-
+        tvLogin.setOnClickListener(this);
+        tvRegister.setOnClickListener(this);
     }
 
     @Override
@@ -105,11 +127,6 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     public void setPresenter(LoginContract.Presenter presenter) {
-
-    }
-
-    @Override
-    public void showToast(int strRes) {
 
     }
 

@@ -1,5 +1,7 @@
 package com.kimonic.utilsmodule.utils;
 
+import android.text.TextUtils;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.kimonic.utilsmodule.bean.GlobalBean;
@@ -128,7 +130,7 @@ public class StringUtils {
      */
     public static int string2Integer(String intString) {
 
-        if (intString == null) {
+        if (TextUtils.isEmpty(intString)) {
             return 0;
         }
         try {

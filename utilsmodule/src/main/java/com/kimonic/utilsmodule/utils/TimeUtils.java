@@ -309,6 +309,35 @@ public class TimeUtils {
         int two = StringUtils.string2Integer(date2.replace("-", ""));
         return one > two;
     }
+    /**
+     * 计算两个日期之间间隔几天,未考虑闰年
+     */
+    public static int differenceDaate(String date1, String date2){
+        String[] da1=date1.split("-");
+        String[] da2=date2.split("-");
+        int[] da11={
+                StringUtils.string2Integer(da1[0]),
+                StringUtils.string2Integer(da1[1]),
+                StringUtils.string2Integer(da1[2]),
+        };
+        int[] da22={
+                StringUtils.string2Integer(da2[0]),
+                StringUtils.string2Integer(da2[1]),
+                StringUtils.string2Integer(da2[2]),
+        };
+        int[] mothNum={31,28,31,30,31,30,31,31,30,31,31};
+        int sum1=0,sum2=0;
+        for (int i = 0; i < da11[1] - 1; i++) {
+            sum1+=mothNum[i];
+        }
+        for (int i = 0; i < da22[1] - 1; i++) {
+            sum2+=mothNum[i];
+        }
+        sum1+=da11[2];
+        sum2+=da22[2];
+        int year=(StringUtils.string2Integer(da1[0])-StringUtils.string2Integer(da2[0]))*365;
+        return sum2-sum1;
+    }
 
 
 }

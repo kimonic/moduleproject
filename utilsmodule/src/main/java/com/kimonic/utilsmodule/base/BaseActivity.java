@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
+import android.support.annotation.StringRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -496,6 +497,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
     /**统一处理返回事件*/
     public void handleBackup(){
 
+    }
+
+    /**显示提示信息*/
+    public void showToast(@StringRes int strRes){
+        ToastUtils.showToast(BaseActivity.this, strRes);
     }
 
 

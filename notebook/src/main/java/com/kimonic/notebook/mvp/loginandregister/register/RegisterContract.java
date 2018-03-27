@@ -1,4 +1,4 @@
-package com.kimonic.notebook.mvp.login;
+package com.kimonic.notebook.mvp.loginandregister.register;
 
 import android.widget.EditText;
 
@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * * ===============================================================
- * name:             LoginContract
+ * name:             RegisterContract
  * guide:
  * author：          kimonik
  * version：          1.0
@@ -17,22 +17,18 @@ import java.util.Map;
  * method:
  * <p>
  * <p>
- * description： 登陆页面契约类
+ * description：
  * history：
  * *==================================================================
  */
 
-public interface LoginContract {
-
-
-    interface Presenter extends BasePresenter {
-
-        /**校验用户名密码*/
-        boolean check(Map<String,EditText> map);
+public interface RegisterContract {
+    interface Presenter extends BasePresenter{
+        /**保存用户名密码*/
+        boolean save(Map<String,EditText> map);
 
     }
-
-    interface View extends BaseView<Presenter> {
+    interface View extends BaseView<Presenter>{
 
     }
 }

@@ -1,6 +1,7 @@
 package com.kimonic.notebook.fragment;
 
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.bean.MyFragBean;
 import com.kimonic.notebook.config.UserConfig;
+import com.kimonic.notebook.mvp.loginandregister.login.LoginActivity;
 import com.kimonic.utilsmodule.base.BaseFragment;
 import com.kimonic.utilsmodule.utils.HeightUtils;
 import com.lzy.okgo.model.Response;
@@ -48,18 +50,23 @@ public class MyFragment extends BaseFragment {
             R.drawable.frag_my_ic002,
             R.drawable.frag_my_ic003,
             R.drawable.frag_my_ic004,
-            R.drawable.frag_my_ic005,};
+            R.drawable.frag_my_ic005,
+            R.drawable.frag_my_ic006
+
+    };
     private int[] item = {R.string.shiyongjiaocheng,
             R.string.yinsibaohu,
             R.string.zhognyaotishi,
             R.string.lianxizuozhe,
-            R.string.banbengengxin
+            R.string.banbengengxin,
+            R.string.tuichudenglu
     };
     //使用教程
     //隐私保护
     //版本更新
     //重要提示
     //联系作者
+    //退出登陆
 
 
     @Override
@@ -92,7 +99,28 @@ public class MyFragment extends BaseFragment {
 
     @Override
     public void initListener() {
-
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5://退出登陆
+                        UserConfig.getInstance().clear(getActivity());
+                        openActivity(LoginActivity.class);
+                        closeActivity();
+                        break;
+                }
+            }
+        });
     }
 
     @Override

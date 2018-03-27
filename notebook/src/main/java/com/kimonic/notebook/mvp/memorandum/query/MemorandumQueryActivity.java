@@ -198,7 +198,7 @@ public class MemorandumQueryActivity extends BaseActivity implements MemorandumQ
      * 获得适配器
      */
     private CommonAdapter<MemorandumLMBean> getAdapter(List<MemorandumLMBean> list) {
-        return new CommonAdapter<MemorandumLMBean>(this, R.layout.lv_memorandum_query, list) {
+        return new  CommonAdapter<MemorandumLMBean>(this, R.layout.lv_memorandum_query, list) {
             @Override
             protected void convert(ViewHolder viewHolder, MemorandumLMBean item, int position) {
                 viewHolder.setText(R.id.lv_memorandum_query_title, item.getTitle());
