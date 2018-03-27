@@ -91,6 +91,8 @@
         <activity android:name=".mvp.memorandum.MemorandumActivity" />
         <!--28.备忘录列表activity-->
         <activity android:name=".mvp.memorandum.query.MemorandumQueryActivity" />
+        <!--29.登陆页面activity-->
+        <activity android:name=".mvp.login.LoginActivity" />
     </application>
 
 </manifest>

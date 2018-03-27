@@ -233,4 +233,9 @@
     <string name="zhognyaotishi">重要提示</string>
     <string name="lianxizuozhe">联系作者</string>
     <string name="banbengengxin">版本更新</string>
+    <string name="act_login_username">请输入用户名</string>
+    <string name="act_login_password">请输入密码</string>
+    <string name="act_login_nozhanghao">没有账号?前往注册</string>
+    <string name="act_login_forgetpassword">忘记密码?</string>
+    <string name="act_login_login">登陆</string>
 </resources>
