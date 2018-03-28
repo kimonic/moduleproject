@@ -29,6 +29,5 @@ public interface RegisterContract {
 
     }
     interface View extends BaseView<Presenter>{
-
     }
 }

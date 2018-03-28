@@ -1,6 +1,7 @@
 package com.kimonic.notebook.mvp.income;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kimonic.notebook.R;
@@ -39,6 +40,8 @@ public class IncomeActivity extends BaseActivity {
     TextView tvStatistics;//统计
     @BindView(R.id.tv_act_income_beifenshourujilu)
     TextView tvBackup;
+    @BindView(R.id.iv_act_income_test)
+    ImageView iv;
 
     @Override
     public int getLayoutResId() {
@@ -76,6 +79,7 @@ public class IncomeActivity extends BaseActivity {
     @Override
     public void initView() {
         setTopMargin(mtb, MApp.STATUS_BAE_HEIGHT);
+        iv.setBackground(getWindow().getDecorView().getBackground());
     }
 
     @Override

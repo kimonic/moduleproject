@@ -19,7 +19,7 @@ import java.util.Map;
  * method:
  * <p>
  * <p>
- * description：
+ * description：注册presenter
  * history：
  * *==================================================================
  */

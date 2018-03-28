@@ -48,6 +48,7 @@
         <EditText
             android:id="@+id/et_act_savedatadetails_shuzhi"
             style="@style/TextStyle001"
+            android:inputType="numberSigned|numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/qingshuruzichanjiazhi"
@@ -68,6 +69,7 @@
         <EditText
             android:id="@+id/et_act_savedatadetails_record"
             style="@style/TextStyle001"
+            android:inputType="date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/qingshurujiluriqi"

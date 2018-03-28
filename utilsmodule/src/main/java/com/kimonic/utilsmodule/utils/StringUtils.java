@@ -169,7 +169,7 @@ public class StringUtils {
      * @return yyyy-MM-dd
      */
     public static String getStrTime(String cc_time) {
-        if (cc_time==null){
+        if (cc_time == null) {
             return "****-**-**";
         }
         String re_StrTime;
@@ -186,9 +186,9 @@ public class StringUtils {
 
 
     /**
-            * 将时间戳转为字符串
+     * 将时间戳转为字符串
      *
-             * @param cc_time 时间戳字符串,到秒
+     * @param cc_time 时间戳字符串,到秒
      * @return yyyy-MM-dd
      */
     public static String getStrTimeFull(String cc_time) {
@@ -213,7 +213,7 @@ public class StringUtils {
      * @return yyyy-MM-dd
      */
     public static String getStrTimeBias(String cc_time) {
-        if (cc_time==null){
+        if (cc_time == null) {
             return "****-**-**";
         }
         String re_StrTime;
@@ -243,7 +243,7 @@ public class StringUtils {
      * 将字符串转化为2位小数的字符串,不足两位的补齐两位小数
      */
     public static String getTwoDecimalsStr(String fStr) {
-        if (fStr==null){
+        if (fStr == null) {
             return "";
         }
         float f = string2Float(fStr);
@@ -256,7 +256,7 @@ public class StringUtils {
      * 补齐两位小数
      */
     public static String getTwoDecimalsStrUD(String fStr) {
-        if (fStr==null){
+        if (fStr == null) {
             return "";
         }
         double f = string2Float(fStr);
@@ -270,15 +270,21 @@ public class StringUtils {
     }
 
 
-
-
     /**
      * 每三位用逗号分隔,最终保留两位小数,不足的用0补齐
      */
     public static String getCommaDecimalsStr(String fStr) {
+        boolean flag = false;
+
         if (fStr == null) {
             return "0.00";
         }
+
+        if (fStr.contains("-")) {
+            flag = true;
+            fStr = fStr.replace("-", "");
+        }
+
         if (fStr.contains(".")) {
             int temp = fStr.indexOf(".");
             String s = fStr.substring(0, temp);
@@ -294,10 +300,22 @@ public class StringUtils {
             if (se.length() > 2) {
                 fStr = s + "." + se.substring(0, 2);
             }
-            return getCommaDecimalsStrAssist(s, fStr, 2);
+            if (flag) {
+                return "-" + getCommaDecimalsStrAssist(s, fStr, 2);
+
+            } else {
+                return getCommaDecimalsStrAssist(s, fStr, 2);
+
+            }
 
         } else {
-            return getCommaDecimalsStrAssist(fStr, fStr + ".00", 2);
+            if (flag) {
+                return "-"+getCommaDecimalsStrAssist(fStr, fStr + ".00", 2);
+
+            } else {
+                return getCommaDecimalsStrAssist(fStr, fStr + ".00", 2);
+
+            }
         }
     }
 
@@ -407,19 +425,19 @@ public class StringUtils {
         return sb.toString();
     }
 
-    /**科学计数法转换为诶数字scientific notation*/
+    /**
+     * 科学计数法转换为诶数字scientific notation
+     */
     public static String changeScientificNotation(String num1) {
-        if (num1!=null){
+        if (num1 != null) {
             BigDecimal bd1 = new BigDecimal(num1);
             return bd1.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString();
-        }else {
+        } else {
             return "0";
         }
 
 
     }
-
-
 
 
 }

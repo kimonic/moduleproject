@@ -36,5 +36,10 @@
         style="@style/IncomeAct_tvstyle"
         android:drawableStart="@drawable/xshape_bluecircle"
         android:text="@string/beifenshourujilu" />
+    <ImageView
+        android:id="@+id/iv_act_income_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"/>
 
 </LinearLayout>

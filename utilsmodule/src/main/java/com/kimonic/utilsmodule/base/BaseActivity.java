@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
@@ -221,7 +222,8 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseMeth
             //设置当前窗体为全屏显示
             window.setFlags(flag, flag);
         }
-
+        //设置透明图片防止背景过度绘制
+        getWindow().getDecorView().setBackground(new ColorDrawable(getColorRes(R.color.touming)));
 
         setContentView(getLayoutResId());
         ButterKnife.bind(this);

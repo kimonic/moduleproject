@@ -39,7 +39,7 @@ import butterknife.BindView;
  * *==================================================================
  */
 
-public class FindDataDetailsActivity extends BaseActivity {
+public class FindDataDetailsActivity extends BaseActivity{
 
     @BindView(R.id.tv_act_finddatadetails_total)
     TextView tvTotal;
@@ -72,19 +72,6 @@ public class FindDataDetailsActivity extends BaseActivity {
     public void initView() {
         setTopMargin(mtb, MApp.STATUS_BAE_HEIGHT);
 
-        listDate = DataSupport.where("userName = ? and dateFlag = ? "
-                , userName, date).find(SaveDataLMBean.class);
-
-
-        float total = 0;
-
-        for (int i = 0; i < listDate.size(); i++) {
-            total += listDate.get(i).getValue();
-        }
-
-        tvTotal.setText(StringUtils.getCommaDecimalsStr(""+total));
-        adapter = getAdapter();
-        lv.setAdapter(adapter);
 
 
     }
@@ -152,6 +139,19 @@ public class FindDataDetailsActivity extends BaseActivity {
     @Override
     public void initDataFromInternet() {
 
+        listDate = DataSupport.where("userName = ? and dateFlag = ? "
+                , userName, date).find(SaveDataLMBean.class);
+
+
+        float total = 0;
+
+        for (int i = 0; i < listDate.size(); i++) {
+            total += listDate.get(i).getValue();
+        }
+
+        tvTotal.setText(StringUtils.getCommaDecimalsStr(""+total));
+        adapter = getAdapter();
+        lv.setAdapter(adapter);
     }
 
     @Override
@@ -164,15 +164,23 @@ public class FindDataDetailsActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==Constants.REQUEST_RESULT_1){
+            initDataFromInternet();
+        }
+    }
+
     private CommonAdapter<SaveDataLMBean> getAdapter() {
         return new CommonAdapter<SaveDataLMBean>(this, R.layout.lv_savedatabean_notebook, listDate) {
             @Override
             protected void convert(ViewHolder viewHolder, SaveDataLMBean item, int position) {
-                viewHolder.setText(R.id.tv_lv_savedatabean_shuzhi, String.valueOf(item.getValue()));
+                viewHolder.setText(R.id.tv_lv_savedatabean_shuzhi, StringUtils.getCommaDecimalsStr(""+item.getValue()));
                 viewHolder.setText(R.id.tv_lv_savedatabean_record, item.getDateFlag());
                 viewHolder.setText(R.id.tv_lv_savedatabean_label, item.getItem());
                 viewHolder.setText(R.id.tv_lv_savedatabean_mark, item.getMark());
-                viewHolder.setText(R.id.tv_lv_savedatabean_modifytimes, String.valueOf(item.getFrequencyOfModification()));
+                viewHolder.setText(R.id.tv_lv_savedatabean_modifytimes, StringUtils.getCommaDecimalsStr(String.valueOf(item.getFrequencyOfModification())));
                 viewHolder.setText(R.id.tv_lv_savedatabean_lastmodify, item.getLastModify());
             }
         };

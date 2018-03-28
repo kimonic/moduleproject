@@ -45,7 +45,7 @@ public class SaveDataDetailsActivity extends BaseActivity {
     @BindView(R.id.et_act_savedatadetails_shuzhi)
     EditText etShuzhi;
     @BindView(R.id.et_act_savedatadetails_record)
-    TextView etRecord;
+    EditText etRecord;
     @BindView(R.id.et_act_savedatadetails_mark)
     EditText etMark;
     @BindView(R.id.tv_act_savedatadetails_save)
@@ -58,6 +58,8 @@ public class SaveDataDetailsActivity extends BaseActivity {
     private String date;
     private List<SaveDataLMBean> listItem;
     private String mark;
+    /**返回刷新标志*/
+    private boolean resultFlag=false;
 
     @Override
     public int getLayoutResId() {
@@ -180,6 +182,7 @@ public class SaveDataDetailsActivity extends BaseActivity {
     public void initView() {
         setTopMargin(mtb, MApp.STATUS_BAE_HEIGHT);
         etLabel.setText(label);
+        etRecord.setText(TimeUtils.getNowDateShort());
     }
 
     @Override
@@ -202,6 +205,7 @@ public class SaveDataDetailsActivity extends BaseActivity {
             bean.setItemFlag((list.size() + 1));
             bean.setUserName(userName);
             bean.save();
+            resultFlag=true;
             return "" + bean.getItemFlag();
         } else if (listItem != null) {
             return "" + listItem.get(0).getItemFlag();
@@ -224,5 +228,11 @@ public class SaveDataDetailsActivity extends BaseActivity {
 
     }
 
-
+    @Override
+    public void handleBackup() {
+        if (resultFlag){
+            setResult(1);
+        }
+        closeActivity();
+    }
 }

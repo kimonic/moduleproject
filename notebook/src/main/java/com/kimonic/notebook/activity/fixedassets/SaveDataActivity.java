@@ -1,5 +1,6 @@
 package com.kimonic.notebook.activity.fixedassets;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -62,7 +63,7 @@ public class SaveDataActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_act_savedata_addnew:
-                openActivity(SaveDataDetailsActivity.class);
+                openActivityForResult(SaveDataDetailsActivity.class,1);
                 break;
 //                 case R.id.:break;
 //                 case R.id.:break;
@@ -112,6 +113,14 @@ public class SaveDataActivity extends BaseActivity {
     @Override
     public void loadInternetDataToUi() {
         lv.setAdapter(getAdapter());
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode==1){
+            initDataFromInternet();
+        }
     }
 
     private CommonAdapter<ItemFlagLMBean> getAdapter() {

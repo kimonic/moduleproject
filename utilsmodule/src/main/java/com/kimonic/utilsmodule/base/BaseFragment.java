@@ -38,6 +38,7 @@ import butterknife.Unbinder;
  * ===================================================
  */
 
+
 public abstract class BaseFragment extends Fragment implements BaseMethod, View.OnClickListener {
     Unbinder unbinder;
 
