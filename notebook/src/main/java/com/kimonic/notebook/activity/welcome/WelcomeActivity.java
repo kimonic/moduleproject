@@ -8,7 +8,6 @@ import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.UserConfig;
 import com.kimonic.notebook.mvp.loginandregister.login.LoginActivity;
 import com.kimonic.utilsmodule.base.BaseActivity;
-import com.kimonic.utilsmodule.utils.LUtils;
 import com.lzy.okgo.model.Response;
 
 import butterknife.BindView;
@@ -91,8 +90,6 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     public void loadInternetDataToUi(Response<String> response) {
-        LUtils.e(WelcomeActivity.class, "logflag---网络链接测试" + response.body());
-
 
     }
 

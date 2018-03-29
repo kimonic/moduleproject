@@ -3,6 +3,7 @@ package com.kimonic.notebook.config;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.kimonic.utilsmodule.utils.LUtils;
 import com.kimonic.utilsmodule.utils.SharedPreferencesUtils;
 import com.kimonic.utilsmodule.utils.TimeUtils;
 
@@ -187,6 +188,8 @@ public class UserConfig {
      */
     public boolean invalideLogin(Context context) {
         getLoginDate(context);//获取上次成功登陆日期
+        LUtils.e(UserConfig.class,"logflag--loginDate-"+loginDate);
+
         if (TextUtils.isEmpty(loginDate)) {
             clear(context);
             return true;

@@ -6,9 +6,15 @@
         <item name="colorPrimary">@color/colorQianLan</item>
         <item name="colorPrimaryDark">@color/colorQianLan</item>
         <item name="colorAccent">@color/colorQianLan</item>
-        <!--解决启动白屏问题-->
-        <item name="android:windowBackground">@drawable/act_welcome</item>
+        <!--&lt;!&ndash;解决启动白屏问题&ndash;&gt;-->
+        <!--<item name="android:windowBackground">@drawable/act_welcome</item>-->
+        <!--<item name="android:windowFullscreen">true</item>-->
     </style>
+
+    <!--<style name="AppThemeWelcome" parent="AppTheme">-->
+        <!--<item name="android:windowBackground">@color/windowback</item>-->
+        <!--<item name="android:windowFullscreen">false</item>-->
+    <!--</style>-->
 
     <style name="TextStyle">
         <item name="android:textSize">14sp</item>

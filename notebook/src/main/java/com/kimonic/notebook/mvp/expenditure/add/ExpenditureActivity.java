@@ -8,6 +8,7 @@ import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.notebook.mvp.expenditure.ExpenditureReository;
 import com.kimonic.notebook.mvp.expenditure.query.ExpenditureQueryActivity;
+import com.kimonic.notebook.mvp.expenditure.statistics.ExpenditureStatisticsActivity;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.kimonic.utilsmodule.utils.ToastUtils;
@@ -64,6 +65,7 @@ public class ExpenditureActivity extends BaseActivity implements ExpenditureCont
                 openActivity(ExpenditureAddActivity.class);
                 break;
             case R.id.tv_act_expenditure_zhichujilutongji://统计
+                openActivity(ExpenditureStatisticsActivity.class);
                 break;
             case R.id.tv_act_expenditure_beifenzhichujilu://备份
                 presenter.backup();

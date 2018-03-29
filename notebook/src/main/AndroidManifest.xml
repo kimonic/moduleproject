@@ -19,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--0.首页activity-->
-        <activity android:name=".activity.welcome.HomeActivity">
+        <activity android:name=".activity.welcome.HomeActivity"
+            >
             <!--<intent-filter>-->
             <!--<action android:name="android.intent.action.MAIN" />-->
 
@@ -43,7 +44,8 @@
         <!--7.比较不同日期的记录数据详情-->
         <activity android:name=".activity.CompareDataDetailsActivity" />
         <!--8.欢迎页activity-->
-        <activity android:name=".activity.welcome.WelcomeActivity">
+        <activity android:name=".activity.welcome.WelcomeActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -95,6 +97,8 @@
         <activity android:name=".mvp.loginandregister.login.LoginActivity" />
         <!--30.注册activity-->
         <activity android:name=".mvp.loginandregister.register.RegisterActivity" />
+        <!--支出统计activity-->
+        <activity android:name=".mvp.expenditure.statistics.ExpenditureStatisticsActivity" />
     </application>
 
 </manifest>

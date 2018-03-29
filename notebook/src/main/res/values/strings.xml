@@ -249,4 +249,7 @@
     <string name="qianhouliangcimimashurubuyizhi">前后两次密码输入不一致,请重新输入</string>
     <string name="mimachangdubunengxiaoyu">密码长度不能小于6位</string>
     <string name="zhucechenggong">注册成功</string>
+    <string name="zhichutongji">支出统计</string>
+    <string name="benyuezhichuzongji">本月支出总计:</string>
+    <string name="zongjixiaofei">总计消费</string>
 </resources>

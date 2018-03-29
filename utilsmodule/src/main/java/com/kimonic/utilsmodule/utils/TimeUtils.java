@@ -153,6 +153,16 @@ public class TimeUtils {
         return calendar.get(Calendar.MONTH) + 1;// 获取当前月份
     }
 
+    /**
+     * 获取当前月份
+     *
+     * @return 月份字符串
+     */
+    public static int getCurrentDayInt() {
+        Calendar calendar = Calendar.getInstance();
+        return calendar.get(Calendar.DATE);// 获取当前月份
+    }
+
 
     /**
      * 获取当前年份

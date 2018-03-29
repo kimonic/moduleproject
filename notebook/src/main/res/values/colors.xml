@@ -16,6 +16,7 @@
     <color name="colorDivider">#008CD6</color>
     <color name="colorLv1">#9CCC31</color>
     <color name="colorDate">#6FADBA</color>
+    <color name="windowback">#fffafafa</color>
 
 
 </resources>

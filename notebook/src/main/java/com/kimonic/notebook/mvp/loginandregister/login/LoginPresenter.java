@@ -48,6 +48,8 @@ public class LoginPresenter implements LoginContract.Presenter {
             int flag=respository.checkPassword(userName,password);
             if (flag==1){
                 UserConfig.getInstance().setUserName((Context) view,userName);
+                UserConfig.getInstance().setLoginDate((Context) view);
+                UserConfig.getInstance().setLogin((Context) view,true);
                 return true;
             }else {
                 view.showToast(R.string.yonghumingmimacuowu);
