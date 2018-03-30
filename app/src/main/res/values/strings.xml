@@ -5,4 +5,10 @@
     <string name="act_integralrecode_default">--,---</string>
     <string name="act_integralrecode_title">积分记录</string>
     <string name="yuqinianhuashouyi">预期年化收益</string>
+    <string name="act_integralshop_wodejifen">我的积分</string>
+    <string name="act_integralshop_touzizhuanjifen">投资赚积分</string>
+    <string name="act_integralshop_shangpinfenlei">商品分类</string>
+    <string name="act_integralshop_jifenshaixuan">积分筛选</string>
+    <string name="act_integralshop_remenduihuan">热门兑换</string>
+    <string name="act_integralshop_jifenpaihangbang">积分排行榜</string>
 </resources>

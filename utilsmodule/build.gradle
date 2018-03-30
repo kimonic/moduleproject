@@ -74,8 +74,10 @@ dependencies {
 //    数据库操作库
     compile 'org.litepal.android:core:1.6.1'
 
-    //万能适配器
+    //万能适配器  listview
     compile 'com.zhy:base-adapter:3.0.3'
+    //万能适配器  recylerview
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.36'
 
 
 }

@@ -1,10 +1,17 @@
 package com.kimonic.myutilsproject.activity;
 
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.kimonic.myutilsproject.R;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.lzy.okgo.model.Response;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
 
 /**
  * * ===============================================================
@@ -22,8 +29,8 @@ public class TestActivity extends BaseActivity {
     public static int DEVICE_DENSITY=132;
 
 
-//    @BindView(R.id.tv_act_integralrecode_totalintegral)
-//    TextView tvActIntegralrecodeTotalintegral;
+    @BindView(R.id.rv_act_test)
+    RecyclerView rv;
 //    @BindView(R.id.tv_act_integralrecode_integralrecode)
 //    TextView tvActIntegralrecodeIntegralrecode;
 //    @BindView(R.id.iv_act_integralrecode_filtrate)
@@ -60,6 +67,30 @@ public class TestActivity extends BaseActivity {
 
     @Override
     public void initDataFromIntent() {
+        final GridLayoutManager manager = new GridLayoutManager(this,3);
+
+
+
+
+
+
+//        LinearLayoutManager manager=new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        rv.setLayoutManager(manager);
+        List<String> list=new ArrayList<>();
+        for (int i = 0; i < 50; i++) {
+            list.add("这是第"+i+"个item");
+        }
+        final RecyclerAdapter<String> adapter=new RecyclerAdapter<>(list,this,R.layout.rv_header
+        ,-1,R.layout.rv_item);
+        rv.setAdapter(adapter);
+
+        manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                return adapter.isFoot(position) || adapter.isHead(position) ||position==10? manager.getSpanCount() : 1;
+            }
+        });
+
     }
 
     @Override

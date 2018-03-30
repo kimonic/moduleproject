@@ -26,6 +26,13 @@ public class InvestmentRecordDetailsLMBean extends DataSupport {
     // 返现金额及其他,额外年化收益,总年化收益,总收益,投资天数,
     // 投资手机号
     //修改次数,最后修改日期 ,投资年份,投资月份,唯一标识
+    //是否已回款
+    /**
+     * 是否已回款
+     * 已回款
+     * 未回款
+     */
+    private String hasTakeBack = "未回款";
     /**
      * 投资年份
      */
@@ -407,5 +414,19 @@ public class InvestmentRecordDetailsLMBean extends DataSupport {
 
     public void setMonth(String month) {
         this.month = month;
+    }
+
+    /**
+     * 是否已回款
+     */
+    public String getHasTakeBack() {
+        return hasTakeBack;
+    }
+
+    /**
+     * 是否已回款
+     */
+    public void setHasTakeBack(String hasTakeBack) {
+        this.hasTakeBack = hasTakeBack;
     }
 }

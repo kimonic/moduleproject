@@ -1,4 +1,4 @@
-package com.kimonic.notebook.mvp.expenditure.statistics;
+package com.kimonic.notebook.mvp.income.statistics;
 
 import com.kimonic.utilsmodule.mvp.BasePresenter;
 import com.kimonic.utilsmodule.mvp.BaseView;
@@ -7,21 +7,20 @@ import java.util.List;
 
 /**
  * * ===============================================================
- * name:             ExpenditureStatisticsContract
+ * name:             IncomeStatisticsContract
  * guide:
  * author：          kimonik
  * version：          1.0
- * date：             2018/3/29
+ * date：             2018/3/30
  * method:
  * <p>
  * <p>
- * description：支出统计契约类
+ * description：
  * history：
  * *==================================================================
  */
 
-public class ExpenditureStatisticsContract {
-
+public class IncomeStatisticsContract {
 
     public interface Presenter extends BasePresenter {
         void init();
@@ -32,13 +31,11 @@ public class ExpenditureStatisticsContract {
 
     }
 
-    public interface VIew extends BaseView<Presenter> {
+    public interface View extends BaseView<Presenter> {
         void setTvCurrenr(String str);
-        void setListView(List<ExpenditureStatisticsPresenter.SizeBean> list);
+        void setListView(List<IncomeStatisticsPresenter.SizeBean> list);
         void setTotal(String str);
         /**设置无数据展示*/
         void showNothing(boolean flag);
     }
-
-
 }

@@ -5,10 +5,14 @@
     android:layout_height="match_parent"
     android:background="@color/global_background_color"
     android:orientation="vertical">
-
-    <com.kimonic.myutilsproject.ui.ZhuoYouView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_act_test"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
+
+    <!--<com.kimonic.myutilsproject.ui.ZhuoYouView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
 
 
 </LinearLayout>

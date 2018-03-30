@@ -1,11 +1,11 @@
-package com.kimonic.notebook.mvp.expenditure.statistics;
+package com.kimonic.notebook.mvp.income.statistics;
 
 import android.content.Context;
 
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.UserConfig;
-import com.kimonic.notebook.litemapbean.daily.ExpenditureLMBean;
-import com.kimonic.notebook.mvp.expenditure.ExpenditureReository;
+import com.kimonic.notebook.litemapbean.daily.IncomeLMBean;
+import com.kimonic.notebook.mvp.income.IncomeRepository;
 import com.kimonic.utilsmodule.utils.TimeUtils;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.Set;
 
 /**
  * * ===============================================================
- * name:             ExpenditureStatisticsPresenter
+ * name:             IncomeStatisticsPresenter
  * guide:
  * author：          kimonik
  * version：          1.0
@@ -30,14 +30,14 @@ import java.util.Set;
  * *==================================================================
  */
 
-public class ExpenditureStatisticsPresenter implements ExpenditureStatisticsContract.Presenter {
+public class IncomeStatisticsPresenter implements IncomeStatisticsContract.Presenter {
 
-    private ExpenditureReository reository;
-    private ExpenditureStatisticsContract.VIew view;
+    private IncomeRepository reository;
+    private IncomeStatisticsContract.View view;
     private int year;
     private int month;
     private String userName;
-    private List<ExpenditureLMBean> list;
+    private List<IncomeLMBean> list;
     private Set<String> set;
 
     private List<String> type;
@@ -49,9 +49,9 @@ public class ExpenditureStatisticsPresenter implements ExpenditureStatisticsCont
     private int fixMonth;
     private int count=0;
 
-    public ExpenditureStatisticsPresenter(ExpenditureStatisticsContract.VIew view) {
+    public IncomeStatisticsPresenter(IncomeStatisticsContract.View view) {
         this.view = view;
-        reository = new ExpenditureReository();
+        reository = new IncomeRepository();
         userName = UserConfig.getInstance().getUserName((Context) view);
         set = new HashSet<>();
         type = new ArrayList<>();

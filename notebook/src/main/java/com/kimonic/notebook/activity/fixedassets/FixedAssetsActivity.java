@@ -15,10 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.gson.ExclusionStrategy;
-import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.activity.CompareDataActivity;
@@ -31,11 +28,8 @@ import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.kimonic.utilsmodule.utils.FileUtils;
-import com.kimonic.utilsmodule.utils.TimeUtils;
 import com.kimonic.utilsmodule.utils.ToastUtils;
 import com.lzy.okgo.model.Response;
-
-import org.litepal.crud.DataSupport;
 
 import java.util.List;
 
@@ -90,33 +84,33 @@ public class FixedAssetsActivity extends BaseActivity {
                 break;
             case R.id.tv_act_fixedassets_daochugudingzichanjilu://导出
                 //gson到处某个Java对象时排除某个字段不导出的配置策略
-                ExclusionStrategy myExclusionStrategy = new ExclusionStrategy() {
-                    @Override
-                    public boolean shouldSkipField(FieldAttributes fa) {
-                        return fa.getName().startsWith("baseObjId");
-                    }
-
-                    @Override
-                    public boolean shouldSkipClass(Class<?> clazz) {
-                        return false;
-                    }
-                };
-
-                Gson gson = new GsonBuilder().setExclusionStrategies(myExclusionStrategy).create();
-
-                BackupsBean bean = new BackupsBean();
-                List<SaveDataLMBean> list = DataSupport.findAll(SaveDataLMBean.class);
-                List<DataNameTableLMBean> list1 = DataSupport.findAll(DataNameTableLMBean.class);
-                List<ItemFlagLMBean> list2 = DataSupport.findAll(ItemFlagLMBean.class);
-                List<DateRecordLMBean> list3 = DataSupport.findAll(DateRecordLMBean.class);
-                bean.setListSaveData(list);
-                bean.setListDataNameTable(list1);
-                bean.setListItemFlag(list2);
-                bean.setListDateRecord(list3);
-
-                String json = gson.toJson(bean);
-                FileUtils.saveJsonToSDCard(this, "notebookbackup", TimeUtils.getNowDateShort() + "notebook.txt", json);
-                break;
+//                ExclusionStrategy myExclusionStrategy = new ExclusionStrategy() {
+//                    @Override
+//                    public boolean shouldSkipField(FieldAttributes fa) {
+//                        return fa.getName().startsWith("baseObjId");
+//                    }
+//
+//                    @Override
+//                    public boolean shouldSkipClass(Class<?> clazz) {
+//                        return false;
+//                    }
+//                };
+//
+//                Gson gson = new GsonBuilder().setExclusionStrategies(myExclusionStrategy).create();
+//
+//                BackupsBean bean = new BackupsBean();
+//                List<SaveDataLMBean> list = DataSupport.findAll(SaveDataLMBean.class);
+//                List<DataNameTableLMBean> list1 = DataSupport.findAll(DataNameTableLMBean.class);
+//                List<ItemFlagLMBean> list2 = DataSupport.findAll(ItemFlagLMBean.class);
+//                List<DateRecordLMBean> list3 = DataSupport.findAll(DateRecordLMBean.class);
+//                bean.setListSaveData(list);
+//                bean.setListDataNameTable(list1);
+//                bean.setListItemFlag(list2);
+//                bean.setListDateRecord(list3);
+//
+//                String json = gson.toJson(bean);
+//                FileUtils.saveJsonToSDCard(this, "notebookbackup", TimeUtils.getNowDateShort() + "notebook.txt", json);
+//                break;
             case R.id.tv_act_fixedassets_duibizichanjilu://对比
                 openActivity(CompareDataActivity.class);
                 break;

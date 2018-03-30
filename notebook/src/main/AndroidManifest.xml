@@ -99,6 +99,7 @@
         <activity android:name=".mvp.loginandregister.register.RegisterActivity" />
         <!--支出统计activity-->
         <activity android:name=".mvp.expenditure.statistics.ExpenditureStatisticsActivity" />
+        <activity android:name=".mvp.income.statistics.IncomeStatisticsActivity" />
     </application>
 
 </manifest>

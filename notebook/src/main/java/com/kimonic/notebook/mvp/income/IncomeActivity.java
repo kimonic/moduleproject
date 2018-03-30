@@ -8,6 +8,7 @@ import com.kimonic.notebook.R;
 import com.kimonic.notebook.mapp.MApp;
 import com.kimonic.notebook.mvp.income.add.IncomeAddActivity;
 import com.kimonic.notebook.mvp.income.query.IncomeQueryActivity;
+import com.kimonic.notebook.mvp.income.statistics.IncomeStatisticsActivity;
 import com.kimonic.utilsmodule.base.BaseActivity;
 import com.kimonic.utilsmodule.ui.MTopBarView;
 import com.lzy.okgo.model.Response;
@@ -63,6 +64,7 @@ public class IncomeActivity extends BaseActivity {
                 openActivity(IncomeAddActivity.class);
                 break;
             case R.id.tv_act_income_shourujilutongji://统计
+                openActivity(IncomeStatisticsActivity.class);
                 break;
             case R.id.tv_act_income_beifenshourujilu://备份
                 break;

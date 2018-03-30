@@ -6,11 +6,11 @@
     android:orientation="vertical">
 
     <com.kimonic.utilsmodule.ui.MTopBarView
-        android:id="@+id/mtb_act_expenditure_statisttics"
+        android:id="@+id/mtb_act_income_statisttics"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorQianLan"
-        app:centerText="@string/zhichutongji"
+        app:centerText="@string/shourutongji"
         app:leftImage="@drawable/xvector_back" />
 
     <LinearLayout
@@ -20,7 +20,7 @@
         android:layout_marginTop="10dp"
         >
         <TextView
-            android:id="@+id/tv_act_expenditure_statisttics_previous"
+            android:id="@+id/tv_act_income_statisttics_previous"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textSize="14sp"
@@ -28,7 +28,7 @@
             android:gravity="center"
             android:layout_weight="1"/>
         <TextView
-            android:id="@+id/tv_act_expenditure_statisttics_current"
+            android:id="@+id/tv_act_income_statisttics_current"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textSize="14sp"
@@ -38,7 +38,7 @@
             android:gravity="center"
             android:layout_weight="2"/>
         <TextView
-            android:id="@+id/tv_act_expenditure_statisttics_next"
+            android:id="@+id/tv_act_income_statisttics_next"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textSize="14sp"
@@ -46,33 +46,32 @@
             android:gravity="center"
             android:layout_weight="1"/>
     </LinearLayout>
-    
 
-        <TextView
-            android:id="@+id/tv_act_expenditure_statisttics_total"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:textSize="14sp"
-            android:textColor="@color/colorBlack"
-            android:gravity="center"
-            android:text="@string/benyuezhichuzongji"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            
-            />
+
+    <TextView
+        android:id="@+id/tv_act_income_statisttics_total"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+
+        />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="@color/color_line"/>
     <ListView
-        android:id="@+id/lv_act_expenditure_statisttics"
+        android:id="@+id/lv_act_income_statisttics"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:dividerHeight="5dp"
         android:divider="@color/color_line"/>
     <TextView
-        android:id="@+id/tv_act_expenditure_statistics_hint"
+        android:id="@+id/tv_act_income_statistics_hint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textSize="30sp"

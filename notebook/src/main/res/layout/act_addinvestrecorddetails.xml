@@ -335,6 +335,25 @@
             </LinearLayout>
 
 
+            <!--是否已回款-->
+            <LinearLayout style="@style/LinearLayoutStytleEditOldRecord">
+
+                <TextView
+                    style="@style/TextStyle001"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shifouyihuikuan" />
+
+                <EditText
+                    android:id="@+id/et_act_addinvestrecorddetails_has_take_back"
+                    style="@style/TextStyle001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    android:text="@string/weihuikuan"
+                    />
+            </LinearLayout>
 
 
 

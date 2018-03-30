@@ -4,7 +4,7 @@
     <dbname value="notebook" />
 
     <!--数据库的版本号,当有改变时将版本号加1-->
-    <version value="1" />
+    <version value="2" />
 
    <!--Java bean,对应相应的表名,必须写完整包路径-->
     <list>

@@ -70,6 +70,8 @@ public class AddInvestRecordDetailsActivity extends BaseActivity {
     EditText etTotalIncome;
     @BindView(R.id.et_act_addinvestrecorddetails_total_annual_income)
     EditText etTotalAnnualIncome;
+    @BindView(R.id.et_act_addinvestrecorddetails_has_take_back)
+    EditText ethasTakeBack;
     @BindView(R.id.tv_act_addinvestrecorddetails_save)
     TextView tvSave;
 
@@ -90,6 +92,7 @@ public class AddInvestRecordDetailsActivity extends BaseActivity {
     private String totalAnnualIncome;
     private String totalIncome;
     private String validFlag;
+    private String hasTakeBack;
     private List<InvestmentRecordDetailsLMBean> list;
 
 
@@ -220,23 +223,23 @@ public class AddInvestRecordDetailsActivity extends BaseActivity {
     }
 
     private void saveOthers() {
-        List<InvestDateLMBean> list1 = DataSupport.where("userName = ? and investDate = ?", userName,investDate).find(InvestDateLMBean.class);
-        List<RepayDateLMBean> list2 = DataSupport.where("userName = ? and repayDate = ?", userName,repayDate).find(RepayDateLMBean.class);
-        List<InvestPlateformLMBean> list3 = DataSupport.where("userName = ? and investPlateform = ?", userName,investPlateform).find(InvestPlateformLMBean.class);
+        List<InvestDateLMBean> list1 = DataSupport.where("userName = ? and investDate = ?", userName, investDate).find(InvestDateLMBean.class);
+        List<RepayDateLMBean> list2 = DataSupport.where("userName = ? and repayDate = ?", userName, repayDate).find(RepayDateLMBean.class);
+        List<InvestPlateformLMBean> list3 = DataSupport.where("userName = ? and investPlateform = ?", userName, investPlateform).find(InvestPlateformLMBean.class);
         if (list1.size() == 0) {
-            InvestDateLMBean bean1=new InvestDateLMBean();
+            InvestDateLMBean bean1 = new InvestDateLMBean();
             bean1.setUserName(userName);
             bean1.setInvestDate(investDate);
             bean1.save();
         }
         if (list2.size() == 0) {
-            RepayDateLMBean bean2=new RepayDateLMBean();
+            RepayDateLMBean bean2 = new RepayDateLMBean();
             bean2.setUserName(userName);
             bean2.setRepayDate(repayDate);
             bean2.save();
         }
         if (list3.size() == 0) {
-            InvestPlateformLMBean bean3=new InvestPlateformLMBean();
+            InvestPlateformLMBean bean3 = new InvestPlateformLMBean();
             bean3.setUserName(userName);
             bean3.setInvestPlateform(investPlateform);
             bean3.save();
@@ -252,6 +255,7 @@ public class AddInvestRecordDetailsActivity extends BaseActivity {
         investPlateform = etInvestPlateform.getText().toString().trim();
         repayDate = etRepaydate.getText().toString().trim();
         investAcount = etInvestAmount.getText().toString().trim();
+        hasTakeBack = ethasTakeBack.getText().toString().trim();
 
         investDate = etInvestdate.getText().toString().trim();
         if ("".equals(investDate)) {
@@ -271,8 +275,11 @@ public class AddInvestRecordDetailsActivity extends BaseActivity {
         if ("".equals(investPlateform)) {
             ToastUtils.showToast(AddInvestRecordDetailsActivity.this, R.string.qingshurutouzipingtai);
             return false;
-        }else if ("".equals(investAcount)) {
+        } else if ("".equals(investAcount)) {
             ToastUtils.showToast(AddInvestRecordDetailsActivity.this, R.string.qingshurutouzijine);
+            return false;
+        } else if (!("已回款".equals(hasTakeBack) || "未回款".equals(hasTakeBack))) {
+            ToastUtils.showToast(AddInvestRecordDetailsActivity.this, R.string.qingshuruyihuikuanhuoweihuikuan);
             return false;
         } else {
             return true;
@@ -294,7 +301,7 @@ public class AddInvestRecordDetailsActivity extends BaseActivity {
     public void initDataFromIntent() {
         userName = UserConfig.getInstance().getUserName(this);
         currentDay = TimeUtils.getNowDateShort();
-        investPlateform=getIntent().getStringExtra("plateform");
+        investPlateform = getIntent().getStringExtra("plateform");
 
         if (investPlateform != null && (!"".equals(investPlateform))) {
             etInvestPlateform.setText(investPlateform);
@@ -307,7 +314,7 @@ public class AddInvestRecordDetailsActivity extends BaseActivity {
     @Override
     public void initView() {
         setTopMargin(mtb, MApp.STATUS_BAE_HEIGHT);
-
+        etInvestdate.setText(TimeUtils.getNowDateShort());
     }
 
     @Override

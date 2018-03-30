@@ -252,4 +252,10 @@
     <string name="zhichutongji">支出统计</string>
     <string name="benyuezhichuzongji">本月支出总计:</string>
     <string name="zongjixiaofei">总计消费</string>
+    <string name="shourutongji">收入统计</string>
+    <string name="zongjishouru">总计收入</string>
+    <string name="benyueshouruzongji">本月收入总计:</string>
+    <string name="shifouyihuikuan">是否已回款</string>
+    <string name="weihuikuan">未回款</string>
+    <string name="qingshuruyihuikuanhuoweihuikuan">请输入已回款或未回款</string>
 </resources>

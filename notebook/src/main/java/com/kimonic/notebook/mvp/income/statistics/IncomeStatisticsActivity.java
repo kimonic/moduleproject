@@ -1,4 +1,4 @@
-package com.kimonic.notebook.mvp.expenditure.statistics;
+package com.kimonic.notebook.mvp.income.statistics;
 
 import android.view.View;
 import android.widget.ListView;
@@ -18,7 +18,7 @@ import butterknife.BindView;
 
 /**
  * * ===============================================================
- * name:             ExpenditureStatisticsActivity
+ * name:             incomeStatisticsActivity
  * guide:
  * author：          kimonik
  * version：          1.0
@@ -31,28 +31,28 @@ import butterknife.BindView;
  * *==================================================================
  */
 
-public class ExpenditureStatisticsActivity extends BaseActivity implements ExpenditureStatisticsContract.VIew {
-    @BindView(R.id.mtb_act_expenditure_statisttics)
+public class IncomeStatisticsActivity extends BaseActivity implements IncomeStatisticsContract.View {
+    @BindView(R.id.mtb_act_income_statisttics)
     MTopBarView mtb;
-    @BindView(R.id.tv_act_expenditure_statisttics_previous)
+    @BindView(R.id.tv_act_income_statisttics_previous)
     TextView tvPrevious;
-    @BindView(R.id.tv_act_expenditure_statisttics_current)
+    @BindView(R.id.tv_act_income_statisttics_current)
     TextView tvCurrent;
-    @BindView(R.id.tv_act_expenditure_statisttics_next)
+    @BindView(R.id.tv_act_income_statisttics_next)
     TextView tvNext;
-    @BindView(R.id.tv_act_expenditure_statisttics_total)
+    @BindView(R.id.tv_act_income_statisttics_total)
     TextView tvTotal;
-     @BindView(R.id.tv_act_expenditure_statistics_hint)
+     @BindView(R.id.tv_act_income_statistics_hint)
     TextView tvHint;
-    @BindView(R.id.lv_act_expenditure_statisttics)
+    @BindView(R.id.lv_act_income_statisttics)
     ListView lv;
 
-    private ExpenditureStatisticsContract.Presenter presenter;
+    private IncomeStatisticsContract.Presenter presenter;
     private CommonAdapter adapter;
 
     @Override
     public int getLayoutResId() {
-        return R.layout.act_expenditure_statistics;
+        return R.layout.act_income_statistics;
     }
 
     @Override
@@ -63,12 +63,12 @@ public class ExpenditureStatisticsActivity extends BaseActivity implements Expen
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.tv_act_expenditure_statisttics_previous:
+            case R.id.tv_act_income_statisttics_previous:
                 presenter.setPrevious();
                 break;
-            case R.id.tv_act_expenditure_statisttics_current:
+            case R.id.tv_act_income_statisttics_current:
                 break;
-            case R.id.tv_act_expenditure_statisttics_next:
+            case R.id.tv_act_income_statisttics_next:
                 presenter.setNext();
                 break;
 //            case R.id.: break;
@@ -79,7 +79,7 @@ public class ExpenditureStatisticsActivity extends BaseActivity implements Expen
 
     @Override
     public void initDataFromIntent() {
-        presenter = new ExpenditureStatisticsPresenter(this);
+        presenter = new IncomeStatisticsPresenter(this);
     }
 
     @Override
@@ -113,7 +113,7 @@ public class ExpenditureStatisticsActivity extends BaseActivity implements Expen
     }
 
     @Override
-    public void setPresenter(ExpenditureStatisticsContract.Presenter presenter) {
+    public void setPresenter(IncomeStatisticsContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
@@ -124,7 +124,7 @@ public class ExpenditureStatisticsActivity extends BaseActivity implements Expen
     }
 
     @Override
-    public void setListView(List<ExpenditureStatisticsPresenter.SizeBean> list) {
+    public void setListView(List<IncomeStatisticsPresenter.SizeBean> list) {
         if (adapter==null){
             adapter=getAdapter(list);
             lv.setAdapter(adapter);
@@ -136,7 +136,7 @@ public class ExpenditureStatisticsActivity extends BaseActivity implements Expen
 
     @Override
     public void setTotal(String str) {
-        tvTotal.setText((getString(R.string.benyuezhichuzongji)+str));
+        tvTotal.setText((getString(R.string.benyueshouruzongji)+str));
     }
 
     @Override
@@ -153,13 +153,13 @@ public class ExpenditureStatisticsActivity extends BaseActivity implements Expen
     /**
      * 获得适配器
      */
-    private CommonAdapter<ExpenditureStatisticsPresenter.SizeBean> getAdapter(List<ExpenditureStatisticsPresenter.SizeBean> list) {
-        return new CommonAdapter<ExpenditureStatisticsPresenter.SizeBean>(this, R.layout.lv_expenditure_statistics, list) {
+    private CommonAdapter<IncomeStatisticsPresenter.SizeBean> getAdapter(List<IncomeStatisticsPresenter.SizeBean> list) {
+        return new CommonAdapter<IncomeStatisticsPresenter.SizeBean>(this, R.layout.lv_income_statistics, list) {
             @Override
-            protected void convert(ViewHolder viewHolder, ExpenditureStatisticsPresenter.SizeBean item, int position) {
-                viewHolder.setText(R.id.tv_lv_act_expenditure_statisttics_type, "消费第"+(position+1)+"名");
-                viewHolder.setText(R.id.tv_lv_act_expenditure_statisttics_typename, item.getType());
-                viewHolder.setText(R.id.tv_lv_act_expenditure_statisttics_total, ""+item.getTotal());
+            protected void convert(ViewHolder viewHolder, IncomeStatisticsPresenter.SizeBean item, int position) {
+                viewHolder.setText(R.id.tv_lv_act_income_statisttics_type, "收入第"+(position+1)+"名");
+                viewHolder.setText(R.id.tv_lv_act_income_statisttics_typename, item.getType());
+                viewHolder.setText(R.id.tv_lv_act_income_statisttics_total, ""+item.getTotal());
 
             }
         };
