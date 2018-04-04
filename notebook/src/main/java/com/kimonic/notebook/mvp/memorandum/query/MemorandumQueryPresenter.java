@@ -6,7 +6,6 @@ import android.content.Intent;
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.config.UserConfig;
 import com.kimonic.notebook.litemapbean.memorandum.MemorandumLMBean;
-import com.kimonic.notebook.mvp.income.query.IncomeQueryActivity;
 import com.kimonic.notebook.mvp.memorandum.MemorandumRespository;
 import com.kimonic.notebook.mvp.memorandum.add.MemorandumAddActivity;
 import com.kimonic.utilsmodule.base.BaseActivity;
@@ -39,7 +38,6 @@ public class MemorandumQueryPresenter implements MemorandumQueryContract.Present
     private int currentMonth, fixMonth;
     private int count = 0;
     private List<MemorandumLMBean> list;
-    private boolean nothingFlag = false;
 
     public MemorandumQueryPresenter(MemorandumQueryContract.View view, MemorandumRespository<MemorandumLMBean> respository) {
         this.view = view;
@@ -54,7 +52,7 @@ public class MemorandumQueryPresenter implements MemorandumQueryContract.Present
         if (list.size() == 0) {
             view.showNothing(true);
         } else {
-            view.setList(list, MemorandumQueryActivity.ADAPTER_SET);
+            view.setList(list);
         }
     }
 
@@ -66,7 +64,7 @@ public class MemorandumQueryPresenter implements MemorandumQueryContract.Present
             view.showNothing(true);
         } else {
             view.showNothing(false);
-            view.setList(list, IncomeQueryActivity.ADAPTER_UPDATE);
+            view.setList(list);
         }
     }
 
@@ -117,7 +115,7 @@ public class MemorandumQueryPresenter implements MemorandumQueryContract.Present
         if (list.size() == 0) {
             view.showNothing(true);
         } else {
-            view.setList(list, IncomeQueryActivity.ADAPTER_UPDATE);
+            view.setList(list);
         }
     }
 

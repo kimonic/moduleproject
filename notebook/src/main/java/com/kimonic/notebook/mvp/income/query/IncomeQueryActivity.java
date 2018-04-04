@@ -54,8 +54,8 @@ public class IncomeQueryActivity extends BaseActivity implements IncomeQueryCont
     TextView tvHint;
     private IncomeQueryContract.Presenter presenter;
 
-    public static final int ADAPTER_SET = 1;
-    public static final int ADAPTER_UPDATE = 2;
+    //    public static final int ADAPTER_SET = 1;
+//    public static final int ADAPTER_UPDATE = 2;
     private CommonAdapter<IncomeLMBean> adapter;
 
 
@@ -109,14 +109,18 @@ public class IncomeQueryActivity extends BaseActivity implements IncomeQueryCont
             @Override
             public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
 //                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
-                menu.setHeaderTitle(R.string.qingxuanzexuyaodecaozuo);
-                //groupId:组ID
+                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+                if (info.id!=-1){//info.id==-1时,说明listview包含头部或底部view
+                    menu.setHeaderTitle(R.string.qingxuanzexuyaodecaozuo);
+                    //groupId:组ID
 //                itemId:菜单项ID，我们上面讲了，整个activity中，这个ID值必须是唯一的。先记住即可，后面我们会讲为什么要唯一。
 //                order:是在一个菜单中的排序顺序，一个菜单的排序顺序会根据这个值，由小到大排列菜单项。所以，仔细看上面的排序方式，
 //                 我故意把排序顺序改成了，1，3，2，4；但界面中菜单的排序应该是按1，2，3，4 这样排序的：
 //              （从效果图可以看到，菜单的排序是按order的大小排列的！）
-                menu.add(0, 0, 0, R.string.gengxingaijilu);
-                menu.add(0, 1, 0, R.string.shanchugaijilu);
+                    menu.add(0, 0, 0, R.string.gengxingaijilu);
+                    menu.add(0, 1, 0, R.string.shanchugaijilu);
+                }
+
             }
         });
     }
@@ -126,7 +130,8 @@ public class IncomeQueryActivity extends BaseActivity implements IncomeQueryCont
     public boolean onContextItemSelected(MenuItem item) {
         //获取点击的item的位置
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        int position=info.position;
+        int position =  info.position;
+
         switch (item.getItemId()) {
             case 0:
                 presenter.startNextAct(position);
@@ -162,16 +167,14 @@ public class IncomeQueryActivity extends BaseActivity implements IncomeQueryCont
 
 
     @Override
-    public void setList(List<IncomeLMBean> list, int flag) {
-        switch (flag) {
-            case ADAPTER_SET://设置适配器
-                adapter = getAdapter(list);
-                lv.setAdapter(adapter);
-                break;
-            case ADAPTER_UPDATE://刷新适配器
-                adapter.notifyDataSetChanged();
-                break;
+    public void setList(List<IncomeLMBean> list) {
+        if (adapter == null) {
+            adapter = getAdapter(list);
+            lv.setAdapter(adapter);
+        } else {
+            adapter.notifyDataSetChanged();
         }
+
 
     }
 
@@ -217,7 +220,7 @@ public class IncomeQueryActivity extends BaseActivity implements IncomeQueryCont
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode==2){
+        if (requestCode == 2) {
             presenter.updateData();
         }
         super.onActivityResult(requestCode, resultCode, data);

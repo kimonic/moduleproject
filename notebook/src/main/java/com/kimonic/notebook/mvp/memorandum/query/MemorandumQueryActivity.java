@@ -55,8 +55,8 @@ public class MemorandumQueryActivity extends BaseActivity implements MemorandumQ
     TextView tvHint;
     private MemorandumQueryContract.Presenter presenter;
 
-    public static final int ADAPTER_SET = 1;
-    public static final int ADAPTER_UPDATE = 2;
+//    public static final int ADAPTER_SET = 1;
+//    public static final int ADAPTER_UPDATE = 2;
     private CommonAdapter<MemorandumLMBean> adapter;
 
     @Override
@@ -166,15 +166,12 @@ public class MemorandumQueryActivity extends BaseActivity implements MemorandumQ
     }
 
     @Override
-    public void setList(List<MemorandumLMBean> list, int flag) {
-        switch (flag) {
-            case ADAPTER_SET://设置适配器
-                adapter = getAdapter(list);
-                lv.setAdapter(adapter);
-                break;
-            case ADAPTER_UPDATE://刷新适配器
-                adapter.notifyDataSetChanged();
-                break;
+    public void setList(List<MemorandumLMBean> list) {
+        if (adapter == null) {
+            adapter = getAdapter(list);
+            lv.setAdapter(adapter);
+        } else {
+            adapter.notifyDataSetChanged();
         }
     }
 
@@ -198,7 +195,7 @@ public class MemorandumQueryActivity extends BaseActivity implements MemorandumQ
      * 获得适配器
      */
     private CommonAdapter<MemorandumLMBean> getAdapter(List<MemorandumLMBean> list) {
-        return new  CommonAdapter<MemorandumLMBean>(this, R.layout.lv_memorandum_query, list) {
+        return new CommonAdapter<MemorandumLMBean>(this, R.layout.lv_memorandum_query, list) {
             @Override
             protected void convert(ViewHolder viewHolder, MemorandumLMBean item, int position) {
                 viewHolder.setText(R.id.lv_memorandum_query_title, item.getTitle());

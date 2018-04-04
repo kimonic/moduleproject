@@ -5,11 +5,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kimonic.myutilsproject.R;
-import com.kimonic.utilsmodule.utils.ToastUtils;
 
 import java.util.List;
 
@@ -86,44 +84,7 @@ public class RecyclerAdapter<T> extends RecyclerView.Adapter {
             return new RecyclerAdapter.ContentHolder(itemView);
         } else if (viewType == TYPE_HEAD) {//头部视图
             View itemView = LayoutInflater.from(context).inflate(resHeader, null, false);
-            LinearLayout ll1 = itemView.findViewById(R.id.ll_act_integralshop_classification_of_goods);
-            LinearLayout ll2 = itemView.findViewById(R.id.ll_act_integralshop_integral_screen);
-            LinearLayout ll3 = itemView.findViewById(R.id.ll_act_integralshop_hot);
-            LinearLayout ll4 = itemView.findViewById(R.id.ll_act_integralshop_ranking_list);
-
-            ll1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ToastUtils.showToast(context, "商品分类");
-
-                }
-            });
-
-            ll2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ToastUtils.showToast(context, "积分筛选");
-
-                }
-            });
-
-            ll3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ToastUtils.showToast(context, "热门兑换");
-
-                }
-            });
-
-            ll4.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ToastUtils.showToast(context, "积分排行榜");
-
-                }
-            });
-
-
+            //处理点击事件
             return new RecyclerAdapter.HeadHolder(itemView);
         } else {//底部视图
             View itemView = LayoutInflater.from(context).inflate(resFooter, null, false);

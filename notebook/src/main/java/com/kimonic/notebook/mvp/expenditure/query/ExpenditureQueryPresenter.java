@@ -36,7 +36,6 @@ public class ExpenditureQueryPresenter implements ExpenditureQueryContract.Prese
     private int currentMonth, fixMonth;
     private int count = 0;
     private List<ExpenditureLMBean> list;
-    private boolean nothingFlag = false;
     private String userName;
 
     public ExpenditureQueryPresenter(ExpenditureQueryContract.View view, ExpenditureReository reository) {
@@ -52,7 +51,7 @@ public class ExpenditureQueryPresenter implements ExpenditureQueryContract.Prese
         if (list.size() == 0) {
             view.showNothing(true);
         } else {
-            view.setList(list, ExpenditureQueryActivity.ADAPTER_SET);
+            view.setList(list);
         }
     }
 
@@ -64,7 +63,7 @@ public class ExpenditureQueryPresenter implements ExpenditureQueryContract.Prese
             view.showNothing(true);
         } else {
             view.showNothing(false);
-            view.setList(list, ExpenditureQueryActivity.ADAPTER_UPDATE);
+            view.setList(list);
         }
     }
 
@@ -115,7 +114,7 @@ public class ExpenditureQueryPresenter implements ExpenditureQueryContract.Prese
         if (list.size() == 0) {
             view.showNothing(true);
         } else {
-            view.setList(list, ExpenditureQueryActivity.ADAPTER_UPDATE);
+            view.setList(list);
         }
     }
 

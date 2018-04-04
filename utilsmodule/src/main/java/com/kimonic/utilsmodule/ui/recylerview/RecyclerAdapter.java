@@ -19,7 +19,7 @@ import java.util.List;
  * method:
  * <p>
  * <p>
- * description：
+ * description：适配器,多类型实现复杂布局的实现
  * history：
  * *==================================================================
  */
@@ -38,7 +38,7 @@ public class RecyclerAdapter<T> extends RecyclerView.Adapter {
     private int resFooter;
     private int resItem;
 
-    /**
+    /**13963626754
      * 构造函数
      */
     public RecyclerAdapter(List<T> list, Context context, int resHeader, int resFooter, int resItem) {

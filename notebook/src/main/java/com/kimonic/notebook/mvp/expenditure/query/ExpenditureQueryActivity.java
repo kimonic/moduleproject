@@ -54,8 +54,8 @@ public class ExpenditureQueryActivity extends BaseActivity implements Expenditur
     TextView tvHint;
     private ExpenditureQueryContract.Presenter presenter;
 
-    public static final int ADAPTER_SET = 1;
-    public static final int ADAPTER_UPDATE = 2;
+//    public static final int ADAPTER_SET = 1;
+//    public static final int ADAPTER_UPDATE = 2;
     private CommonAdapter<ExpenditureLMBean> adapter;
 
 
@@ -126,7 +126,7 @@ public class ExpenditureQueryActivity extends BaseActivity implements Expenditur
     public boolean onContextItemSelected(MenuItem item) {
         //获取点击的item的位置
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        int position=info.position;
+        int position = info.position;
         switch (item.getItemId()) {
             case 0:
                 presenter.startNextAct(position);
@@ -162,17 +162,13 @@ public class ExpenditureQueryActivity extends BaseActivity implements Expenditur
 
 
     @Override
-    public void setList(List<ExpenditureLMBean> list, int flag) {
-        switch (flag) {
-            case ADAPTER_SET://设置适配器
-                adapter = getAdapter(list);
-                lv.setAdapter(adapter);
-                break;
-            case ADAPTER_UPDATE://刷新适配器
-                adapter.notifyDataSetChanged();
-                break;
+    public void setList(List<ExpenditureLMBean> list) {
+        if (adapter == null) {
+            adapter = getAdapter(list);
+            lv.setAdapter(adapter);
+        } else {
+            adapter.notifyDataSetChanged();
         }
-
     }
 
     @Override
@@ -217,7 +213,7 @@ public class ExpenditureQueryActivity extends BaseActivity implements Expenditur
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode==2){
+        if (requestCode == 2) {
             presenter.updateData();
         }
         super.onActivityResult(requestCode, resultCode, data);

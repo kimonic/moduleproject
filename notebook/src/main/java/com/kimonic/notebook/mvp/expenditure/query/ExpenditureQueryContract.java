@@ -26,7 +26,7 @@ public class ExpenditureQueryContract {
     interface View extends BaseView<Presenter> {
 
         /**设置list*/
-        void setList(List<ExpenditureLMBean> list, int flag);
+        void setList(List<ExpenditureLMBean> list);
         /**设置当前展示文本*/
         void setCurrent(String str);
         /**设置无数据展示*/

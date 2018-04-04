@@ -36,7 +36,6 @@ public class IncomeQueryPresenter implements IncomeQueryContract.Presenter {
     private int currentMonth, fixMonth;
     private int count = 0;
     private List<IncomeLMBean> list;
-    private boolean nothingFlag = false;
     private String userName;
 
     public IncomeQueryPresenter(IncomeQueryContract.View view, IncomeRepository respository) {
@@ -52,7 +51,7 @@ public class IncomeQueryPresenter implements IncomeQueryContract.Presenter {
         if (list.size() == 0) {
             view.showNothing(true);
         } else {
-            view.setList(list, IncomeQueryActivity.ADAPTER_SET);
+            view.setList(list);
         }
     }
 
@@ -64,7 +63,7 @@ public class IncomeQueryPresenter implements IncomeQueryContract.Presenter {
             view.showNothing(true);
         } else {
             view.showNothing(false);
-            view.setList(list, IncomeQueryActivity.ADAPTER_UPDATE);
+            view.setList(list);
         }
     }
 
@@ -115,7 +114,7 @@ public class IncomeQueryPresenter implements IncomeQueryContract.Presenter {
         if (list.size() == 0) {
             view.showNothing(true);
         } else {
-            view.setList(list, IncomeQueryActivity.ADAPTER_UPDATE);
+            view.setList(list);
         }
     }
 
