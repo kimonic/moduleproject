@@ -8,7 +8,18 @@ package com.kimonic.utilsmodule.code;
  * version：          1.0
  * date：             2018/1/23
  * description：
- * history：
+ * history： <meta-data
+ android:name="sak"
+ android:value=";3jm$>/p-ED^cVz_j~.KV&amp;V)k9jn,UAH" />
+ <meta-data
+ android:name="ssk"
+ android:value="DY34fdgsWET@#$%wg#@4fgd345sg" />
+ <meta-data
+ android:name="rak"
+ android:value="54Ms5bkE6UEdyrRviJ0![OR]g+i79x]k" />
+ <meta-data
+ android:name="rsk"
+ android:value="DYklj45T78ET@asd23" />
  * *==================================================================
  */
 
@@ -18,7 +29,9 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.util.Base64;
-import android.util.Log;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -28,13 +41,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
-import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class CreateCode {
     private static String SEND_AES_KEY;
@@ -98,7 +109,8 @@ public class CreateCode {
 
     public static String s2pDiyou(String str) {
         try {
-            return UnicodeToString(new String(Base64.decode(AESencrypt.decrypt2PHP(RECEIVE_AES_KEY, str).getBytes(), 2)));
+//            return UnicodeToString(new String(Base64.decode(AESencrypt.decrypt2PHP(RECEIVE_AES_KEY, str).getBytes(), 2)));
+            return UnicodeToString(new String(Base64.decode(AESencrypt.decrypt2PHP("54Ms5bkE6UEdyrRviJ0![OR]g+i79x]k", str).getBytes(), 2)));
         } catch (UnsupportedEncodingException var2) {
             var2.printStackTrace();
         } catch (Exception var3) {

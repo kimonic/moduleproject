@@ -10,6 +10,34 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:text="测试按钮"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center"-->
+            <!--android:text="预期年化fgasugsgddkjkw收益率"-->
+            <!--android:textSize="30sp"-->
+            <!--/>-->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:lottie_loop="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="预期年化收益率"
+            android:textSize="30sp"
+            android:textColor="#a3a3"
+            />
+
+    </FrameLayout>
+
+
 
     <ScrollView
         android:id="@+id/sv_act_test_main"

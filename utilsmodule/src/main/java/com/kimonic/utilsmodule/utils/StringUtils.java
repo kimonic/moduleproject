@@ -52,7 +52,7 @@ public class StringUtils {
         String temp;
         GlobalBean bean = firstParseJson(json);
         //MD5验证
-        if (MD5Utils.md5(CreateCode.getRECEIVE_SiGN_KEY() + bean.getDiyou() + CreateCode.getRECEIVE_SiGN_KEY()).equals(bean.getXmdy())) {
+        if (MD5Utils.md5("DYklj45T78ET@asd23" + bean.getDiyou() + "DYklj45T78ET@asd23").equals(bean.getXmdy())) {
             temp = CreateCode.s2pDiyou(bean.getDiyou());
             return temp;
         } else {

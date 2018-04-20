@@ -79,5 +79,6 @@ dependencies {
     //万能适配器  recylerview
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.36'
 
-
+    //日志格式化输出库,com.orhanobut.logger.Logger包名
+//    implementation 'com.orhanobut:logger:2.2.0'
 }
