@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.kimonic.uninstallapp.ActUninstallMainActivity">
+    <ImageView
+        android:id="@+id/iv_act_uninstall"
+        android:background="#a3a3"
+        android:scaleType="centerInside"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="500dp" />
 
     <ListView
         android:id="@+id/lv_act_uninstall_main"

@@ -3,12 +3,15 @@ package com.kimonic.uninstallapp;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.net.Uri;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.kimonic.utilsmodule.base.BaseActivity;
+import com.kimonic.utilsmodule.utils.ImageGlideUtils;
 import com.lzy.okgo.model.Response;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
@@ -19,12 +22,15 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class ActUninstallMainActivity extends BaseActivity {
 
 
     @BindView(R.id.lv_act_uninstall_main)
     ListView lv;
+    @BindView(R.id.iv_act_uninstall)
+    ImageView iv;
     private List<PackageInfo> packages;
 
     @Override
@@ -52,6 +58,10 @@ public class ActUninstallMainActivity extends BaseActivity {
 
     @Override
     public void initDataFromIntent() {
+        ImageGlideUtils.loadCircularImage(iv,"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525687212951&di=e40bc402436481d4eb0019b00435f146&imgtype=0&src=http%3A%2F%2F2t.5068.com%2Fuploads%2Fallimg%2F151024%2F48-151024111511-50.jpg");
+
+
+
         packages = getPackageManager().getInstalledPackages(0);
         for (int i = 0; i < packages.size(); i++) {
             PackageInfo packageInfo = packages.get(i);
@@ -83,7 +93,7 @@ public class ActUninstallMainActivity extends BaseActivity {
             }
             reader.close();
             content = output.toString();
-            Log.e("ActnActivity", "initView: -----"+content);
+            Log.e("ActnActivity", "initView: -----" + content);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -130,4 +140,10 @@ public class ActUninstallMainActivity extends BaseActivity {
     }
 
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
 }
