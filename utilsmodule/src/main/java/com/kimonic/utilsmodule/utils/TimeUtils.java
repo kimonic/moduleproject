@@ -1,5 +1,7 @@
 package com.kimonic.utilsmodule.utils;
 
+import android.util.Log;
+
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -196,6 +198,18 @@ public class TimeUtils {
     }
 
     /**
+     * 获取系统当前年月
+     *
+     * @return 类似2018年1月的字符串
+     */
+    public static String getCurrentYearMonth2() {
+        if (getCurrentMonthInt()==1){
+            return (getCurrentYear()-1)+"12";
+        }
+        return getCurrentYear() + getLastMonth2(getCurrentMonthInt());
+    }
+
+    /**
      * 获取系统当前月的1号是星期几
      * 1----星期日
      * 7----星期六
@@ -273,6 +287,20 @@ public class TimeUtils {
     }
 
     /**
+     * 获取当前月的上一个月,两位数表示
+     */
+    public static String getLastMonth2(int currentMonth) {
+        if (currentMonth == 1) {
+            return "" + 12;
+        } else {
+            if (currentMonth < 11) {
+                return "0" + (currentMonth-1);
+            }
+            return "" + (currentMonth - 1);
+        }
+    }
+
+    /**
      * 获取当前月的上一个月所在的年份
      */
     public static int getYearOfLastMonth(int currentYear, int currentMonth) {
@@ -319,34 +347,35 @@ public class TimeUtils {
         int two = StringUtils.string2Integer(date2.replace("-", ""));
         return one > two;
     }
+
     /**
      * 计算两个日期之间间隔几天,未考虑闰年
      */
-    public static int differenceDaate(String date1, String date2){
-        String[] da1=date1.split("-");
-        String[] da2=date2.split("-");
-        int[] da11={
+    public static int differenceDaate(String date1, String date2) {
+        String[] da1 = date1.split("-");
+        String[] da2 = date2.split("-");
+        int[] da11 = {
                 StringUtils.string2Integer(da1[0]),
                 StringUtils.string2Integer(da1[1]),
                 StringUtils.string2Integer(da1[2]),
         };
-        int[] da22={
+        int[] da22 = {
                 StringUtils.string2Integer(da2[0]),
                 StringUtils.string2Integer(da2[1]),
                 StringUtils.string2Integer(da2[2]),
         };
-        int[] mothNum={31,28,31,30,31,30,31,31,30,31,31};
-        int sum1=0,sum2=0;
+        int[] mothNum = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 31};
+        int sum1 = 0, sum2 = 0;
         for (int i = 0; i < da11[1] - 1; i++) {
-            sum1+=mothNum[i];
+            sum1 += mothNum[i];
         }
         for (int i = 0; i < da22[1] - 1; i++) {
-            sum2+=mothNum[i];
+            sum2 += mothNum[i];
         }
-        sum1+=da11[2];
-        sum2+=da22[2];
-        int year=(StringUtils.string2Integer(da1[0])-StringUtils.string2Integer(da2[0]))*365;
-        return sum2-sum1;
+        sum1 += da11[2];
+        sum2 += da22[2];
+        int year = (StringUtils.string2Integer(da1[0]) - StringUtils.string2Integer(da2[0])) * 365;
+        return sum2 - sum1;
     }
 
 

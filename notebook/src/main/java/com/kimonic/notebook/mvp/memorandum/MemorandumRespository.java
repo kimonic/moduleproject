@@ -27,7 +27,23 @@ import java.util.List;
  */
 
 public class MemorandumRespository<T> {
-    /**加载数据*/
+
+    /**获取该用户下所有数据*/
+    public List<MemorandumLMBean> loadData(String userName) {
+
+        List<MemorandumLMBean> listDate = DataSupport.where("userName = ?"
+                , userName).find(MemorandumLMBean.class);
+
+        if (listDate.size() < 2) {
+            return listDate;
+        }
+
+        Collections.sort(listDate, new ReositoryComparator());
+
+        return listDate;
+    }
+
+        /**加载数据*/
     public List<MemorandumLMBean> loadData(String userName, int year, int month) {
 
 

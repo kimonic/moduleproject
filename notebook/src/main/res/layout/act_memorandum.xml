@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <com.kimonic.utilsmodule.ui.MTopBarView
         android:id="@+id/mtb_act_memorandum"
         android:layout_width="match_parent"
@@ -29,6 +30,12 @@
         style="@style/MemorandumAct_tvstyle"
         android:drawableStart="@drawable/xshape_erniucircle"
         android:text="@string/beifenbeiwanglu" />
+
+    <TextView
+        android:id="@+id/tv_act_memorandum_cunchumulu"
+        style="@style/MemorandumAct_tvstyle"
+        android:drawableStart="@drawable/xshape_bluecircle"
+        android:text="@string/xiaomaomi" />
 
 
 </LinearLayout>

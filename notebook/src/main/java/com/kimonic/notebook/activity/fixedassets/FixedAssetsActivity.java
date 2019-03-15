@@ -19,6 +19,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.kimonic.notebook.R;
 import com.kimonic.notebook.activity.CompareDataActivity;
+import com.kimonic.notebook.backup.BackupUtil;
 import com.kimonic.notebook.litemapbean.fixedassets.BackupsBean;
 import com.kimonic.notebook.litemapbean.fixedassets.DataNameTableLMBean;
 import com.kimonic.notebook.litemapbean.fixedassets.DateRecordLMBean;
@@ -83,6 +84,7 @@ public class FixedAssetsActivity extends BaseActivity {
                 openActivity(QueryDataActivity.class);
                 break;
             case R.id.tv_act_fixedassets_daochugudingzichanjilu://导出
+                BackupUtil.savaZiChan(this);
                 //gson到处某个Java对象时排除某个字段不导出的配置策略
 //                ExclusionStrategy myExclusionStrategy = new ExclusionStrategy() {
 //                    @Override
@@ -110,7 +112,7 @@ public class FixedAssetsActivity extends BaseActivity {
 //
 //                String json = gson.toJson(bean);
 //                FileUtils.saveJsonToSDCard(this, "notebookbackup", TimeUtils.getNowDateShort() + "notebook.txt", json);
-//                break;
+                break;
             case R.id.tv_act_fixedassets_duibizichanjilu://对比
                 openActivity(CompareDataActivity.class);
                 break;

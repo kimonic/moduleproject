@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.kimonic.notebook.R;
+import com.kimonic.notebook.backup.BackupUtil;
 import com.kimonic.notebook.config.UserConfig;
 import com.kimonic.notebook.mvp.loginandregister.login.LoginActivity;
 import com.kimonic.utilsmodule.base.BaseActivity;
@@ -74,6 +75,9 @@ public class WelcomeActivity extends BaseActivity {
                 closeActivity();
             }
         }, 500);
+
+        BackupUtil.saveBeiWangLu(this);
+        BackupUtil.savaZiChan(this);
 
     }
 

@@ -57,6 +57,16 @@ public class FileUtils {
         return filePath;
     }
 
+    public static String getSavePath(Context context, String directoryName) {
+        File appDir = new File(Environment.getExternalStorageDirectory(), directoryName);
+        if (!appDir.exists()) {
+            if (!appDir.mkdir()) {
+                ToastUtils.showToast(context, R.string.muluchuangjianshibai);
+            }
+        }
+        return appDir.getAbsolutePath();
+    }
+
     /**
      * 保存传递的字符串到本地--存储到外部SD卡缓存目录(优先)或内部缓存目录
      *
@@ -64,16 +74,16 @@ public class FileUtils {
      * @param fileName 文件存储名称
      * @param content  存储内容
      */
-    public static void saveJsonToSDCard(Context context, String directoryName,String fileName, String content) {
+    public static void saveJsonToSDCard(Context context, String directoryName, String fileName, String content) {
 
         File appDir = new File(Environment.getExternalStorageDirectory(), directoryName);
         if (!appDir.exists()) {
             if (!appDir.mkdir()) {
-                Log.e("TAG", "saveImageToGallery: -----图片保存目录创建失败!!");
+                ToastUtils.showToast(context, R.string.muluchuangjianshibai);
             }
         }
-        File file = new File(appDir.getAbsolutePath()+"/" + fileName);
-        Log.e("TAG", "saveJsonToSDCard: " + (appDir.getAbsolutePath() + fileName));
+        File file = new File(appDir.getAbsolutePath() + "/" + fileName);
+        Log.e("TAG", "saveJsonToSDCard: " + (appDir.getAbsolutePath() + "/" + fileName));
 
         FileOutputStream os = null;
         try {
@@ -86,6 +96,7 @@ public class FileUtils {
             os.write(content.getBytes(), 0, content.getBytes().length);
             os.flush();
             ToastUtils.showToast(context, R.string.wenjianbaocunchenggong);
+            ToastUtils.showToastLong(context, file.getAbsolutePath());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -134,7 +145,7 @@ public class FileUtils {
                 Log.e("TAG", "saveImageToGallery: -----图片保存目录创建失败!!");
             }
         }
-        File file = new File(appDir.getAbsolutePath()+"/" + fileName);
+        File file = new File(appDir.getAbsolutePath() + "/" + fileName);
 
         if (file.exists()) {
             FileInputStream fis = null;
@@ -171,8 +182,9 @@ public class FileUtils {
 
     /**
      * 通过详细路径读取文件
-     * @param fileName   详细路径
-     * @return  文件字符串
+     *
+     * @param fileName 详细路径
+     * @return 文件字符串
      */
     public static String readFileContent(String fileName) {
         File file = new File(fileName);
@@ -330,7 +342,7 @@ public class FileUtils {
 //
 //    }
 
-    public static String getIconDir(){
+    public static String getIconDir() {
         // 首先确定保存图片的目录
         File appDir = new File(Environment.getExternalStorageDirectory(), "icon");
         if (!appDir.exists()) {

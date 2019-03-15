@@ -62,6 +62,12 @@ public class ToastUtils {
     public static void showToast(Context context, String content) {
         Toast.makeText(context, content, Toast.LENGTH_SHORT).show();
     }
+ /**
+     * 使用字符串展示
+     */
+    public static void showToastLong(Context context, String content) {
+        Toast.makeText(context, content, Toast.LENGTH_LONG).show();
+    }
 
     /**
      * 使用字符串展示
